@@ -1,0 +1,6 @@
+{
+  "name": "BrokerBros",
+  "description": "Institutional-grade global brokerage, trading platform, and wealth management services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

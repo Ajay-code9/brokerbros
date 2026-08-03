@@ -1,0 +1,235 @@
+import React, { useState } from 'react';
+import { RouterProvider, useRouter } from './router';
+import { MarketTicker } from './components/Header/MarketTicker';
+import { Navbar } from './components/Header/Navbar';
+import { Footer } from './components/Footer/Footer';
+import { OpenAccountModal } from './components/Modals/OpenAccountModal';
+import { LoginModal } from './components/Modals/LoginModal';
+import { SearchModal } from './components/Modals/SearchModal';
+import { TickerItem } from './types';
+
+// Pages
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { WhyBrokerBrosPage } from './pages/WhyBrokerBrosPage';
+import { BestExecutionPage } from './pages/BestExecutionPage';
+import { GlobalMarketAccessPage } from './pages/GlobalMarketAccessPage';
+import { MarketsOverviewPage } from './pages/markets/MarketsOverviewPage';
+import { StocksPage } from './pages/markets/StocksPage';
+import { EtfsPage } from './pages/markets/EtfsPage';
+import { MutualFundsPage } from './pages/markets/MutualFundsPage';
+import { BondsPage } from './pages/markets/BondsPage';
+import { IposPage } from './pages/markets/IposPage';
+import { CommoditiesPage } from './pages/markets/CommoditiesPage';
+import { ForexPage } from './pages/markets/ForexPage';
+import { OptionsPage } from './pages/markets/OptionsPage';
+import { FuturesOptionsPage } from './pages/markets/FuturesOptionsPage';
+import { PlatformsOverviewPage } from './pages/platforms/PlatformsOverviewPage';
+import { WebPlatformPage } from './pages/platforms/WebPlatformPage';
+import { DesktopPlatformPage } from './pages/platforms/DesktopPlatformPage';
+import { MobileAppPage } from './pages/platforms/MobileAppPage';
+import { TradingToolsPage } from './pages/platforms/TradingToolsPage';
+import { ResearchPage } from './pages/research/ResearchPage';
+import { EconomicCalendarPage } from './pages/research/EconomicCalendarPage';
+import { NewsInsightsPage } from './pages/research/NewsInsightsPage';
+import { EducationPage } from './pages/education/EducationPage';
+import { AcademyPage } from './pages/education/AcademyPage';
+import { LearningCenterPage } from './pages/education/LearningCenterPage';
+import { PricingPage } from './pages/PricingPage';
+import { AccountsPage } from './pages/AccountsPage';
+import { FundingWithdrawalsPage } from './pages/FundingWithdrawalsPage';
+import { SecurityPage } from './pages/SecurityPage';
+import { RegulationPage } from './pages/RegulationPage';
+import { ClientProtectionPage } from './pages/ClientProtectionPage';
+import { InstitutionalServicesPage } from './pages/InstitutionalServicesPage';
+import { PartnerProgramPage } from './pages/PartnerProgramPage';
+import { ApiIntegrationsPage } from './pages/ApiIntegrationsPage';
+import { HelpCenterPage } from './pages/HelpCenterPage';
+import { ContactPage } from './pages/ContactPage';
+import { CareersPage } from './pages/CareersPage';
+import { BlogPage } from './pages/BlogPage';
+import { LegalPage } from './pages/LegalPage';
+import { LoginPage } from './pages/auth/LoginPage';
+import { OpenAccountPage } from './pages/auth/OpenAccountPage';
+
+function AppContent() {
+  const { currentPath, navigate } = useRouter();
+  const [selectedSegment, setSelectedSegment] = useState<'individual' | 'institutional'>('individual');
+  const [isOpenAccountModalOpen, setIsOpenAccountModalOpen] = useState<boolean>(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false);
+
+  const handleOpenAccount = () => {
+    navigate('/open-account');
+  };
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
+  const handleOpenSearch = () => setIsSearchModalOpen(true);
+
+  const handleSelectTicker = (ticker: TickerItem) => {
+    handleOpenAccount();
+  };
+
+  const renderPage = () => {
+    switch (currentPath) {
+      case '/':
+        return <HomePage onOpenAccount={handleOpenAccount} onExplorePlatforms={() => navigate('/platforms')} />;
+      case '/about':
+        return <AboutPage onOpenAccount={handleOpenAccount} />;
+      case '/why-brokerbros':
+        return <WhyBrokerBrosPage onOpenAccount={handleOpenAccount} />;
+      case '/why-brokerbros/best-execution':
+      case '/best-execution':
+        return <BestExecutionPage onOpenAccount={handleOpenAccount} />;
+      case '/why-brokerbros/global-market-access':
+      case '/global-market-access':
+        return <GlobalMarketAccessPage onOpenAccount={handleOpenAccount} />;
+      case '/markets':
+        return <MarketsOverviewPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/stocks':
+        return <StocksPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/etfs':
+        return <EtfsPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/mutual-funds':
+        return <MutualFundsPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/fixed-income':
+      case '/markets/bonds':
+        return <BondsPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/ipos':
+        return <IposPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/commodities':
+        return <CommoditiesPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/forex':
+        return <ForexPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/options':
+      case '/markets/options-volatility':
+        return <OptionsPage onOpenAccount={handleOpenAccount} />;
+      case '/markets/futures':
+      case '/markets/futures-options':
+        return <FuturesOptionsPage onOpenAccount={handleOpenAccount} />;
+      case '/platforms':
+        return <PlatformsOverviewPage onOpenAccount={handleOpenAccount} />;
+      case '/platforms/web':
+        return <WebPlatformPage onOpenAccount={handleOpenAccount} />;
+      case '/platforms/desktop':
+        return <DesktopPlatformPage onOpenAccount={handleOpenAccount} />;
+      case '/platforms/mobile':
+        return <MobileAppPage onOpenAccount={handleOpenAccount} />;
+      case '/platforms/tools':
+        return <TradingToolsPage onOpenAccount={handleOpenAccount} />;
+      case '/research':
+        return <ResearchPage onOpenAccount={handleOpenAccount} />;
+      case '/research/calendar':
+        return <EconomicCalendarPage onOpenAccount={handleOpenAccount} />;
+      case '/research/news':
+        return <NewsInsightsPage onOpenAccount={handleOpenAccount} />;
+      case '/education':
+        return <EducationPage onOpenAccount={handleOpenAccount} />;
+      case '/education/academy':
+        return <AcademyPage onOpenAccount={handleOpenAccount} />;
+      case '/education/learning-center':
+        return <LearningCenterPage onOpenAccount={handleOpenAccount} />;
+      case '/pricing':
+        return <PricingPage onOpenAccount={handleOpenAccount} />;
+      case '/accounts':
+        return <AccountsPage onOpenAccount={handleOpenAccount} />;
+      case '/funding':
+        return <FundingWithdrawalsPage onOpenAccount={handleOpenAccount} />;
+      case '/security':
+        return <SecurityPage onOpenAccount={handleOpenAccount} />;
+      case '/security/regulation':
+        return <RegulationPage onOpenAccount={handleOpenAccount} />;
+      case '/security/client-protection':
+        return <ClientProtectionPage onOpenAccount={handleOpenAccount} />;
+      case '/institutional':
+        return <InstitutionalServicesPage onOpenAccount={handleOpenAccount} />;
+      case '/partner':
+        return <PartnerProgramPage onOpenAccount={handleOpenAccount} />;
+      case '/api-integrations':
+        return <ApiIntegrationsPage onOpenAccount={handleOpenAccount} />;
+      case '/help':
+      case '/faqs':
+        return <HelpCenterPage onOpenAccount={handleOpenAccount} />;
+      case '/contact':
+        return <ContactPage onOpenAccount={handleOpenAccount} />;
+      case '/careers':
+        return <CareersPage onOpenAccount={handleOpenAccount} />;
+      case '/blog':
+        return <BlogPage onOpenAccount={handleOpenAccount} />;
+      case '/legal':
+      case '/privacy-policy':
+      case '/terms-conditions':
+        return <LegalPage onOpenAccount={handleOpenAccount} />;
+      case '/login':
+        return <LoginPage onOpenAccount={handleOpenAccount} />;
+      case '/open-account':
+      case '/signup':
+      case '/register':
+        return <OpenAccountPage onLoginRedirect={handleLogin} />;
+      default:
+        return <HomePage onOpenAccount={handleOpenAccount} onExplorePlatforms={() => navigate('/platforms')} />;
+    }
+  };
+
+  const isAuthPage = currentPath === '/login' || currentPath === '/open-account' || currentPath === '/signup' || currentPath === '/register';
+
+  return (
+    <div className="min-h-screen max-w-full overflow-x-clip bg-white text-slate-900 font-sans antialiased selection:bg-emerald-500 selection:text-white flex flex-col justify-between">
+      <div>
+        {/* Enterprise Navigation */}
+        {!isAuthPage && (
+          <Navbar
+            onOpenAccount={handleOpenAccount}
+            onLogin={handleLogin}
+            onOpenSearch={handleOpenSearch}
+            selectedSegment={selectedSegment}
+            setSelectedSegment={setSelectedSegment}
+          />
+        )}
+
+        {/* Dynamic Route View */}
+        <main id="main-content" className="w-full max-w-full overflow-x-clip">
+          {renderPage()}
+        </main>
+      </div>
+
+      {/* Enterprise Footer */}
+      {!isAuthPage && <Footer onOpenAccount={handleOpenAccount} onLogin={handleLogin} />}
+
+      {/* Global Modals */}
+      <OpenAccountModal
+        isOpen={isOpenAccountModalOpen}
+        onClose={() => setIsOpenAccountModalOpen(false)}
+      />
+
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+        onOpenAccount={() => {
+          setIsLoginModalOpen(false);
+          setIsOpenAccountModalOpen(true);
+        }}
+      />
+
+      <SearchModal
+        isOpen={isSearchModalOpen}
+        onClose={() => setIsSearchModalOpen(false)}
+        onOpenAccount={() => {
+          setIsSearchModalOpen(false);
+          setIsOpenAccountModalOpen(true);
+        }}
+      />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <RouterProvider>
+      <AppContent />
+    </RouterProvider>
+  );
+}
