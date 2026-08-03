@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { HeroSection } from '../components/Hero/HeroSection';
 import { MarketTickerBar } from '../components/Home/MarketTickerBar';
 import { InstitutionalClassyShowcase } from '../components/Home/InstitutionalClassyShowcase';
+import { IbkrComparisonTable } from '../components/Home/IbkrComparisonTable';
 import { StatsWallSection } from '../components/Home/StatsWallSection';
 import { TrustSection } from '../components/Trust/TrustSection';
 import { ProductsSection } from '../components/Products/ProductsSection';
@@ -43,16 +44,18 @@ const Section: React.FC<{
 
 export const HomePage: React.FC<HomePageProps> = ({ onOpenAccount, onExplorePlatforms }) => {
   return (
-    <div className="selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden">
+    <div className="selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden bg-white text-slate-900">
 
       {/* ① LIVE MARKET TICKER */}
       <MarketTickerBar />
 
-      {/* ② HERO SECTION */}
+      {/* ② INSTITUTIONAL PURE WHITE HERO SECTION */}
       <HeroSection onOpenAccount={onOpenAccount} onExplorePlatforms={onExplorePlatforms} />
 
-      {/* ③ BOLD STAT WALL */}
-      <StatsWallSection />
+      {/* ③ IBKR-STYLE BROKERAGE COMPARISON TABLE */}
+      <Section anim={fadeUp}>
+        <IbkrComparisonTable onOpenAccount={onOpenAccount} />
+      </Section>
 
       {/* ④ ULTRA CLASSY IBKR-STYLE SHOWCASE (Clean Whitespace, Real Mockup & 2-Col Grid) */}
       <Section anim={fadeUp}>

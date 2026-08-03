@@ -5,6 +5,7 @@ import {
   ShieldCheck,
   DollarSign,
   Globe2,
+  Globe,
   Play,
   TrendingUp,
   TrendingDown,
@@ -213,241 +214,85 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAccount, onExplo
   };
 
   return (
-    <section
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      className="relative bg-[#06141D] text-white overflow-hidden min-h-[calc(100vh-80px)] flex items-center border-b border-emerald-900/40 font-sans"
-    >
-      <VideoHeroBackground videoSrc="/test3.mp4" opacity={0.28} theme="dark" />
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <section className="relative bg-white text-slate-900 h-[calc(100vh-80px)] min-h-[560px] max-h-[820px] flex items-center border-b border-slate-100 overflow-hidden font-sans">
+      
+      {/* Subtle Background Glow */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-emerald-50/40 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full py-12 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
-          {/* ── LEFT ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left Column — Institutional Value Proposition */}
           <div className="lg:col-span-7 space-y-4">
-            {/* Tab selector */}
-            <div className="flex flex-wrap gap-0.5 bg-slate-900/80 backdrop-blur p-1 rounded-lg border border-slate-800/80 w-fit shadow-md mb-2">
-              {HERO_SLIDES.map((slide, i) => (
-                <button
-                  key={i}
-                  onClick={() => handleTabClick(i)}
-                  className={`px-2.5 py-1 rounded-md text-[9px] sm:text-[10px] font-mono font-bold tracking-tight transition-all cursor-pointer ${
-                    activeTab === i
-                      ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-                  }`}
-                >
-                  {slide.badge}
-                </button>
-              ))}
+            
+            {/* Top Institutional Badge */}
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200/80">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <span>THE INSTITUTIONAL BROKERAGE STANDARD</span>
             </div>
 
-            {/* Headline & Description Container */}
-            <div className="relative min-h-[240px] sm:min-h-[210px] lg:min-h-[220px] overflow-hidden flex items-start">
-              <AnimatePresence mode="wait" custom={direction}>
-                <motion.div
-                  key={activeTab}
-                  custom={direction}
-                  variants={slideVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-                  className="space-y-3 w-full pt-1"
-                >
-                  <h1 className="text-3xl sm:text-4xl lg:text-[3.1rem] font-black tracking-tight leading-[1.15] text-white font-sans">
-                    {currentSlide.title}{' '}
-                    <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-                      {currentSlide.highlight}
-                    </span>
-                  </h1>
-                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal max-w-2xl pt-1">
-                    {currentSlide.description}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
+              Lowest Costs. Global Access. <br />
+              <span className="text-emerald-700">Uncompromising Execution.</span>
+            </h1>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+            {/* Subtext */}
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-normal">
+              Invest globally in stocks, options, futures, currencies, bonds, and funds from a single unified account. Benefit from $0.00 commissions, 4.85% APY cash sweep, and zero-PFOF SmartRouting.
+            </p>
+
+            {/* Primary & Secondary Actions */}
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={onOpenAccount}
-                className="px-7 py-3.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 text-slate-950 font-extrabold text-sm rounded-xl shadow-xl shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                className="px-7 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
               >
-                <span>{currentSlide.cta}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span>Open Protected Account</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
+
               <button
                 onClick={onExplorePlatforms}
-                className="px-6 py-3.5 bg-slate-900/80 hover:bg-slate-800 text-white font-bold text-sm rounded-xl border border-slate-700/80 backdrop-blur transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="px-6 py-3 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-lg border border-slate-300 transition-all flex items-center gap-2 cursor-pointer text-sm"
               >
-                <Play className="w-4 h-4 fill-emerald-400 text-emerald-400" />
-                <span>Explore Platform Sandbox</span>
+                <Globe className="w-4 h-4 text-emerald-600" />
+                <span>Explore Global Venues</span>
               </button>
             </div>
 
-            {/* Trust bar */}
-            <div className="pt-5 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-xs font-sans">
-              <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
-                <div>
-                  <div className="font-bold text-white">S&P Rated A-</div>
-                  <div className="text-slate-500 text-[11px]">Stable Credit Rating</div>
-                </div>
+            {/* IBKR-Grade Quick Metrics Row */}
+            <div className="pt-6 border-t border-slate-100 grid grid-cols-4 gap-4 text-xs font-mono">
+              <div>
+                <div className="text-slate-400 text-xs">US Equity Trade</div>
+                <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">$0.00 Fixed</div>
               </div>
-              <div className="flex items-center gap-2.5">
-                <DollarSign className="w-5 h-5 text-emerald-400 shrink-0" />
-                <div>
-                  <div className="font-bold text-white">$28.4B Capital</div>
-                  <div className="text-slate-500 text-[11px]">Audited Balance Sheet</div>
-                </div>
+              <div>
+                <div className="text-slate-400 text-xs">USD Cash Sweep</div>
+                <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">4.85% APY</div>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Globe2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                <div>
-                  <div className="font-bold text-white">26 Currencies</div>
-                  <div className="text-slate-500 text-[11px]">Single Settled Account</div>
-                </div>
+              <div>
+                <div className="text-slate-400 text-xs">Margin Borrow</div>
+                <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">5.83% Rate</div>
+              </div>
+              <div>
+                <div className="text-slate-400 text-xs">Connected Markets</div>
+                <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">150+ Venues</div>
               </div>
             </div>
+
           </div>
 
-          {/* ── RIGHT — Professional Terminal Card ── */}
-          <div className="lg:col-span-5 relative">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-500/20 via-teal-400/10 to-cyan-500/15 blur-2xl opacity-80 animate-pulse pointer-events-none" />
-
-            <div className="relative rounded-2xl overflow-hidden border border-slate-700/60 shadow-2xl bg-[#0A1929] ring-1 ring-white/5">
-
-              {/* ── Title bar (macOS-style) ── */}
-              <div className="flex items-center justify-between px-4 py-2.5 bg-[#0D2035] border-b border-slate-800/80">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                  <span className="ml-3 text-slate-400 text-[10px] font-mono">BrokerBros Pro · Market Watch</span>
-                </div>
-                <div className="flex items-center gap-1.5 font-mono text-[10px]">
-                  <Wifi className="w-3 h-3 text-emerald-400" />
-                  <span className="text-emerald-400 font-bold">LIVE</span>
-                  <span className="text-slate-600 mx-1">·</span>
-                  <span className="text-slate-400">NY4</span>
-                  <span className="text-slate-600 mx-1">·</span>
-                  <span className="text-slate-300 font-bold">1.2ms</span>
-                </div>
-              </div>
-
-              {/* ── Chart area for selected stock ── */}
-              <div className="px-4 pt-3 pb-2 bg-[#081524] border-b border-slate-800/60">
-                <div className="flex items-start justify-between mb-1">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <LogoBadge logoUrl={activeStock.logoUrl} symbol={activeStock.symbol} color={activeStock.color} />
-                      <div>
-                        <div className="text-white font-black text-sm font-mono">{activeStock.symbol}</div>
-                        <div className="text-slate-500 text-[9px]">{activeStock.name}</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-white font-black text-xl font-mono">
-                      ${activeStock.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                    </div>
-                    <div className={`flex items-center justify-end gap-1 text-[11px] font-mono font-bold ${activeStock.up ? 'text-emerald-400' : 'text-rose-400'}`}>
-                      {activeStock.up ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
-                      {activeStock.up ? '+' : ''}{activeStock.changePct.toFixed(2)}%
-                      <span className="text-slate-500 font-normal text-[10px] ml-1">Today</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Live area chart */}
-                <div className="h-20 w-full mt-2">
-                  <LiveAreaChart up={activeStock.up} symbol={activeStock.symbol} />
-                </div>
-
-                {/* Time axis */}
-                <div className="flex justify-between text-slate-700 text-[9px] font-mono mt-1">
-                  <span>9:30</span><span>11:00</span><span>12:30</span><span>14:00</span><span>15:30</span><span>16:00</span>
-                </div>
-              </div>
-
-              {/* ── Watchlist rows ── */}
-              <div className="divide-y divide-slate-800/50">
-                {/* Header */}
-                <div className="flex items-center justify-between px-4 py-1.5 bg-[#0D2035]/60">
-                  <span className="text-slate-600 text-[9px] font-mono uppercase tracking-widest">Symbol</span>
-                  <span className="text-slate-600 text-[9px] font-mono uppercase tracking-widest">Chart</span>
-                  <span className="text-slate-600 text-[9px] font-mono uppercase tracking-widest">Last / Chg%</span>
-                </div>
-
-                {prices.map((item, idx) => (
-                  <motion.button
-                    key={item.symbol}
-                    onClick={() => setSelectedSymbol(idx)}
-                    className={`w-full flex items-center justify-between px-4 py-2 transition-colors cursor-pointer text-left ${
-                      selectedSymbol === idx ? 'bg-emerald-500/8 border-l-2 border-emerald-500' : 'hover:bg-slate-800/30 border-l-2 border-transparent'
-                    }`}
-                    animate={{ backgroundColor: item.up ? 'rgba(16,185,129,0.02)' : 'rgba(244,63,94,0.02)' }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {/* Logo + name */}
-                    <div className="flex items-center gap-2 w-28">
-                      <LogoBadge logoUrl={item.logoUrl} symbol={item.symbol} color={item.color} />
-                      <div>
-                        <div className="text-white font-bold text-xs font-mono">{item.symbol}</div>
-                        <div className="text-slate-600 text-[9px] truncate max-w-[60px]">{item.name.split(' ')[0]}</div>
-                      </div>
-                    </div>
-
-                    {/* Mini sparkline */}
-                    <div className="w-16 h-7 opacity-80">
-                      <LiveAreaChart up={item.up} symbol={item.symbol + 'mini'} />
-                    </div>
-
-                    {/* Price + change */}
-                    <div className="text-right w-24">
-                      <div className="text-white font-mono font-bold text-xs">
-                        ${item.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                      </div>
-                      <div className={`font-mono text-[10px] font-bold ${item.up ? 'text-emerald-400' : 'text-rose-400'}`}>
-                        {item.up ? '▲' : '▼'} {Math.abs(item.changePct).toFixed(2)}%
-                      </div>
-                    </div>
-                  </motion.button>
-                ))}
-              </div>
-
-              {/* ── Footer ── */}
-              <div className="flex items-center justify-between px-4 py-2.5 bg-[#0D2035]/80 border-t border-slate-800/80 font-mono text-[10px]">
-                <div className="flex items-center gap-1.5 text-slate-500">
-                  <Lock className="w-3 h-3 text-emerald-400" />
-                  <span>SIPC · $30M Lloyd's · SEC Regulated</span>
-                </div>
-                <button
-                  onClick={onOpenAccount}
-                  className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-bold transition-colors cursor-pointer"
-                >
-                  <span>Start Trading</span>
-                  <ArrowRight className="w-3 h-3" />
-                </button>
-              </div>
-            </div>
+          {/* Right Column — Clean Real Workstation Mockup */}
+          <div className="lg:col-span-5">
+            <img
+              src="/trading_platform_desktop.png"
+              alt="BrokerBros Pro Workstation Terminal"
+              className="w-full h-auto max-h-[420px] object-contain shadow-md rounded-xl border border-slate-200"
+            />
           </div>
 
         </div>
-      </div>
-
-      {/* Scroll chevron */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-        <span className="text-slate-500 text-[9px] font-mono uppercase tracking-widest">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <ChevronDown className="w-5 h-5 text-emerald-400" />
-        </motion.div>
       </div>
     </section>
   );
