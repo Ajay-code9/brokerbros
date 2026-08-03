@@ -434,41 +434,32 @@ export const BondsPage: React.FC<BondsPageProps> = ({ onOpenAccount }) => {
         </div>
       </div>
 
-      {/* 1. EDITORIAL HERO SECTION WITH REUSABLE VIDEO BACKGROUND */}
-      <section className="relative bg-gradient-to-b from-[#06141D] via-[#0B1E2B] to-[#0A1A24] text-white py-8 lg:py-14 min-h-[calc(100vh-80px)] flex items-center border-b border-emerald-900/40 overflow-hidden font-sans">
+      {/* 1. HERO SECTION (100vh Viewport Lock - Clean Simple Layout) */}
+      <section className="relative bg-white text-slate-900 h-[calc(100vh-80px)] min-h-[520px] max-h-[800px] flex items-center border-b border-slate-100 overflow-hidden font-sans">
         
-        {/* Mesh Glow Lighting Accents */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-10 w-[450px] h-[450px] bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none" />
-
-        {/* Reusable Video Hero Background */}
-        <VideoHeroBackground videoSrc="/test.mp4" opacity={0.35} theme="dark" />
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Column Content */}
-            <div className="lg:col-span-7 space-y-4 lg:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-teal-500/20 border border-emerald-500/40 text-emerald-300 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider shadow-lg shadow-emerald-500/10">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            {/* Left Copy Block */}
+            <div className="lg:col-span-7 space-y-3.5">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200/80">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 <span>INSTITUTIONAL FIXED INCOME & YIELD DESK</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-white font-sans">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
                 Access 1,000,000+ Bonds <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-                  With Zero Markup Pricing.
-                </span>
+                <span className="text-emerald-700">With Zero Markup Pricing</span>
               </h1>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans font-normal">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl font-sans font-normal">
                 Invest with confidence through global Treasuries, Municipals, Corporate Bonds, and CDs. Construct automated bond ladders backed by institutional liquidity, live yield metrics, and transparent wholesale pricing.
               </p>
 
               <div className="pt-1 flex flex-wrap items-center gap-3.5">
                 <button
                   onClick={onOpenAccount}
-                  className="px-6 py-3 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 text-slate-950 font-black rounded-xl shadow-xl shadow-emerald-500/25 transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
+                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
                 >
                   <span>Open Fixed Income Account</span>
                   <ArrowRight className="w-4 h-4" />
@@ -479,26 +470,37 @@ export const BondsPage: React.FC<BondsPageProps> = ({ onOpenAccount }) => {
                     const el = document.getElementById('bond-screener-section');
                     el?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="px-5 py-3 bg-slate-900/90 hover:bg-slate-800 text-cyan-300 font-bold rounded-xl border border-cyan-500/40 shadow-lg backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
+                  className="px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-lg border border-slate-300 transition-all flex items-center gap-2 cursor-pointer text-sm"
                 >
-                  <Search className="w-4 h-4 text-cyan-400" />
+                  <Search className="w-4 h-4 text-emerald-600" />
                   <span>Search Bond Screener</span>
                 </button>
               </div>
-            </div>
 
-            {/* Right Sleek Border Image Card (Zero Text Overlays) */}
-            <div className="lg:col-span-5 relative">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/40 via-teal-500/30 to-cyan-500/40 opacity-40 blur-xl animate-pulse pointer-events-none" />
-              <div className="relative p-1.5 rounded-2xl bg-[#0B1E2B] border border-slate-800 shadow-2xl ring-1 ring-emerald-500/30 overflow-hidden group">
-                <div className="relative h-56 sm:h-64 rounded-xl overflow-hidden">
-                  <img
-                    src="/bonds_treasury_vault.png"
-                    alt="Bonds Treasury Vault"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+              {/* Key Quick Badges */}
+              <div className="pt-4 border-t border-slate-100 grid grid-cols-3 gap-4 text-xs font-mono">
+                <div>
+                  <div className="text-slate-400 text-xs">Available Bonds</div>
+                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">1,000,000+ CUSIPs</div>
+                </div>
+                <div>
+                  <div className="text-slate-400 text-xs">Bond Markup</div>
+                  <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">Zero ($0 Markup)</div>
+                </div>
+                <div>
+                  <div className="text-slate-400 text-xs">10Y US Treasury</div>
+                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">4.22% Yield</div>
                 </div>
               </div>
+            </div>
+
+            {/* Right Bonds Image - Clean Simple Image */}
+            <div className="lg:col-span-5">
+              <img
+                src="/bonds_treasury_vault.png"
+                alt="Bonds Treasury Vault"
+                className="w-full h-auto max-h-[420px] object-contain shadow-md rounded-xl border border-slate-200"
+              />
             </div>
 
           </div>
@@ -506,7 +508,7 @@ export const BondsPage: React.FC<BondsPageProps> = ({ onOpenAccount }) => {
       </section>
 
       {/* 2. WHY FIXED INCOME? (ELEGANT VISUAL CARDS) */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-12 lg:py-16 min-h-[calc(100vh-80px)] flex flex-col justify-center bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">

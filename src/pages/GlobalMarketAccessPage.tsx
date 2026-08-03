@@ -127,53 +127,47 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
   ];
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden bg-[#06141D] text-white selection:bg-emerald-500 selection:text-white font-sans">
-      {/* Download Toast Notification */}
+    <div className="w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-emerald-500 selection:text-white font-sans antialiased">
+      {/* Toast Notification */}
       {downloadToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-slate-950 text-white px-5 py-4 rounded-xl border border-emerald-500/40 shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-200">
           <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
           <div>
-            <div className="text-xs font-bold text-white">Global Market Directory Downloaded</div>
-            <div className="text-[11px] text-slate-400">Complete list of 150+ connected exchanges & trading schedules saved.</div>
+            <div className="text-xs font-bold text-white">Global Exchange Coverage Brochure Downloaded</div>
+            <div className="text-[11px] text-slate-400">Complete listing of 150+ international exchange specifications.</div>
           </div>
         </div>
       )}
 
-      {/* 1. HERO SECTION WITH VIDEO BACKGROUND (/test.mp4) */}
-      <section className="relative bg-gradient-to-b from-[#06141D] via-[#0B1E2B] to-[#0A1A24] text-white min-h-[calc(100vh-64px)] flex items-center border-b border-emerald-900/40 overflow-hidden font-sans">
+      {/* 1. HERO SECTION (Apple & IBKR Clean White Institutional Style) */}
+      <section className="relative bg-white text-slate-900 py-12 lg:py-16 min-h-[calc(100vh-80px)] flex flex-col justify-center border-b border-slate-100 overflow-hidden font-sans">
         
-        {/* Mesh Glow Lighting Accents */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-10 w-[450px] h-[450px] bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none" />
-
-        {/* Reusable Video Hero Background */}
-        <VideoHeroBackground videoSrc="/test.mp4" opacity={0.35} theme="dark" />
+        {/* Soft Background Accents */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left Column Content */}
-            <div className="lg:col-span-7 space-y-4 lg:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-teal-500/20 border border-emerald-500/40 text-emerald-300 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider shadow-lg shadow-emerald-500/10">
-                <Globe className="w-3.5 h-3.5 text-emerald-400 animate-spin" style={{ animationDuration: '12s' }} />
+            {/* Left Copy */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200/80">
+                <Globe className="w-3.5 h-3.5 text-emerald-600" />
                 <span>150+ MARKET CENTERS • 35 COUNTRIES • 26 CURRENCIES</span>
               </div>
 
-              <h1 className="text-3xl sm:text-[34px] lg:text-[42px] font-black tracking-tight leading-[1.1] text-white font-sans">
-                Trade Global Financial Markets <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-                  From One Institutional Account.
-                </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
+                Trade Global Markets <br />
+                <span className="text-emerald-700">From One Unified Account</span>
               </h1>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans font-normal">
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-normal">
                 Access 150+ global exchanges across 35 countries through a single multi-currency account with institutional execution quality.
               </p>
 
-              <div className="pt-1 flex flex-wrap items-center gap-3.5">
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={onOpenAccount}
-                  className="px-6 py-3 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 text-slate-950 font-black rounded-xl shadow-xl shadow-emerald-500/25 transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
+                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
                 >
                   <span>Open Global Account</span>
                   <ArrowRight className="w-4 h-4" />
@@ -181,59 +175,37 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
 
                 <button
                   onClick={handleDownloadBrochure}
-                  className="px-5 py-3 bg-slate-900/90 hover:bg-slate-800 text-cyan-300 font-bold rounded-xl border border-cyan-500/40 shadow-lg backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
+                  className="px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-lg border border-slate-300 transition-all flex items-center gap-2 cursor-pointer text-sm"
                 >
-                  <Download className="w-4 h-4 text-cyan-400" />
-                  <span>Global Directory (PDF)</span>
+                  <Download className="w-4 h-4 text-emerald-600" />
+                  <span>Download Global Guide</span>
                 </button>
               </div>
 
               {/* Quick Highlights */}
-              <div className="pt-4 border-t border-slate-800/80 grid grid-cols-3 gap-3 text-xs font-mono">
+              <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-4 text-xs font-mono">
                 <div>
-                  <div className="text-slate-400 text-[11px]">Exchanges Connected</div>
-                  <div className="text-emerald-400 font-bold text-xs sm:text-sm">150+ Venues</div>
+                  <div className="text-slate-400 text-xs">Exchanges</div>
+                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">150+ Direct Venues</div>
                 </div>
                 <div>
-                  <div className="text-slate-400 text-[11px]">Supported Currencies</div>
-                  <div className="text-white font-bold text-xs sm:text-sm">26 Currencies</div>
+                  <div className="text-slate-400 text-xs">Countries</div>
+                  <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">35 Global Nations</div>
                 </div>
                 <div>
-                  <div className="text-slate-400 text-[11px]">Regulatory Protection</div>
-                  <div className="text-emerald-400 font-bold text-xs sm:text-sm">$30M Per Account</div>
+                  <div className="text-slate-400 text-xs">Currencies</div>
+                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">26 Wallet Currencies</div>
                 </div>
               </div>
             </div>
 
-            {/* Right — Premium Glassmorphism Image Card */}
+            {/* Right Global Network Graphic */}
             <div className="lg:col-span-5 relative">
-              {/* Ambient glow halo */}
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-emerald-500/30 via-teal-400/20 to-cyan-500/25 blur-2xl opacity-60 animate-pulse pointer-events-none" />
-
-              {/* Card shell */}
-              <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 border border-emerald-500/25 shadow-2xl bg-gradient-to-b from-[#0D2231]/80 to-[#06141D]/90 backdrop-blur-xl">
-
-                {/* Image */}
-                <div className="relative h-60 sm:h-72 group overflow-hidden">
-                  <img
-                    src="/global_economy_network.png"
-                    alt="Global Market Network"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Subtle vignette only at bottom edge */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#06141D]/80 via-transparent to-transparent" />
-                </div>
-
-                {/* Frosted glass stats strip */}
-                <div className="flex items-center justify-between px-4 py-3 border-t border-white/10 bg-white/5 backdrop-blur-md font-mono text-[11px]">
-                  <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span>NYSE / LSE / HKEX</span>
-                  </div>
-                  <div className="text-slate-400 font-semibold">150+ Venues · 35 Countries</div>
-                  <div className="text-cyan-300 font-bold">26 Currencies</div>
-                </div>
-              </div>
+              <img
+                src="/global_economy_network.png"
+                alt="Global Economy Network"
+                className="w-full h-auto object-contain shadow-2xl rounded-2xl border border-slate-200"
+              />
             </div>
 
           </div>

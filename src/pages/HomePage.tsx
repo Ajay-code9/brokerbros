@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { HeroSection } from '../components/Hero/HeroSection';
 import { MarketTickerBar } from '../components/Home/MarketTickerBar';
+import { InstitutionalClassyShowcase } from '../components/Home/InstitutionalClassyShowcase';
 import { StatsWallSection } from '../components/Home/StatsWallSection';
 import { TrustSection } from '../components/Trust/TrustSection';
 import { ProductsSection } from '../components/Products/ProductsSection';
@@ -50,8 +51,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAccount, onExplorePlat
       {/* ② HERO SECTION */}
       <HeroSection onOpenAccount={onOpenAccount} onExplorePlatforms={onExplorePlatforms} />
 
-      {/* ③ BOLD STAT WALL — Immediate credibility punch post-hero */}
+      {/* ③ BOLD STAT WALL */}
       <StatsWallSection />
+
+      {/* ④ ULTRA CLASSY IBKR-STYLE SHOWCASE (Clean Whitespace, Real Mockup & 2-Col Grid) */}
+      <Section anim={fadeUp}>
+        <InstitutionalClassyShowcase onOpenAccount={onOpenAccount} />
+      </Section>
 
       {/* ④ GLOBAL ASSET COVERAGE & PRODUCTS — Show what you can trade */}
       <Section anim={fadeUp}>

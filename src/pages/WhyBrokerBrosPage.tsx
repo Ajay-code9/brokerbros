@@ -154,7 +154,7 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   ];
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden bg-[#06141D] text-white selection:bg-emerald-500 selection:text-white font-sans">
+    <div className="w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-emerald-500 selection:text-white font-sans antialiased">
       {/* Toast Notification for Financial Report Download */}
       {downloadToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-slate-950 text-white px-5 py-4 rounded-xl border border-emerald-500/40 shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-200">
@@ -166,41 +166,35 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
         </div>
       )}
 
-      {/* 1. HERO SECTION WITH VIDEO BACKGROUND (/test.mp4) */}
-      <section className="relative bg-gradient-to-b from-[#06141D] via-[#0B1E2B] to-[#0A1A24] text-white min-h-[calc(100vh-64px)] flex items-center border-b border-emerald-900/40 overflow-hidden font-sans">
+      {/* 1. HERO SECTION (Apple & IBKR Clean White Institutional Style) */}
+      <section className="relative bg-white text-slate-900 py-12 lg:py-16 min-h-[calc(100vh-80px)] flex flex-col justify-center border-b border-slate-100 overflow-hidden font-sans">
         
-        {/* Mesh Glow Lighting Accents */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-10 w-[450px] h-[450px] bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none" />
-
-        {/* Reusable Video Hero Background */}
-        <VideoHeroBackground videoSrc="/test.mp4" opacity={0.35} theme="dark" />
+        {/* Soft Background Accents */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-4 lg:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-teal-500/20 border border-emerald-500/40 text-emerald-300 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider shadow-lg shadow-emerald-500/10">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200/80">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 <span>INSTITUTIONAL CAPITAL & CREDIT STANDING</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-white font-sans">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
                 Built on Unshakeable <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-                  Capital Strength & S&P Rating.
-                </span>
+                <span className="text-emerald-700">Capital Strength & S&P Rating</span>
               </h1>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans font-normal">
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-normal">
                 BrokerBros operates with $28.4 Billion in consolidated equity capital, an S&P A- credit rating, and $30 Million in excess client protection per account.
               </p>
 
-              <div className="pt-1 flex flex-wrap items-center gap-3.5">
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={onOpenAccount}
-                  className="px-6 py-3 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 text-slate-950 font-black rounded-xl shadow-xl shadow-emerald-500/25 transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
+                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
                 >
                   <span>Open Protected Account</span>
                   <ArrowRight className="w-4 h-4" />
@@ -208,26 +202,26 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
 
                 <button
                   onClick={handleDownloadReport}
-                  className="px-5 py-3 bg-slate-900/90 hover:bg-slate-800 text-cyan-300 font-bold rounded-xl border border-cyan-500/40 shadow-lg backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
+                  className="px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-lg border border-slate-300 transition-all flex items-center gap-2 cursor-pointer text-sm"
                 >
-                  <Download className="w-4 h-4 text-cyan-400" />
-                  <span>Download 2026 Audit Report (PDF)</span>
+                  <Download className="w-4 h-4 text-emerald-600" />
+                  <span>Download 2026 Audit Report</span>
                 </button>
               </div>
 
               {/* Key Quick Badges */}
-              <div className="pt-4 border-t border-slate-800/80 grid grid-cols-3 gap-3 text-xs font-mono">
+              <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-4 text-xs font-mono">
                 <div>
-                  <div className="text-slate-400 text-[11px]">S&P Credit Rating</div>
-                  <div className="text-emerald-400 font-bold text-xs sm:text-sm">A- (Stable Outlook)</div>
+                  <div className="text-slate-400 text-xs">S&P Credit Rating</div>
+                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">A- (Stable Outlook)</div>
                 </div>
                 <div>
-                  <div className="text-slate-400 text-[11px]">CET1 Ratio</div>
-                  <div className="text-white font-bold text-xs sm:text-sm">28.5% (2.7x Req)</div>
+                  <div className="text-slate-400 text-xs">CET1 Ratio</div>
+                  <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">28.5% (2.7x Req)</div>
                 </div>
                 <div>
-                  <div className="text-slate-400 text-[11px]">Client Protection</div>
-                  <div className="text-emerald-400 font-bold text-xs sm:text-sm">$30M Excess Insurance</div>
+                  <div className="text-slate-400 text-xs">Client Protection</div>
+                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">$30M Excess Insurance</div>
                 </div>
               </div>
             </div>
