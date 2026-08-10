@@ -1,78 +1,121 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --font-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-mono: "Roboto Mono", "SF Mono", Monaco, Consolas, monospace;
-    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-serif: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    /* Single Global Color Palette */
+    --color-heading: #111827;
+    --color-paragraph: #4B5563;
+    --color-muted: #6B7280;
 
-    /* Institutional Color Palette - Rich Accent #31a736 & Crisp Porcelain */
-    --bg-obsidian-deep: #070a11;
-    --bg-obsidian-card: #0d1322;
-    --bg-obsidian-border: #1a2336;
-    
     --brand-green-primary: #31a736;
-    --brand-green-glow: rgba(49, 167, 54, 0.15);
     --brand-green-hover: #26872a;
+  }
 
-    --text-primary: #0b0f19;
-    --text-secondary: #27303f;
-    --text-muted: #526075;
-
-    --line-height-heading: 1.15;
-    --line-height-tight: 1.25;
-    --line-height-body: 1.7;
-
-    /* Financial Typography Scale */
-    --size-h1: clamp(2.5rem, 4.5vw, 3.75rem);
-    --size-h2: clamp(2rem, 3vw, 2.75rem);
-    --size-h3: clamp(1.5rem, 2vw, 2rem);
-    --size-h4: clamp(1.125rem, 1.5vw, 1.35rem);
-    --size-body-lg: 1.125rem;
-    --size-body: 1rem;
-    --size-small: 0.875rem;
-    --size-xs: 0.75rem;
+  /* Global Clean Font Application: Plus Jakarta Sans Everywhere */
+  *, html, body, button, input, select, textarea {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   }
 
   html {
-    font-family: var(--font-sans);
-    color: var(--text-primary);
+    color: var(--color-heading);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
   }
 
-  /* Viewport-Aware Snap Container Utility */
-  .snap-container {
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
-  }
-
-  .snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   body {
     font-family: var(--font-sans);
     font-weight: 400;
-    font-size: var(--size-body);
-    line-height: var(--line-height-body);
-    color: var(--text-secondary);
-    background-color: #fafbfc;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4B5563;
+    background-color: #ffffff;
   }
 
-  /* Universal High-Contrast Focus Ring System (WCAG 2.1 AA) */
+  /* Type Scale System */
+  h1, .hero-heading {
+    font-family: var(--font-sans);
+    font-size: clamp(2.25rem, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #111827;
+  }
+
+  h2, .section-heading {
+    font-family: var(--font-sans);
+    font-size: clamp(1.75rem, 3.5vw, 46px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #111827;
+  }
+
+  h3, .card-heading {
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 2vw, 28px);
+    font-weight: 600;
+    line-height: 1.3;
+    color: #111827;
+  }
+
+  h4, .small-heading {
+    font-family: var(--font-sans);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #111827;
+  }
+
+  p, .text-body {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #4B5563;
+  }
+
+  .text-body-lg {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #4B5563;
+  }
+
+  nav, .text-nav {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  button, input[type="button"], input[type="submit"], .btn, .text-button {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 0px !important;
+  }
+
+  .text-small {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    color: #4B5563;
+  }
+
+  .text-caption {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B7280;
+  }
+
+  /* Universal High-Contrast Focus Ring System */
   :focus-visible {
     outline: 2px solid #31a736 !important;
     outline-offset: 2px !important;

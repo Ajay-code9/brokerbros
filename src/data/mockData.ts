@@ -126,59 +126,59 @@ export const MARKET_CATEGORIES: MarketCategory[] = [
 export const ACCOUNT_TYPES: AccountType[] = [
   {
     id: 'individual',
-    title: 'Individual Account',
-    subtitle: 'Single Owner Investor Account',
-    description: 'For solo investors trading equities, options, futures, and currencies globally. Full access to margin or cash setups.',
+    title: 'White-Label Client Accounts',
+    subtitle: 'Multi-Currency Client Portal',
+    description: 'Full-featured branded client account portal with instant deposit/withdrawal, multi-currency wallets, and real-time balance dashboards.',
     features: [
-      'Access 150+ global exchanges from 1 account',
-      'Earn 4.85% APY on uninvested cash reserves',
-      'Free real-time research & professional tools',
-      'No account inactivity fees or setup charges'
+      'Branded portal under your own domain & logo',
+      'Multi-currency wallets (26 currency pairs)',
+      'Instant deposit & withdrawal processing',
+      'Real-time P&L and statement generation'
     ],
-    minDeposit: '$0 Minimum',
-    recommendedFor: 'Active Traders & Investors'
+    minDeposit: 'SaaS Module Pricing',
+    recommendedFor: 'Retail Brokers & White-Label Operators'
   },
   {
     id: 'joint',
-    title: 'Joint Account',
-    subtitle: 'Shared Ownership for Two Partners',
-    description: 'Co-owned by two individuals (Tenants with Rights of Survivorship or Tenants in Common) with shared trading authority.',
+    title: 'Multi-Tier IB Partner Accounts',
+    subtitle: 'Unlimited IB Rebate Tree Network',
+    description: 'Deploy unlimited multi-level Introducing Broker networks with automated lot-based rebate calculations and real-time commission tracking.',
     features: [
-      'Dual access logins with individual security tokens',
-      'Consolidated tax reporting and statement generation',
-      'Flexible power of attorney and trading permission roles',
-      'FDIC insured cash sweep options up to $2,500,000'
+      'Unlimited IB tree depth & sub-IB hierarchy',
+      'Automated lot-based rebate calculations',
+      'Real-time commission & volume dashboards',
+      'Custom rebate rules per asset class'
     ],
-    minDeposit: '$0 Minimum',
-    recommendedFor: 'Couples & Business Partners'
+    minDeposit: 'SaaS Module Pricing',
+    recommendedFor: 'IB Networks & Affiliate Managers'
   },
   {
     id: 'trust',
-    title: 'Trust & Estate Account',
-    subtitle: 'Fiduciary & Estate Planning',
-    description: 'Established for revocable or irrevocable legal trusts, managed by appointed trustees for designated beneficiaries.',
+    title: 'Prop Firm Funded Trader Accounts',
+    subtitle: 'Challenge & Evaluation Engine',
+    description: 'Automated prop firm evaluation with configurable daily drawdown limits, profit targets, breach lock mechanisms, and funded account payouts.',
     features: [
-      'Seamless compliance and legal entity onboarding',
-      'Custom fiduciary sub-accounting and asset segregation',
-      'Integrated estate distribution reporting tools',
-      'Institutional fixed income desk advisory access'
+      'Configurable challenge phases & profit targets',
+      'Automated drawdown breach & account lock',
+      'Funded trader dashboard with payout rules',
+      'MT5 & FIX API integration for live feeds'
     ],
-    minDeposit: '$10,000 USD',
-    recommendedFor: 'High Net Worth Trusts & Estates'
+    minDeposit: 'SaaS Module Pricing',
+    recommendedFor: 'Prop Firms & Funded Trader Platforms'
   },
   {
     id: 'institutional',
-    title: 'Institutional & Family Office',
-    subtitle: 'Hedge Funds, Advisors & Prop Trading Desk',
-    description: 'Enterprise solution providing prime brokerage services, execution algorithms, white-label portals, and custom API gateways.',
+    title: 'Omnibus Clearing Accounts',
+    subtitle: 'Prime Brokerage & FIX Execution',
+    description: 'Institutional-grade prime brokerage clearing with omnibus sub-accounts, FIX 4.4 bridge connectivity, and dedicated LP relationship management.',
     features: [
-      'Multi-clearing accounts & omnibus sub-account structures',
-      'FIX Protocol & REST API low-latency connectivity',
-      'Dedicated Institutional Relationship Manager',
-      'Custom prime brokerage margin & stock borrow rates'
+      'Omnibus sub-account & prime clearing structure',
+      'FIX 4.4 & REST API low-latency execution',
+      'Dedicated Liquidity & LP Relationship Manager',
+      'Custom spread markup & volume-based pricing'
     ],
-    minDeposit: '$100,000 USD',
-    recommendedFor: 'Hedge Funds, RIAs & Family Offices',
+    minDeposit: 'Enterprise Quotation',
+    recommendedFor: 'Institutional Brokers & Prime Clearing',
     badge: 'Enterprise Tier'
   }
 ];
@@ -186,42 +186,42 @@ export const ACCOUNT_TYPES: AccountType[] = [
 export const PLATFORM_FEATURES: PlatformFeature[] = [
   {
     id: 'pro-desktop',
-    title: 'BrokerBros Pro Desktop Terminal',
-    subtitle: 'High-Performance Workbench for Active Traders',
-    description: 'Built for speed and precision. Features multi-monitor layouts, advanced technical charting with 120+ indicators, depth-of-market order books, and real-time risk monitor.',
+    title: 'White-Label Desktop Workstation',
+    subtitle: 'High-Performance Execution Workbench',
+    description: 'Custom branded desktop terminal engineered for active traders. Features multi-monitor layouts, 120+ indicators, level-2 depth of market, and native MT5 server hooks.',
     specs: [
-      { label: 'Order Execution Speed', value: '< 12 ms' },
-      { label: 'Order Types & Algos', value: '100+ Types' },
-      { label: 'Custom Indicators', value: '120+ Built-in' },
-      { label: 'Max Chart Windows', value: '32 Panels' }
+      { label: 'Order Execution', value: '< 12 ms' },
+      { label: 'Order Algos', value: '100+ Types' },
+      { label: 'MT5 Server API', value: 'C++ Hooks' },
+      { label: 'Chart Panels', value: '32 Workstations' }
     ],
-    keyTools: ['BookTrader Level II', 'OptionTrader Strategy Builder', 'BasketTrader Algo', 'Real-time PortfolioAnalyst'],
+    keyTools: ['BookTrader Level II', 'OptionTrader Strategy Builder', 'BasketTrader Algo', 'Real-time Risk Monitor'],
     imageType: 'chart'
   },
   {
     id: 'web-trader',
-    title: 'BrokerBros Web Portal',
-    subtitle: 'Clean Browser Interface with Zero Installation Required',
-    description: 'A responsive, modern web interface that delivers fast execution, full account overview, intuitive order tickets, and live market streaming on any modern browser.',
+    title: 'White-Label Webtrader Portal',
+    subtitle: 'Browser Interface with Zero Installation',
+    description: 'Deliver instant web-based trading access for your clients. Includes TradingView charting integration, automated deposit workflows, and full broker brand customization.',
     specs: [
       { label: 'Compatibility', value: 'Chrome / Safari / Edge' },
       { label: 'Security', value: '256-Bit SSL + 2FA' },
-      { label: 'Data Sync', value: 'Instant Cloud Sync' },
-      { label: 'Watchlists', value: 'Unlimited Dynamic Lists' }
+      { label: 'Chart Engine', value: 'TradingView Native' },
+      { label: 'Deployment', value: 'Turnkey Cloud' }
     ],
     keyTools: ['One-Click Order Entry', 'Interactive Economic Calendar', 'AI Screener Studio', 'ESG & Fundamentals'],
     imageType: 'order'
   },
   {
     id: 'mobile-app',
-    title: 'BrokerBros Mobile Trader',
-    subtitle: 'Institutional Power in the Palm of Your Hand',
-    description: 'Manage positions, stream live level-2 quotes, set price alerts, and execute multi-leg orders anywhere in the world on iOS and Android devices.',
+    title: 'Branded iOS & Android Mobile Apps',
+    subtitle: 'Published to App Store & Google Play',
+    description: 'Provide your clients with high-rated mobile trading apps under your own broker brand name, icon, and custom color theme tokens.',
     specs: [
-      { label: 'Biometrics', value: 'FaceID & TouchID' },
-      { label: 'Push Alerts', value: 'Sub-second Notifications' },
-      { label: 'App Store Rating', value: '4.9 ★★★★★' },
-      { label: 'Offline Mode', value: 'Encrypted Vault Storage' }
+      { label: 'App Stores', value: 'Apple & Google Play' },
+      { label: 'Authentication', value: 'FaceID & TouchID' },
+      { label: 'Push Alerts', value: 'Instant Order Fills' },
+      { label: 'App Rating', value: '4.9 ★★★★★' }
     ],
     keyTools: ['Mobile Charting with Gestures', 'Instant Push Order Alerts', 'Quick Cash Deposit via Mobile Check', 'Option Chain Matrix'],
     imageType: 'mobile'
@@ -306,71 +306,71 @@ export const EXCHANGE_MARKETS: ExchangeMarket[] = [
 export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-1',
-    category: 'Pricing & Yield',
-    question: 'How does BrokerBros calculate interest paid on uninvested cash balances?',
-    answer: 'BrokerBros pays up to 4.85% APY interest on fully liquid, uninvested cash settled balances in client accounts. Interest is calculated daily on balances exceeding $10,000 USD and paid monthly directly into your account with no lockup periods.'
+    category: 'Licensing & Pricing',
+    question: 'How is BrokerBros infrastructure priced — per seat, per module, or flat SaaS?',
+    answer: 'BrokerBros operates on a flat monthly SaaS licensing model per module. Brokers select only the modules they need (CRM, Prop Engine, Webtrader, FIX Bridge, etc.) and pay a fixed monthly fee with zero per-trade revenue share. Volume-based enterprise discounts are available for high-frequency deployments.'
   },
   {
     id: 'faq-2',
-    category: 'Trading',
-    question: 'What is BrokerBros Smart Routing and how does it prevent PFOF conflicts?',
-    answer: 'Unlike zero-commission retail brokers that accept Payment for Order Flow (PFOF) to send your orders to market makers, BrokerBros SmartRouting continuously evaluates fast-changing market conditions and routes your order to dark pools, exchanges, and ECNs to achieve the highest price improvement.'
+    category: 'Liquidity & FIX',
+    question: 'How does the FIX 4.4 LP Bridge connect to our existing liquidity providers?',
+    answer: 'The BrokerBros FIX 4.4 Bridge connects directly to your preferred Tier-1 LP or Prime of Prime via standard FIX protocol sessions. Configuration takes under 2 business days. We support Aggregation, A-Book, B-Book, and hybrid routing rules with sub-millisecond execution speeds.'
   },
   {
     id: 'faq-3',
-    category: 'Security & Accounts',
-    question: 'How are my securities and funds protected at BrokerBros?',
-    answer: 'Client accounts are protected by SIPC for up to $500,000 (including $250,000 for cash claims). Additionally, BrokerBros carries excess SIPC coverage through Lloyd’s of London for up to $30 million per account. Uninvested cash can also be swept into insured bank accounts via our FDIC Insured Sweep Program for up to $2,500,000 in coverage.'
+    category: 'Compliance & Security',
+    question: 'How are client funds segregated within the BrokerBros infrastructure?',
+    answer: 'All client fund balances are maintained in fully segregated ledger accounts at Tier-1 custodian banks, completely isolated from operational capital. The multi-currency wallet module supports 26 currency pairs with automated daily reconciliation and cryptographic audit logs for regulator submission.'
   },
   {
     id: 'faq-4',
-    category: 'Trading',
-    question: 'Can I trade US stocks outside standard market hours?',
-    answer: 'Yes! BrokerBros offers 24/5 Overnight Trading on 10,000+ US equities and ETFs, allowing you to react instantly to earnings announcements, economic data releases, and global geopolitical events from Sunday 8:00 PM EST through Friday 8:00 PM EST.'
+    category: 'Infrastructure & Setup',
+    question: 'What is the typical go-live timeline for a complete White-Label Brokerage setup?',
+    answer: 'A standard White-Label Brokerage deployment (CRM + Webtrader + Mobile App + Client Portal) takes 1–3 business days after branding assets and MT5 server credentials are submitted. FIX Bridge connectivity and Prop Firm Engine configurations typically add 1–2 additional business days.'
   },
   {
     id: 'faq-5',
-    category: 'Pricing & Yield',
-    question: 'What are the margin interest rates for borrowing cash?',
-    answer: 'BrokerBros offers some of the lowest margin borrowing rates in the financial industry, starting at 5.83% for Tier 1 institutional accounts and scaled transparently based on benchmark central bank rates plus a small tiered spread.'
+    category: 'Licensing & Pricing',
+    question: 'Does BrokerBros charge any revenue share or per-lot commissions on client trades?',
+    answer: 'No. BrokerBros charges zero per-lot commissions or revenue share on client trade activity. All pricing is transparent flat SaaS monthly fees. Brokers retain 100% of the spread markup, commission income, and swap revenue generated from their client base.'
   },
   {
     id: 'faq-6',
-    category: 'Technology',
-    question: 'Do you offer FIX Protocol or REST API access for automated algorithmic trading?',
-    answer: 'Yes. Every client account can connect to our REST API, WebSockets API, and FIX 4.2/4.4 gateways. We provide SDKs in Python, C++, Java, Node.js, and C# with comprehensive documentation and paper trading sandbox environments.'
+    category: 'Prop Firm Engine',
+    question: 'Does the Prop Firm Engine support automated drawdown breach and account lock?',
+    answer: 'Yes. The Prop Firm Evaluation Engine includes fully automated real-time drawdown monitoring with configurable daily loss limits, trailing drawdown, and maximum drawdown thresholds. When a breach is detected, the engine automatically locks the trading account and triggers a notification workflow to the operator dashboard within milliseconds.'
   }
 ];
 
 export const RESEARCH_ARTICLES: ResearchArticle[] = [
   {
     id: 'res-1',
-    title: 'Global Macro Outlook Q3: Interest Rate Cuts & Volatility Shifts',
-    category: 'Market Insights',
+    title: 'Connecting Your MT5 Server to FIX Liquidity Providers (A-Book vs B-Book Setup)',
+    category: 'Liquidity Setup',
     date: 'July 28, 2026',
-    author: 'Dr. Marcus Vance, Chief Economist',
-    readTime: '6 min read',
-    summary: 'An in-depth analysis of central bank interest rate decisions, global yield curve inversions, and sector rotations across US and European equity markets.',
-    tag: 'Macroeconomy'
+    author: 'Alex Mercer • Head of Systems Integration',
+    readTime: '5 min read',
+    summary: 'A simple guide to configuring FIX 4.4 liquidity bridges. Learn how to balance A-Book execution and B-Book risk management for optimum spread margins.',
+    tag: 'Liquidity & Execution'
   },
   {
     id: 'res-2',
-    title: 'Mastering Portfolio Margin: Capital Efficiency for Options Traders',
-    category: 'Trading Academy',
+    title: 'Setting Up Prop Firm Challenges: Drawdown Rules & Automated Account Lockout',
+    category: 'Prop Firm Guide',
     date: 'July 24, 2026',
-    author: 'Elena Rostova, Quantitative Risk Analyst',
-    readTime: '8 min read',
-    summary: 'Learn how risk-based portfolio margin replaces legacy Reg T requirements to lower margin requirements on hedged multi-leg positions by up to 70%.',
-    tag: 'Advanced Trading'
+    author: 'Sarah Chen • Lead Product Specialist',
+    readTime: '6 min read',
+    summary: 'Step-by-step setup for evaluation phases, daily drawdown rules, profit targets, and automated funded trader payouts using the BrokerBros Prop Engine.',
+    tag: 'Prop Firm Operations'
   },
   {
     id: 'res-3',
-    title: 'Sovereign Bond Yield Analysis: Opportunities in 2-Year vs 10-Year Notes',
-    category: 'Fixed Income',
+    title: 'Offshore & Onshore Licensing Checklist (FCA, CySEC, ASIC, & VFSC Setup)',
+    category: 'Compliance Guide',
     date: 'July 20, 2026',
-    author: 'Jonathan Hayes, Fixed Income Strategist',
-    readTime: '5 min read',
-    summary: 'Evaluating inflation expectations and yield differentials between US Treasuries, German Bunds, and UK Gilts for fixed income investors.',
-    tag: 'Bonds & Rates'
+    author: 'David Miller • Senior Regulatory Consultant',
+    readTime: '4 min read',
+    summary: 'Everything you need to launch under regulated jurisdictions. How to use pre-built KYC document queues and AML background checks for fast client onboarding.',
+    tag: 'Compliance & Regulation'
   }
 ];

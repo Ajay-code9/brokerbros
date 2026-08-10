@@ -7,7 +7,7 @@ export const FaqSection: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [openFaqId, setOpenFaqId] = useState<string>(FAQ_ITEMS[0].id);
 
-  const categories = ['ALL', 'Trading', 'Pricing & Yield', 'Security & Accounts', 'Technology'];
+  const categories = ['ALL', 'Licensing & Pricing', 'Liquidity & FIX', 'Compliance & Security', 'Infrastructure & Setup'];
 
   const filteredFaqs = FAQ_ITEMS.filter(faq => {
     const matchesCategory = selectedCategory === 'ALL' || faq.category === selectedCategory;
@@ -18,7 +18,7 @@ export const FaqSection: React.FC = () => {
   });
 
   return (
-    <section id="faq" className="py-16 lg:py-20 bg-slate-50/70 border-b border-slate-200">
+    <section id="faq" className="py-16 lg:py-20 bg-[#F8FAFC] border-b border-slate-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Title Header */}
@@ -31,7 +31,7 @@ export const FaqSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans">
-            Clear, transparent answers regarding trading execution, SIPC asset protection, margin rates, and account funding.
+            Clear answers on deployment timelines, flat SaaS pricing, MT5 & FIX 4.4 integration, segregated client wallets, and multi-jurisdiction compliance frameworks.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export const FaqSection: React.FC = () => {
             <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search questions (e.g., interest rates, SIPC insurance, SmartRouting)..."
+              placeholder="Search questions (e.g., FIX Bridge setup, KYC module, SaaS pricing, go-live timeline)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-11 pr-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 text-xs sm:text-sm focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none shadow-xs transition-all"
@@ -85,7 +85,7 @@ export const FaqSection: React.FC = () => {
                   className={`bg-white rounded-xl border transition-all ${
                     isOpen
                       ? 'border-emerald-500/80 shadow-md ring-1 ring-emerald-500/20'
-                      : 'border-slate-200/90 hover:border-slate-300 shadow-2xs'
+                      : 'border-slate-200/80 hover:border-slate-300 shadow-[0_2px_10px_rgba(0,0,0,0.02)]'
                   }`}
                 >
                   <button
@@ -122,17 +122,17 @@ export const FaqSection: React.FC = () => {
             </div>
             <div>
               <div className="text-sm font-bold text-slate-900">Still have questions?</div>
-              <div className="text-xs text-slate-500">Our 24/5 Wall Street Support Desk is available via live chat and telephone.</div>
+              <div className="text-xs text-slate-500">Our B2B Enterprise Support Desk is available 24/5 via live chat and direct account manager line.</div>
             </div>
           </div>
           <div className="flex items-center gap-3 shrink-0">
-            <a
-              href="tel:+18005550199"
-              className="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition-all flex items-center gap-2"
+            <button
+              onClick={() => window.location.href = '#contact'}
+              className="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition-all flex items-center gap-2 cursor-pointer"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-emerald-400" />
-              <span>+1 (800) 555-0199</span>
-            </a>
+              <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Talk to B2B Specialist →</span>
+            </button>
           </div>
         </div>
 

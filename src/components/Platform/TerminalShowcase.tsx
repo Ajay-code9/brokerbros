@@ -26,13 +26,13 @@ export const TerminalShowcase: React.FC<TerminalShowcaseProps> = ({ onOpenAccoun
             <div className="space-y-2.5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#0D2231] text-white font-mono text-[11px] border border-slate-800 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span className="text-emerald-400 font-bold tracking-wider">SUB-12MS LATENCY WORKSTATION</span>
+                <span className="text-emerald-400 font-bold tracking-wider">ENTERPRISE TRADING PLATFORM SUITE</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white font-sans leading-tight">
-                Platforms Built for Precision
+                Deploy Multi-Device Terminals Under Your Broker Brand
               </h2>
               <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-sans">
-                Experience sub-12ms latencies across multi-monitor workstation, browser web portal, and mobile app.
+                Equip your traders with high-speed desktop, web browser, and mobile trading apps fully customized with your brokerage logo and color tokens.
               </p>
             </div>
 
@@ -81,12 +81,11 @@ export const TerminalShowcase: React.FC<TerminalShowcaseProps> = ({ onOpenAccoun
             </div>
           </div>
 
-          {/* RIGHT COLUMN (lg:col-span-7): Single Viewport Terminal Display + Specs */}
-          <div className="lg:col-span-7 bg-slate-900/90 rounded-2xl border border-slate-800 p-3 sm:p-4 shadow-2xl space-y-4">
+          {/* RIGHT COLUMN (lg:col-span-7): Clean Showcase Viewport */}
+          <div className="lg:col-span-7 space-y-4">
             
-            {/* Display Image Bounding Box (Strict Locked Fixed Height) */}
-            <div className="relative w-full h-[360px] sm:h-[390px] group rounded-xl overflow-hidden border border-slate-800/90 shadow-2xl bg-slate-950 flex items-center justify-center p-2">
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl blur-xl opacity-50 group-hover:opacity-75 transition duration-500 pointer-events-none" />
+            {/* Display Image Container */}
+            <div className="bg-slate-900 border border-slate-800 p-2 sm:p-3 shadow-xl rounded-none flex items-center justify-center min-h-[340px] sm:min-h-[380px]">
               <img
                 src={
                   selectedFeatureId === 'web-trader' 
@@ -96,16 +95,16 @@ export const TerminalShowcase: React.FC<TerminalShowcaseProps> = ({ onOpenAccoun
                     : '/webterminal.png'
                 }
                 alt={currentFeature.title}
-                className="relative w-full h-full object-contain rounded-xl select-none shadow-2xl transition-all duration-300 group-hover:scale-[1.005]"
+                className="w-full h-auto max-h-[360px] object-contain select-none shadow-md"
               />
             </div>
 
             {/* Horizontal Specs Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {currentFeature.specs.map((spec, idx) => (
-                <div key={idx} className="bg-slate-950/80 p-2.5 rounded-lg border border-slate-800/80 text-center">
-                  <div className="text-[10px] text-slate-400 font-sans truncate">{spec.label}</div>
-                  <div className="text-xs font-black text-emerald-400 font-mono mt-0.5 truncate">{spec.value}</div>
+                <div key={idx} className="bg-slate-900 p-2.5 border border-slate-800 text-center">
+                  <div className="text-[10px] text-slate-400 font-sans tracking-tight">{spec.label}</div>
+                  <div className="text-xs font-extrabold text-emerald-400 font-mono mt-0.5">{spec.value}</div>
                 </div>
               ))}
             </div>

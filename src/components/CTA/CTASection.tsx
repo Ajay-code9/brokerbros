@@ -12,18 +12,15 @@ interface CTASectionProps {
 
 export const CTASection: React.FC<CTASectionProps> = ({
   onOpenAccount,
-  title = "Ready to Experience Institutional Precision & Lower Costs?",
-  subtitle = "Open your BrokerBros account in minutes with zero account minimums. Earn up to 4.85% APY on uninvested cash reserves today.",
-  badge = "INSTITUTIONAL EXECUTION GATEWAY",
+  title = "Launch Your White-Label Brokerage Infrastructure",
+  subtitle = "14 enterprise infrastructure modules. Flat monthly SaaS pricing. Zero revenue share. Your brand, your clients, your revenue.",
+  badge = "TURNKEY BROKERAGE LAUNCH GATEWAY",
   variant = 'default'
 }) => {
   const isDark = variant !== 'light';
 
   return (
-    <section className={`relative overflow-hidden py-24 lg:py-32 font-sans ${isDark ? 'bg-[#06141D] text-white border-t border-slate-800' : 'bg-slate-50 text-slate-900 border-t border-slate-200'}`}>
-
-      {/* Video background (dark only) */}
-      {isDark && <VideoHeroBackground videoSrc="/test.mp4" opacity={0.20} theme="dark" />}
+    <section className={`relative overflow-hidden py-24 lg:py-32 font-sans ${isDark ? 'bg-slate-950 text-white border-t border-slate-800' : 'bg-[#F8FAFC] text-slate-900 border-t border-slate-200/80'}`}>
 
       {/* Mesh glows */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -51,9 +48,9 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
         {/* Headline */}
         <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight max-w-4xl mx-auto leading-[1.1] ${isDark ? 'text-white' : 'text-slate-900'}`}>
-          The Brokerage Built for{' '}
-          <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-            Serious Investors.
+          Launch Your White-Label{' '}
+          <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+            Brokerage Infrastructure.
           </span>
         </h2>
 
@@ -67,7 +64,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
             onClick={onOpenAccount}
             className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 text-slate-950 font-extrabold text-base rounded-xl shadow-2xl shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer group"
           >
-            <span>Open Free Account — $0 Minimum</span>
+            <span>Request Custom Module Quotation</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
           <button
@@ -75,17 +72,17 @@ export const CTASection: React.FC<CTASectionProps> = ({
             className={`w-full sm:w-auto px-7 py-4 font-bold text-sm rounded-xl border transition-all flex items-center justify-center gap-2 cursor-pointer ${isDark ? 'bg-slate-900/80 hover:bg-slate-800 text-slate-200 border-slate-700 backdrop-blur' : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-300'}`}
           >
             <Lock className="w-4 h-4 text-emerald-400" />
-            <span>Request Institutional Clearing Review</span>
+            <span>Schedule a Live Platform Demo</span>
           </button>
         </div>
 
         {/* Trust checkmarks */}
         <div className={`flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-mono ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
           {[
-            { icon: CheckCircle2, label: '$0 Account Minimums' },
-            { icon: ShieldCheck, label: 'SIPC + $30M Excess Insurance' },
-            { icon: Zap, label: '1.2ms Execution Speed' },
-            { icon: Globe2, label: '150+ Global Exchanges' },
+            { icon: CheckCircle2, label: '14 Enterprise Modules' },
+            { icon: ShieldCheck, label: 'Zero Revenue Share' },
+            { icon: Zap, label: '1–3 Day Go-Live SLA' },
+            { icon: Globe2, label: 'Flat SaaS Pricing' },
           ].map((item, i) => {
             const Icon = item.icon;
             return (
@@ -99,14 +96,14 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
         {/* Subtle divider stat line */}
         {isDark && (
-          <div className="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-8 text-[11px] font-mono text-slate-500">
-            <span>SEC & FINRA Registered</span>
+          <div className="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-8 text-[11px] font-mono text-slate-400">
+            <span>ISO 27001 Certified</span>
             <span className="text-slate-700">·</span>
-            <span>$28.4B Consolidated Equity Capital</span>
+            <span>99.99% Uptime SLA</span>
             <span className="text-slate-700">·</span>
-            <span>S&P A- Credit Rating</span>
+            <span>26 Currency Support</span>
             <span className="text-slate-700">·</span>
-            <span>2.4M+ Active Accounts</span>
+            <span>500+ Active Brokerage Clients</span>
           </div>
         )}
       </div>

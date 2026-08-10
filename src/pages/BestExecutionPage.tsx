@@ -193,94 +193,63 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
         </div>
       )}
 
-      {/* 1. HERO SECTION (Apple & IBKR Clean White Institutional Style) */}
-      <section className="relative bg-white text-slate-900 py-12 lg:py-16 min-h-[calc(100vh-80px)] flex flex-col justify-center border-b border-slate-100 overflow-hidden font-sans">
-        
-        {/* Soft Background Accents */}
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200/80">
-                <Zap className="w-3.5 h-3.5 text-emerald-600" />
-                <span>SMARTROUTING ENGINE & ZERO PFOF</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
-                Best Execution & <br />
-                <span className="text-emerald-700">Zero Payment For Order Flow</span>
-              </h1>
-
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-normal">
-                BrokerBros rejects 100% of PFOF rebates. Our SmartRouting engine scans 150+ lit ECNs, market centers, and dark pools to deliver an average price improvement of $0.024 per share.
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={onOpenAccount}
-                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
-                >
-                  <span>Start Trading with SmartRouting</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                <button
-                  onClick={handleDownloadRule605}
-                  className="px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-lg border border-slate-300 transition-all flex items-center gap-2 cursor-pointer text-sm"
-                >
-                  <Download className="w-4 h-4 text-emerald-600" />
-                  <span>Download SEC Rule 605 Disclosure</span>
-                </button>
-              </div>
-
-              {/* Quick Execution Highlights */}
-              <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-4 text-xs font-mono">
-                <div>
-                  <div className="text-slate-400 text-xs">PFOF Policy</div>
-                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">Zero (100% Rejected)</div>
-                </div>
-                <div>
-                  <div className="text-slate-400 text-xs">Avg Fill Speed</div>
-                  <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">1.2 ms (NY4 Colocated)</div>
-                </div>
-                <div>
-                  <div className="text-slate-400 text-xs">Price Improvement</div>
-                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">88.4% of Orders</div>
-                </div>
-              </div>
+      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE (100vh Landing Viewport Fit) */}
+      <section 
+        className="relative text-slate-900 min-h-[calc(100vh-80px)] py-12 lg:py-16 border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
+        style={{ backgroundImage: "url('/backgroundimage-two.png')" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center">
+          <div className="max-w-3xl space-y-6">
+            
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-emerald-800 text-xs font-mono font-bold border border-emerald-300 shadow-sm backdrop-blur-md">
+              <Zap className="w-3.5 h-3.5 text-emerald-600" />
+              <span>SMARTROUTING ENGINE & ZERO PFOF</span>
             </div>
 
-            {/* Right — Premium Glassmorphism Image Card */}
-            <div className="lg:col-span-5 relative">
-              {/* Ambient glow halo */}
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-emerald-500/30 via-teal-400/20 to-cyan-500/25 blur-2xl opacity-60 animate-pulse pointer-events-none" />
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-slate-950 font-sans">
+              Best Execution & <br />
+              <span className="text-emerald-700">Zero Payment For Order Flow</span>
+            </h1>
 
-              {/* Card shell */}
-              <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 border border-emerald-500/25 shadow-2xl bg-gradient-to-b from-[#0D2231]/80 to-[#06141D]/90 backdrop-blur-xl">
+            <p className="text-slate-900 text-sm sm:text-base leading-relaxed max-w-2xl font-sans font-medium bg-white/60 backdrop-blur-xs p-2.5 sm:p-3 rounded-xl border border-white/80 shadow-2xs">
+              BrokerBros rejects 100% of PFOF rebates. Our SmartRouting engine scans 150+ lit ECNs, market centers, and dark pools to deliver an average price improvement of $0.024 per share.
+            </p>
 
-                {/* Image */}
-                <div className="relative h-60 sm:h-72 group overflow-hidden">
-                  <img
-                    src="/datacenter_latency.png"
-                    alt="Datacenter Latency Network"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Subtle vignette only at bottom edge */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#06141D]/80 via-transparent to-transparent" />
-                </div>
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={onOpenAccount}
+                className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer text-sm"
+              >
+                <span>Start Trading with SmartRouting</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-                {/* Frosted glass stats strip */}
-                <div className="flex items-center justify-between px-4 py-3 border-t border-white/10 bg-white/5 backdrop-blur-md font-mono text-[11px]">
-                  <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span>1.2ms SmartRoute</span>
-                  </div>
-                  <div className="text-slate-400 font-semibold">NASDAQ / NYSE / IEX</div>
-                  <div className="text-cyan-300 font-bold">0% PFOF</div>
-                </div>
-              </div>
+              <button
+                onClick={handleDownloadRule605}
+                className="px-5 py-3.5 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-xl border border-slate-300 shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
+              >
+                <Download className="w-4 h-4 text-emerald-600" />
+                <span>Download SEC Rule 605 Disclosure</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Quick Execution Highlights - Bottom Fold Viewport Alignment */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-12 pb-2">
+          <div className="pt-6 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">PFOF Policy</div>
+              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">Zero (100% Rejected)</div>
+            </div>
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">Avg Fill Speed</div>
+              <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">1.2 ms (NY4 Colocated)</div>
+            </div>
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">Price Improvement</div>
+              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">88.4% of Orders</div>
             </div>
           </div>
         </div>
@@ -336,7 +305,7 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
           {/* Interactive Routing Architecture Diagram */}
           <div className="bg-slate-900/90 rounded-2xl border border-slate-800 p-8 sm:p-10 space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center text-center font-mono">
-              
+
               {/* Step 1 */}
               <div className="p-5 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
                 <div className="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mx-auto flex items-center justify-center font-bold text-xs">
@@ -519,7 +488,7 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="bg-slate-950 text-white rounded-2xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             <div className="lg:col-span-8 space-y-4">
               <div className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">REGULATORY DISCLOSURES</div>
               <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-white">

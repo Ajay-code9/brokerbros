@@ -22,23 +22,23 @@ export const CashYieldSection: React.FC<{ onOpenAccount: () => void }> = ({ onOp
   const extraGain = annualEarnings - competitorAnnual;
 
   return (
-    <section className="py-16 lg:py-24 bg-[#06141D] border-b border-emerald-900/40 text-white font-sans relative overflow-hidden">
+    <section className="py-8 lg:py-12 bg-slate-50/80 border-b border-slate-200 text-slate-900 font-sans relative overflow-hidden">
       
       {/* Mesh Glow Accent */}
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-teal-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>INSTITUTIONAL CASH SWEEP ENGINE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-sans tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 font-sans tracking-tight">
             Interest Rates & Idle Cash Yield
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans">
             Automatically earn benchmark interest on uninvested cash or access industry-leading wholesale margin borrowing rates with daily interest accrual and monthly distributions.
           </p>
         </div>

@@ -65,18 +65,18 @@ export const GlobalMapSection: React.FC<GlobalMapSectionProps> = ({ onOpenAccoun
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200/80 shadow-2xs">
                 <Globe className="w-3.5 h-3.5 text-emerald-600" />
-                <span>GLOBAL EXCHANGE ACCESS</span>
+                <span>GLOBAL LIQUIDITY & MULTI-CURRENCY ROUTING</span>
               </div>
             </div>
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight text-[#0F172A] font-sans leading-[1.15]">
-              World of Investment Opportunities
+              Connect Your Brokerage to Global Multi-Asset Liquidity
             </h2>
 
             {/* Description */}
             <p className="text-[#64748B] text-sm sm:text-base leading-relaxed font-normal max-w-lg">
-              Invest globally in stocks, options, futures, currencies, and fixed income from a single unified platform. Fund in 26 currencies.
+              Bridge your trading platforms directly to Tier-1 ECNs, bank prime brokers, and crypto liquidity venues across 35+ countries. Clear client balances seamlessly in 26 currencies.
             </p>
 
             {/* Three Statistic Cards (Subtle Border, Soft Shadow, 16px Rounded, Hover Effect, Icon Bag) */}
@@ -86,15 +86,15 @@ export const GlobalMapSection: React.FC<GlobalMapSectionProps> = ({ onOpenAccoun
                   <Globe className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-xl sm:text-2xl font-black text-[#0F172A] font-mono tracking-tight">150+</div>
-                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Global Markets</div>
+                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Connected LPs & Venues</div>
               </div>
 
               <div className="bg-white p-3.5 rounded-[16px] border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
                 <div className="w-7 h-7 rounded-lg bg-[#DCFCE7] text-[#22C55E] flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                   <Layers className="w-3.5 h-3.5" />
                 </div>
-                <div className="text-xl sm:text-2xl font-black text-[#22C55E] font-mono tracking-tight">35</div>
-                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Countries</div>
+                <div className="text-xl sm:text-2xl font-black text-[#22C55E] font-mono tracking-tight">35+</div>
+                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Financial Hubs</div>
               </div>
 
               <div className="bg-white p-3.5 rounded-[16px] border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
@@ -102,7 +102,7 @@ export const GlobalMapSection: React.FC<GlobalMapSectionProps> = ({ onOpenAccoun
                   <Coins className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-xl sm:text-2xl font-black text-[#0F172A] font-mono tracking-tight">26</div>
-                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Currencies</div>
+                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Currency Wallets</div>
               </div>
             </div>
 
@@ -110,9 +110,9 @@ export const GlobalMapSection: React.FC<GlobalMapSectionProps> = ({ onOpenAccoun
             <div className="pt-2">
               <button
                 onClick={onOpenAccount}
-                className="px-6 py-3.5 bg-[#22C55E] hover:bg-emerald-600 text-white font-bold text-sm rounded-xl shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 transition-all flex items-center gap-2.5 cursor-pointer group"
+                className="px-6 py-3.5 bg-[#22C55E] hover:bg-[#16A34A] text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-sm font-sans flex items-center gap-2 group cursor-pointer"
               >
-                <span>Access Global Markets</span>
+                <span>Access Global Liquidity Bridge</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>

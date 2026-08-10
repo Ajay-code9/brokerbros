@@ -11,7 +11,7 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
   const selectedAccount = ACCOUNT_TYPES.find(a => a.id === selectedAccountId) || ACCOUNT_TYPES[0];
 
   return (
-    <section className="py-8 lg:py-10 bg-slate-50/50 border-b border-slate-200/80">
+    <section className="py-12 lg:py-16 bg-[#F8FAFC] border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
         
         {/* Section Header */}
@@ -19,14 +19,14 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200">
               <User className="w-3.5 h-3.5 text-emerald-600" />
-              <span>TAILORED ACCOUNT ARCHITECTURE</span>
+              <span>MODULAR BROKERAGE INFRASTRUCTURE</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 font-sans">
-              Configured for Individual & Institutional Capital
+              Configured for Your Brokerage Business Model
             </h2>
           </div>
           <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-md font-sans">
-            From single-user retail accounts to complex multi-entity trust and hedge fund clearing structures, configure permissions to match your objectives.
+            From White-Label Retail Brokers to Prop Firms and Multi-Tier IB Networks — select the infrastructure stack that matches your target market and go live in days.
           </p>
         </div>
 
@@ -38,10 +38,10 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
               <div
                 key={account.id}
                 onClick={() => setSelectedAccountId(account.id)}
-                className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
+                className={`p-6 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                   isSelected
-                    ? 'bg-slate-900 text-white border-emerald-500/80 shadow-xl shadow-emerald-500/10 ring-1 ring-emerald-500/30'
-                    : 'bg-white text-slate-900 border-slate-200/90 hover:border-slate-300 hover:shadow-sm'
+                    ? 'bg-slate-900 text-white border-emerald-500/80 shadow-xl shadow-slate-900/10 ring-1 ring-emerald-500/30'
+                    : 'bg-white text-slate-900 border-slate-200/80 hover:border-slate-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.03)]'
                 }`}
               >
                 <div className="space-y-3">
@@ -109,10 +109,10 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
           <div className="relative z-10 text-center max-w-xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold">
               <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-spin" style={{ animationDuration: '6s' }} />
-              <span>FAST DIGITAL ONBOARDING PORTAL</span>
+              <span>TURNKEY BROKERAGE DEPLOYMENT WORKFLOW</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight">
-              Digital Verification & Account Activation in 3 Steps
+              Live Brokerage Launch in 3 Steps
             </h3>
           </div>
 
@@ -126,18 +126,18 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
                   01
                 </div>
                 <span className="text-[10px] font-mono font-bold text-emerald-400/80 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/60">
-                  Step 1 • 3 Mins
+                  Step 1 • 1 Day
                 </span>
               </div>
               <div>
-                <h4 className="text-base font-bold text-white font-sans group-hover/card:text-emerald-400 transition-colors">Complete Secure Profile</h4>
+                <h4 className="text-base font-bold text-white font-sans group-hover/card:text-emerald-400 transition-colors">Select Infrastructure Modules</h4>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans mt-1.5">
-                  Submit encrypted application details with instant biometric KYC identity clearance in under 5 minutes.
+                  Choose your brokerage stack: CRM, Prop Engine, Webtrader, Mobile App, FIX LP Bridge, Copy Trading, and more from 14 available modules.
                 </p>
               </div>
               <div className="pt-2 flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
                 <Shield className="w-3.5 h-3.5 text-emerald-400" />
-                <span>256-Bit SSL Encrypted Vault</span>
+                <span>14 Enterprise Modules Available</span>
               </div>
             </div>
 
@@ -148,18 +148,18 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
                   02
                 </div>
                 <span className="text-[10px] font-mono font-bold text-emerald-400/80 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/60">
-                  Step 2 • Instant
+                  Step 2 • 1–2 Days
                 </span>
               </div>
               <div>
-                <h4 className="text-base font-bold text-white font-sans group-hover/card:text-emerald-400 transition-colors">Connect Cash or ACATS Transfer</h4>
+                <h4 className="text-base font-bold text-white font-sans group-hover/card:text-emerald-400 transition-colors">Custom Branding & API Configuration</h4>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans mt-1.5">
-                  Fund via instant ACH, wire, or transfer existing portfolio positions seamlessly with zero incoming transfer fees.
+                  Upload your logo, brand colors, and domain. We configure MT5 server hooks, FIX LP sessions, and all API credentials to your specification.
                 </p>
               </div>
               <div className="pt-2 flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
                 <Briefcase className="w-3.5 h-3.5 text-emerald-400" />
-                <span>FDIC Cash Sweep & Zero Transfer Surcharge</span>
+                <span>Zero-Code White-Label Branding Engine</span>
               </div>
             </div>
 
@@ -174,14 +174,14 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
                 </span>
               </div>
               <div>
-                <h4 className="text-base font-bold text-white font-sans group-hover/card:text-emerald-400 transition-colors">Access Global Markets</h4>
+                <h4 className="text-base font-bold text-white font-sans group-hover/card:text-emerald-400 transition-colors">Go Live & Onboard Your First Clients</h4>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans mt-1.5">
-                  Launch BrokerBros Pro Desktop, Web, or Mobile Trader and execute across 150+ market centers immediately.
+                  Your branded brokerage portal, mobile apps, and admin backoffice are live. Begin client onboarding with built-in KYC and AML compliance flows.
                 </p>
               </div>
               <div className="pt-2 flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
                 <Building2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Sub-Millisecond Direct DMA Routing</span>
+                <span>99.99% Uptime SLA Guaranteed</span>
               </div>
             </div>
 
@@ -192,7 +192,7 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
               onClick={onOpenAccount}
               className="px-8 py-3.5 bg-[#22C55E] hover:bg-emerald-400 text-slate-950 font-extrabold text-xs rounded-xl shadow-xl shadow-emerald-500/20 transition-all cursor-pointer inline-flex items-center gap-2 group/btn"
             >
-              <span>Launch Digital Account Portal</span>
+              <span>Request a Live Demo & Module Quotation</span>
               <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </button>
           </div>

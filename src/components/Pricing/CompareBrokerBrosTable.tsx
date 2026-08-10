@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X, ShieldCheck, Sparkles } from 'lucide-react';
+import { Check, X, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
 
 export const CompareBrokerBrosTable: React.FC<{ onOpenAccount: () => void }> = ({ onOpenAccount }) => {
   const features = [
@@ -27,7 +27,7 @@ export const CompareBrokerBrosTable: React.FC<{ onOpenAccount: () => void }> = (
       schwab: '0.45% APY',
       etrade: '0.45% APY',
       fidelity: '2.72% APY',
-      neo: '0.01% APY (w/o paid sub)',
+      neo: '0.01% APY (w/o sub)',
       highlight: true,
     },
     {
@@ -87,49 +87,52 @@ export const CompareBrokerBrosTable: React.FC<{ onOpenAccount: () => void }> = (
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-[#091824] border-b border-emerald-900/40 text-white font-sans relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-slate-50/80 border-b border-slate-200 text-slate-900 font-sans relative overflow-hidden">
       
-      {/* Mesh Glow Accent */}
-      <div className="absolute top-10 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Subtle Accent */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10 font-sans">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-teal-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>COMPETITIVE BENCHMARK MATRIX</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-sans">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight font-sans">
             How BrokerBros Outperforms Legacy Brokers
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
-            See how BrokerBros stacks up against traditional retail brokerages and legacy platforms on execution cost and cash yields.
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans">
+            See how BrokerBros stacks up against traditional retail brokerages on execution cost, margin rates, and cash yields.
           </p>
         </div>
 
         {/* Comparison Table Container */}
-        <div className="overflow-x-auto bg-[#0D2231]/90 backdrop-blur-md rounded-3xl border border-emerald-500/30 shadow-2xl">
+        <div className="overflow-x-auto bg-white rounded-2xl border border-slate-200 shadow-xl">
           <table className="w-full text-left text-xs font-sans min-w-[700px]">
             <thead>
-              <tr className="bg-slate-950 text-slate-400 font-mono uppercase tracking-wider text-[11px] border-b border-slate-800">
-                <th className="py-4 px-5 font-bold text-white">Feature / Pricing Dimension</th>
-                <th className="py-4 px-5 text-emerald-300 font-bold bg-emerald-500/10 border-x border-emerald-500/40">
-                  BrokerBros Pro 👑
+              <tr className="bg-slate-950 text-white font-mono uppercase tracking-wider text-[11px] border-b border-slate-800">
+                <th className="py-4 px-5 font-bold text-white w-1/4">Feature / Pricing Dimension</th>
+                <th className="py-4 px-5 text-emerald-400 font-bold bg-slate-900 border-x-2 border-emerald-500 shadow-inner">
+                  <div className="flex items-center gap-1.5">
+                    <span>BrokerBros Pro</span>
+                    <span className="text-[10px] bg-emerald-500 text-slate-950 px-1.5 py-0.5 rounded font-black">TOP CHOICE</span>
+                  </div>
                 </th>
-                <th className="py-4 px-4 font-semibold text-slate-400">Charles Schwab</th>
-                <th className="py-4 px-4 font-semibold text-slate-700">E*TRADE / MS</th>
-                <th className="py-4 px-4 font-semibold text-slate-700">Fidelity</th>
-                <th className="py-4 px-4 font-semibold text-slate-700">Neo-Brokers</th>
+                <th className="py-4 px-4 font-semibold text-slate-300">Charles Schwab</th>
+                <th className="py-4 px-4 font-semibold text-slate-300">E*TRADE / MS</th>
+                <th className="py-4 px-4 font-semibold text-slate-300">Fidelity</th>
+                <th className="py-4 px-4 font-semibold text-slate-300">Neo-Brokers</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-700">
               {features.map((f, idx) => (
-                <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-white hover:bg-slate-50/80 transition-colors' : 'bg-slate-50/40 hover:bg-slate-50/90 transition-colors'}>
                   <td className="py-3.5 px-5 font-bold text-slate-900 font-sans">
                     {f.label}
                   </td>
-                  <td className="py-3.5 px-5 font-mono font-bold text-emerald-800 bg-emerald-50/50 border-x border-emerald-200/80">
+                  <td className="py-3.5 px-5 font-mono font-extrabold text-emerald-700 bg-emerald-50/60 border-x-2 border-emerald-500/80">
                     {f.brokerbros}
                   </td>
                   <td className="py-3.5 px-4 font-mono text-slate-600">{f.schwab}</td>
@@ -142,17 +145,18 @@ export const CompareBrokerBrosTable: React.FC<{ onOpenAccount: () => void }> = (
           </table>
         </div>
 
-        {/* Action Row */}
-        <div className="bg-emerald-50/80 p-6 rounded-2xl border border-emerald-200/90 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Action Banner */}
+        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
-            <div className="text-lg font-bold font-serif-heading text-slate-900">Ready to stop overpaying legacy brokers?</div>
+            <div className="text-base font-bold text-slate-900">Ready to stop overpaying legacy brokers?</div>
             <div className="text-xs text-slate-600">Transfer existing portfolios seamlessly with up to $150 in ACATS fee reimbursements.</div>
           </div>
           <button
             onClick={onOpenAccount}
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-sm transition-all whitespace-nowrap cursor-pointer"
+            className="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer flex items-center gap-2"
           >
-            Switch to BrokerBros Today
+            <span>Switch to BrokerBros Today</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
@@ -160,4 +164,3 @@ export const CompareBrokerBrosTable: React.FC<{ onOpenAccount: () => void }> = (
     </section>
   );
 };
-

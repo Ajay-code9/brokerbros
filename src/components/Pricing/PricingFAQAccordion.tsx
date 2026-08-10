@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, Sparkles } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 
 interface FAQ {
   id: string;
@@ -35,7 +35,7 @@ export const PricingFAQAccordion: React.FC = () => {
       id: 'faq-4',
       category: 'Margin Rates',
       question: 'How do BrokerBros margin interest rates compare to traditional brokers?',
-      answer: 'BrokerBros charges wholesale margin rates benchmarked directly to central bank rates (starting at 5.83% APY for USD). Traditional brokers like Charles Schwab or Morgan Stanley charge between 11.5% and 13.0% APY on identical loan amounts, allowing our clients to save thousands annually.',
+      answer: 'BrokerBros charges wholesale margin rates benchmarked directly to central bank rates (starting at 5.83% APY for USD). Traditional brokers charge between 11.5% and 13.0% APY on identical loan amounts, allowing our clients to save thousands annually.',
     },
     {
       id: 'faq-5',
@@ -70,32 +70,32 @@ export const PricingFAQAccordion: React.FC = () => {
     : faqs.filter(f => f.category === activeCategory);
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-b border-slate-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section className="py-8 sm:py-12 bg-white border-b border-slate-200 font-sans">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
         {/* Header */}
-        <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center space-y-1.5 max-w-xl mx-auto">
+          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-[11px] font-mono font-semibold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
             <span>Got Questions?</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 tracking-tight">
-            Frequently Asked Questions About Pricing & Yield
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight font-sans">
+            Frequently Asked Questions
           </h2>
-          <p className="text-slate-600 text-base leading-relaxed font-sans">
-            Everything you need to know about our commission schedules, cash yield accrual, and zero hidden fee guarantee.
+          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans">
+            Everything you need to know about our commission schedules, cash yield accrual, and fee guarantee.
           </p>
         </div>
 
         {/* Category Tabs Filter */}
-        <div className="flex items-center justify-center gap-2 flex-wrap">
+        <div className="flex items-center justify-center gap-1.5 flex-wrap">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-slate-900 text-white shadow-sm'
+                  ? 'bg-slate-950 text-white shadow-sm'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >
@@ -104,30 +104,34 @@ export const PricingFAQAccordion: React.FC = () => {
           ))}
         </div>
 
-        {/* Accordion List */}
-        <div className="space-y-4">
+        {/* Accordion List - Compact & High Contrast */}
+        <div className="space-y-2.5">
           {filteredFaqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div
                 key={faq.id}
-                className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all"
+                className={`rounded-xl border transition-all overflow-hidden ${
+                  isOpen
+                    ? 'bg-white border-emerald-500/80 shadow-md ring-1 ring-emerald-500/20'
+                    : 'bg-slate-50/70 border-slate-200/90 hover:bg-white hover:border-slate-300'
+                }`}
               >
                 <button
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-sans font-bold text-slate-900 text-base sm:text-lg cursor-pointer hover:text-emerald-700 transition-colors"
+                  className="w-full text-left p-4 flex items-center justify-between gap-3 font-sans font-bold text-slate-950 text-xs sm:text-sm cursor-pointer hover:text-emerald-700 transition-colors"
                 >
-                  <span className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">
+                  <span className="flex items-center gap-2.5">
+                    <span className="text-[10px] font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-200/80 px-2 py-0.5 rounded-md shrink-0">
                       {faq.category}
                     </span>
                     <span>{faq.question}</span>
                   </span>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-600' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-600' : ''}`} />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 pt-0 text-slate-600 text-sm leading-relaxed font-sans border-t border-slate-200/60 mt-2 pt-4">
+                  <div className="px-4 pb-4 text-slate-600 text-xs sm:text-sm leading-relaxed font-sans border-t border-slate-100 pt-3">
                     {faq.answer}
                   </div>
                 )}

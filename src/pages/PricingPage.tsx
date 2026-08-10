@@ -1,5 +1,6 @@
 import React from 'react';
 import { PricingHero } from '../components/Pricing/PricingHero';
+import { PricingTiersSection } from '../components/Pricing/PricingTiersSection';
 import { StickyPricingNav } from '../components/Pricing/StickyPricingNav';
 import { WhyTransparencyMatters } from '../components/Pricing/WhyTransparencyMatters';
 import { CommissionPricingTable } from '../components/Pricing/CommissionPricingTable';
@@ -37,8 +38,8 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenAccount }) => {
         onScrollToCalculator={scrollToCalculator}
       />
 
-      {/* 2. Premium Sticky Section Navigation Bar */}
-      <StickyPricingNav onOpenAccount={onOpenAccount} />
+      {/* 1.5 Enterprise SaaS Pricing Tiers (Monthly / Annual) */}
+      <PricingTiersSection onOpenAccount={onOpenAccount} />
 
       {/* 3. Why Transparent Pricing Matters */}
       <WhyTransparencyMatters />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { HeroSection } from '../components/Hero/HeroSection';
-import { MarketTickerBar } from '../components/Home/MarketTickerBar';
+import { FeatureStripSection } from '../components/Home/FeatureStripSection';
 import { InstitutionalClassyShowcase } from '../components/Home/InstitutionalClassyShowcase';
 import { IbkrComparisonTable } from '../components/Home/IbkrComparisonTable';
 import { StatsWallSection } from '../components/Home/StatsWallSection';
@@ -10,7 +10,6 @@ import { ProductsSection } from '../components/Products/ProductsSection';
 import { YieldPricingSection } from '../components/Pricing/YieldPricingSection';
 import { TerminalShowcase } from '../components/Platform/TerminalShowcase';
 import { GlobalMapSection } from '../components/GlobalPresence/GlobalMapSection';
-import { SecuritySection } from '../components/Security/SecuritySection';
 import { ResearchSection } from '../components/Research/ResearchSection';
 import { AccountSection } from '../components/Accounts/AccountSection';
 import { AcademySection } from '../components/Education/AcademySection';
@@ -46,11 +45,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAccount, onExplorePlat
   return (
     <div className="selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden bg-white text-slate-900">
 
-      {/* ① LIVE MARKET TICKER */}
-      <MarketTickerBar />
-
-      {/* ② INSTITUTIONAL PURE WHITE HERO SECTION */}
+      {/* ① INSTITUTIONAL PURE WHITE HERO SECTION */}
       <HeroSection onOpenAccount={onOpenAccount} onExplorePlatforms={onExplorePlatforms} />
+
+      {/* ② 4-COLUMN INSTITUTIONAL FEATURE STRIP */}
+      <FeatureStripSection />
 
       {/* ③ IBKR-STYLE BROKERAGE COMPARISON TABLE */}
       <Section anim={fadeUp}>
@@ -87,12 +86,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAccount, onExplorePlat
         <TrustSection onOpenAccount={onOpenAccount} />
       </Section>
 
-      {/* ⑨ REGULATORY & ASSET PROTECTION */}
-      <Section anim={fadeLeft}>
-        <SecuritySection onOpenAccount={onOpenAccount} />
-      </Section>
-
-      {/* ⑩ QUANTITATIVE RESEARCH PORTAL */}
+      {/* ⑨ OPERATOR KNOWLEDGE BASE & INTELLIGENCE PORTAL */}
       <Section anim={scaleUp}>
         <ResearchSection onOpenAccount={onOpenAccount} />
       </Section>

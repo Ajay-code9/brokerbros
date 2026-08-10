@@ -45,7 +45,7 @@ export interface PlatformFeature {
 
 export interface FAQItem {
   id: string;
-  category: 'Trading' | 'Pricing & Yield' | 'Security & Accounts' | 'Technology';
+  category: 'Licensing & Pricing' | 'Liquidity & FIX' | 'Compliance & Security' | 'Infrastructure & Setup' | 'Prop Firm Engine';
   question: string;
   answer: string;
 }

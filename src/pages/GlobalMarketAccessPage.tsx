@@ -139,75 +139,64 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
         </div>
       )}
 
-      {/* 1. HERO SECTION (Apple & IBKR Clean White Institutional Style) */}
-      <section className="relative bg-white text-slate-900 py-12 lg:py-16 min-h-[calc(100vh-80px)] flex flex-col justify-center border-b border-slate-100 overflow-hidden font-sans">
-        
-        {/* Soft Background Accents */}
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE (100vh Landing Viewport Fit) */}
+      <section 
+        className="relative text-slate-900 min-h-[calc(100vh-80px)] py-12 lg:py-16 border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
+        style={{ backgroundImage: "url('/backgroundimage-three.png')" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center">
+          <div className="max-w-3xl space-y-6 pt-4 sm:pt-6">
             
-            {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200/80">
-                <Globe className="w-3.5 h-3.5 text-emerald-600" />
-                <span>150+ MARKET CENTERS • 35 COUNTRIES • 26 CURRENCIES</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
-                Trade Global Markets <br />
-                <span className="text-emerald-700">From One Unified Account</span>
-              </h1>
-
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-normal">
-                Access 150+ global exchanges across 35 countries through a single multi-currency account with institutional execution quality.
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={onOpenAccount}
-                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
-                >
-                  <span>Open Global Account</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                <button
-                  onClick={handleDownloadBrochure}
-                  className="px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-lg border border-slate-300 transition-all flex items-center gap-2 cursor-pointer text-sm"
-                >
-                  <Download className="w-4 h-4 text-emerald-600" />
-                  <span>Download Global Guide</span>
-                </button>
-              </div>
-
-              {/* Quick Highlights */}
-              <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-4 text-xs font-mono">
-                <div>
-                  <div className="text-slate-400 text-xs">Exchanges</div>
-                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">150+ Direct Venues</div>
-                </div>
-                <div>
-                  <div className="text-slate-400 text-xs">Countries</div>
-                  <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">35 Global Nations</div>
-                </div>
-                <div>
-                  <div className="text-slate-400 text-xs">Currencies</div>
-                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">26 Wallet Currencies</div>
-                </div>
-              </div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-emerald-800 text-xs font-mono font-bold border border-emerald-300 shadow-sm backdrop-blur-md">
+              <Globe className="w-3.5 h-3.5 text-emerald-600" />
+              <span>150+ MARKET CENTERS • 35 COUNTRIES • 26 CURRENCIES</span>
             </div>
 
-            {/* Right Global Network Graphic */}
-            <div className="lg:col-span-5 relative">
-              <img
-                src="/global_economy_network.png"
-                alt="Global Economy Network"
-                className="w-full h-auto object-contain shadow-2xl rounded-2xl border border-slate-200"
-              />
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
+              Trade Global Markets <br />
+              <span className="text-emerald-700">From One Unified Account</span>
+            </h1>
+
+            <p className="text-slate-900 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-semibold bg-white/60 backdrop-blur-xs p-3.5 rounded-xl border border-white/80 shadow-2xs">
+              Access 150+ global exchanges across 35 countries through a single multi-currency account with institutional execution quality.
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={onOpenAccount}
+                className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer text-sm"
+              >
+                <span>Open Global Account</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <button
+                onClick={handleDownloadBrochure}
+                className="px-5 py-3.5 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-xl border border-slate-300 shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
+              >
+                <Download className="w-4 h-4 text-emerald-600" />
+                <span>Download Global Guide</span>
+              </button>
             </div>
 
+          </div>
+        </div>
+
+        {/* Quick Highlights - Bottom Fold Viewport Alignment */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-8 pb-2">
+          <div className="pt-6 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">Exchanges</div>
+              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">150+ Direct Venues</div>
+            </div>
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">Countries</div>
+              <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">35 Global Nations</div>
+            </div>
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">Currencies</div>
+              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">26 Wallet Currencies</div>
+            </div>
           </div>
         </div>
       </section>
@@ -277,33 +266,29 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
             <div className="flex flex-wrap justify-center gap-2 pt-2">
               <button
                 onClick={() => { setSelectedRegion('all'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                  selectedRegion === 'all' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'all' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
               >
                 All Exchanges (150+)
               </button>
               <button
                 onClick={() => { setSelectedRegion('americas'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                  selectedRegion === 'americas' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'americas' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
               >
                 Americas (NYSE, NASDAQ, TSX)
               </button>
               <button
                 onClick={() => { setSelectedRegion('emea'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                  selectedRegion === 'emea' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'emea' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
               >
                 Europe & Middle East (LSE, Euronext)
               </button>
               <button
                 onClick={() => { setSelectedRegion('apac'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                  selectedRegion === 'apac' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'apac' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
               >
                 Asia-Pacific (HKEX, JPX, SGX, ASX)
               </button>
@@ -452,11 +437,10 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
                 <div
                   key={sess.key}
                   onClick={() => setActiveSession(sess.key as 'asia' | 'europe' | 'us')}
-                  className={`p-6 rounded-xl border text-left transition-all cursor-pointer space-y-4 ${
-                    isSelected
+                  className={`p-6 rounded-xl border text-left transition-all cursor-pointer space-y-4 ${isSelected
                       ? 'bg-slate-900 border-emerald-500 shadow-xl shadow-emerald-500/10 scale-102'
                       : 'bg-slate-900/50 border-slate-800 hover:border-slate-700'
-                  }`}
+                    }`}
                 >
                   <div className="flex justify-between items-center text-xs font-mono">
                     <span className="text-emerald-400 font-bold">{sess.time}</span>

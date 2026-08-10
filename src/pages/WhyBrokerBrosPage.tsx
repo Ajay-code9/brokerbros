@@ -167,96 +167,64 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
       )}
 
       {/* 1. HERO SECTION (Apple & IBKR Clean White Institutional Style) */}
-      <section className="relative bg-white text-slate-900 py-12 lg:py-16 min-h-[calc(100vh-80px)] flex flex-col justify-center border-b border-slate-100 overflow-hidden font-sans">
-        
-        {/* Soft Background Accents */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE (Shifted Upward for Perfect Viewport Balance) */}
+      <section 
+        className="relative text-slate-900 min-h-[calc(100vh-80px)] py-10 lg:py-14 border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
+        style={{ backgroundImage: "url('/backgroundimage-one.png')" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center">
+          <div className="max-w-3xl space-y-5 -mt-6 sm:-mt-8">
             
-            {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200/80">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                <span>INSTITUTIONAL CAPITAL & CREDIT STANDING</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
-                Built on Unshakeable <br />
-                <span className="text-emerald-700">Capital Strength & S&P Rating</span>
-              </h1>
-
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-normal">
-                BrokerBros operates with $28.4 Billion in consolidated equity capital, an S&P A- credit rating, and $30 Million in excess client protection per account.
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={onOpenAccount}
-                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
-                >
-                  <span>Open Protected Account</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                <button
-                  onClick={handleDownloadReport}
-                  className="px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-lg border border-slate-300 transition-all flex items-center gap-2 cursor-pointer text-sm"
-                >
-                  <Download className="w-4 h-4 text-emerald-600" />
-                  <span>Download 2026 Audit Report</span>
-                </button>
-              </div>
-
-              {/* Key Quick Badges */}
-              <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-4 text-xs font-mono">
-                <div>
-                  <div className="text-slate-400 text-xs">S&P Credit Rating</div>
-                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">A- (Stable Outlook)</div>
-                </div>
-                <div>
-                  <div className="text-slate-400 text-xs">CET1 Ratio</div>
-                  <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">28.5% (2.7x Req)</div>
-                </div>
-                <div>
-                  <div className="text-slate-400 text-xs">Client Protection</div>
-                  <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">$30M Excess Insurance</div>
-                </div>
-              </div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-emerald-800 text-xs font-mono font-bold border border-emerald-300 shadow-sm backdrop-blur-md">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <span>INSTITUTIONAL CAPITAL & CREDIT STANDING</span>
             </div>
 
-            {/* Right — Premium Glassmorphism Image Card */}
-            <div className="lg:col-span-5 relative">
-              {/* Ambient glow halo */}
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-emerald-500/30 via-teal-400/20 to-cyan-500/25 blur-2xl opacity-60 animate-pulse pointer-events-none" />
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
+              Built on Unshakeable <br />
+              <span className="text-emerald-700">Capital Strength & S&P Rating</span>
+            </h1>
 
-              {/* Card shell */}
-              <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 border border-emerald-500/25 shadow-2xl bg-gradient-to-b from-[#0D2231]/80 to-[#06141D]/90 backdrop-blur-xl">
+            <p className="text-slate-900 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-semibold bg-white/60 backdrop-blur-xs p-3 rounded-xl border border-white/80 shadow-2xs">
+              BrokerBros operates with $28.4 Billion in consolidated equity capital, an S&P A- credit rating, and $30 Million in excess client protection per account.
+            </p>
 
-                {/* Image */}
-                <div className="relative h-60 sm:h-72 group overflow-hidden">
-                  <img
-                    src="/trading_platform_desktop.png"
-                    alt="BrokerBros Pro Trading Terminal"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Subtle vignette only at bottom edge */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#06141D]/80 via-transparent to-transparent" />
-                </div>
+            <div className="pt-1 flex flex-wrap items-center gap-3">
+              <button
+                onClick={onOpenAccount}
+                className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer text-sm"
+              >
+                <span>Open Protected Account</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-                {/* Frosted glass stats strip */}
-                <div className="flex items-center justify-between px-4 py-3 border-t border-white/10 bg-white/5 backdrop-blur-md font-mono text-[11px]">
-                  <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span>A- S&amp;P Rating</span>
-                  </div>
-                  <div className="text-slate-400 font-semibold">$28.4B Equity Capital</div>
-                  <div className="text-cyan-300 font-bold">SIPC + $30M</div>
-                </div>
-              </div>
+              <button
+                onClick={handleDownloadReport}
+                className="px-5 py-3.5 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-xl border border-slate-300 shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
+              >
+                <Download className="w-4 h-4 text-emerald-600" />
+                <span>Download 2026 Audit Report</span>
+              </button>
             </div>
 
+          </div>
+        </div>
+
+        {/* Key Quick Badges - Positioned at Bottom Fold */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-8 pb-2">
+          <div className="pt-6 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">S&P Credit Rating</div>
+              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">A- (Stable Outlook)</div>
+            </div>
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">CET1 Capital Ratio</div>
+              <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">28.5% (2.7x Req)</div>
+            </div>
+            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-slate-500 text-xs font-sans">Client Protection</div>
+              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">$30M Excess Policy</div>
+            </div>
           </div>
         </div>
       </section>
@@ -307,8 +275,8 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {metrics.map((m, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-slate-50/70 p-8 rounded-2xl border border-slate-200/80 space-y-3 relative overflow-hidden group hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex justify-between items-center text-xs font-mono text-slate-500">
@@ -527,8 +495,8 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {riskFramework.map((item, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-white p-8 rounded-2xl border border-slate-200 space-y-3 shadow-xs hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between">
@@ -608,8 +576,8 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {globalHubs.map((hub, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-white p-6 rounded-2xl border border-slate-200/90 space-y-3 shadow-2xs hover:border-emerald-500/60 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="flex justify-between items-center text-xs font-mono">
@@ -688,11 +656,10 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
             {faqs.map((faq, idx) => {
               const isOpen = activeFaq === idx;
               return (
-                <div 
-                  key={idx} 
-                  className={`bg-white rounded-xl border transition-all duration-200 overflow-hidden ${
-                    isOpen ? 'border-emerald-500/80 shadow-md ring-1 ring-emerald-500/20' : 'border-slate-200/90 hover:border-slate-300 shadow-2xs'
-                  }`}
+                <div
+                  key={idx}
+                  className={`bg-white rounded-xl border transition-all duration-200 overflow-hidden ${isOpen ? 'border-emerald-500/80 shadow-md ring-1 ring-emerald-500/20' : 'border-slate-200/90 hover:border-slate-300 shadow-2xs'
+                    }`}
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}

@@ -37,221 +37,165 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
 
   const tabData = {
     routing: {
-      badge: 'DIRECT MARKET EXECUTION',
-      amount: '150+ Venues',
+      badge: 'SAFE CLIENT FUNDS',
+      amount: '100% Segregated Accounts',
       lastAudited: 'Updated Daily',
-      verifiedStatus: 'Direct Market Access',
-      heading: '100% Direct Market Access Routing',
+      verifiedStatus: 'Tier-1 Segregated Accounts',
+      heading: 'Client Capital is Always Kept Separate & Safe',
       paragraph:
-        'BrokerBros routes your orders directly to global lit exchanges and primary liquidity venues. Experience institutional execution with transparent pricing, maximum order speed, and complete alignment with your investment objectives.',
+        'Client trading funds are stored in top-tier bank accounts, completely separate from firm operating capital. Includes automated daily balance reconciliation.',
       imagePath: '/section-one.png',
-      placeholderLabel: 'Transparent Trade Execution Illustration',
+      placeholderLabel: 'Segregated Client Funds Architecture',
       metrics: [
         {
-          title: 'Direct Market Routing',
-          value: '150+ Venues',
-          subtitle: 'Direct access to major global exchanges',
-          icon: Globe2,
+          title: 'Client Fund Safety',
+          value: '100% Isolated',
+          subtitle: 'Client money separated from firm ops',
+          icon: Lock,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         },
         {
-          title: 'Routing Transparency',
-          value: '100% DMA',
-          subtitle: 'Direct lit exchange execution',
-          icon: DollarSign,
+          title: 'Multi-Currency Support',
+          value: '26 Currencies',
+          subtitle: 'Automated multi-currency balance tracking',
+          icon: Coins,
           highlight: 'bg-blue-50 text-blue-700 border-blue-200'
         },
         {
-          title: 'Fast Execution Speed',
-          value: '1.2 ms',
-          subtitle: 'Ultra-fast order routing & confirmation',
-          icon: Zap,
+          title: 'Bank Tier',
+          value: 'Tier-1 Banks',
+          subtitle: 'Stored in top-tier institutional banks',
+          icon: Landmark,
           highlight: 'bg-slate-50 text-slate-700 border-slate-200'
         },
         {
-          title: 'Order Selling Rate',
-          value: '0%',
-          subtitle: 'We never sell your trades to third parties',
-          icon: ShieldCheck,
-          highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
-        },
-        {
-          title: 'Price Protection',
-          value: '100% Guaranteed',
-          subtitle: 'Always executed at best available price',
-          icon: Lock,
-          highlight: 'bg-slate-50 text-slate-700 border-slate-200'
-        },
-        {
-          title: 'Total Investor Savings',
-          value: '$142 Million',
-          subtitle: 'Saved for clients in lower execution costs',
-          icon: Coins,
+          title: 'Daily Balance Check',
+          value: 'Daily Ledger',
+          subtitle: 'Automated daily balance reconciliation',
+          icon: BadgeCheck,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         }
       ]
     },
     capital: {
-      badge: 'VERIFIED FINANCIAL STRENGTH',
-      amount: '$28.4 Billion Base',
-      lastAudited: 'Independent Audit Q2 2026',
-      verifiedStatus: 'Regulatory Capital Verified',
-      heading: 'Strong Capital Base Protecting Your Funds',
+      badge: 'AUTOMATIC RISK LOGS',
+      amount: 'Transparent History',
+      lastAudited: 'Continuous Compliance',
+      verifiedStatus: 'Clear Audit History',
+      heading: 'Clean, Transparent & Audit-Ready Record Keeping',
       paragraph:
-        'BrokerBros holds over $16.2 Billion in excess net capital reserve—more than 2.7x mandatory regulatory requirements. This guarantees that your funds and liquidity are 100% safe and available for withdrawal at any moment, even during sudden market downturns.',
+        'Every trade, IB commission payout, and account breach is automatically recorded in real-time so your brokerage is always ready for regulator review.',
       imagePath: '/section-second.png',
-      placeholderLabel: 'Strong Capital Position Illustration',
+      placeholderLabel: 'Immutable Audit Logging Illustration',
       metrics: [
         {
-          title: 'Excess Capital Reserve',
-          value: '$16.2 Billion',
-          subtitle: '2.7x higher than mandatory legal limit',
-          icon: Landmark,
+          title: 'Audit Trail',
+          value: '100% Secure',
+          subtitle: 'Tamper-proof digital record keeping',
+          icon: ShieldCheck,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         },
         {
-          title: 'Capital Reserves Ratio',
-          value: '28.5%',
-          subtitle: 'Far exceeds international banking standard',
-          icon: Percent,
+          title: 'Risk & Breach Logs',
+          value: 'Sub-Second',
+          subtitle: 'Real-time account risk tracking',
+          icon: Scale,
           highlight: 'bg-blue-50 text-blue-700 border-blue-200'
         },
         {
-          title: 'Long-Term Debt Risk',
-          value: '$0.00 Debt',
-          subtitle: 'Zero debt burden on firm operations',
-          icon: Scale,
+          title: 'Report Exports',
+          value: '1-Click XML',
+          subtitle: 'Easy reports for FCA/CySEC/ASIC',
+          icon: Download,
           highlight: 'bg-slate-50 text-slate-700 border-slate-200'
         },
         {
-          title: 'Liquidity Coverage',
-          value: '310%',
-          subtitle: 'High liquid cash reserves on demand',
+          title: 'Data Retention',
+          value: '7+ Years',
+          subtitle: 'Compliant with record-keeping rules',
           icon: Shield,
-          highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
-        },
-        {
-          title: 'Consolidated Capital',
-          value: '$28.4 Billion',
-          subtitle: 'Solid balance sheet backing every client',
-          icon: Coins,
-          highlight: 'bg-slate-50 text-slate-700 border-slate-200'
-        },
-        {
-          title: 'Independent Credit Rating',
-          value: 'A- (Stable)',
-          subtitle: 'High investment grade credit ranking',
-          icon: Award,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         }
       ]
     },
     insurance: {
-      badge: 'CLIENT PROTECTION POLICY',
-      amount: '$30,000,000 / Acct',
-      lastAudited: 'Fully Insured 2026',
-      verifiedStatus: 'SIPC Member Registered',
-      heading: 'Complete Insurance & Account Protection',
+      badge: 'BANK-GRADE SECURITY',
+      amount: '99.99% Uptime SLA',
+      lastAudited: 'Certified 2026',
+      verifiedStatus: 'Bank-Grade Cyber Security',
+      heading: 'Ultra-Fast, Hack-Proof & Reliable Infrastructure',
       paragraph:
-        "Every client account is covered by standard SIPC protection up to $500,000. For complete peace of mind, BrokerBros carries additional excess insurance underwritten by Lloyd's of London, protecting individual client accounts up to $30 Million.",
+        'Powered by ISO 27001 security standards, 256-bit encryption, and a guaranteed 99.99% uptime SLA to keep your brokerage running smoothly 24/7.',
       imagePath: '/section-third.png',
-      placeholderLabel: 'Client Asset Protection Illustration',
+      placeholderLabel: 'Cyber Security Architecture Illustration',
       metrics: [
         {
-          title: 'Excess Insurance Limit',
-          value: '$30.0 Million',
-          subtitle: 'Maximum protection limit per account',
+          title: 'Security Standard',
+          value: 'ISO 27001',
+          subtitle: 'Certified information security system',
           icon: Shield,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         },
         {
-          title: 'Standard SIPC Safety',
-          value: '$500,000',
-          subtitle: 'Includes $250,000 cash protection limit',
-          icon: ShieldCheck,
+          title: 'Server Uptime SLA',
+          value: '99.99% SLA',
+          subtitle: 'Multi-region server backup',
+          icon: Zap,
           highlight: 'bg-blue-50 text-blue-700 border-blue-200'
         },
         {
-          title: 'Total Policy Backup',
-          value: '$150.0 Million',
-          subtitle: "Underwritten by Lloyd's of London",
-          icon: Building2,
-          highlight: 'bg-slate-50 text-slate-700 border-slate-200'
-        },
-        {
-          title: 'Segregated Client Funds',
-          value: '100% Isolated',
-          subtitle: 'Your assets are kept separate from firm cash',
+          title: 'Data Encryption',
+          value: '256-Bit SSL',
+          subtitle: 'Encrypted data in transit & at rest',
           icon: Lock,
-          highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
-        },
-        {
-          title: 'SIPC Protection Status',
-          value: 'Active Member',
-          subtitle: 'Official registration CRD #184920',
-          icon: BadgeCheck,
           highlight: 'bg-slate-50 text-slate-700 border-slate-200'
         },
         {
-          title: 'Tier-1 Custodial Banks',
-          value: 'Top-Tier Banks',
-          subtitle: 'Stored in world-class financial institutions',
+          title: 'Disaster Recovery',
+          value: '< 5 min Failover',
+          subtitle: 'Automated backup server system',
           icon: Landmark,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         }
       ]
     },
     rating: {
-      badge: 'INDEPENDENT AUDITS',
-      amount: 'S&P Rated A-',
-      lastAudited: 'Reviewed 2026',
-      verifiedStatus: 'Highest Safety Standards',
-      heading: 'Proven Financial Stability & Solvency',
+      badge: 'GLOBAL LICENSE READY',
+      amount: '5+ Frameworks',
+      lastAudited: 'Regulator Compliant',
+      verifiedStatus: 'FCA / CySEC / ASIC Ready',
+      heading: 'Ready for Global Financial Regulation & Onboarding',
       paragraph:
-        'Independently audited and rated "A- Outlook Stable" by S&P Global and "A3" by Moody\'s. These ratings confirm that BrokerBros maintains exceptional financial health, prudent risk management, and long-term stability.',
+        'Pre-configured workflows for FCA, CySEC, ASIC, and offshore licenses with built-in instant KYC document verification and AML background checks.',
       imagePath: '/section-fourth.png',
-      placeholderLabel: 'Financial Stability Illustration',
+      placeholderLabel: 'Regulatory Compliance Framework Illustration',
       metrics: [
         {
-          title: 'S&P Financial Rating',
-          value: 'A- (Stable)',
-          subtitle: 'Strong investment grade financial rating',
+          title: 'Supported Licenses',
+          value: '5+ Global Licenses',
+          subtitle: 'FCA, CySEC, ASIC, VFSC, FSA ready',
           icon: Award,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         },
         {
-          title: 'Moody\'s Issuer Rating',
-          value: 'A3 (Prime)',
-          subtitle: 'Highest category of financial stability',
+          title: 'Fast KYC Verification',
+          value: '< 2 min Auto',
+          subtitle: 'Automated ID document check',
           icon: ShieldCheck,
           highlight: 'bg-blue-50 text-blue-700 border-blue-200'
         },
         {
-          title: 'Fitch Solvency Score',
-          value: 'A- Verified',
-          subtitle: 'Proven ability to fulfill all commitments',
+          title: 'AML Sanctions Check',
+          value: 'Live Screening',
+          subtitle: 'Global PEP & sanction blacklist checks',
           icon: BadgeCheck,
           highlight: 'bg-slate-50 text-slate-700 border-slate-200'
         },
         {
-          title: 'Operating Risk Level',
-          value: 'Ultra-Low',
-          subtitle: 'Conservative management principles',
+          title: 'Compliance Reports',
+          value: 'Automated',
+          subtitle: 'Periodic regulatory filing exports',
           icon: Scale,
-          highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
-        },
-        {
-          title: 'Financial Health',
-          value: 'Top 1%',
-          subtitle: 'Strong profit retention and capital reserves',
-          icon: PieChart,
-          highlight: 'bg-slate-50 text-slate-700 border-slate-200'
-        },
-        {
-          title: 'Audit Frequency',
-          value: 'Quarterly',
-          subtitle: 'Regular audits by Big-4 accounting firms',
-          icon: ShieldCheck,
           highlight: 'bg-emerald-50 text-emerald-700 border-emerald-200'
         }
       ]
@@ -324,16 +268,16 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-slate-900 text-white font-mono text-[11px] border border-slate-800 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-emerald-400 font-bold tracking-wider">SEC & FINRA REGISTERED</span>
+              <span className="text-emerald-400 font-bold tracking-wider">ISO 27001 CERTIFIED</span>
               <span className="text-slate-700">|</span>
-              <span className="text-slate-300 font-bold">$30.0M LLOYD'S COVERAGE</span>
+              <span className="text-slate-300 font-bold">MULTI-JURISDICTION COMPLIANCE READY</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 font-sans">
-              Engineered for Complete Investor Peace of Mind
+              Enterprise Security & Regulatory Compliance Guaranteed
             </h2>
           </div>
           <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-md font-sans font-medium">
-            Our strong capital reserves, $28.4 Billion equity base, and strict policy against selling customer trades guarantee your assets stay safe in every market environment.
+            Built on military-grade encryption, segregated client wallet architecture, and automated audit trails required by global financial regulators (FCA, CySEC, ASIC, FSA, VFSC).
           </p>
         </div>
 
@@ -347,10 +291,10 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
               <div className="space-y-1">
                 <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest flex items-center gap-1.5">
                   <Shield className="w-3 h-3" />
-                  TRUST & SECURITY PILLARS
+                  INFRASTRUCTURE SECURITY PILLARS
                 </span>
                 <p className="text-[11px] text-slate-300 font-sans leading-snug">
-                  Choose a topic below to review how we protect your money and execute your trades fairly:
+                  Select a pillar below to review how BrokerBros protects your operators' client capital and keeps your infrastructure audit-ready:
                 </p>
               </div>
 
@@ -368,26 +312,26 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
                 {[
                   {
                     id: 'routing' as StoryKey,
-                    title: 'Transparent Trade Execution',
-                    badge: 'We Never Sell Your Orders',
+                    title: 'Safe Client Funds',
+                    badge: '100% Segregated Accounts',
                     icon: Lock
                   },
                   {
                     id: 'capital' as StoryKey,
-                    title: 'Strong Capital Position',
-                    badge: '$28.4B Equity Capital Reserve',
+                    title: 'Automatic Risk Logs',
+                    badge: '100% Transparent History',
                     icon: Landmark
                   },
                   {
                     id: 'insurance' as StoryKey,
-                    title: 'Client Asset Protection',
-                    badge: '$30M Excess SIPC Insurance',
+                    title: 'Bank-Grade Security',
+                    badge: 'ISO 27001 & 99.99% Uptime',
                     icon: ShieldCheck
                   },
                   {
                     id: 'rating' as StoryKey,
-                    title: 'Financial Stability',
-                    badge: 'S&P Rated A- (Stable)',
+                    title: 'Global License Ready',
+                    badge: 'FCA / CySEC / ASIC Frameworks',
                     icon: Award
                   }
                 ].map((tab, idx) => {
@@ -465,7 +409,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
             <div className="relative z-10 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] font-mono text-slate-400">
               <span className="flex items-center gap-1.5">
                 <BadgeCheck className="w-3 h-3 text-emerald-400" />
-                FINRA / SIPC MEMBER
+                ISO 27001 CERTIFIED
               </span>
               <span className="text-emerald-400 font-bold tracking-wider">256-BIT ENCRYPTED</span>
             </div>
@@ -595,33 +539,31 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
             <div className="pt-2.5 border-t border-slate-200 space-y-2.5">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-center">
                 <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
-                  <span>FINRA Regulated</span>
+                  <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" />
+                  <span>ISO 27001 Certified</span>
                 </div>
                 <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
-                  <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" />
-                  <span>Client Assets Protected</span>
+                  <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                  <span>Segregated Wallets</span>
                 </div>
                 <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
                   <BadgeCheck className="w-3 h-3 text-emerald-600 shrink-0" />
-                  <span>Bank-Level Security</span>
+                  <span>FCA / CySEC / ASIC Ready</span>
                 </div>
                 <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
                   <Lock className="w-3 h-3 text-emerald-600 shrink-0" />
-                  <span>Transparent Pricing</span>
+                  <span>Cryptographic Audit Logs</span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 pt-0.5">
-                <a
-                  href="https://brokercheck.finra.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={onOpenAccount}
                   className="flex items-center gap-1.5 text-[10.5px] font-mono font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-3 py-2 rounded-lg border border-slate-300/80 transition-all justify-center cursor-pointer"
                 >
                   <Download className="w-3 h-3 text-emerald-600 shrink-0" />
-                  <span>Learn How Trade Execution Works →</span>
-                </a>
+                  <span>Download Infrastructure Security Brief →</span>
+                </button>
 
                 <motion.button
                   onClick={onOpenAccount}
@@ -629,7 +571,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
                   whileTap={{ scale: 0.98 }}
                   className="px-6 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-[11px] rounded-lg shadow-sm shadow-emerald-500/20 transition-all flex items-center justify-center gap-1.5 cursor-pointer group"
                 >
-                  <span>Open Your Account →</span>
+                  <span>Request Security Documentation →</span>
                 </motion.button>
               </div>
             </div>

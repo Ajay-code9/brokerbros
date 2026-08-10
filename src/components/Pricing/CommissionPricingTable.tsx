@@ -128,7 +128,7 @@ export const CommissionPricingTable: React.FC<{ onOpenAccount: () => void }> = (
   const currentAsset = assetClasses.find((a) => a.id === activeTab) || assetClasses[0];
 
   return (
-    <section id="pricing-tables" className="py-20 sm:py-24 bg-slate-50/70 border-b border-slate-200">
+    <section id="pricing-tables" className="py-8 sm:py-12 bg-slate-50/70 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
@@ -145,19 +145,19 @@ export const CommissionPricingTable: React.FC<{ onOpenAccount: () => void }> = (
           </p>
         </div>
 
-        {/* Asset Class Tabs Filter */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+        {/* Asset Class Tabs Filter - Clean Wrap Container */}
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-5xl mx-auto px-2 py-1">
           {assetClasses.map((ac) => (
             <button
               key={ac.id}
               onClick={() => setActiveTab(ac.id)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
                 activeTab === ac.id
-                  ? 'bg-emerald-600 text-white shadow-md font-bold'
-                  : 'bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-slate-200'
+                  ? 'bg-slate-950 text-white shadow-md ring-2 ring-emerald-500/30'
+                  : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-950 shadow-2xs'
               }`}
             >
-              <span>{ac.name}</span>
+              {ac.name}
             </button>
           ))}
         </div>

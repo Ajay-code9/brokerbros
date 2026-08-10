@@ -29,6 +29,10 @@ import { WebPlatformPage } from './pages/platforms/WebPlatformPage';
 import { DesktopPlatformPage } from './pages/platforms/DesktopPlatformPage';
 import { MobileAppPage } from './pages/platforms/MobileAppPage';
 import { TradingToolsPage } from './pages/platforms/TradingToolsPage';
+import { WebTradingTerminalPage } from './pages/trading/WebTradingTerminalPage';
+import { MobileTradingAppsPage } from './pages/trading/MobileTradingAppsPage';
+import { TradingRobotsPage } from './pages/trading/TradingRobotsPage';
+import { TechnicalIndicatorsPage } from './pages/trading/TechnicalIndicatorsPage';
 import { ResearchPage } from './pages/research/ResearchPage';
 import { EconomicCalendarPage } from './pages/research/EconomicCalendarPage';
 import { NewsInsightsPage } from './pages/research/NewsInsightsPage';
@@ -36,6 +40,11 @@ import { EducationPage } from './pages/education/EducationPage';
 import { AcademyPage } from './pages/education/AcademyPage';
 import { LearningCenterPage } from './pages/education/LearningCenterPage';
 import { PricingPage } from './pages/PricingPage';
+import { CommissionsPage } from './pages/pricing/CommissionsPage';
+import { InterestRatesPage } from './pages/pricing/InterestRatesPage';
+import { ShortSaleCostPage } from './pages/pricing/ShortSaleCostPage';
+import { MarketDataPricingPage } from './pages/pricing/MarketDataPricingPage';
+import { OtherFeesPage } from './pages/pricing/OtherFeesPage';
 import { AccountsPage } from './pages/AccountsPage';
 import { FundingWithdrawalsPage } from './pages/FundingWithdrawalsPage';
 import { SecurityPage } from './pages/SecurityPage';
@@ -48,9 +57,19 @@ import { HelpCenterPage } from './pages/HelpCenterPage';
 import { ContactPage } from './pages/ContactPage';
 import { CareersPage } from './pages/CareersPage';
 import { BlogPage } from './pages/BlogPage';
+import { BrokerCrmPage } from './pages/solutions/BrokerCrmPage';
+import { IbPartnerModulePage } from './pages/solutions/IbPartnerModulePage';
 import { LegalPage } from './pages/LegalPage';
 import { LoginPage } from './pages/auth/LoginPage';
 import { OpenAccountPage } from './pages/auth/OpenAccountPage';
+import { AdminBackofficePage } from './pages/solutions/AdminBackofficePage';
+import { SocialCopyTradingPage } from './pages/solutions/SocialCopyTradingPage';
+import { PammMamPage } from './pages/solutions/PammMamPage';
+import { PropFirmCrmPage } from './pages/solutions/PropFirmCrmPage';
+import { Mt5ServerApiPage } from './pages/solutions/Mt5ServerApiPage';
+import { WebSocketsStreamingPage } from './pages/solutions/WebSocketsStreamingPage';
+import { CryptoGatewayPage } from './pages/solutions/CryptoGatewayPage';
+import { FixApiLiquidityPage } from './pages/solutions/FixApiLiquidityPage';
 
 function AppContent() {
   const { currentPath, navigate } = useRouter();
@@ -80,6 +99,8 @@ function AppContent() {
       case '/about':
         return <AboutPage onOpenAccount={handleOpenAccount} />;
       case '/why-brokerbros':
+      case '/why-brokerbros/capital-safety':
+      case '/capital-safety':
         return <WhyBrokerBrosPage onOpenAccount={handleOpenAccount} />;
       case '/why-brokerbros/best-execution':
       case '/best-execution':
@@ -120,6 +141,14 @@ function AppContent() {
         return <MobileAppPage onOpenAccount={handleOpenAccount} />;
       case '/platforms/tools':
         return <TradingToolsPage onOpenAccount={handleOpenAccount} />;
+      case '/trading/web-terminal':
+        return <WebTradingTerminalPage onOpenAccount={handleOpenAccount} />;
+      case '/trading/mobile-apps':
+        return <MobileTradingAppsPage onOpenAccount={handleOpenAccount} />;
+      case '/trading/robots':
+        return <TradingRobotsPage onOpenAccount={handleOpenAccount} />;
+      case '/trading/indicators':
+        return <TechnicalIndicatorsPage onOpenAccount={handleOpenAccount} />;
       case '/research':
         return <ResearchPage onOpenAccount={handleOpenAccount} />;
       case '/research/calendar':
@@ -134,6 +163,16 @@ function AppContent() {
         return <LearningCenterPage onOpenAccount={handleOpenAccount} />;
       case '/pricing':
         return <PricingPage onOpenAccount={handleOpenAccount} />;
+      case '/pricing/commissions':
+        return <CommissionsPage onOpenAccount={handleOpenAccount} />;
+      case '/pricing/interest-rates':
+        return <InterestRatesPage onOpenAccount={handleOpenAccount} />;
+      case '/pricing/short-sale-cost':
+        return <ShortSaleCostPage onOpenAccount={handleOpenAccount} />;
+      case '/pricing/market-data':
+        return <MarketDataPricingPage onOpenAccount={handleOpenAccount} />;
+      case '/pricing/other-fees':
+        return <OtherFeesPage onOpenAccount={handleOpenAccount} />;
       case '/accounts':
         return <AccountsPage onOpenAccount={handleOpenAccount} />;
       case '/funding':
@@ -146,6 +185,26 @@ function AppContent() {
         return <ClientProtectionPage onOpenAccount={handleOpenAccount} />;
       case '/institutional':
         return <InstitutionalServicesPage onOpenAccount={handleOpenAccount} />;
+      case '/solutions/broker-crm':
+        return <BrokerCrmPage />;
+      case '/solutions/admin-backoffice':
+        return <AdminBackofficePage />;
+      case '/solutions/social-copy-trading':
+        return <SocialCopyTradingPage />;
+      case '/solutions/pamm-mam':
+        return <PammMamPage />;
+      case '/solutions/prop-firm-crm':
+        return <PropFirmCrmPage />;
+      case '/solutions/mt5-server-apis':
+        return <Mt5ServerApiPage />;
+      case '/solutions/websockets-streaming':
+        return <WebSocketsStreamingPage />;
+      case '/solutions/crypto-gateway':
+        return <CryptoGatewayPage />;
+      case '/solutions/fix-api-liquidity':
+        return <FixApiLiquidityPage />;
+      case '/solutions/ib-partner':
+        return <IbPartnerModulePage />;
       case '/partner':
         return <PartnerProgramPage onOpenAccount={handleOpenAccount} />;
       case '/api-integrations':

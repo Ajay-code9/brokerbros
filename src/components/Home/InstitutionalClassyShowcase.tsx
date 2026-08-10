@@ -10,45 +10,51 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
     <section className="bg-white text-slate-900 py-16 sm:py-24 font-sans border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
-        {/* ── 1. IBKR STYLE: DISCOVER A WORLD OF OPPORTUNITIES ── */}
+        {/* ── 1. B2B MODULAR INFRASTRUCTURE SHOWCASE ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column Text */}
-          <div className="lg:col-span-5 space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-slate-950 tracking-tight leading-[1.15]">
-              Discover a World of Opportunities
+          <div className="lg:col-span-5 space-y-5">
+            <h2 className="text-2xl sm:text-3xl lg:text-[2.4rem] font-extrabold text-slate-950 tracking-tight leading-[1.15] font-sans">
+              Empower Your Brokerage With Turnkey Infrastructure
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Invest globally in stocks, options, futures, currencies, bonds and funds from a single unified platform. Fund your account in multiple currencies and trade assets worldwide 24 hours a day, 5 days a week.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium font-sans">
+              Deploy white-label trading terminals, multi-tier IB rebate engines, prop firm evaluation workflows, and low-latency FIX liquidity bridges — engineered for global brokers and financial institutions.
             </p>
 
-            {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-6 pt-2 pb-2">
+            {/* B2B Stats Row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2 pb-2 border-y border-slate-100">
               <div>
-                <div className="text-3xl font-extrabold text-slate-950">150+</div>
-                <div className="text-xs text-slate-500 font-medium mt-0.5">Markets</div>
+                <div className="text-2xl font-black text-slate-950 font-sans">14+</div>
+                <div className="text-[11px] text-slate-500 font-medium mt-0.5 font-sans">Modular Systems</div>
               </div>
               <div>
-                <div className="text-3xl font-extrabold text-slate-950">35</div>
-                <div className="text-xs text-slate-500 font-medium mt-0.5">Countries</div>
+                <div className="text-2xl font-black text-slate-950 font-sans">150+</div>
+                <div className="text-[11px] text-slate-500 font-medium mt-0.5 font-sans">Connected LPs</div>
               </div>
               <div>
-                <div className="text-3xl font-extrabold text-slate-950">26</div>
-                <div className="text-xs text-slate-500 font-medium mt-0.5">Currencies</div>
+                <div className="text-2xl font-black text-slate-950 font-sans">99.99%</div>
+                <div className="text-[11px] text-slate-500 font-medium mt-0.5 font-sans">Uptime SLA</div>
+              </div>
+              <div>
+                <div className="text-2xl font-black text-slate-950 font-sans">500+</div>
+                <div className="text-[11px] text-slate-500 font-medium mt-0.5 font-sans">Global Partners</div>
               </div>
             </div>
 
             {/* Action Button */}
-            <button
-              onClick={onOpenAccount}
-              className="px-6 py-2.5 border border-slate-900 text-slate-900 hover:bg-slate-950 hover:text-white transition-all text-xs font-bold rounded cursor-pointer"
-            >
-              Global Markets Access
-            </button>
+            <div>
+              <button
+                onClick={onOpenAccount}
+                className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-none transition-colors text-xs tracking-wider uppercase font-sans cursor-pointer shadow-xs"
+              >
+                Explore 14 Modular Solutions
+              </button>
+            </div>
 
-            {/* Market Ticker Status */}
-            <div className="text-[11px] font-mono text-slate-500 pt-2">
-              NYSE: <span className="text-emerald-700 font-bold">OPEN</span> · LSE: <span className="text-slate-400 font-bold">CLOSED</span> · HKEX: <span className="text-slate-400 font-bold">CLOSED</span>
+            {/* System Infrastructure Status */}
+            <div className="text-[11px] font-mono text-slate-500 pt-1">
+              SYSTEM SLA: <span className="text-emerald-700 font-bold">99.99%</span> · FIX BRIDGE: <span className="text-emerald-700 font-bold">ONLINE</span> · API HOOKS: <span className="text-emerald-700 font-bold">ACTIVE</span>
             </div>
           </div>
 
@@ -73,147 +79,184 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
         <div className="py-8 text-center space-y-6">
           <div className="relative max-w-4xl mx-auto">
             <img
-              src="/trading_platform_desktop.png"
+              src="/desktop-terminal.png"
               alt="BrokerBros Pro Trading Terminal"
               className="w-full h-auto object-contain shadow-2xl rounded-2xl border border-slate-200"
             />
           </div>
         </div>
 
-        {/* ── 3. IBKR STYLE: POWERFUL TRADING PLATFORMS (2-COL MINIMAL LIST) ── */}
-        <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight">
-              Powerful Trading Platforms To Help You Succeed
+        {/* ── 3. B2B MODULAR SOLUTIONS ENGINE (2-COL GRID) ── */}
+        <div className="space-y-10">
+          <div className="text-center max-w-3xl mx-auto space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight font-sans">
+              Complete Modular Infrastructure Engine
             </h2>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium font-sans">
+              Turnkey software modules designed to launch, operate, and scale modern brokerages and prop trading firms.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             
-            {/* Item 1 */}
-            <div className="space-y-2">
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Award winning platforms for every investor from beginner to advanced on mobile, web and desktop.
+            {/* Card 1 */}
+            <div className="space-y-2.5 p-6 bg-slate-50/70 border border-slate-200/80 border-l-4 border-l-emerald-600 hover:bg-white hover:shadow-md transition-all group">
+              <h3 className="text-base font-bold text-slate-950 font-sans group-hover:text-emerald-700 transition-colors">
+                White-Label Broker CRM & Backoffice
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium font-sans">
+                Complete client portal, automated KYC verification, and multi-tier IB rebate management.
               </p>
               <button
                 onClick={onOpenAccount}
-                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer pt-1"
               >
-                <span>Trading Platforms</span>
-                <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
+                <span>Explore CRM Suite</span>
+                <span className="w-4 h-4 rounded-none bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
               </button>
             </div>
 
-            {/* Item 2 */}
-            <div className="space-y-2">
-              <p className="text-slate-600 text-sm leading-relaxed">
-                100+ order types - from limit orders to complex algorithmic trading - help you execute any trading strategy.
+            {/* Card 2 */}
+            <div className="space-y-2.5 p-6 bg-slate-50/70 border border-slate-200/80 border-l-4 border-l-emerald-600 hover:bg-white hover:shadow-md transition-all group">
+              <h3 className="text-base font-bold text-slate-950 font-sans group-hover:text-emerald-700 transition-colors">
+                Prop Firm Evaluation Engine
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium font-sans">
+                Automated daily drawdown tracking, profit target rules, breach alerts, and payout management.
               </p>
               <button
                 onClick={onOpenAccount}
-                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer pt-1"
               >
-                <span>Order Types and Algos</span>
-                <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
+                <span>Explore Prop Firm Engine</span>
+                <span className="w-4 h-4 rounded-none bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
               </button>
             </div>
 
-            {/* Item 3 */}
-            <div className="space-y-2">
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Discover new investment opportunities with over 200 free and premium global research and news providers.
+            {/* Card 3 */}
+            <div className="space-y-2.5 p-6 bg-slate-50/70 border border-slate-200/80 border-l-4 border-l-emerald-600 hover:bg-white hover:shadow-md transition-all group">
+              <h3 className="text-base font-bold text-slate-950 font-sans group-hover:text-emerald-700 transition-colors">
+                Web & Mobile Trading Apps
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium font-sans">
+                Custom branded Webtrader, iOS, and Android applications with real-time charting and instant execution.
               </p>
               <button
                 onClick={onOpenAccount}
-                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer pt-1"
               >
-                <span>Global Research and News</span>
-                <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
+                <span>Explore Trading Apps</span>
+                <span className="w-4 h-4 rounded-none bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
               </button>
             </div>
 
-            {/* Item 4 */}
-            <div className="space-y-2">
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Real-time trade confirmations, margin details, transaction cost analysis, sophisticated portfolio analysis and more.
+            {/* Card 4 */}
+            <div className="space-y-2.5 p-6 bg-slate-50/70 border border-slate-200/80 border-l-4 border-l-emerald-600 hover:bg-white hover:shadow-md transition-all group">
+              <h3 className="text-base font-bold text-slate-950 font-sans group-hover:text-emerald-700 transition-colors">
+                Copy Trading & PAMM / MAM
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium font-sans">
+                Ultra-fast trade copying, flexible equity allocation, and automated performance fee splitting.
               </p>
               <button
                 onClick={onOpenAccount}
-                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer pt-1"
               >
-                <span>Comprehensive Reporting</span>
-                <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
+                <span>Explore Copy & PAMM</span>
+                <span className="w-4 h-4 rounded-none bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
               </button>
             </div>
 
-            {/* Item 5 */}
-            <div className="space-y-2">
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Spot market opportunities, analyze results, manage your account and make better decisions with our free trading tools.
+            {/* Card 5 */}
+            <div className="space-y-2.5 p-6 bg-slate-50/70 border border-slate-200/80 border-l-4 border-l-emerald-600 hover:bg-white hover:shadow-md transition-all group">
+              <h3 className="text-base font-bold text-slate-950 font-sans group-hover:text-emerald-700 transition-colors">
+                MT5 Server APIs & WebSockets
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium font-sans">
+                Server-side MetaTrader 5 API hooks, event triggers, and real-time WebSocket tick price streaming.
               </p>
               <button
                 onClick={onOpenAccount}
-                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer pt-1"
               >
-                <span>Free Trading Tools</span>
-                <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
+                <span>Explore Server APIs</span>
+                <span className="w-4 h-4 rounded-none bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
               </button>
             </div>
 
-            {/* Item 6 */}
-            <div className="space-y-2">
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Sub-account hierarchy, multi-currency cash balances, automated tax-lot routing, and real-time risk monitoring.
+            {/* Card 6 */}
+            <div className="space-y-2.5 p-6 bg-slate-50/70 border border-slate-200/80 border-l-4 border-l-emerald-600 hover:bg-white hover:shadow-md transition-all group">
+              <h3 className="text-base font-bold text-slate-950 font-sans group-hover:text-emerald-700 transition-colors">
+                FIX Liquidity & Crypto Gateways
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium font-sans">
+                Direct FIX 4.4/5.0 liquidity bridge to 150+ LPs and instant crypto deposit auto-crediting.
               </p>
               <button
                 onClick={onOpenAccount}
-                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer pt-1"
               >
-                <span>Account Architecture</span>
-                <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
+                <span>Explore FIX & Gateways</span>
+                <span className="w-4 h-4 rounded-none bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
               </button>
             </div>
 
           </div>
         </div>
 
-        {/* ── 4. IBKR STYLE: NO MARKUPS OR BUILT-IN SPREADS ── */}
+        {/* ── 4. B2B TRANSPARENT PRICING & ZERO HIDDEN FEES ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-10 border-t border-slate-100">
           
-          {/* Left Column Real Professional Stock Photo */}
+          {/* Left Column Graphic */}
           <div className="lg:col-span-5">
             <img
-              src="/wallstreet_trader_analytics.png"
-              alt="Professional Investor Analytics"
-              className="w-full h-auto object-cover rounded-xl shadow-lg border border-slate-200"
+              src="/pricing-showcase.png"
+              alt="BrokerBros B2B Modular Analytics"
+              className="w-full h-auto object-cover rounded-none border border-slate-200 shadow-sm"
             />
           </div>
 
           {/* Right Column Institutional Transparency Copy */}
-          <div className="lg:col-span-7 space-y-5">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight">
-              No Mark-ups or Built-in Spreads
+          <div className="lg:col-span-7 space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight font-sans">
+              Transparent Modular Pricing. Zero Hidden Fees.
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              At BrokerBros, trades are executed without hidden mark-ups or built-in spreads. By removing embedded fees, traders benefit from clearer price discovery, tighter bid-ask spreads, and improved strategy performance.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium font-sans">
+              Predictable monthly licensing designed to maximize operational profit margins for brokers and prop trading firms worldwide.
             </p>
 
-            <div className="space-y-2 text-sm text-slate-700 font-sans">
-              <div className="font-bold text-slate-900">Bond & Fixed Income Commissions:</div>
-              <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-600">
-                <li>Treasury bills, notes and bonds: <strong className="text-slate-900">0.2 bps</strong> for the first USD 1 million of face value.</li>
-                <li>Corporate bonds: <strong className="text-slate-900">10 bps</strong> for the first USD 10,000 of face value.</li>
-                <li>Municipal bonds: <strong className="text-slate-900">5 bps</strong> for the first USD 10,000 of face value.</li>
-              </ul>
+            <div className="space-y-3 text-xs sm:text-sm text-slate-700 font-sans pt-1">
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <p className="text-xs text-slate-600 font-medium font-sans">
+                  <strong className="text-slate-900 font-bold">White-Label CRM:</strong> Flat monthly fee with unlimited client accounts and zero per-trader penalty charges.
+                </p>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <p className="text-xs text-slate-600 font-medium font-sans">
+                  <strong className="text-slate-900 font-bold">FIX Liquidity Bridge:</strong> Direct Tier-1 LP connectivity with transparent volume tiers and zero hidden markups.
+                </p>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <p className="text-xs text-slate-600 font-medium font-sans">
+                  <strong className="text-slate-900 font-bold">Prop Firm Engine:</strong> 100% automated drawdown monitoring, instant breach alerts, and profit-split accuracy.
+                </p>
+              </div>
             </div>
 
-            <button
-              onClick={onOpenAccount}
-              className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group pt-2"
-            >
-              <span>View Full Fee Transparency Schedule</span>
-              <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
-            </button>
+            <div className="pt-2">
+              <button
+                onClick={onOpenAccount}
+                className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs hover:text-emerald-800 transition-colors cursor-pointer group"
+              >
+                <span>REQUEST MODULAR PRICING QUOTE</span>
+                <span className="w-4 h-4 rounded-none bg-emerald-600 text-white flex items-center justify-center text-[10px] group-hover:translate-x-1 transition-transform">›</span>
+              </button>
+            </div>
           </div>
 
         </div>
