@@ -218,7 +218,7 @@ export const InteractivePlatformSelector: React.FC<{ onOpenAccount: () => void }
             {/* Generated Mobile App Preview Image */}
             <div className="relative h-44 rounded-xl overflow-hidden border border-emerald-500/30">
               <img
-                src="/mobile_trading_app.png"
+                src="/mobile_trading_app.webp"
                 alt="Mobile App"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

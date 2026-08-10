@@ -27,7 +27,7 @@ export const MarketDataPricingPage: React.FC<MarketDataPricingPageProps> = ({ on
       {/* Dedicated Market Data Hero */}
       <section
         className="relative text-slate-900 min-h-[120vh] border-b border-slate-100 overflow-hidden font-sans flex flex-col bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/backgroundpricefourth.png')" }}
+        style={{ backgroundImage: "url('/backgroundpricefourth.webp')" }}
       >
         <div className="absolute top-0 right-1/3 w-[500px] h-[500px] bg-emerald-50/60 rounded-full blur-[140px] pointer-events-none" />
         {/* Subtle white overlay to slightly dull the background */}

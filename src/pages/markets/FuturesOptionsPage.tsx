@@ -383,7 +383,7 @@ export const FuturesOptionsPage: React.FC<FuturesOptionsPageProps> = ({ onOpenAc
             {/* Right Futures Image - Clean Simple Image */}
             <div className="lg:col-span-5">
               <img
-                src="/futures_globex_terminal.png"
+                src="/futures_globex_terminal.webp"
                 alt="Futures Globex Terminal"
                 className="w-full h-auto max-h-[420px] object-contain shadow-md rounded-xl border border-slate-200"
               />

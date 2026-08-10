@@ -27,7 +27,7 @@ export const ShortSaleCostPage: React.FC<ShortSaleCostPageProps> = ({ onOpenAcco
       {/* Dedicated Short Sale Hero */}
       <section
         className="relative text-slate-900 min-h-[120vh] border-b border-slate-100 overflow-hidden font-sans flex flex-col bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/backgroundpricethird.png')" }}
+        style={{ backgroundImage: "url('/backgroundpricethird.webp')" }}
       >
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/60 rounded-full blur-[140px] pointer-events-none" />
         {/* Subtle white overlay to slightly dull the background */}

@@ -60,7 +60,7 @@ export const PlatformsHero: React.FC<HeroProps> = ({ onOpenAccount }) => {
         {/* Real Mobile Trading App Frame Mockup */}
         <div className="mt-16 relative max-w-4xl mx-auto text-center">
           <img
-            src="/mobile_trading_app.png"
+            src="/mobile_trading_app.webp"
             alt="BrokerBros Mobile Trading App"
             className="w-full h-auto max-h-[500px] object-contain shadow-2xl rounded-2xl border border-slate-200 mx-auto"
           />

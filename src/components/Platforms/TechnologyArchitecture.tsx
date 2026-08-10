@@ -54,7 +54,7 @@ export const TechnologyArchitecture: React.FC = () => {
         {/* Datacenter Visual Showcase Box */}
         <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl h-56 sm:h-72 group">
           <img
-            src="/datacenter_latency.png"
+            src="/datacenter_latency.webp"
             alt="High-Frequency Datacenter"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />

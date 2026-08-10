@@ -28,7 +28,7 @@ export const CommissionsPage: React.FC<CommissionsPageProps> = ({ onOpenAccount 
       {/* 1. Dedicated Commissions Hero (Natural Background Image) */}
       <section 
         className="relative text-slate-900 py-16 lg:py-24 border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/commissions-background.png')" }}
+        style={{ backgroundImage: "url('/commissions-background.webp')" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
           

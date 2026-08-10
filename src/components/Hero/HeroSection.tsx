@@ -21,7 +21,7 @@ interface SlideItem {
 const HERO_SLIDES: SlideItem[] = [
   {
     id: 1,
-    bgImage: '/Homepage/hero-one.png',
+    bgImage: '/Homepage/hero-one.webp',
     badge: 'MULTI-ASSET TRADING VENUE',
     headline: 'Lowest Costs. Global Access.\nUncompromising Execution.',
     subtext: 'Invest globally in stocks, options, futures, currencies, bonds, and funds from a single unified account. Benefit from $0.00 commissions and zero-PFOF SmartRouting.',
@@ -31,7 +31,7 @@ const HERO_SLIDES: SlideItem[] = [
   },
   {
     id: 2,
-    bgImage: '/Homepage/hero-two.png',
+    bgImage: '/Homepage/hero-two.webp',
     badge: 'TURNKEY BROKERAGE INFRASTRUCTURE',
     headline: 'White-Label Broker CRM &\nAdmin Backoffice Suite.',
     subtext: 'Comprehensive broker operating system featuring multi-level IB management, client onboarding, risk monitoring, and prop firm evaluation engines.',
@@ -41,7 +41,7 @@ const HERO_SLIDES: SlideItem[] = [
   },
   {
     id: 3,
-    bgImage: '/Homepage/hero-three.png',
+    bgImage: '/Homepage/hero-three.webp',
     badge: 'INSTITUTIONAL CONNECTIVITY',
     headline: 'Tier-1 Liquidity Bridge &\nLow-Latency FIX APIs.',
     subtext: 'Direct FIX 4.4/5.0 liquidity bridges, MT5 server hooks, real-time WebSocket tick feeds, and automated multi-chain crypto gateways.',

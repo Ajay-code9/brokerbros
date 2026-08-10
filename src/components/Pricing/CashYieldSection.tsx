@@ -46,7 +46,7 @@ export const CashYieldSection: React.FC<{ onOpenAccount: () => void }> = ({ onOp
         {/* Generated Digital Cash Vault Banner Card */}
         <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl h-56 sm:h-64 group">
           <img
-            src="/pricing_cash_vault.png"
+            src="/pricing_cash_vault.webp"
             alt="Cash Vault Yield"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />

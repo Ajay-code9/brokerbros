@@ -196,7 +196,7 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE (100vh Landing Viewport Fit) */}
       <section 
         className="relative text-slate-900 min-h-[calc(100vh-80px)] py-12 lg:py-16 border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
-        style={{ backgroundImage: "url('/backgroundimage-two.png')" }}
+        style={{ backgroundImage: "url('/backgroundimage-two.webp')" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center">
           <div className="max-w-3xl space-y-6">

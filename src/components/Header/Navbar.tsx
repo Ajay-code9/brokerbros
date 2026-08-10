@@ -82,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Brand Logo - Prominent & Large */}
         <button onClick={() => handleNav('/')} className="flex items-center group shrink-0 text-left cursor-pointer py-1">
           <img
-            src="/logo-white.png"
+            src="/logo-white.webp"
             alt="BrokerBros"
             className="h-11 sm:h-13 lg:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.01]"
           />

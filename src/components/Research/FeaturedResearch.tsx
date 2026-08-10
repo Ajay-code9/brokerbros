@@ -60,7 +60,7 @@ export const FeaturedResearch: React.FC<FeaturedResearchProps> = ({
             >
               <div className="relative h-64 sm:h-80 overflow-hidden bg-slate-900">
                 <img
-                  src="/wallstreet_trader_analytics.png"
+                  src="/wallstreet_trader_analytics.webp"
                   alt={displayArticles[0].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />

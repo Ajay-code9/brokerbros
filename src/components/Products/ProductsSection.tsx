@@ -49,7 +49,7 @@ const B2B_MODULE_TABS: B2BModuleTab[] = [
     description: 'Comprehensive broker operating system featuring multi-level IB rebate hierarchies, automated KYC document processing, multi-currency client wallets, and granular admin compliance queues.',
     deploymentTime: '1 - 3 Days',
     slaMetric: 'Unlimited IBs',
-    image: '/module-showcase.png',
+    image: '/module-showcase.webp',
     highlights: [
       'Multi-currency client portal with instant deposit/withdrawal workflows',
       'Unlimited multi-tier IB rebate tree with real-time lot calculations',
@@ -78,7 +78,7 @@ const B2B_MODULE_TABS: B2BModuleTab[] = [
     description: 'Purpose-built evaluation engine for funded trader programs. Automates daily drawdown limits, maximum equity loss limits, profit target flags, and automated payout splits with zero manual delay.',
     deploymentTime: 'Turnkey Setup',
     slaMetric: 'Real-Time Breach',
-    image: '/desktop-terminal.png',
+    image: '/desktop-terminal.webp',
     highlights: [
       'Automated daily equity snapshot & trailing drawdown breach detection',
       'Configurable 1-Step, 2-Step, or Instant Funding evaluation rules',
@@ -107,7 +107,7 @@ const B2B_MODULE_TABS: B2BModuleTab[] = [
     description: 'Deploy custom branded trading platforms for web and mobile. Features real-time TradingView charting, one-click order execution, depth of market (DOM), and custom color tokens for your broker brand.',
     deploymentTime: 'Custom Branded',
     slaMetric: 'Sub-10ms Order',
-    image: '/web-mobile-app.png',
+    image: '/web-mobile-app.webp',
     highlights: [
       'Cross-platform Web-first terminal with full TradingView indicator suite',
       'Native iOS & Android mobile apps published directly to App Store / Play Store',
@@ -136,7 +136,7 @@ const B2B_MODULE_TABS: B2BModuleTab[] = [
     description: 'Scale social trading and asset management programs. Connect signal providers to unlimited followers with sub-millisecond copier execution, equity/balance proportional modes, and high-watermark fee splits.',
     deploymentTime: 'Instant Hook',
     slaMetric: '< 1ms Copy Latency',
-    image: '/copy-pamm-showcase.png',
+    image: '/copy-pamm-showcase.webp',
     highlights: [
       'Sub-millisecond trade replication with zero slippage or execution lag',
       'Flexible allocation modes: Equity Ratio, Balance Ratio, Lot Multiplier',
@@ -165,7 +165,7 @@ const B2B_MODULE_TABS: B2BModuleTab[] = [
     description: 'Connect directly to Tier-1 prime brokers, bank ECNs, and crypto LPs via standardized FIX 4.4/5.0 protocols. Includes server-side MT5 C++ API hooks and automated multi-chain crypto deposit gateways.',
     deploymentTime: 'Direct LP Hook',
     slaMetric: '150+ Connected LPs',
-    image: '/fix-bridge-showcase.png',
+    image: '/fix-bridge-showcase.webp',
     highlights: [
       'FIX 4.4 / 5.0 standardized protocol bridge connecting 150+ Tier-1 LPs',
       'MetaTrader 5 server-side API hooks for custom EA execution & account sync',

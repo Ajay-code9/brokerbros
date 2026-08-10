@@ -4,22 +4,22 @@ import { Percent, Globe2, Cpu, ShieldCheck } from 'lucide-react';
 export const FeatureStripSection: React.FC = () => {
   const features = [
     {
-      imageSrc: '/Homepage/icon-one.png',
+      imageSrc: '/Homepage/icon-one.webp',
       title: 'Institutional Pricing',
       description: 'Flat SaaS monthly module pricing, zero per-trade commissions or revenue share, and full spread control.',
     },
     {
-      imageSrc: '/Homepage/icon-two.png',
+      imageSrc: '/Homepage/icon-two.webp',
       title: 'Global Market Access',
       description: 'Pre-integrated connectivity across 150+ Tier-1 LPs, prime brokers, and exchanges in 35 countries.',
     },
     {
-      imageSrc: '/Homepage/icon-three.png',
+      imageSrc: '/Homepage/icon-three.webp',
       title: 'Turnkey Technology',
       description: 'White-label webtrader, branded iOS/Android apps, prop firm evaluation engine, and FIX 4.4/5.0 APIs.',
     },
     {
-      imageSrc: '/Homepage/icon-four.png',
+      imageSrc: '/Homepage/icon-four.webp',
       title: 'Capital & Security',
       description: 'ISO 27001 security standards, segregated client wallet architecture, and automated audit logs.',
     },

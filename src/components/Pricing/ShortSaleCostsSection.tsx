@@ -19,7 +19,7 @@ export const ShortSaleCostsSection: React.FC = () => {
     { 
       ticker: 'AAPL', 
       name: 'Apple Inc.', 
-      logo: '/Homepage/apple-logo.png',
+      logo: '/Homepage/apple-logo.webp',
       status: 'General Availability', 
       borrowRate: '0.25% APY', 
       annualPercent: 0.25, 
@@ -29,7 +29,7 @@ export const ShortSaleCostsSection: React.FC = () => {
     { 
       ticker: 'NVDA', 
       name: 'NVIDIA Corporation', 
-      logo: '/Homepage/nvidia-logo.png',
+      logo: '/Homepage/nvidia-logo.webp',
       status: 'General Availability', 
       borrowRate: '0.30% APY', 
       annualPercent: 0.30, 
@@ -39,7 +39,7 @@ export const ShortSaleCostsSection: React.FC = () => {
     { 
       ticker: 'TSLA', 
       name: 'Tesla, Inc.', 
-      logo: '/Homepage/tesla-logo.png',
+      logo: '/Homepage/tesla-logo.webp',
       status: 'General Availability', 
       borrowRate: '0.45% APY', 
       annualPercent: 0.45, 
@@ -49,7 +49,7 @@ export const ShortSaleCostsSection: React.FC = () => {
     { 
       ticker: 'RIVN', 
       name: 'Rivian Automotive', 
-      logo: '/Homepage/Rivian-logo.png',
+      logo: '/Homepage/Rivian-logo.webp',
       status: 'Hard to Borrow', 
       borrowRate: '2.85% APY', 
       annualPercent: 2.85, 
@@ -59,7 +59,7 @@ export const ShortSaleCostsSection: React.FC = () => {
     { 
       ticker: 'PLTR', 
       name: 'Palantir Technologies', 
-      logo: '/Homepage/plantir-logo.png',
+      logo: '/Homepage/plantir-logo.webp',
       status: 'General Availability', 
       borrowRate: '0.35% APY', 
       annualPercent: 0.35, 
@@ -69,7 +69,7 @@ export const ShortSaleCostsSection: React.FC = () => {
     { 
       ticker: 'GME', 
       name: 'GameStop Corp.', 
-      logo: '/Homepage/GameStop-logo.png',
+      logo: '/Homepage/GameStop-logo.webp',
       status: 'Hard to Borrow', 
       borrowRate: '8.40% APY', 
       annualPercent: 8.40, 
@@ -79,7 +79,7 @@ export const ShortSaleCostsSection: React.FC = () => {
     { 
       ticker: 'AMC', 
       name: 'AMC Entertainment', 
-      logo: '/Homepage/AMC-logo.png',
+      logo: '/Homepage/AMC-logo.webp',
       status: 'Pre-Borrow Required', 
       borrowRate: '18.50% APY', 
       annualPercent: 18.50, 

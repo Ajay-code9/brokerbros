@@ -26,7 +26,7 @@ export const InterestRatesPage: React.FC<InterestRatesPageProps> = ({ onOpenAcco
       {/* Dedicated Interest Rates & Margin Hero */}
       <section
         className="relative text-slate-900 min-h-[120vh] border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col"
-        style={{ backgroundImage: "url('/backgroundtwo.png')" }}
+        style={{ backgroundImage: "url('/backgroundtwo.webp')" }}
       >
         {/* Main content — vertically centered in the viewport */}
         <div className="flex-1 flex items-center justify-center">

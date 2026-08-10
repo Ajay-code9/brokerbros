@@ -89,10 +89,10 @@ export const TerminalShowcase: React.FC<TerminalShowcaseProps> = ({ onOpenAccoun
               <img
                 src={
                   selectedFeatureId === 'web-trader' 
-                    ? '/webportal.png' 
+                    ? '/webportal.webp' 
                     : selectedFeatureId === 'mobile-app' 
-                    ? '/mobileportal.png' 
-                    : '/webterminal.png'
+                    ? '/mobileportal.webp' 
+                    : '/webterminal.webp'
                 }
                 alt={currentFeature.title}
                 className="w-full h-auto max-h-[360px] object-contain select-none shadow-md"

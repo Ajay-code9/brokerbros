@@ -62,7 +62,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
           <div className="lg:col-span-7 flex justify-center">
             <div className="relative w-full max-w-2xl">
               <img
-                src="/worldmap.png"
+                src="/worldmap.webp"
                 alt="Global Market Access Map"
                 className="w-full h-auto object-contain opacity-85"
                 onError={(e) => {
@@ -79,7 +79,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
         <div className="py-8 text-center space-y-6">
           <div className="relative max-w-4xl mx-auto">
             <img
-              src="/desktop-terminal.png"
+              src="/desktop-terminal.webp"
               alt="BrokerBros Pro Trading Terminal"
               className="w-full h-auto object-contain shadow-2xl rounded-2xl border border-slate-200"
             />
@@ -210,7 +210,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
           {/* Left Column Graphic */}
           <div className="lg:col-span-5">
             <img
-              src="/pricing-showcase.png"
+              src="/pricing-showcase.webp"
               alt="BrokerBros B2B Modular Analytics"
               className="w-full h-auto object-cover rounded-none border border-slate-200 shadow-sm"
             />

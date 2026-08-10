@@ -44,7 +44,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
       heading: 'Client Capital is Always Kept Separate & Safe',
       paragraph:
         'Client trading funds are stored in top-tier bank accounts, completely separate from firm operating capital. Includes automated daily balance reconciliation.',
-      imagePath: '/section-one.png',
+      imagePath: '/section-one.webp',
       placeholderLabel: 'Segregated Client Funds Architecture',
       metrics: [
         {
@@ -85,7 +85,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
       heading: 'Clean, Transparent & Audit-Ready Record Keeping',
       paragraph:
         'Every trade, IB commission payout, and account breach is automatically recorded in real-time so your brokerage is always ready for regulator review.',
-      imagePath: '/section-second.png',
+      imagePath: '/section-second.webp',
       placeholderLabel: 'Immutable Audit Logging Illustration',
       metrics: [
         {
@@ -126,7 +126,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
       heading: 'Ultra-Fast, Hack-Proof & Reliable Infrastructure',
       paragraph:
         'Powered by ISO 27001 security standards, 256-bit encryption, and a guaranteed 99.99% uptime SLA to keep your brokerage running smoothly 24/7.',
-      imagePath: '/section-third.png',
+      imagePath: '/section-third.webp',
       placeholderLabel: 'Cyber Security Architecture Illustration',
       metrics: [
         {
@@ -167,7 +167,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
       heading: 'Ready for Global Financial Regulation & Onboarding',
       paragraph:
         'Pre-configured workflows for FCA, CySEC, ASIC, and offshore licenses with built-in instant KYC document verification and AML background checks.',
-      imagePath: '/section-fourth.png',
+      imagePath: '/section-fourth.webp',
       placeholderLabel: 'Regulatory Compliance Framework Illustration',
       metrics: [
         {

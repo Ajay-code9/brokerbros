@@ -497,7 +497,7 @@ export const BondsPage: React.FC<BondsPageProps> = ({ onOpenAccount }) => {
             {/* Right Bonds Image - Clean Simple Image */}
             <div className="lg:col-span-5">
               <img
-                src="/bonds_treasury_vault.png"
+                src="/bonds_treasury_vault.webp"
                 alt="Bonds Treasury Vault"
                 className="w-full h-auto max-h-[420px] object-contain shadow-md rounded-xl border border-slate-200"
               />

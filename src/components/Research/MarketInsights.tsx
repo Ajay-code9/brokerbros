@@ -37,7 +37,7 @@ export const MarketInsights: React.FC = () => {
         {/* Visual Global Network Banner Card */}
         <div className="relative rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl h-48 sm:h-56 group">
           <img
-            src="/global_economy_network.png"
+            src="/global_economy_network.webp"
             alt="Global Financial Network"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />

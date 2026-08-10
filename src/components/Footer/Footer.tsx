@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-8 border-b border-slate-800/70">
           <div className="space-y-1.5 max-w-lg">
             <div className="flex items-center gap-2">
-              <img src="/logo-white.png" alt="BrokerBros" className="h-7 w-auto object-contain" />
+              <img src="/logo-white.webp" alt="BrokerBros" className="h-7 w-auto object-contain" />
               <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full tracking-wider uppercase">
                 Enterprise SaaS
               </span>

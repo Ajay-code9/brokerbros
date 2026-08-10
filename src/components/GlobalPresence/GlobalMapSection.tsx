@@ -143,7 +143,7 @@ export const GlobalMapSection: React.FC<GlobalMapSectionProps> = ({ onOpenAccoun
               {/* Real World Map Image Background Layer */}
               <div className="absolute inset-0 pointer-events-none flex items-center justify-center p-1">
                 <img
-                  src="/worldmap.png"
+                  src="/worldmap.webp"
                   alt="Global World Map"
                   className="w-full h-full object-contain opacity-85 select-none filter brightness-95 contrast-150"
                 />
