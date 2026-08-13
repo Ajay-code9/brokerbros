@@ -43,7 +43,7 @@ const Section: React.FC<{
 
 export const HomePage: React.FC<HomePageProps> = ({ onOpenAccount, onExplorePlatforms }) => {
   return (
-    <div className="selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden bg-white text-slate-900">
+    <div className="selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
       {/* ① INSTITUTIONAL PURE WHITE HERO SECTION */}
       <HeroSection onOpenAccount={onOpenAccount} onExplorePlatforms={onExplorePlatforms} />
@@ -107,7 +107,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAccount, onExplorePlat
       </Section>
 
       {/* ⑭ FINAL CINEMATIC CTA */}
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
     </div>
   );
 };

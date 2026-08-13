@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RouterProvider, useRouter } from './router';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { MarketTicker } from './components/Header/MarketTicker';
 import { Navbar } from './components/Header/Navbar';
 import { Footer } from './components/Footer/Footer';
@@ -71,8 +72,18 @@ import { WebSocketsStreamingPage } from './pages/solutions/WebSocketsStreamingPa
 import { CryptoGatewayPage } from './pages/solutions/CryptoGatewayPage';
 import { FixApiLiquidityPage } from './pages/solutions/FixApiLiquidityPage';
 
+// New Product Submenu Pages
+import { BackOfficePage } from './pages/products/BackOfficePage';
+import { PropTradingCrmPage } from './pages/products/PropTradingCrmPage';
+import { ClientAreaPage } from './pages/products/ClientAreaPage';
+import { MobileAppProductPage } from './pages/products/MobileAppProductPage';
+import { PartnerAreaPage } from './pages/products/PartnerAreaPage';
+import { B2bCrmPage } from './pages/products/B2bCrmPage';
+import { ServiceDeskPage } from './pages/products/ServiceDeskPage';
+
 function AppContent() {
   const { currentPath, navigate } = useRouter();
+  const { theme } = useTheme();
   const [selectedSegment, setSelectedSegment] = useState<'individual' | 'institutional'>('individual');
   const [isOpenAccountModalOpen, setIsOpenAccountModalOpen] = useState<boolean>(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
@@ -205,6 +216,22 @@ function AppContent() {
         return <FixApiLiquidityPage />;
       case '/solutions/ib-partner':
         return <IbPartnerModulePage />;
+
+      {/* Dedicated Products Submenu Pages */}
+      case '/products/back-office':
+        return <BackOfficePage onOpenAccount={handleOpenAccount} />;
+      case '/products/prop-trading-crm':
+        return <PropTradingCrmPage onOpenAccount={handleOpenAccount} />;
+      case '/products/client-area':
+        return <ClientAreaPage onOpenAccount={handleOpenAccount} />;
+      case '/products/mobile-app':
+        return <MobileAppProductPage onOpenAccount={handleOpenAccount} />;
+      case '/products/partner-area':
+        return <PartnerAreaPage onOpenAccount={handleOpenAccount} />;
+      case '/products/b2b-crm':
+        return <B2bCrmPage onOpenAccount={handleOpenAccount} />;
+      case '/products/service-desk':
+        return <ServiceDeskPage onOpenAccount={handleOpenAccount} />;
       case '/partner':
         return <PartnerProgramPage onOpenAccount={handleOpenAccount} />;
       case '/api-integrations':
@@ -236,7 +263,9 @@ function AppContent() {
   const isAuthPage = currentPath === '/login' || currentPath === '/open-account' || currentPath === '/signup' || currentPath === '/register';
 
   return (
-    <div className="min-h-screen max-w-full overflow-x-clip bg-white text-slate-900 font-sans antialiased selection:bg-emerald-500 selection:text-white flex flex-col justify-between">
+    <div className={`min-h-screen max-w-full overflow-x-clip font-sans antialiased selection:bg-emerald-500 selection:text-white flex flex-col justify-between transition-colors duration-300 ${
+      theme === 'dark' ? 'bg-[#0a0a0a] text-slate-100' : 'bg-white text-slate-900'
+    }`}>
       <div>
         {/* Enterprise Navigation */}
         {!isAuthPage && (
@@ -287,8 +316,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <RouterProvider>
-      <AppContent />
-    </RouterProvider>
+    <ThemeProvider>
+      <RouterProvider>
+        <AppContent />
+      </RouterProvider>
+    </ThemeProvider>
   );
 }

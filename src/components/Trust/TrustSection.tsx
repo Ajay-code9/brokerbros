@@ -255,7 +255,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
     <section
       ref={sectionRef}
       id="trust"
-      className="py-6 lg:py-10 bg-white text-slate-900 border-b border-slate-200/50 relative overflow-hidden font-sans"
+      className="py-6 lg:py-10 bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 border-b border-slate-200/50 dark:border-[#1E293B] relative overflow-hidden font-sans transition-colors duration-300"
     >
       {/* Subtle Animated Background Grid (Opacity < 5%) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.035]">
@@ -264,7 +264,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/70 pb-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/70 dark:border-[#1E293B] pb-4">
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-slate-900 text-white font-mono text-[11px] border border-slate-800 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
@@ -272,16 +272,16 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
               <span className="text-slate-700">|</span>
               <span className="text-slate-300 font-bold">MULTI-JURISDICTION COMPLIANCE READY</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 font-sans">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 dark:text-white font-sans">
               Enterprise Security & Regulatory Compliance Guaranteed
             </h2>
           </div>
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-md font-sans font-medium">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed max-w-md font-sans font-medium">
             Built on military-grade encryption, segregated client wallet architecture, and automated audit trails required by global financial regulators (FCA, CySEC, ASIC, FSA, VFSC).
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-lg shadow-slate-200/40 overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all">
+        <div className="bg-white dark:bg-[#141C2B] rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-lg shadow-slate-200/40 overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all">
 
           {/* LEFT STICKY NAVIGATION PANEL */}
           <div className="lg:col-span-4 bg-slate-900 text-white p-5 space-y-4 flex flex-col justify-between relative overflow-hidden border-r border-slate-800">
@@ -416,7 +416,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
           </div>
 
           {/* RIGHT STORY CONTENT PANEL (SMOOTH ANIMATED TRANSITION) */}
-          <div className="lg:col-span-8 p-5 sm:p-6 flex flex-col justify-between space-y-5 bg-white">
+          <div className="lg:col-span-8 p-5 sm:p-6 flex flex-col justify-between space-y-5 bg-white dark:bg-[#141C2B]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}

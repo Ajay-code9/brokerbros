@@ -22,26 +22,26 @@ export const OtherFeesPage: React.FC<OtherFeesPageProps> = ({ onOpenAccount }) =
   };
 
   return (
-    <div className="bg-white text-slate-900 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+    <div className="bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white transition-colors duration-300">
       
       {/* Dedicated Other Fees Hero */}
       <section
-        className="relative text-slate-900 min-h-[120vh] border-b border-slate-100 overflow-hidden font-sans flex flex-col bg-cover bg-center bg-no-repeat"
+        className="relative text-slate-900 dark:text-white min-h-[120vh] border-b border-slate-200 dark:border-[#1E293B] overflow-hidden font-sans flex flex-col bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/backgroundpricefifth.webp')" }}
       >
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/60 rounded-full blur-[140px] pointer-events-none" />
-        {/* Subtle white overlay */}
-        <div className="absolute inset-0 bg-white/20 pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/60 dark:bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-white/20 dark:bg-[#090D14]/85 backdrop-blur-[2px] transition-colors duration-300 pointer-events-none" />
 
         {/* Main content — vertically centered in the viewport */}
         <div className="flex-1 flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 w-full">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 dark:text-white tracking-tight leading-[1.12]">
               Complete Fee Schedule & <br />
-              <span className="text-emerald-600">Transparent Administrative Pricing</span>
+              <span className="text-emerald-600 dark:text-emerald-400">Transparent Administrative Pricing</span>
             </h1>
 
-            <p className="text-slate-900 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-semibold bg-white/65 backdrop-blur-sm px-5 py-3 rounded-xl border border-white/80 shadow-sm">
+            <p className="text-slate-900 dark:text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-semibold bg-white/65 dark:bg-[#141C2B]/80 backdrop-blur-sm px-5 py-3 rounded-xl border border-white/80 dark:border-[#1E293B] shadow-sm">
               Every administrative, wire transfer, corporate action, and regulatory pass-through fee disclosed upfront. No hidden maintenance fees or surprise monthly account minimums.
             </p>
 
@@ -55,7 +55,7 @@ export const OtherFeesPage: React.FC<OtherFeesPageProps> = ({ onOpenAccount }) =
               </button>
               <button
                 onClick={scrollToCalculator}
-                className="px-5 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
+                className="px-5 py-3 bg-slate-900 dark:bg-[#141C2B] hover:bg-slate-800 dark:hover:bg-[#1B2538] text-white font-semibold rounded-xl border border-slate-700 dark:border-[#1E293B] transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm"
               >
                 <Zap className="w-4 h-4 text-emerald-400" />
                 <span>Calculate Savings</span>
@@ -66,18 +66,18 @@ export const OtherFeesPage: React.FC<OtherFeesPageProps> = ({ onOpenAccount }) =
 
         {/* Quick Stat Badges — pinned to bottom, visible only on scroll */}
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pb-8 pt-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto border-t border-slate-100 pt-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto border-t border-slate-200 dark:border-[#1E293B] pt-6 text-center">
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 font-mono">$0 / mo</div>
-              <div className="text-xs text-slate-500 font-medium mt-1">Inactivity Fee Policy</div>
+              <div className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white font-mono">$0 / mo</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Inactivity Fee Policy</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-emerald-600 font-mono">$0 Minimum</div>
-              <div className="text-xs text-slate-500 font-medium mt-1">Account Balance Requirement</div>
+              <div className="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono">$0 Minimum</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Account Balance Requirement</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 font-mono">SEC / FINRA</div>
-              <div className="text-xs text-slate-500 font-medium mt-1">Exact Regulatory Pass-Through</div>
+              <div className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white font-mono">SEC / FINRA</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Exact Regulatory Pass-Through</div>
             </div>
           </div>
         </div>
@@ -89,34 +89,34 @@ export const OtherFeesPage: React.FC<OtherFeesPageProps> = ({ onOpenAccount }) =
       </div>
 
       {/* PDF Module 13 Crypto & Fiat Payment Gateway Cards */}
-      <section className="py-12 bg-slate-50 border-b border-slate-200">
+      <section className="py-12 bg-slate-50/80 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider">
-              <Wallet className="w-4 h-4 text-emerald-600" />
+            <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+              <Wallet className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span>Integrated Payment Gateway (PDF Module 13)</span>
             </div>
-            <h3 className="text-2xl font-bold text-slate-900">Seamless Deposits & Withdrawals for Global Clients</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Seamless Deposits & Withdrawals for Global Clients</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Process crypto and fiat funding requests automatically with instant wallet credit, multi-chain confirmations, and zero hidden deposit surcharges.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2">
-              <div className="text-xs font-mono font-bold text-emerald-600 uppercase">Bank Wires & Local Transfers</div>
-              <div className="text-lg font-bold text-slate-900">$0 Deposit Fee</div>
-              <p className="text-xs text-slate-600 leading-relaxed">Free incoming ACH and bank wire deposits. Outgoing domestic wires billed at raw bank pass-through cost ($10).</p>
+            <div className="bg-white dark:bg-[#141C2B] p-6 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm space-y-2">
+              <div className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase">Bank Wires & Local Transfers</div>
+              <div className="text-lg font-bold text-slate-900 dark:text-white">$0 Deposit Fee</div>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Free incoming ACH and bank wire deposits. Outgoing domestic wires billed at raw bank pass-through cost ($10).</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2">
-              <div className="text-xs font-mono font-bold text-emerald-600 uppercase">Crypto Payment Gateway</div>
-              <div className="text-lg font-bold text-slate-900">USDT, USDC, BTC & ETH</div>
-              <p className="text-xs text-slate-600 leading-relaxed">Instant blockchain confirmation tracking with automated sub-account credit and zero deposit markup.</p>
+            <div className="bg-white dark:bg-[#141C2B] p-6 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm space-y-2">
+              <div className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase">Crypto Payment Gateway</div>
+              <div className="text-lg font-bold text-slate-900 dark:text-white">USDT, USDC, BTC & ETH</div>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Instant blockchain confirmation tracking with automated sub-account credit and zero deposit markup.</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2">
-              <div className="text-xs font-mono font-bold text-emerald-600 uppercase">ACATS Portfolio Transfers</div>
-              <div className="text-lg font-bold text-slate-900">Up to $150 Reimbursed</div>
-              <p className="text-xs text-slate-600 leading-relaxed">Transfer your existing stock or options portfolio from another broker and get transfer fees automatically reimbursed.</p>
+            <div className="bg-white dark:bg-[#141C2B] p-6 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm space-y-2">
+              <div className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase">ACATS Portfolio Transfers</div>
+              <div className="text-lg font-bold text-slate-900 dark:text-white">Up to $150 Reimbursed</div>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Transfer your existing stock or options portfolio from another broker and get transfer fees automatically reimbursed.</p>
             </div>
           </div>
         </div>

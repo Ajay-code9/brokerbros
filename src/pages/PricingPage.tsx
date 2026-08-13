@@ -31,7 +31,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenAccount }) => {
   };
 
   return (
-    <div className="bg-white text-slate-900 font-sans antialiased">
+    <div className="bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
       {/* 1. Premium Hero Section */}
       <PricingHero
         onOpenAccount={onOpenAccount}

@@ -41,7 +41,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onOpenAccount }) => {
             onClick={() => navigate('/')}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <img src="/logo-white.webp" alt="BrokerBros" className="h-9 w-auto object-contain" />
+            <img src="/logo-white.png" alt="BrokerBros" className="h-9 w-auto object-contain" />
           </button>
 
           {/* Right Action: Sign Up Button */}

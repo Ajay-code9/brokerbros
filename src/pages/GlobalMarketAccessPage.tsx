@@ -127,7 +127,7 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
   ];
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-emerald-500 selection:text-white font-sans antialiased">
+    <div className="w-full max-w-full overflow-x-hidden bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 transition-colors duration-300 selection:bg-emerald-500 selection:text-white font-sans antialiased">
       {/* Toast Notification */}
       {downloadToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-slate-950 text-white px-5 py-4 rounded-xl border border-emerald-500/40 shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-200">
@@ -139,25 +139,27 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
         </div>
       )}
 
-      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE (100vh Landing Viewport Fit) */}
+      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE */}
       <section 
-        className="relative text-slate-900 min-h-[calc(100vh-80px)] py-12 lg:py-16 border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
+        className="relative text-slate-900 dark:text-white min-h-[calc(100vh-80px)] py-12 lg:py-16 border-b border-slate-200 dark:border-[#1E293B] overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
         style={{ backgroundImage: "url('/backgroundimage-three.webp')" }}
       >
+        <div className="absolute inset-0 bg-white/40 dark:bg-[#090D14]/85 backdrop-blur-[2px] transition-colors duration-300" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center">
           <div className="max-w-3xl space-y-6 pt-4 sm:pt-6">
             
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-emerald-800 text-xs font-mono font-bold border border-emerald-300 shadow-sm backdrop-blur-md">
-              <Globe className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 dark:bg-slate-900/90 text-emerald-800 dark:text-emerald-400 text-xs font-mono font-bold border border-emerald-300 dark:border-emerald-500/30 shadow-sm backdrop-blur-md">
+              <Globe className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>150+ MARKET CENTERS • 35 COUNTRIES • 26 CURRENCIES</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 font-sans">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-950 dark:text-white font-sans">
               Trade Global Markets <br />
-              <span className="text-emerald-700">From One Unified Account</span>
+              <span className="text-emerald-700 dark:text-emerald-400">From One Unified Account</span>
             </h1>
 
-            <p className="text-slate-900 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-semibold bg-white/60 backdrop-blur-xs p-3.5 rounded-xl border border-white/80 shadow-2xs">
+            <p className="text-slate-900 dark:text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl font-sans font-semibold bg-white/70 dark:bg-slate-900/80 backdrop-blur-xs p-3.5 rounded-xl border border-white/80 dark:border-slate-800 shadow-2xs">
               Access 150+ global exchanges across 35 countries through a single multi-currency account with institutional execution quality.
             </p>
 
@@ -172,9 +174,9 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
 
               <button
                 onClick={handleDownloadBrochure}
-                className="px-5 py-3.5 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-xl border border-slate-300 shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
+                className="px-5 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-semibold rounded-xl border border-slate-300 dark:border-slate-700 shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
               >
-                <Download className="w-4 h-4 text-emerald-600" />
+                <Download className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Download Global Guide</span>
               </button>
             </div>
@@ -182,64 +184,64 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
           </div>
         </div>
 
-        {/* Quick Highlights - Bottom Fold Viewport Alignment */}
+        {/* Quick Highlights */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-8 pb-2">
-          <div className="pt-6 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
-            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-xs font-sans">Exchanges</div>
-              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">150+ Direct Venues</div>
+          <div className="pt-6 border-t border-slate-300/80 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
+            <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">Exchanges</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-extrabold text-sm sm:text-base mt-0.5">150+ Direct Venues</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-xs font-sans">Countries</div>
-              <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">35 Global Nations</div>
+            <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">Countries</div>
+              <div className="text-slate-950 dark:text-white font-extrabold text-sm sm:text-base mt-0.5">35 Global Nations</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-xs font-sans">Currencies</div>
-              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">26 Wallet Currencies</div>
+            <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">Currencies</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-extrabold text-sm sm:text-base mt-0.5">26 Wallet Currencies</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. ONE ACCOUNT. GLOBAL OPPORTUNITIES */}
-      <section className="relative py-8 lg:py-12 bg-slate-50 border-b border-slate-200 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans">
+      <section className="relative py-8 lg:py-12 bg-slate-50/80 dark:bg-[#0c0f17] border-b border-slate-200 dark:border-slate-800/80 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 w-full">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               One Account. Universal Global Access.
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
               Eliminate the friction of opening multiple foreign brokerage accounts. BrokerBros aggregates world financial centers into a single streamlined trading workspace.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs space-y-4 hover:border-emerald-500/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700 font-bold">
-                <Globe2 className="w-6 h-6 text-emerald-600" />
+            <div className="bg-white dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-4 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-bold">
+                <Globe2 className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
               </div>
-              <h3 className="text-xl font-bold font-serif-heading text-slate-900">Unified Multi-Market Access</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold font-serif-heading text-slate-900 dark:text-white">Unified Multi-Market Access</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                 Trade US Tech stocks at 10:00 AM EST, order European dividend Aristocrats at 2:00 PM CET, and hedge Asian index futures overnight — all from a single screen.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs space-y-4 hover:border-emerald-500/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700 font-bold">
-                <Coins className="w-6 h-6 text-emerald-600" />
+            <div className="bg-white dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-4 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-bold">
+                <Coins className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
               </div>
-              <h3 className="text-xl font-bold font-serif-heading text-slate-900">Multi-Currency Wallet</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold font-serif-heading text-slate-900 dark:text-white">Multi-Currency Wallet</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                 Fund your account in USD, EUR, GBP, SGD, or JPY. Hold foreign currencies without forced conversion or convert at tight interbank wholesale rates.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs space-y-4 hover:border-emerald-500/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700 font-bold">
-                <ShieldCheck className="w-6 h-6 text-emerald-600" />
+            <div className="bg-white dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-4 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-bold">
+                <ShieldCheck className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
               </div>
-              <h3 className="text-xl font-bold font-serif-heading text-slate-900">Global Regulatory Protection</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold font-serif-heading text-slate-900 dark:text-white">Global Regulatory Protection</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                 Your international holdings remain fully segregated under SEC Rule 15c3-3 and backed by $30 Million in excess Lloyd's of London account insurance.
               </p>
             </div>
@@ -248,17 +250,17 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 3. GLOBAL MARKETS & EXCHANGES */}
-      <section className="relative py-8 lg:py-12 bg-white border-b border-slate-200 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans">
+      <section className="relative py-8 lg:py-12 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 w-full">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 text-xs font-bold font-mono rounded-md border border-emerald-200">
-              <Building2 className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 text-xs font-bold font-mono rounded-md border border-emerald-200 dark:border-emerald-500/30">
+              <Building2 className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
               150+ CONNECTED EXCHANGE VENUES
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Explore Connected Global Exchanges
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-600 dark:text-slate-300 text-base">
               Direct market access routing to the world's primary liquidity centers.
             </p>
 
@@ -266,28 +268,28 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
             <div className="flex flex-wrap justify-center gap-2 pt-2">
               <button
                 onClick={() => { setSelectedRegion('all'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'all' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'all' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800'
                   }`}
               >
                 All Exchanges (150+)
               </button>
               <button
                 onClick={() => { setSelectedRegion('americas'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'americas' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'americas' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800'
                   }`}
               >
                 Americas (NYSE, NASDAQ, TSX)
               </button>
               <button
                 onClick={() => { setSelectedRegion('emea'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'emea' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'emea' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800'
                   }`}
               >
                 Europe & Middle East (LSE, Euronext)
               </button>
               <button
                 onClick={() => { setSelectedRegion('apac'); setSelectedExchangeIndex(0); }}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'apac' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${selectedRegion === 'apac' ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800'
                   }`}
               >
                 Asia-Pacific (HKEX, JPX, SGX, ASX)
@@ -300,22 +302,22 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
             {filteredExchanges.map((ex, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2 hover:bg-white hover:border-emerald-500 hover:shadow-md transition-all cursor-pointer"
+                className="bg-slate-50 dark:bg-[#121520] p-5 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2 hover:bg-white dark:hover:bg-[#161a28] hover:border-emerald-500 dark:hover:border-emerald-500/60 hover:shadow-md transition-all cursor-pointer"
                 onClick={() => setSelectedExchangeIndex(idx)}
               >
                 <div className="flex justify-between items-center text-xs font-mono">
-                  <span className="font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">{ex.code}</span>
-                  <span className="text-slate-500">{ex.location}</span>
+                  <span className="font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-500/20 px-2 py-0.5 rounded">{ex.code}</span>
+                  <span className="text-slate-500 dark:text-slate-400">{ex.location}</span>
                 </div>
-                <h3 className="text-base font-bold font-serif-heading text-slate-900">{ex.name}</h3>
-                <div className="text-xs font-mono text-slate-600 space-y-1 pt-2 border-t border-slate-200/80">
+                <h3 className="text-base font-bold font-serif-heading text-slate-900 dark:text-white">{ex.name}</h3>
+                <div className="text-xs font-mono text-slate-600 dark:text-slate-400 space-y-1 pt-2 border-t border-slate-200/80 dark:border-slate-800">
                   <div className="flex justify-between">
                     <span>Market Cap:</span>
-                    <strong className="text-slate-900">{ex.marketCap}</strong>
+                    <strong className="text-slate-900 dark:text-white">{ex.marketCap}</strong>
                   </div>
                   <div className="flex justify-between">
                     <span>Trading Hours:</span>
-                    <span className="text-slate-700">{ex.hours}</span>
+                    <span className="text-slate-700 dark:text-slate-300">{ex.hours}</span>
                   </div>
                 </div>
               </div>
@@ -325,14 +327,14 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 4. INVESTMENT PRODUCTS */}
-      <section className="relative py-8 lg:py-12 bg-slate-950 text-white border-b border-slate-800 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans">
+      <section className="relative py-8 lg:py-12 bg-slate-50/90 dark:bg-[#0c0f17] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 w-full">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">FULL ASSET CLASS DIVERSIFICATION</div>
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-white">
+            <div className="text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">FULL ASSET CLASS DIVERSIFICATION</div>
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Complete Global Investment Products
             </h2>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
               Trade equities, fixed income, currencies, and derivatives across major international markets.
             </p>
           </div>
@@ -341,15 +343,15 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
             {investmentProducts.map((prod, idx) => {
               const IconComp = prod.icon;
               return (
-                <div key={idx} className="bg-slate-900/90 p-6 rounded-xl border border-slate-800 space-y-3 hover:border-emerald-500/40 transition-colors">
+                <div key={idx} className="bg-white dark:bg-[#121520] p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-3 hover:border-emerald-500/40 transition-colors shadow-xs">
                   <div className="flex justify-between items-center">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-bold">
                       <IconComp className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">{prod.badge}</span>
+                    <span className="text-[11px] font-mono text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-500/20">{prod.badge}</span>
                   </div>
-                  <h3 className="text-lg font-bold font-serif-heading text-white">{prod.title}</h3>
-                  <p className="text-slate-300 text-xs leading-relaxed">{prod.desc}</p>
+                  <h3 className="text-lg font-bold font-serif-heading text-slate-900 dark:text-white">{prod.title}</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">{prod.desc}</p>
                 </div>
               );
             })}
@@ -358,29 +360,29 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 5. MARKET COVERAGE STATISTICS */}
-      <section className="relative py-8 lg:py-12 bg-white border-b border-slate-200 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans">
+      <section className="relative py-8 lg:py-12 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 min-h-[calc(100vh-80px)] flex items-center overflow-hidden font-sans transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 pb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
             <div>
-              <div className="text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider mb-2">GLOBAL SCALE & CONNECTIVITY</div>
-              <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">Market Coverage In Numbers</h2>
+              <div className="text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider mb-2">GLOBAL SCALE & CONNECTIVITY</div>
+              <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">Market Coverage In Numbers</h2>
             </div>
-            <p className="text-slate-600 text-sm max-w-md">
+            <p className="text-slate-600 dark:text-slate-300 text-sm max-w-md">
               Institutional metrics representing the scope and execution speed of the BrokerBros global mesh.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {coverageStats.map((st, idx) => (
-              <div key={idx} className="bg-slate-50 p-8 rounded-xl border border-slate-200 space-y-3 hover:border-emerald-500/50 transition-colors">
-                <div className="flex justify-between items-center text-xs font-mono text-slate-500">
+              <div key={idx} className="bg-slate-50 dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-3 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors">
+                <div className="flex justify-between items-center text-xs font-mono text-slate-500 dark:text-slate-400">
                   <span>{st.label}</span>
-                  <span className="text-emerald-800 font-bold bg-emerald-100 px-2 py-0.5 rounded">{st.highlight}</span>
+                  <span className="text-emerald-800 dark:text-emerald-400 font-bold bg-emerald-100 dark:bg-emerald-500/20 px-2 py-0.5 rounded">{st.highlight}</span>
                 </div>
-                <div className="text-3xl sm:text-4xl font-serif-heading font-extrabold text-slate-900 tracking-tight pt-1">
+                <div className="text-3xl sm:text-4xl font-serif-heading font-extrabold text-slate-900 dark:text-white tracking-tight pt-1">
                   {st.value}
                 </div>
-                <div className="text-xs font-sans text-slate-600 pt-1 border-t border-slate-200">
+                <div className="text-xs font-sans text-slate-600 dark:text-slate-400 pt-1 border-t border-slate-200 dark:border-slate-800">
                   {st.sub}
                 </div>
               </div>
@@ -390,26 +392,26 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 6. MULTI-CURRENCY TRADING */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-20 bg-slate-50/80 dark:bg-[#0c0f17] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Multi-Currency Wallet & Low-Cost FX
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-600 dark:text-slate-300 text-base">
               Hold cash balances in 26 currencies. Avoid forced conversions and enjoy institutional wholesale exchange rates.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {multiCurrencyFeatures.map((feat, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs space-y-3 hover:border-emerald-500/50 transition-colors">
-                <div className="flex items-center gap-2 text-emerald-700 font-mono text-xs font-bold">
-                  <CheckCircle className="w-4 h-4 text-emerald-600" />
+              <div key={idx} className="bg-white dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-3 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors">
+                <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   <span>WHOLESALE FX FEATURE</span>
                 </div>
-                <h3 className="text-xl font-bold font-serif-heading text-slate-900">{feat.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{feat.desc}</p>
+                <h3 className="text-xl font-bold font-serif-heading text-slate-900 dark:text-white">{feat.title}</h3>
+                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{feat.desc}</p>
               </div>
             ))}
           </div>
@@ -417,14 +419,14 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 7. TRADING AROUND THE CLOCK */}
-      <section className="py-20 bg-slate-950 text-white border-b border-slate-800">
+      <section className="py-20 bg-slate-50/90 dark:bg-[#0c0f17] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">CONTINUOUS 24/5 COVERAGE</div>
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-white">
+            <div className="text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">CONTINUOUS 24/5 COVERAGE</div>
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Follow the Sun: Global Trading Sessions
             </h2>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
               As one market closes, another opens. Trade seamless market transitions around the clock.
             </p>
           </div>
@@ -437,17 +439,17 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
                 <div
                   key={sess.key}
                   onClick={() => setActiveSession(sess.key as 'asia' | 'europe' | 'us')}
-                  className={`p-6 rounded-xl border text-left transition-all cursor-pointer space-y-4 ${isSelected
-                      ? 'bg-slate-900 border-emerald-500 shadow-xl shadow-emerald-500/10 scale-102'
-                      : 'bg-slate-900/50 border-slate-800 hover:border-slate-700'
+                  className={`p-6 rounded-xl border text-left transition-all cursor-pointer space-y-4 shadow-xs ${isSelected
+                      ? 'bg-white dark:bg-slate-900 border-emerald-500 shadow-xl shadow-emerald-500/10 scale-102'
+                      : 'bg-white/70 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}
                 >
                   <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="text-emerald-400 font-bold">{sess.time}</span>
-                    <span className="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20 text-[10px]">{sess.status}</span>
+                    <span className="text-emerald-700 dark:text-emerald-400 font-bold">{sess.time}</span>
+                    <span className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-500/20 text-[10px]">{sess.status}</span>
                   </div>
-                  <h3 className="text-lg font-bold font-serif-heading text-white">{sess.title}</h3>
-                  <div className="text-xs font-mono text-slate-400 border-t border-slate-800/80 pt-3">
+                  <h3 className="text-lg font-bold font-serif-heading text-slate-900 dark:text-white">{sess.title}</h3>
+                  <div className="text-xs font-mono text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800/80 pt-3">
                     Primary Hubs: {sess.hubs}
                   </div>
                 </div>
@@ -458,22 +460,22 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 8. WHY GLOBAL DIVERSIFICATION MATTERS */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-20 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Why Global Diversification Matters
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-600 dark:text-slate-300 text-base">
               The strategic benefits of expanding your portfolio beyond domestic market borders.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {diversificationPillars.map((pil, idx) => (
-              <div key={idx} className="bg-slate-50 p-8 rounded-xl border border-slate-200 space-y-3 hover:border-emerald-500/50 transition-colors">
-                <h3 className="text-xl font-bold font-serif-heading text-slate-900">{pil.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{pil.desc}</p>
+              <div key={idx} className="bg-slate-50 dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-3 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors">
+                <h3 className="text-xl font-bold font-serif-heading text-slate-900 dark:text-white">{pil.title}</h3>
+                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{pil.desc}</p>
               </div>
             ))}
           </div>
@@ -481,13 +483,13 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 9. FAQ */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-20 bg-slate-50/80 dark:bg-[#0c0f17] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Global Market Access FAQ
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-600 dark:text-slate-300 text-base">
               Detailed answers regarding cross-border investing, tax treaties, and currency handling.
             </p>
           </div>
@@ -496,16 +498,16 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
             {faqs.map((faq, idx) => {
               const isOpen = activeFaq === idx;
               return (
-                <div key={idx} className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+                <div key={idx} className="bg-white dark:bg-[#121520] rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs overflow-hidden">
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full p-6 text-left flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors cursor-pointer"
+                    className="w-full p-6 text-left flex justify-between items-center gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors cursor-pointer"
                   >
-                    <span className="font-bold text-slate-900 text-base sm:text-lg font-serif-heading">{faq.q}</span>
-                    {isOpen ? <ChevronUp className="w-5 h-5 text-emerald-600 shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />}
+                    <span className="font-bold text-slate-900 dark:text-white text-base sm:text-lg font-serif-heading">{faq.q}</span>
+                    {isOpen ? <ChevronUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />}
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 font-sans">
+                    <div className="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4 font-sans">
                       {faq.a}
                     </div>
                   )}
@@ -517,7 +519,7 @@ export const GlobalMarketAccessPage: React.FC<GlobalMarketAccessPageProps> = ({ 
       </section>
 
       {/* 10. FINAL CTA */}
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
     </div>
   );
 };

@@ -72,73 +72,70 @@ export const SecuritySection: React.FC<SecuritySectionProps> = ({ onOpenAccount 
             {/* Information Block Content */}
             <div className="relative z-10 space-y-4 text-left">
               <div>
-                <div className="text-[11px] font-mono font-bold text-[#64748B] tracking-wider uppercase">
+                <div className="text-[11px] font-mono font-bold text-[#64748B] dark:text-slate-400 tracking-wider uppercase">
                   GLOBAL REGULATORY COVERAGE
                 </div>
                 <div className="flex items-baseline gap-2 mt-1">
-                  <span className="text-4xl sm:text-5xl font-black text-[#0F172A] font-mono tracking-tight">35+</span>
-                  <span className="text-sm font-semibold text-[#64748B]">Countries & Jurisdictions</span>
+                  <span className="text-4xl sm:text-5xl font-black text-[#0F172A] dark:text-white font-mono tracking-tight">35+</span>
+                  <span className="text-sm font-semibold text-[#64748B] dark:text-slate-400">Countries & Jurisdictions</span>
                 </div>
               </div>
 
-              <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed font-normal border-t border-[#E5E7EB] pt-3.5">
+              <p className="text-[#64748B] dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-normal border-t border-[#E5E7EB] dark:border-[#1E293B] pt-3.5">
                 Pre-configured compliance rules for onshore and offshore brokerage licenses, enabling rapid international market expansion with zero regulatory downtime.
               </p>
             </div>
-
           </div>
 
         </div>
-
-        {/* Security Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* Card 1 */}
-          <div className="bg-white p-8 rounded-2xl border border-[#E5E7EB] space-y-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_45px_rgba(34,197,94,0.10)] hover:border-[#22C55E] hover:bg-[#FCFFFD] -translate-y-0 hover:-translate-y-1 transition-all duration-250 ease-out cursor-pointer group relative overflow-hidden">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold transition-all duration-250 group-hover:bg-[#DCFCE7] group-hover:text-[#22C55E] group-hover:rotate-2">
+          <div className="bg-white dark:bg-[#141C2B] p-8 rounded-2xl border border-[#E5E7EB] dark:border-[#1E293B] space-y-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_45px_rgba(34,197,94,0.10)] hover:border-[#22C55E] dark:hover:border-emerald-500 hover:bg-[#FCFFFD] dark:hover:bg-[#1B2538] -translate-y-0 hover:-translate-y-1 transition-all duration-250 ease-out cursor-pointer group relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold transition-all duration-250 group-hover:bg-[#DCFCE7] dark:group-hover:bg-emerald-500/20 group-hover:text-[#22C55E] group-hover:rotate-2">
               <FileText className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 group-hover:text-slate-950 font-sans transition-colors duration-250">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-slate-950 dark:group-hover:text-white font-sans transition-colors duration-250">
               Automated KYC & Identity Verification Queue
             </h3>
-            <p className="text-xs text-slate-600 leading-relaxed font-sans">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
               AI document verification, passport OCR, and biometric face match supporting 200+ countries with sub-2 minute automated client onboarding approval.
             </p>
-            <div className="relative text-xs font-mono font-bold text-[#22C55E] pt-3.5 border-t border-[#E5E7EB] group-hover:border-emerald-200/80 transition-colors duration-250 overflow-hidden">
+            <div className="relative text-xs font-mono font-bold text-[#22C55E] dark:text-emerald-400 pt-3.5 border-t border-[#E5E7EB] dark:border-[#1E293B] group-hover:border-emerald-200/80 transition-colors duration-250 overflow-hidden">
               <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full bg-[#22C55E] transition-all duration-350 ease-out" />
               Automated KYC Approval: &lt; 2 Minutes
             </div>
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white p-8 rounded-2xl border border-[#E5E7EB] space-y-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_45px_rgba(34,197,94,0.10)] hover:border-[#22C55E] hover:bg-[#FCFFFD] -translate-y-0 hover:-translate-y-1 transition-all duration-250 ease-out cursor-pointer group relative overflow-hidden">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold transition-all duration-250 group-hover:bg-[#DCFCE7] group-hover:text-[#22C55E] group-hover:rotate-2">
+          <div className="bg-white dark:bg-[#141C2B] p-8 rounded-2xl border border-[#E5E7EB] dark:border-[#1E293B] space-y-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_45px_rgba(34,197,94,0.10)] hover:border-[#22C55E] dark:hover:border-emerald-500 hover:bg-[#FCFFFD] dark:hover:bg-[#1B2538] -translate-y-0 hover:-translate-y-1 transition-all duration-250 ease-out cursor-pointer group relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold transition-all duration-250 group-hover:bg-[#DCFCE7] dark:group-hover:bg-emerald-500/20 group-hover:text-[#22C55E] group-hover:rotate-2">
               <Lock className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 group-hover:text-slate-950 font-sans transition-colors duration-250">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-slate-950 dark:group-hover:text-white font-sans transition-colors duration-250">
               Real-Time AML & PEP Sanctions Screening
             </h3>
-            <p className="text-xs text-slate-600 leading-relaxed font-sans">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
               Instant background screening against global sanction lists, OFAC, and PEP databases with automated risk scoring and manager review triggers.
             </p>
-            <div className="relative text-xs font-mono font-bold text-[#22C55E] pt-3.5 border-t border-[#E5E7EB] group-hover:border-emerald-200/80 transition-colors duration-250 overflow-hidden">
+            <div className="relative text-xs font-mono font-bold text-[#22C55E] dark:text-emerald-400 pt-3.5 border-t border-[#E5E7EB] dark:border-[#1E293B] group-hover:border-emerald-200/80 transition-colors duration-250 overflow-hidden">
               <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full bg-[#22C55E] transition-all duration-350 ease-out" />
               Global OFAC & PEP List Auto-Screening
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white p-8 rounded-2xl border border-[#E5E7EB] space-y-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_45px_rgba(34,197,94,0.10)] hover:border-[#22C55E] hover:bg-[#FCFFFD] -translate-y-0 hover:-translate-y-1 transition-all duration-250 ease-out cursor-pointer group relative overflow-hidden">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold transition-all duration-250 group-hover:bg-[#DCFCE7] group-hover:text-[#22C55E] group-hover:rotate-2">
+          <div className="bg-white dark:bg-[#141C2B] p-8 rounded-2xl border border-[#E5E7EB] dark:border-[#1E293B] space-y-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_45px_rgba(34,197,94,0.10)] hover:border-[#22C55E] dark:hover:border-emerald-500 hover:bg-[#FCFFFD] dark:hover:bg-[#1B2538] -translate-y-0 hover:-translate-y-1 transition-all duration-250 ease-out cursor-pointer group relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold transition-all duration-250 group-hover:bg-[#DCFCE7] dark:group-hover:bg-emerald-500/20 group-hover:text-[#22C55E] group-hover:rotate-2">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 group-hover:text-slate-950 font-sans transition-colors duration-250">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-slate-950 dark:group-hover:text-white font-sans transition-colors duration-250">
               Segregated Client Ledger Architecture
             </h3>
-            <p className="text-xs text-slate-600 leading-relaxed font-sans">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
               Automated multi-currency balance isolation at Tier-1 custodian banks, fully segregated from firm operational capital with daily reconciliation logs.
             </p>
-            <div className="relative text-xs font-mono font-bold text-[#22C55E] pt-3.5 border-t border-[#E5E7EB] group-hover:border-emerald-200/80 transition-colors duration-250 overflow-hidden">
+            <div className="relative text-xs font-mono font-bold text-[#22C55E] dark:text-emerald-400 pt-3.5 border-t border-[#E5E7EB] dark:border-[#1E293B] group-hover:border-emerald-200/80 transition-colors duration-250 overflow-hidden">
               <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full bg-[#22C55E] transition-all duration-350 ease-out" />
               100% Segregated Ledger Isolation
             </div>
@@ -147,13 +144,7 @@ export const SecuritySection: React.FC<SecuritySectionProps> = ({ onOpenAccount 
         </div>
 
         {/* Regulatory Badges (Trust Bar) */}
-        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-[#E5E7EB] flex flex-wrap items-center justify-around gap-4 text-slate-600 text-xs font-bold font-mono shadow-[0_4px_16px_rgba(15,23,42,0.03)]">
-          <span className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-transparent hover:border-emerald-300 hover:bg-[#FAFFFB] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
-            <CheckCircle className="w-4 h-4 text-[#22C55E] group-hover:drop-shadow-[0_0_6px_rgba(34,197,94,0.4)] transition-all" /> FCA Framework (UK)
-          </span>
-          <span className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-transparent hover:border-emerald-300 hover:bg-[#FAFFFB] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
-            <CheckCircle className="w-4 h-4 text-[#22C55E] group-hover:drop-shadow-[0_0_6px_rgba(34,197,94,0.4)] transition-all" /> CySEC Ready (EU)
-          </span>
+        <div className="bg-white dark:bg-[#141C2B] p-4 sm:p-5 rounded-2xl border border-[#E5E7EB] dark:border-[#1E293B] flex flex-wrap items-center justify-around gap-4 text-slate-600 dark:text-slate-300 text-xs font-bold font-mono shadow-[0_4px_16px_rgba(15,23,42,0.03)]">
           <span className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-transparent hover:border-emerald-300 hover:bg-[#FAFFFB] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
             <CheckCircle className="w-4 h-4 text-[#22C55E] group-hover:drop-shadow-[0_0_6px_rgba(34,197,94,0.4)] transition-all" /> ASIC Compliant (AU)
           </span>

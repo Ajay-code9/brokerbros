@@ -21,22 +21,23 @@ export const InterestRatesPage: React.FC<InterestRatesPageProps> = ({ onOpenAcco
   };
 
   return (
-    <div className="bg-white text-slate-900 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+    <div className="bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white transition-colors duration-300">
       
       {/* Dedicated Interest Rates & Margin Hero */}
       <section
-        className="relative text-slate-900 min-h-[120vh] border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col"
+        className="relative text-slate-900 dark:text-white min-h-[120vh] border-b border-slate-200 dark:border-[#1E293B] overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col"
         style={{ backgroundImage: "url('/backgroundtwo.webp')" }}
       >
+        <div className="absolute inset-0 bg-white/40 dark:bg-[#090D14]/85 backdrop-blur-[2px] transition-colors duration-300" />
         {/* Main content — vertically centered in the viewport */}
         <div className="flex-1 flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-5 w-full">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 dark:text-white tracking-tight leading-[1.12]">
               High-Yield Cash Sweep & <br />
-              <span className="text-emerald-700">Wholesale Margin Borrowing Rates</span>
+              <span className="text-emerald-700 dark:text-emerald-400">Wholesale Margin Borrowing Rates</span>
             </h1>
 
-            <p className="text-slate-900 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-semibold bg-white/60 backdrop-blur-xs p-3 rounded-xl border border-white/80 shadow-2xs">
+            <p className="text-slate-900 dark:text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-semibold bg-white/60 dark:bg-[#141C2B]/80 backdrop-blur-xs p-3 rounded-xl border border-white/80 dark:border-[#1E293B] shadow-2xs">
               Earn 4.85% APY on uninvested cash automatically swept into FDIC-insured partner bank accounts. Access wholesale margin loans starting at just 5.83% APY with zero borrowing markup.
             </p>
 
@@ -50,7 +51,7 @@ export const InterestRatesPage: React.FC<InterestRatesPageProps> = ({ onOpenAcco
               </button>
               <button
                 onClick={scrollToCalculator}
-                className="px-5 py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-semibold rounded-xl transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm shadow-md"
+                className="px-5 py-3.5 bg-slate-950 dark:bg-[#141C2B] hover:bg-slate-900 dark:hover:bg-[#1B2538] text-white font-semibold rounded-xl border border-slate-800 dark:border-[#1E293B] transition-all flex items-center gap-2 cursor-pointer text-xs sm:text-sm shadow-md"
               >
                 <Zap className="w-4 h-4 text-emerald-400" />
                 <span>Calculate Interest Earnings</span>
@@ -61,18 +62,18 @@ export const InterestRatesPage: React.FC<InterestRatesPageProps> = ({ onOpenAcco
 
         {/* Quick Stat Badges — pinned to bottom, visible only on scroll */}
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pb-8 pt-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto border-t border-white/60 pt-6 text-center">
-            <div className="bg-white/70 backdrop-blur-xs rounded-xl px-4 py-3 border border-white/80 shadow-2xs">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-700 font-mono">4.85% APY</div>
-              <div className="text-xs text-slate-700 font-semibold mt-0.5">Uninvested Cash Interest Rate</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto border-t border-white/60 dark:border-[#1E293B] pt-6 text-center">
+            <div className="bg-white/70 dark:bg-[#141C2B]/90 backdrop-blur-md rounded-xl px-4 py-3 border border-white/80 dark:border-[#1E293B] shadow-2xs">
+              <div className="text-2xl sm:text-3xl font-black text-emerald-700 dark:text-emerald-400 font-mono">4.85% APY</div>
+              <div className="text-xs text-slate-700 dark:text-slate-300 font-semibold mt-0.5">Uninvested Cash Interest Rate</div>
             </div>
-            <div className="bg-white/70 backdrop-blur-xs rounded-xl px-4 py-3 border border-white/80 shadow-2xs">
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 font-mono">5.83% APY</div>
-              <div className="text-xs text-slate-700 font-semibold mt-0.5">Wholesale Margin Loan Rate</div>
+            <div className="bg-white/70 dark:bg-[#141C2B]/90 backdrop-blur-md rounded-xl px-4 py-3 border border-white/80 dark:border-[#1E293B] shadow-2xs">
+              <div className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white font-mono">5.83% APY</div>
+              <div className="text-xs text-slate-700 dark:text-slate-300 font-semibold mt-0.5">Wholesale Margin Loan Rate</div>
             </div>
-            <div className="bg-white/70 backdrop-blur-xs rounded-xl px-4 py-3 border border-white/80 shadow-2xs">
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 font-mono">$2,500,000</div>
-              <div className="text-xs text-slate-700 font-semibold mt-0.5">FDIC Sweep Protection Limit</div>
+            <div className="bg-white/70 dark:bg-[#141C2B]/90 backdrop-blur-md rounded-xl px-4 py-3 border border-white/80 dark:border-[#1E293B] shadow-2xs">
+              <div className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white font-mono">$2,500,000</div>
+              <div className="text-xs text-slate-700 dark:text-slate-300 font-semibold mt-0.5">FDIC Sweep Protection Limit</div>
             </div>
           </div>
         </div>
@@ -84,35 +85,35 @@ export const InterestRatesPage: React.FC<InterestRatesPageProps> = ({ onOpenAcco
       </div>
 
       {/* Custom Interest Rate Highlights Box */}
-      <section className="py-8 bg-slate-50 border-b border-slate-200">
+      <section className="py-8 bg-slate-50/80 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+            <div className="bg-white dark:bg-[#141C2B] p-5 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-2xs space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
                 <Percent className="w-4.5 h-4.5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">Daily Calculation, Monthly Payout</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Daily Calculation, Monthly Payout</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Interest accrues daily on settled uninvested cash balances and is automatically deposited directly into your account on the 1st business day of each month.
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+            <div className="bg-white dark:bg-[#141C2B] p-5 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-2xs space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
                 <ShieldCheck className="w-4.5 h-4.5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">Up to $2.5M FDIC Sweep Protection</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Up to $2.5M FDIC Sweep Protection</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Uninvested cash is automatically swept into a network of FDIC-insured program banks, boosting your standard $250k protection up to $2,500,000 per account.
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+            <div className="bg-white dark:bg-[#141C2B] p-5 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-2xs space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
                 <TrendingUp className="w-4.5 h-4.5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900">Wholesale Margin Loans (5.83% - 6.83%)</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Wholesale Margin Loans (5.83% - 6.83%)</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Borrow against your portfolio at raw benchmark rates. Save over 5.0% compared to traditional retail brokerage margin charges of 11.5% - 13.0% APY.
               </p>
             </div>

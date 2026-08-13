@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAccount, onExplo
 
   return (
     <section
-      className="relative bg-slate-100 text-slate-950 min-h-[460px] sm:min-h-[510px] flex items-center overflow-hidden border-b border-slate-200 font-sans select-none"
+      className="relative bg-slate-100 dark:bg-[#090D14] text-slate-950 dark:text-white min-h-[460px] sm:min-h-[510px] flex items-center overflow-hidden border-b border-slate-200 dark:border-[#1E293B] font-sans select-none transition-colors duration-300"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

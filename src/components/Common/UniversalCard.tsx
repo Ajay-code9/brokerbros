@@ -41,7 +41,7 @@ export const UniversalCard: React.FC<UniversalCardProps> = ({
             ? 'bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white border border-slate-800 shadow-xl hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/15 hover:-translate-y-1.5'
             : isGlass
             ? 'bg-slate-900/90 backdrop-blur-md text-white border border-slate-800 shadow-2xl hover:border-emerald-400/80 hover:shadow-emerald-500/20 hover:-translate-y-1.5'
-            : 'bg-white text-slate-900 border border-slate-200/90 shadow-2xs hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1.5'
+            : 'bg-white dark:bg-[#121520] text-slate-900 dark:text-slate-100 border border-slate-200/90 dark:border-slate-800/80 shadow-2xs hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/15 hover:-translate-y-1.5'
         }
         ${className}
       `}
@@ -63,7 +63,7 @@ export const UniversalCard: React.FC<UniversalCardProps> = ({
                   ${
                     isDark || isGlass
                       ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-slate-950 group-hover:scale-105'
-                      : 'bg-emerald-50 border border-emerald-200/80 text-emerald-700 group-hover:bg-emerald-500 group-hover:text-slate-950 group-hover:border-emerald-400 group-hover:scale-105'
+                      : 'bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200/80 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400 group-hover:bg-emerald-500 group-hover:text-slate-950 group-hover:border-emerald-400 group-hover:scale-105'
                   }
                 `}
               >
@@ -85,7 +85,7 @@ export const UniversalCard: React.FC<UniversalCardProps> = ({
           className={`text-lg sm:text-xl font-bold font-sans tracking-tight transition-colors duration-200 ${
             isDark || isGlass
               ? 'text-white group-hover:text-emerald-400'
-              : 'text-slate-900 group-hover:text-emerald-700'
+              : 'text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400'
           }`}
         >
           {title}
@@ -94,7 +94,7 @@ export const UniversalCard: React.FC<UniversalCardProps> = ({
         {/* Description */}
         <p
           className={`text-xs sm:text-sm leading-relaxed font-sans ${
-            isDark || isGlass ? 'text-slate-300' : 'text-slate-600'
+            isDark || isGlass ? 'text-slate-300' : 'text-slate-600 dark:text-slate-300'
           }`}
         >
           {description}
@@ -105,7 +105,7 @@ export const UniversalCard: React.FC<UniversalCardProps> = ({
       {(footerLeft || footerRight) && (
         <div
           className={`pt-4 mt-4 border-t flex items-center justify-between relative z-10 transition-colors ${
-            isDark || isGlass ? 'border-slate-800/80' : 'border-slate-100'
+            isDark || isGlass ? 'border-slate-800/80' : 'border-slate-100 dark:border-slate-800/80'
           }`}
         >
           {footerLeft && (

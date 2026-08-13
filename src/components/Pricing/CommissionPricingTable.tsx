@@ -128,19 +128,19 @@ export const CommissionPricingTable: React.FC<{ onOpenAccount: () => void }> = (
   const currentAsset = assetClasses.find((a) => a.id === activeTab) || assetClasses[0];
 
   return (
-    <section id="pricing-tables" className="py-8 sm:py-12 bg-slate-50/70 border-b border-slate-200">
+    <section id="pricing-tables" className="py-8 sm:py-12 bg-slate-50/70 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider">
-            <Layers className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-semibold uppercase tracking-wider">
+            <Layers className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>Complete Asset Class Schedule</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-heading font-semibold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-heading font-semibold text-slate-900 dark:text-white tracking-tight">
             Commission & Execution Rates
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-sans">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed font-sans">
             Transparent, low-cost pricing models across all major asset classes with zero hidden ticket surcharges or payment for order flow markups.
           </p>
         </div>
@@ -153,8 +153,8 @@ export const CommissionPricingTable: React.FC<{ onOpenAccount: () => void }> = (
               onClick={() => setActiveTab(ac.id)}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
                 activeTab === ac.id
-                  ? 'bg-slate-950 text-white shadow-md ring-2 ring-emerald-500/30'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-950 shadow-2xs'
+                  ? 'bg-slate-950 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md ring-2 ring-emerald-500/30'
+                  : 'bg-white dark:bg-[#141C2B] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[#1E293B] hover:bg-slate-100 dark:hover:bg-[#1B2538] hover:text-slate-950 dark:hover:text-white shadow-2xs'
               }`}
             >
               {ac.name}
@@ -163,17 +163,17 @@ export const CommissionPricingTable: React.FC<{ onOpenAccount: () => void }> = (
         </div>
 
         {/* Pricing Detail Table & Tier Cards (White Enterprise Theme) */}
-        <div className="bg-white text-slate-900 rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-8 font-sans">
+        <div className="bg-white dark:bg-[#141C2B] text-slate-900 dark:text-white rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm p-6 sm:p-8 space-y-8 font-sans">
           
           {/* Header Row */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-[#1E293B] pb-6">
             <div>
-              <span className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider">{currentAsset.category} PRICING TIER SCHEDULE</span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-serif-heading mt-0.5">{currentAsset.name}</h3>
+              <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">{currentAsset.category} PRICING TIER SCHEDULE</span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-serif-heading mt-0.5">{currentAsset.name}</h3>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-xs text-slate-500 font-medium">Ready to trade?</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Ready to trade?</span>
               <button
                 onClick={onOpenAccount}
                 className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-xs transition-all cursor-pointer flex items-center gap-1.5"
@@ -188,62 +188,62 @@ export const CommissionPricingTable: React.FC<{ onOpenAccount: () => void }> = (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Fixed Tier */}
-            <div className="bg-slate-50/80 p-6 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between">
+            <div className="bg-slate-50/80 dark:bg-[#0E1420] p-6 rounded-xl border border-slate-200 dark:border-[#1E293B] space-y-4 flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="text-xs font-mono font-bold text-slate-500 uppercase">TIER 1 · FIXED RATE</div>
-                <div className="text-xl font-bold text-slate-900">{currentAsset.fixedRate}</div>
-                <p className="text-xs text-slate-600 leading-relaxed">Simple, straightforward execution rate with zero monthly volume minimum required.</p>
+                <div className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase">TIER 1 · FIXED RATE</div>
+                <div className="text-xl font-bold text-slate-900 dark:text-white">{currentAsset.fixedRate}</div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Simple, straightforward execution rate with zero monthly volume minimum required.</p>
               </div>
-              <ul className="space-y-2 pt-4 border-t border-slate-200 text-xs text-slate-700">
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Zero minimum volume requirement</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> All-inclusive simple commission</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Free real-time Level 1 streaming quotes</li>
+              <ul className="space-y-2 pt-4 border-t border-slate-200 dark:border-[#1E293B] text-xs text-slate-700 dark:text-slate-300">
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Zero minimum volume requirement</li>
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> All-inclusive simple commission</li>
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Free real-time Level 1 streaming quotes</li>
               </ul>
             </div>
 
             {/* Pro Tier (Featured) */}
-            <div className="bg-white p-6 rounded-xl border-2 border-emerald-500 shadow-md space-y-4 flex flex-col justify-between relative">
-              <div className="absolute -top-3 right-4 bg-emerald-600 text-white text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full uppercase">
+            <div className="bg-white dark:bg-[#1B2538] p-6 rounded-xl border-2 border-emerald-500 shadow-md space-y-4 flex flex-col justify-between relative">
+              <div className="absolute -top-3 right-4 bg-emerald-600 dark:bg-emerald-500 text-white dark:text-slate-950 text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full uppercase">
                 RECOMMENDED
               </div>
               <div className="space-y-2">
-                <div className="text-xs font-mono font-bold text-emerald-700 uppercase">TIER 2 · PRO TIERED</div>
-                <div className="text-xl font-bold text-emerald-800">{currentAsset.tieredRate}</div>
-                <p className="text-xs text-slate-600 leading-relaxed">Volume-tiered rates that drop automatically as your monthly trading activity scales.</p>
+                <div className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase">TIER 2 · PRO TIERED</div>
+                <div className="text-xl font-bold text-emerald-800 dark:text-emerald-300">{currentAsset.tieredRate}</div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Volume-tiered rates that drop automatically as your monthly trading activity scales.</p>
               </div>
-              <ul className="space-y-2 pt-4 border-t border-slate-100 text-xs text-slate-700">
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Exchange liquidity pass-through rebates</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Min ticket: {currentAsset.minTicket}</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Max cap: {currentAsset.maxCap}</li>
+              <ul className="space-y-2 pt-4 border-t border-slate-100 dark:border-[#1E293B] text-xs text-slate-700 dark:text-slate-300">
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Exchange liquidity pass-through rebates</li>
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Min ticket: {currentAsset.minTicket}</li>
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Max cap: {currentAsset.maxCap}</li>
               </ul>
             </div>
 
             {/* Institutional Tier */}
-            <div className="bg-slate-50/80 p-6 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between">
+            <div className="bg-slate-50/80 dark:bg-[#0E1420] p-6 rounded-xl border border-slate-200 dark:border-[#1E293B] space-y-4 flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="text-xs font-mono font-bold text-slate-500 uppercase">TIER 3 · INSTITUTIONAL PRIME</div>
-                <div className="text-xl font-bold text-slate-900">{currentAsset.instRate}</div>
-                <p className="text-xs text-slate-600 leading-relaxed">Custom FIX 4.4 API connectivity, direct exchange clearing, and dedicated prime broker desk.</p>
+                <div className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase">TIER 3 · INSTITUTIONAL PRIME</div>
+                <div className="text-xl font-bold text-slate-900 dark:text-white">{currentAsset.instRate}</div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Custom FIX 4.4 API connectivity, direct exchange clearing, and dedicated prime broker desk.</p>
               </div>
-              <ul className="space-y-2 pt-4 border-t border-slate-200 text-xs text-slate-700">
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Tailored custom volume schedules</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Dedicated institutional desk contact</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Equinix NY4 / LD4 co-located gateways</li>
+              <ul className="space-y-2 pt-4 border-t border-slate-200 dark:border-[#1E293B] text-xs text-slate-700 dark:text-slate-300">
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Tailored custom volume schedules</li>
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Dedicated institutional desk contact</li>
+                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" /> Equinix NY4 / LD4 co-located gateways</li>
               </ul>
             </div>
 
           </div>
 
           {/* Concrete Execution Example Callout */}
-          <div className="bg-emerald-50/50 p-5 rounded-xl border border-emerald-200/80 space-y-2.5 text-xs">
-            <div className="flex items-center gap-2 text-emerald-900 font-bold font-mono">
-              <Info className="w-4 h-4 shrink-0 text-emerald-700" />
+          <div className="bg-emerald-50/50 dark:bg-emerald-500/10 p-5 rounded-xl border border-emerald-200/80 dark:border-emerald-500/30 space-y-2.5 text-xs">
+            <div className="flex items-center gap-2 text-emerald-900 dark:text-emerald-300 font-bold font-mono">
+              <Info className="w-4 h-4 shrink-0 text-emerald-700 dark:text-emerald-400" />
               <span>REAL-WORLD ORDER COST EXAMPLE:</span>
             </div>
-            <p className="text-slate-700 text-xs leading-relaxed font-sans font-medium">
+            <p className="text-slate-700 dark:text-slate-200 text-xs leading-relaxed font-sans font-medium">
               {currentAsset.example}
             </p>
-            <div className="pt-2 border-t border-emerald-200/60 text-[11px] text-slate-500">
+            <div className="pt-2 border-t border-emerald-200/60 dark:border-emerald-500/20 text-[11px] text-slate-500 dark:text-slate-400">
               * Regulatory Pass-Through: {currentAsset.passThroughFees}
             </div>
           </div>
@@ -251,8 +251,8 @@ export const CommissionPricingTable: React.FC<{ onOpenAccount: () => void }> = (
           {/* Highlights checklist */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
             {currentAsset.highlights.map((h, idx) => (
-              <div key={idx} className="flex items-center gap-2.5 text-xs font-medium text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div key={idx} className="flex items-center gap-2.5 text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-[#0E1420] p-3.5 rounded-xl border border-slate-200/80 dark:border-[#1E293B]">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                 <span>{h}</span>
               </div>
             ))}

@@ -181,7 +181,7 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
   ];
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-emerald-500 selection:text-white font-sans antialiased">
+    <div className="w-full max-w-full overflow-x-hidden bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 transition-colors duration-300 selection:bg-emerald-500 selection:text-white font-sans antialiased">
       {/* Download Toast Notification */}
       {downloadToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-slate-950 text-white px-5 py-4 rounded-xl border border-emerald-500/40 shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-200">
@@ -193,25 +193,27 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
         </div>
       )}
 
-      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE (100vh Landing Viewport Fit) */}
+      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE */}
       <section 
-        className="relative text-slate-900 min-h-[calc(100vh-80px)] py-12 lg:py-16 border-b border-slate-200 overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
+        className="relative text-slate-900 dark:text-white min-h-[calc(100vh-80px)] py-12 lg:py-16 border-b border-slate-200 dark:border-[#1E293B] overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
         style={{ backgroundImage: "url('/backgroundimage-two.webp')" }}
       >
+        <div className="absolute inset-0 bg-white/40 dark:bg-[#090D14]/85 backdrop-blur-[2px] transition-colors duration-300" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center">
           <div className="max-w-3xl space-y-6">
             
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-emerald-800 text-xs font-mono font-bold border border-emerald-300 shadow-sm backdrop-blur-md">
-              <Zap className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 dark:bg-slate-900/90 text-emerald-800 dark:text-emerald-400 text-xs font-mono font-bold border border-emerald-300 dark:border-emerald-500/30 shadow-sm backdrop-blur-md">
+              <Zap className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>SMARTROUTING ENGINE & ZERO PFOF</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-slate-950 font-sans">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-slate-950 dark:text-white font-sans">
               Best Execution & <br />
-              <span className="text-emerald-700">Zero Payment For Order Flow</span>
+              <span className="text-emerald-700 dark:text-emerald-400">Zero Payment For Order Flow</span>
             </h1>
 
-            <p className="text-slate-900 text-sm sm:text-base leading-relaxed max-w-2xl font-sans font-medium bg-white/60 backdrop-blur-xs p-2.5 sm:p-3 rounded-xl border border-white/80 shadow-2xs">
+            <p className="text-slate-900 dark:text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl font-sans font-medium bg-white/70 dark:bg-slate-900/80 backdrop-blur-xs p-2.5 sm:p-3 rounded-xl border border-white/80 dark:border-slate-800 shadow-2xs">
               BrokerBros rejects 100% of PFOF rebates. Our SmartRouting engine scans 150+ lit ECNs, market centers, and dark pools to deliver an average price improvement of $0.024 per share.
             </p>
 
@@ -226,9 +228,9 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
 
               <button
                 onClick={handleDownloadRule605}
-                className="px-5 py-3.5 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-xl border border-slate-300 shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
+                className="px-5 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-semibold rounded-xl border border-slate-300 dark:border-slate-700 shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
               >
-                <Download className="w-4 h-4 text-emerald-600" />
+                <Download className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Download SEC Rule 605 Disclosure</span>
               </button>
             </div>
@@ -236,33 +238,33 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
           </div>
         </div>
 
-        {/* Quick Execution Highlights - Bottom Fold Viewport Alignment */}
+        {/* Quick Execution Highlights */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-12 pb-2">
-          <div className="pt-6 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
-            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-xs font-sans">PFOF Policy</div>
-              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">Zero (100% Rejected)</div>
+          <div className="pt-6 border-t border-slate-300/80 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
+            <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">PFOF Policy</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-extrabold text-sm sm:text-base mt-0.5">Zero (100% Rejected)</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-xs font-sans">Avg Fill Speed</div>
-              <div className="text-slate-950 font-extrabold text-sm sm:text-base mt-0.5">1.2 ms (NY4 Colocated)</div>
+            <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">Avg Fill Speed</div>
+              <div className="text-slate-950 dark:text-white font-extrabold text-sm sm:text-base mt-0.5">1.2 ms (NY4 Colocated)</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-xs font-sans">Price Improvement</div>
-              <div className="text-emerald-700 font-extrabold text-sm sm:text-base mt-0.5">88.4% of Orders</div>
+            <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">Price Improvement</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-extrabold text-sm sm:text-base mt-0.5">88.4% of Orders</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. WHAT IS BEST EXECUTION? */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-20 bg-slate-50/80 dark:bg-[#0c0f17] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               The Five Pillars of Institutional Best Execution
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
               Best Execution is a strict legal and operational standard requiring a broker-dealer to execute client orders at the most favorable terms under prevailing market conditions.
             </p>
           </div>
@@ -271,17 +273,17 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
             {whatIsBestExec.map((item, idx) => {
               const IconComp = item.icon;
               return (
-                <div key={idx} className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs space-y-4 hover:border-emerald-500/50 hover:shadow-md transition-all">
+                <div key={idx} className="bg-white dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-4 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700 font-bold">
-                      <IconComp className="w-6 h-6 text-emerald-600" />
+                    <div className="w-12 h-12 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-bold">
+                      <IconComp className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">
+                    <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-100 dark:border-emerald-500/30">
                       {item.highlight}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold font-serif-heading text-slate-900">{item.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold font-serif-heading text-slate-900 dark:text-white">{item.title}</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -290,87 +292,87 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       </section>
 
       {/* 3. SMARTROUTING TECHNOLOGY */}
-      <section className="py-20 bg-slate-950 text-white border-b border-slate-800">
+      <section className="py-20 bg-slate-50/90 dark:bg-[#0c0f17] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">PROPRIETARY ROUTING ARCHITECTURE</div>
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-white">
+            <div className="text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">PROPRIETARY ROUTING ARCHITECTURE</div>
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               How SmartRouting Scans & Executes Orders
             </h2>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
               Instead of sending your order to a single market maker, SmartRouting searches 150+ venues simultaneously to capture hidden price improvement.
             </p>
           </div>
 
           {/* Interactive Routing Architecture Diagram */}
-          <div className="bg-slate-900/90 rounded-2xl border border-slate-800 p-8 sm:p-10 space-y-8">
+          <div className="bg-white dark:bg-[#121520] rounded-2xl border border-slate-200 dark:border-slate-800 p-8 sm:p-10 space-y-8 shadow-xs">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center text-center font-mono">
 
               {/* Step 1 */}
-              <div className="p-5 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-                <div className="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mx-auto flex items-center justify-center font-bold text-xs">
+              <div className="p-5 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
+                <div className="w-8 h-8 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 mx-auto flex items-center justify-center font-bold text-xs">
                   01
                 </div>
-                <div className="font-bold text-white text-sm">Client Order</div>
-                <div className="text-slate-400 text-xs">1,000 Shares @ MKT</div>
+                <div className="font-bold text-slate-900 dark:text-white text-sm">Client Order</div>
+                <div className="text-slate-600 dark:text-slate-400 text-xs">1,000 Shares @ MKT</div>
               </div>
 
-              <div className="hidden lg:flex justify-center text-emerald-400">
+              <div className="hidden lg:flex justify-center text-emerald-600 dark:text-emerald-400">
                 <ArrowRight className="w-6 h-6 animate-pulse" />
               </div>
 
               {/* Step 2 */}
-              <div className="p-5 bg-emerald-950/60 rounded-xl border border-emerald-500/60 space-y-2 shadow-lg shadow-emerald-500/10">
-                <div className="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 mx-auto flex items-center justify-center font-extrabold text-xs">
+              <div className="p-5 bg-emerald-50 dark:bg-emerald-950/40 rounded-xl border border-emerald-300 dark:border-emerald-500/60 space-y-2 shadow-lg shadow-emerald-500/10">
+                <div className="w-8 h-8 rounded-full bg-emerald-600 dark:bg-emerald-500 text-white dark:text-slate-950 mx-auto flex items-center justify-center font-extrabold text-xs">
                   02
                 </div>
-                <div className="font-bold text-emerald-300 text-sm">SmartRouting Engine</div>
-                <div className="text-slate-300 text-xs">Microsecond Liquidity Scan</div>
+                <div className="font-bold text-emerald-900 dark:text-emerald-300 text-sm">SmartRouting Engine</div>
+                <div className="text-emerald-700 dark:text-slate-300 text-xs">Microsecond Liquidity Scan</div>
               </div>
 
-              <div className="hidden lg:flex justify-center text-emerald-400">
+              <div className="hidden lg:flex justify-center text-emerald-600 dark:text-emerald-400">
                 <ArrowRight className="w-6 h-6 animate-pulse" />
               </div>
 
               {/* Step 3 */}
-              <div className="p-5 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-                <div className="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mx-auto flex items-center justify-center font-bold text-xs">
+              <div className="p-5 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
+                <div className="w-8 h-8 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 mx-auto flex items-center justify-center font-bold text-xs">
                   03
                 </div>
-                <div className="font-bold text-white text-sm">Optimal Fill</div>
-                <div className="text-emerald-400 text-xs font-bold">+$0.035/sh Price Saved</div>
+                <div className="font-bold text-slate-900 dark:text-white text-sm">Optimal Fill</div>
+                <div className="text-emerald-700 dark:text-emerald-400 text-xs font-bold">+$0.035/sh Price Saved</div>
               </div>
 
             </div>
 
             {/* Venue Breakdown Grid */}
-            <div className="pt-6 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
-              <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-                <div className="text-emerald-400 font-bold flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <div className="pt-6 border-t border-slate-100 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
+              <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
+                <div className="text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400"></span>
                   Lit Exchanges (NYSE, NASDAQ, CBOE)
                 </div>
-                <p className="text-slate-400 leading-relaxed font-sans text-xs">
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed font-sans text-xs">
                   Direct connection to primary exchange order books ensuring access to public top-of-book displayed liquidity.
                 </p>
               </div>
 
-              <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-                <div className="text-cyan-400 font-bold flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+              <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
+                <div className="text-cyan-700 dark:text-cyan-400 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400"></span>
                   Non-Displayed Dark Pools
                 </div>
-                <p className="text-slate-400 leading-relaxed font-sans text-xs">
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed font-sans text-xs">
                   Queries institutional dark pools for non-displayed midpoint orders without signaling intent to the open market.
                 </p>
               </div>
 
-              <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-                <div className="text-indigo-400 font-bold flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-indigo-400"></span>
+              <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
+                <div className="text-indigo-700 dark:text-indigo-400 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
                   Electronic Communication Networks (ECNs)
                 </div>
-                <p className="text-slate-400 leading-relaxed font-sans text-xs">
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed font-sans text-xs">
                   Accesses institutional crossing networks and IEX speed-bump protection against predatory high-frequency trading.
                 </p>
               </div>
@@ -380,44 +382,44 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       </section>
 
       {/* 4. WHY ZERO PFOF MATTERS */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-20 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 text-xs font-bold font-mono rounded-md border border-emerald-200">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 text-xs font-bold font-mono rounded-md border border-emerald-200 dark:border-emerald-500/30">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
               TRANSPARENT EXECUTION COMPARISON
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               BrokerBros Zero PFOF vs Industry Models
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
               When a broker takes PFOF, they compromise execution quality for kickbacks. See how BrokerBros aligns 100% with trader interests.
             </p>
           </div>
 
           {/* Detailed Comparison Table */}
-          <div className="overflow-x-auto bg-white rounded-xl border border-slate-200 shadow-xs">
+          <div className="overflow-x-auto bg-white dark:bg-[#121520] rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs">
             <table className="w-full text-left text-sm">
-              <thead className="bg-slate-100 text-slate-700 text-xs uppercase font-mono border-b border-slate-200">
+              <thead className="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs uppercase font-mono border-b border-slate-200 dark:border-slate-800">
                 <tr>
                   <th className="py-4 px-6 font-bold">Execution Metric</th>
-                  <th className="py-4 px-6 font-bold text-emerald-800 bg-emerald-50/80">BrokerBros (Zero PFOF)</th>
+                  <th className="py-4 px-6 font-bold text-emerald-800 dark:text-emerald-400 bg-emerald-50/80 dark:bg-emerald-500/10">BrokerBros (Zero PFOF)</th>
                   <th className="py-4 px-6 font-bold">Standard Retail PFOF App</th>
                   <th className="py-4 px-6 font-bold">B-Book Internalizer</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 font-sans">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 font-sans">
                 {pfofComparison.map((row, idx) => (
-                  <tr key={idx} className={row.isHighlight ? "bg-emerald-50/40 font-semibold" : "hover:bg-slate-50 text-slate-600"}>
-                    <td className="py-4 px-6 font-bold text-slate-900">{row.feature}</td>
-                    <td className="py-4 px-6 font-mono font-bold text-emerald-900 bg-emerald-50/30">
+                  <tr key={idx} className={row.isHighlight ? "bg-emerald-50/40 dark:bg-emerald-500/10 font-semibold" : "hover:bg-slate-50 dark:hover:bg-slate-800/40 text-slate-600 dark:text-slate-300"}>
+                    <td className="py-4 px-6 font-bold text-slate-900 dark:text-white">{row.feature}</td>
+                    <td className="py-4 px-6 font-mono font-bold text-emerald-900 dark:text-emerald-300 bg-emerald-50/30 dark:bg-emerald-500/5">
                       <span className="flex items-center gap-1.5">
-                        <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                        <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                         {row.brokerbros}
                       </span>
                     </td>
-                    <td className="py-4 px-6 font-mono text-xs text-slate-600">{row.retailApp}</td>
-                    <td className="py-4 px-6 font-mono text-xs text-slate-500">{row.internalizer}</td>
+                    <td className="py-4 px-6 font-mono text-xs text-slate-600 dark:text-slate-400">{row.retailApp}</td>
+                    <td className="py-4 px-6 font-mono text-xs text-slate-500 dark:text-slate-400">{row.internalizer}</td>
                   </tr>
                 ))}
               </tbody>
@@ -427,29 +429,29 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       </section>
 
       {/* 5. EXECUTION PERFORMANCE STATISTICS */}
-      <section className="py-20 bg-slate-950 text-white border-b border-slate-800">
+      <section className="py-20 bg-slate-50/90 dark:bg-[#0c0f17] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
             <div>
-              <div className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider mb-2">VERIFIED PERFORMANCE METRICS</div>
-              <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-white">Execution Metrics At A Glance</h2>
+              <div className="text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider mb-2">VERIFIED PERFORMANCE METRICS</div>
+              <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">Execution Metrics At A Glance</h2>
             </div>
-            <p className="text-slate-400 text-sm max-w-md">
+            <p className="text-slate-600 dark:text-slate-400 text-sm max-w-md">
               Audited quarterly figures confirming our speed, price improvement, and venue connectivity.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {executionStats.map((st, idx) => (
-              <div key={idx} className="bg-slate-900/90 p-8 rounded-xl border border-slate-800 space-y-3 relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
-                <div className="flex justify-between items-center text-xs font-mono text-slate-400">
+              <div key={idx} className="bg-white dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-3 relative overflow-hidden group hover:border-emerald-500/40 transition-colors shadow-xs">
+                <div className="flex justify-between items-center text-xs font-mono text-slate-600 dark:text-slate-400">
                   <span>{st.label}</span>
-                  <span className="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">{st.highlight}</span>
+                  <span className="text-emerald-800 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-500/20">{st.highlight}</span>
                 </div>
-                <div className="text-3xl sm:text-4xl font-serif-heading font-extrabold text-white tracking-tight pt-1">
+                <div className="text-3xl sm:text-4xl font-serif-heading font-extrabold text-slate-900 dark:text-white tracking-tight pt-1">
                   {st.value}
                 </div>
-                <div className="text-xs font-sans text-slate-400 pt-1 border-t border-slate-800/80">
+                <div className="text-xs font-sans text-slate-600 dark:text-slate-400 pt-1 border-t border-slate-100 dark:border-slate-800/80">
                   {st.sub}
                 </div>
               </div>
@@ -459,25 +461,25 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       </section>
 
       {/* 6. TECHNOLOGY INFRASTRUCTURE */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-20 bg-slate-50/80 dark:bg-[#0c0f17] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Low-Latency Institutional Infrastructure
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-600 dark:text-slate-300 text-base">
               Engineered specifically for microsecond processing speeds and high-volume institutional order flows.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {techPillars.map((item, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs space-y-3 hover:border-emerald-500/50 transition-colors">
-                <span className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-100">
+              <div key={idx} className="bg-white dark:bg-[#121520] p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-3 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors">
+                <span className="text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-100 dark:border-emerald-500/30">
                   {item.tag}
                 </span>
-                <h3 className="text-xl font-bold font-serif-heading text-slate-900 pt-2">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold font-serif-heading text-slate-900 dark:text-white pt-2">{item.title}</h3>
+                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -485,9 +487,9 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       </section>
 
       {/* 7. BEST EXECUTION POLICY */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-20 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="bg-slate-950 text-white rounded-2xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="bg-slate-950 dark:bg-[#121520] text-white rounded-2xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
             <div className="lg:col-span-8 space-y-4">
               <div className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">REGULATORY DISCLOSURES</div>
@@ -522,13 +524,13 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       </section>
 
       {/* 8. FAQ */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-20 bg-slate-50/80 dark:bg-[#0c0f17] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-serif-heading font-semibold text-slate-900 dark:text-white">
               Execution & Routing FAQ
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-600 dark:text-slate-300 text-base">
               Detailed answers regarding SmartRouting, NBBO compliance, and PFOF policy.
             </p>
           </div>
@@ -537,16 +539,16 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
             {faqs.map((faq, idx) => {
               const isOpen = activeFaq === idx;
               return (
-                <div key={idx} className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+                <div key={idx} className="bg-white dark:bg-[#121520] rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs overflow-hidden">
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full p-6 text-left flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors cursor-pointer"
+                    className="w-full p-6 text-left flex justify-between items-center gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors cursor-pointer"
                   >
-                    <span className="font-bold text-slate-900 text-base sm:text-lg font-serif-heading">{faq.q}</span>
-                    {isOpen ? <ChevronUp className="w-5 h-5 text-emerald-600 shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />}
+                    <span className="font-bold text-slate-900 dark:text-white text-base sm:text-lg font-serif-heading">{faq.q}</span>
+                    {isOpen ? <ChevronUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />}
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 font-sans">
+                    <div className="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4 font-sans">
                       {faq.a}
                     </div>
                   )}
@@ -558,7 +560,7 @@ export const BestExecutionPage: React.FC<BestExecutionPageProps> = ({ onOpenAcco
       </section>
 
       {/* 9. FINAL CTA */}
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
     </div>
   );
 };

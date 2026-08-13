@@ -27,23 +27,23 @@ export const InteractivePricingCalculator: React.FC<{ onOpenAccount: () => void 
   const totalAnnualAdvantage = commissionSavings + cashYieldAdvantage + marginSavings;
 
   return (
-    <section id="pricing-calculator" className="relative py-6 lg:py-10 bg-slate-50/90 border-b border-slate-200 text-slate-900 font-sans overflow-hidden">
+    <section id="pricing-calculator" className="relative py-6 lg:py-10 bg-slate-50/90 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B] text-slate-900 dark:text-white font-sans overflow-hidden transition-colors duration-300">
       
       {/* Background Soft Glow */}
-      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-emerald-100/40 dark:bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 relative z-10 font-sans w-full">
         
         {/* Section Header - Compact */}
         <div className="text-center max-w-2xl mx-auto space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-mono font-bold uppercase tracking-wider">
-            <Calculator className="w-3 h-3 text-emerald-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-[11px] font-mono font-bold uppercase tracking-wider">
+            <Calculator className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
             <span>INTERACTIVE SAVINGS & YIELD ESTIMATOR</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950 font-sans">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white font-sans">
             Calculate Your Total Annual Savings
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans max-w-xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-sans max-w-xl mx-auto">
             Adjust your monthly trading volume, idle portfolio cash, and margin balance to estimate your savings.
           </p>
         </div>
@@ -52,95 +52,73 @@ export const InteractivePricingCalculator: React.FC<{ onOpenAccount: () => void 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-6xl mx-auto">
           
           {/* Left Column: Sliders */}
-          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-5 shadow-md space-y-4 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white dark:bg-[#141C2B] rounded-2xl border border-slate-200 dark:border-[#1E293B] p-5 shadow-md space-y-4 flex flex-col justify-between">
             <div className="space-y-4">
               
               {/* Slider 1: Monthly Trades */}
               <div className="space-y-1">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-700 font-bold uppercase font-mono text-[11px]">1. Monthly Trade Volume</span>
-                  <span className="text-emerald-700 font-black font-mono text-sm">{tradesPerMonth} trades / mo</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-300">Monthly Trade Volume:</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">{tradesPerMonth} trades / month</span>
                 </div>
                 <input
                   type="range"
-                  min={0}
-                  max={200}
-                  step={5}
+                  min="5"
+                  max="200"
+                  step="5"
                   value={tradesPerMonth}
                   onChange={(e) => setTradesPerMonth(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-200 dark:bg-[#1E293B] rounded-lg appearance-none cursor-pointer accent-emerald-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-                  <span>0 trades</span>
-                  <span>100 trades</span>
-                  <span>200+ trades</span>
-                </div>
               </div>
 
-              {/* Slider 2: Average Order Size */}
+              {/* Slider 2: Average Order Value */}
               <div className="space-y-1">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-700 font-bold uppercase font-mono text-[11px]">2. Average Trade Order Size</span>
-                  <span className="text-emerald-700 font-black font-mono text-sm">${avgOrderSize.toLocaleString()}</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-300">Average Trade Order Value:</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">${avgOrderSize.toLocaleString()}</span>
                 </div>
                 <input
                   type="range"
-                  min={1000}
-                  max={100000}
-                  step={1000}
+                  min="2000"
+                  max="100000"
+                  step="2000"
                   value={avgOrderSize}
                   onChange={(e) => setAvgOrderSize(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-200 dark:bg-[#1E293B] rounded-lg appearance-none cursor-pointer accent-emerald-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-                  <span>$1,000</span>
-                  <span>$50,000</span>
-                  <span>$100,000</span>
-                </div>
               </div>
 
-              {/* Slider 3: Uninvested Idle Cash */}
+              {/* Slider 3: Uninvested Cash */}
               <div className="space-y-1">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-700 font-bold uppercase font-mono text-[11px]">3. Uninvested Idle USD Cash</span>
-                  <span className="text-emerald-700 font-black font-mono text-sm">${idleCash.toLocaleString()}</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-300">Uninvested Cash Balance (4.85% APY):</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">${idleCash.toLocaleString()}</span>
                 </div>
                 <input
                   type="range"
-                  min={0}
-                  max={500000}
-                  step={5000}
+                  min="5000"
+                  max="500000"
+                  step="5000"
                   value={idleCash}
                   onChange={(e) => setIdleCash(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-200 dark:bg-[#1E293B] rounded-lg appearance-none cursor-pointer accent-emerald-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-                  <span>$0</span>
-                  <span>$250,000</span>
-                  <span>$500,000</span>
-                </div>
               </div>
 
-              {/* Slider 4: Margin Loan Balance */}
+              {/* Slider 4: Margin Borrow Balance */}
               <div className="space-y-1">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-700 font-bold uppercase font-mono text-[11px]">4. Margin Loan Balance</span>
-                  <span className="text-emerald-700 font-black font-mono text-sm">${marginLoan.toLocaleString()}</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-300">Margin Borrow Balance (5.83% APY):</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">${marginLoan.toLocaleString()}</span>
                 </div>
                 <input
                   type="range"
-                  min={0}
-                  max={250000}
-                  step={5000}
+                  min="0"
+                  max="300000"
+                  step="5000"
                   value={marginLoan}
-                  onChange={(e) => setMarginLoan(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-                  <span>$0</span>
-                  <span>$100,000</span>
-                  <span>$250,000</span>
-                </div>
               </div>
 
             </div>

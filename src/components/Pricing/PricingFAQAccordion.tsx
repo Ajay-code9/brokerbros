@@ -70,19 +70,19 @@ export const PricingFAQAccordion: React.FC = () => {
     : faqs.filter(f => f.category === activeCategory);
 
   return (
-    <section className="py-8 sm:py-12 bg-white border-b border-slate-200 font-sans">
+    <section className="py-8 sm:py-12 bg-white dark:bg-[#090D14] border-b border-slate-200 dark:border-[#1E293B] font-sans transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
         {/* Header */}
         <div className="text-center space-y-1.5 max-w-xl mx-auto">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-[11px] font-mono font-semibold uppercase tracking-wider">
-            <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-slate-100 dark:bg-[#141C2B] border border-slate-200 dark:border-[#1E293B] text-slate-800 dark:text-slate-200 text-[11px] font-mono font-semibold uppercase tracking-wider">
+            <HelpCircle className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>Got Questions?</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white tracking-tight font-sans">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-sans">
             Everything you need to know about our commission schedules, cash yield accrual, and fee guarantee.
           </p>
         </div>
@@ -95,8 +95,8 @@ export const PricingFAQAccordion: React.FC = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-slate-950 text-white shadow-sm'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  ? 'bg-slate-950 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-sm'
+                  : 'bg-slate-100 dark:bg-[#141C2B] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[#1E293B] hover:bg-slate-200 dark:hover:bg-[#1B2538]'
               }`}
             >
               {cat}
@@ -113,25 +113,25 @@ export const PricingFAQAccordion: React.FC = () => {
                 key={faq.id}
                 className={`rounded-xl border transition-all overflow-hidden ${
                   isOpen
-                    ? 'bg-white border-emerald-500/80 shadow-md ring-1 ring-emerald-500/20'
-                    : 'bg-slate-50/70 border-slate-200/90 hover:bg-white hover:border-slate-300'
+                    ? 'bg-white dark:bg-[#141C2B] border-emerald-500/80 dark:border-emerald-500 shadow-md ring-1 ring-emerald-500/20'
+                    : 'bg-slate-50/70 dark:bg-[#141C2B]/60 border-slate-200/90 dark:border-[#1E293B] hover:bg-white dark:hover:bg-[#141C2B]'
                 }`}
               >
                 <button
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
-                  className="w-full text-left p-4 flex items-center justify-between gap-3 font-sans font-bold text-slate-950 text-xs sm:text-sm cursor-pointer hover:text-emerald-700 transition-colors"
+                  className="w-full text-left p-4 flex items-center justify-between gap-3 font-sans font-bold text-slate-950 dark:text-white text-xs sm:text-sm cursor-pointer hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                 >
                   <span className="flex items-center gap-2.5">
-                    <span className="text-[10px] font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-200/80 px-2 py-0.5 rounded-md shrink-0">
+                    <span className="text-[10px] font-mono font-bold bg-emerald-50 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-500/30 px-2 py-0.5 rounded-md shrink-0">
                       {faq.category}
                     </span>
                     <span>{faq.question}</span>
                   </span>
-                  <ChevronDown className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-600' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-600 dark:text-emerald-400' : ''}`} />
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 pb-4 text-slate-600 text-xs sm:text-sm leading-relaxed font-sans border-t border-slate-100 pt-3">
+                  <div className="px-4 pb-4 text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-sans border-t border-slate-100 dark:border-[#1E293B] pt-3">
                     {faq.answer}
                   </div>
                 )}

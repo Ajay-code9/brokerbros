@@ -1200,7 +1200,7 @@ export const FuturesOptionsPage: React.FC<FuturesOptionsPageProps> = ({ onOpenAc
       </section>
 
       {/* 12. FINAL CTA SECTION */}
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
 
     </div>
   );

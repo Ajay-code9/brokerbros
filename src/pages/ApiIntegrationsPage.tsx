@@ -57,7 +57,7 @@ print(f"Order Executed ID: {order.id}")`}
         </div>
       </section>
 
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
     </div>
   );
 };

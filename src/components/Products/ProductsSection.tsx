@@ -192,22 +192,22 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onOpenAccount 
   const activeTab = B2B_MODULE_TABS.find(t => t.id === activeTabId) || B2B_MODULE_TABS[0];
 
   return (
-    <section id="products" className="py-14 sm:py-20 bg-white text-slate-900 border-b border-slate-200 font-sans select-none">
+    <section id="products" className="py-14 sm:py-20 bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-[#1E293B] font-sans select-none transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Section Header - Clean Enterprise Style */}
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 dark:text-white tracking-tight font-sans">
             Explore Our 14 Modular Infrastructure Solutions
           </h2>
 
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium font-sans">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium font-sans">
             Select a software module below to view enterprise capabilities, API specifications, and deployment workflows.
           </p>
         </div>
 
         {/* B2B Solution Module Filter Tabs Bar */}
-        <div className="bg-slate-100 p-1.5 border border-slate-200 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1">
+        <div className="bg-slate-100 dark:bg-[#0E1420] p-1.5 border border-slate-200 dark:border-[#1E293B] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1">
           {B2B_MODULE_TABS.map((tab) => {
             const isActive = tab.id === activeTabId;
             const IconComp = tab.icon;
@@ -218,12 +218,12 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onOpenAccount 
                 onClick={() => setActiveTabId(tab.id)}
                 className={`py-3 px-3 transition-all flex items-center justify-center gap-2 text-center cursor-pointer font-sans ${
                   isActive
-                    ? 'bg-white text-slate-950 border border-slate-300 shadow-xs'
-                    : 'bg-transparent text-slate-600 hover:text-slate-950 hover:bg-white/60'
+                    ? 'bg-white dark:bg-[#141C2B] text-slate-950 dark:text-white border border-slate-300 dark:border-[#1E293B] shadow-xs'
+                    : 'bg-transparent text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white hover:bg-white/60 dark:hover:bg-[#141C2B]/60'
                 }`}
               >
-                <IconComp className={`w-4 h-4 shrink-0 ${isActive ? 'text-emerald-600' : 'text-slate-500'}`} />
-                <span className={`text-xs tracking-tight ${isActive ? 'font-extrabold text-slate-950' : 'font-semibold text-slate-700'}`}>
+                <IconComp className={`w-4 h-4 shrink-0 ${isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500'}`} />
+                <span className={`text-xs tracking-tight ${isActive ? 'font-extrabold text-slate-950 dark:text-white' : 'font-semibold text-slate-700 dark:text-slate-300'}`}>
                   {tab.name}
                 </span>
               </button>
@@ -232,7 +232,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onOpenAccount 
         </div>
 
         {/* 2-Column Content Showcase Box */}
-        <div className="bg-slate-50 border border-slate-200 p-6 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="bg-slate-50 dark:bg-[#0E1420] border border-slate-200 dark:border-[#1E293B] p-6 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column (lg:col-span-7): Module Specifications & Features */}
           <div className="lg:col-span-7 space-y-6">
@@ -247,30 +247,30 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ onOpenAccount 
               >
                 {/* Module Header */}
                 <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 tracking-tight font-sans">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 dark:text-white tracking-tight font-sans">
                     {activeTab.tagline}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium font-sans">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium font-sans">
                     {activeTab.description}
                   </p>
                 </div>
 
                 {/* Metric Badges Row */}
-                <div className="grid grid-cols-2 gap-4 bg-white p-4 border border-slate-200">
+                <div className="grid grid-cols-2 gap-4 bg-white dark:bg-[#141C2B] p-4 border border-slate-200 dark:border-[#1E293B]">
                   <div>
-                    <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">ESTIMATED DEPLOYMENT</div>
-                    <div className="text-sm font-extrabold font-sans text-slate-950 mt-0.5">{activeTab.deploymentTime}</div>
+                    <div className="text-[10px] font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">ESTIMATED DEPLOYMENT</div>
+                    <div className="text-sm font-extrabold font-sans text-slate-950 dark:text-white mt-0.5">{activeTab.deploymentTime}</div>
                   </div>
                   <div>
-                    <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">ENTERPRISE PERFORMANCE</div>
-                    <div className="text-sm font-extrabold font-sans text-emerald-700 mt-0.5">{activeTab.slaMetric}</div>
+                    <div className="text-[10px] font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">ENTERPRISE PERFORMANCE</div>
+                    <div className="text-sm font-extrabold font-sans text-emerald-700 dark:text-emerald-400 mt-0.5">{activeTab.slaMetric}</div>
                   </div>
                 </div>
 
                 {/* Feature Checklist */}
                 <div className="space-y-2.5">
                   {activeTab.highlights.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-slate-800 font-medium font-sans">
+                    <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 font-medium font-sans">
                       <div className="w-4 h-4 bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3 h-3 stroke-[3]" />
                       </div>

@@ -113,19 +113,19 @@ export const OtherFeesAccordionSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-24 bg-slate-50/80 border-b border-slate-200 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section className="py-16 sm:py-20 bg-slate-50/70 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B] font-sans transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200 border border-slate-300 text-slate-800 text-xs font-semibold uppercase tracking-wider">
-            <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200 dark:bg-[#141C2B] border border-slate-300 dark:border-[#1E293B] text-slate-800 dark:text-slate-200 text-xs font-semibold uppercase tracking-wider">
+            <DollarSign className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>Comprehensive Fee Transparency</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-heading font-semibold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-heading font-semibold text-slate-900 dark:text-white tracking-tight">
             Other Fees & Service Charges
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
             No fine print, no hidden surcharges. Expand any service category below to view our complete itemized operational fee schedule.
           </p>
         </div>
@@ -139,33 +139,33 @@ export const OtherFeesAccordionSection: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden transition-all"
+                className="bg-white dark:bg-[#141C2B] text-slate-900 dark:text-white rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-xs overflow-hidden transition-all"
               >
                 {/* Header Toggle */}
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/60 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/60 dark:hover:bg-[#1B2538] transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center shrink-0">
                       <IconComp className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
-                        <span className="hidden sm:inline-block text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                        <h3 className="text-base font-bold text-slate-900 dark:text-white">{item.title}</h3>
+                        <span className="hidden sm:inline-block text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-500/30">
                           {item.badge}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-500 font-medium mt-0.5">{item.subtitle}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-0.5">{item.subtitle}</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="sm:hidden text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
+                    <span className="sm:hidden text-[10px] font-mono font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/20 px-2 py-0.5 rounded">
                       {item.badge}
                     </span>
-                    <div className={`w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 transition-transform duration-200 ${isOpen ? 'rotate-180 bg-slate-200 text-slate-900' : ''}`}>
+                    <div className={`w-8 h-8 rounded-lg bg-slate-100 dark:bg-[#0E1420] flex items-center justify-center text-slate-600 dark:text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180 bg-slate-200 dark:bg-[#1E293B] text-slate-900 dark:text-white' : ''}`}>
                       <ChevronDown className="w-4 h-4" />
                     </div>
                   </div>
@@ -173,19 +173,19 @@ export const OtherFeesAccordionSection: React.FC = () => {
 
                 {/* Expanded Details Body */}
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 border-t border-slate-100 space-y-4 bg-slate-50/40">
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                  <div className="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-[#1E293B] space-y-4 bg-slate-50/40 dark:bg-[#0E1420]/50">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                       {item.summaryText}
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                       {item.details.map((d, dIdx) => (
-                        <div key={dIdx} className="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-2xs space-y-1">
+                        <div key={dIdx} className="bg-white dark:bg-[#141C2B] p-3.5 rounded-xl border border-slate-200/80 dark:border-[#1E293B] shadow-2xs space-y-1">
                           <div className="flex justify-between items-center">
-                            <span className="text-xs font-bold text-slate-900">{d.label}</span>
-                            <span className="text-xs font-mono font-bold text-emerald-700">{d.value}</span>
+                            <span className="text-xs font-bold text-slate-900 dark:text-white">{d.label}</span>
+                            <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">{d.value}</span>
                           </div>
-                          <p className="text-[11px] text-slate-500">{d.note}</p>
+                          <p className="text-[11px] text-slate-500 dark:text-slate-400">{d.note}</p>
                         </div>
                       ))}
                     </div>

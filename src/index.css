@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
@@ -28,6 +29,13 @@
     scroll-behavior: smooth;
   }
 
+  html.dark {
+    --color-heading: #f8fafc;
+    --color-paragraph: #94a3b8;
+    --color-muted: #64748b;
+    color-scheme: dark;
+  }
+
   body {
     font-family: var(--font-sans);
     font-weight: 400;
@@ -35,6 +43,12 @@
     line-height: 1.7;
     color: #4B5563;
     background-color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
+    color: #cbd5e1;
+    background-color: #0a0a0a;
   }
 
   /* Type Scale System */

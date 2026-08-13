@@ -30,7 +30,7 @@ export const GlobalMapSection: React.FC<GlobalMapSectionProps> = ({ onOpenAccoun
   const [selectedMarker, setSelectedMarker] = useState<LocationMarker>(MARKERS[0]);
 
   return (
-    <section id="global-map" className="py-16 sm:py-20 bg-white border-b border-gray-200 relative overflow-hidden font-sans">
+    <section id="global-map" className="py-16 sm:py-20 bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 border-b border-gray-200 dark:border-[#1E293B] relative overflow-hidden font-sans transition-colors duration-300">
 
       {/* BACKGROUND: Subtle dot grid, soft radial green gradients, <6% opacity map watermark */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -63,41 +63,41 @@ export const GlobalMapSection: React.FC<GlobalMapSectionProps> = ({ onOpenAccoun
 
             {/* Global Exchange Access Badge */}
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200/80 shadow-2xs">
-                <Globe className="w-3.5 h-3.5 text-emerald-600" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold border border-emerald-200/80 dark:border-emerald-500/30 shadow-2xs">
+                <Globe className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                 <span>GLOBAL LIQUIDITY & MULTI-CURRENCY ROUTING</span>
               </div>
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight text-[#0F172A] font-sans leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight text-[#0F172A] dark:text-white font-sans leading-[1.15]">
               Connect Your Brokerage to Global Multi-Asset Liquidity
             </h2>
 
             {/* Description */}
-            <p className="text-[#64748B] text-sm sm:text-base leading-relaxed font-normal max-w-lg">
+            <p className="text-[#64748B] dark:text-slate-300 text-sm sm:text-base leading-relaxed font-normal max-w-lg">
               Bridge your trading platforms directly to Tier-1 ECNs, bank prime brokers, and crypto liquidity venues across 35+ countries. Clear client balances seamlessly in 26 currencies.
             </p>
 
             {/* Three Statistic Cards (Subtle Border, Soft Shadow, 16px Rounded, Hover Effect, Icon Bag) */}
             <div className="grid grid-cols-3 gap-3 pt-1">
-              <div className="bg-white p-3.5 rounded-[16px] border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
-                <div className="w-7 h-7 rounded-lg bg-[#DCFCE7] text-[#22C55E] flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <div className="bg-white dark:bg-[#141C2B] p-3.5 rounded-[16px] border border-[#E5E7EB] dark:border-[#1E293B] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
+                <div className="w-7 h-7 rounded-lg bg-[#DCFCE7] dark:bg-emerald-500/10 text-[#22C55E] dark:text-emerald-400 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                   <Globe className="w-3.5 h-3.5" />
                 </div>
-                <div className="text-xl sm:text-2xl font-black text-[#0F172A] font-mono tracking-tight">150+</div>
-                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Connected LPs & Venues</div>
+                <div className="text-xl sm:text-2xl font-black text-[#0F172A] dark:text-white font-mono tracking-tight">150+</div>
+                <div className="text-[11px] text-[#64748B] dark:text-slate-400 font-medium mt-0.5">Connected LPs & Venues</div>
               </div>
 
-              <div className="bg-white p-3.5 rounded-[16px] border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
-                <div className="w-7 h-7 rounded-lg bg-[#DCFCE7] text-[#22C55E] flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <div className="bg-white dark:bg-[#141C2B] p-3.5 rounded-[16px] border border-[#E5E7EB] dark:border-[#1E293B] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
+                <div className="w-7 h-7 rounded-lg bg-[#DCFCE7] dark:bg-emerald-500/10 text-[#22C55E] dark:text-emerald-400 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                   <Layers className="w-3.5 h-3.5" />
                 </div>
-                <div className="text-xl sm:text-2xl font-black text-[#22C55E] font-mono tracking-tight">35+</div>
-                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Financial Hubs</div>
+                <div className="text-xl sm:text-2xl font-black text-[#22C55E] dark:text-emerald-400 font-mono tracking-tight">35+</div>
+                <div className="text-[11px] text-[#64748B] dark:text-slate-400 font-medium mt-0.5">Financial Hubs</div>
               </div>
 
-              <div className="bg-white p-3.5 rounded-[16px] border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
+              <div className="bg-white dark:bg-[#141C2B] p-3.5 rounded-[16px] border border-[#E5E7EB] dark:border-[#1E293B] shadow-xs hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
                 <div className="w-7 h-7 rounded-lg bg-[#DCFCE7] text-[#22C55E] flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                   <Coins className="w-3.5 h-3.5" />
                 </div>

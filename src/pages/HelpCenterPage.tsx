@@ -10,7 +10,7 @@ export const HelpCenterPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <div className="bg-white text-slate-900">
       <FaqSection />
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
     </div>
   );
 };

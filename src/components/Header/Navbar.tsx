@@ -19,9 +19,12 @@ import {
   Layers,
   Wallet,
   Zap,
-  Briefcase
+  Briefcase,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { useRouter } from '../../router';
+import { useTheme } from '../../context/ThemeContext';
 
 interface NavbarProps {
   onOpenAccount: () => void;
@@ -38,12 +41,16 @@ export const Navbar: React.FC<NavbarProps> = ({
   selectedSegment,
   setSelectedSegment
 }) => {
-  const { navigate } = useRouter();
+  const { currentPath, navigate } = useRouter();
+  const { theme, toggleTheme } = useTheme();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const isSolutionsPage = Boolean(currentPath && currentPath.startsWith('/solutions/'));
+  const isDarkNavbar = theme === 'dark';
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -76,22 +83,35 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-200 transition-all duration-200">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${
+      isDarkNavbar
+        ? isScrolled
+          ? 'bg-[#090D14]/95 backdrop-blur-md border-b border-[#1E293B] text-white shadow-xl'
+          : 'bg-[#090D14] border-b border-transparent text-white'
+        : isScrolled
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-900 shadow-md'
+          : 'bg-white border-b border-transparent text-slate-900'
+    }`}>
       {/* Container matching sleek institutional header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
-        {/* Brand Logo - Prominent & Large */}
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${
+        isScrolled ? 'h-14 sm:h-16' : 'h-18 sm:h-20'
+      }`}>
         <button onClick={() => handleNav('/')} className="flex items-center group shrink-0 text-left cursor-pointer py-1">
           <img
-            src="/logo-white.webp"
+            src={isDarkNavbar ? '/logo-black.png' : '/logo-white.png'}
             alt="BrokerBros"
-            className="h-11 sm:h-13 lg:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.01]"
+            className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.01] ${
+              isScrolled ? 'h-9 sm:h-10 lg:h-11' : 'h-11 sm:h-13 lg:h-14'
+            }`}
           />
         </button>
 
         {/* Right Aligned Navigation & Actions */}
         <div className="hidden lg:flex items-center gap-6">
           {/* Navigation Links - Signature IBKR Sleek Layout with Full PDF Modules */}
-          <nav className="flex items-center gap-5 xl:gap-7 text-xs xl:text-[13px] font-semibold text-slate-700">
+          <nav className={`flex items-center gap-4 xl:gap-6 text-xs xl:text-[13px] font-semibold ${
+            isDarkNavbar ? 'text-slate-200' : 'text-slate-700'
+          }`}>
             
             {/* 1. Why BrokerBros Dropdown */}
             <div
@@ -105,33 +125,214 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('why');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap ${activeDropdown === 'why' ? 'text-emerald-600 font-bold' : 'hover:text-emerald-700'}`}
+                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                  activeDropdown === 'why'
+                    ? 'text-emerald-500 font-bold'
+                    : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
+                }`}
               >
-                Why BrokerBros
+                <span>Why BrokerBros</span>
+                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'why' && (
                 <div
                   onMouseEnter={() => handleMouseEnter('why')}
                   onMouseLeave={handleMouseLeave}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 bg-white rounded-none shadow-2xl border border-slate-200 border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50"
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
+                    isDarkNavbar
+                      ? 'bg-[#121520] border-slate-800 text-white'
+                      : 'bg-white border-slate-200 text-slate-800'
+                  }`}
                 >
                   {/* Upward pointing pointer arrow */}
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
-                  <button onClick={() => handleNav('/why-brokerbros/capital-safety')} className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
+                  <button onClick={() => handleNav('/why-brokerbros/capital-safety')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Capital Strength & Safety
                   </button>
-                  <button onClick={() => handleNav('/why-brokerbros/best-execution')} className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
+                  <button onClick={() => handleNav('/why-brokerbros/best-execution')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Best Execution & Zero PFOF
                   </button>
-                  <button onClick={() => handleNav('/why-brokerbros/global-market-access')} className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
+                  <button onClick={() => handleNav('/why-brokerbros/global-market-access')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Global Market Access
                   </button>
                 </div>
               )}
             </div>
 
-            {/* 2. Pricing Dropdown (Matching Image 1 Submenus) */}
+            {/* 2. Products Dropdown (NEW!) */}
+            <div
+              className="relative py-2"
+              onMouseEnter={() => handleMouseEnter('products')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMouseEnter('products');
+                }}
+                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                  activeDropdown === 'products'
+                    ? 'text-emerald-500 font-bold'
+                    : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
+                }`}
+              >
+                <span>Products</span>
+                <ChevronDown className="w-3 h-3 opacity-70" />
+              </button>
+              {activeDropdown === 'products' && (
+                <div
+                  onMouseEnter={() => handleMouseEnter('products')}
+                  onMouseLeave={handleMouseLeave}
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
+                    isDarkNavbar
+                      ? 'bg-[#121520] border-slate-800 text-white'
+                      : 'bg-white border-slate-200 text-slate-800'
+                  }`}
+                >
+                  <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
+
+                  <button onClick={() => handleNav('/products/back-office')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Back Office
+                  </button>
+                  <button onClick={() => handleNav('/products/prop-trading-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Prop Trading CRM
+                  </button>
+                  <button onClick={() => handleNav('/products/client-area')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Client Area
+                  </button>
+                  <button onClick={() => handleNav('/products/mobile-app')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Mobile App
+                  </button>
+                  <button onClick={() => handleNav('/products/partner-area')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Partner Area
+                  </button>
+                  <button onClick={() => handleNav('/products/b2b-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    B2B CRM
+                  </button>
+                  <button onClick={() => handleNav('/products/service-desk')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Service Desk
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* 3. Services Dropdown */}
+            <div
+              className="relative py-2"
+              onMouseEnter={() => handleMouseEnter('services')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMouseEnter('services');
+                }}
+                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                  activeDropdown === 'services' || (isSolutionsPage && isDarkNavbar)
+                    ? 'text-emerald-500 font-bold'
+                    : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
+                }`}
+              >
+                <span>Services</span>
+                <ChevronDown className="w-3 h-3 opacity-70" />
+              </button>
+              {activeDropdown === 'services' && (
+                <div
+                  onMouseEnter={() => handleMouseEnter('services')}
+                  onMouseLeave={handleMouseLeave}
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-72 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
+                    isDarkNavbar
+                      ? 'bg-[#121520] border-slate-800 text-white'
+                      : 'bg-white border-slate-200 text-slate-800'
+                  }`}
+                >
+                  <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
+
+                  <button onClick={() => handleNav('/solutions/broker-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer flex items-center justify-between ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    <span>White-Label Broker CRM</span>
+                    <span className="text-[9px] bg-emerald-500/20 text-emerald-400 font-mono px-1.5 py-0.5 rounded">Core</span>
+                  </button>
+                  <button onClick={() => handleNav('/solutions/ib-partner')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    CRM with IB Partner Module
+                  </button>
+                  <button onClick={() => handleNav('/solutions/admin-backoffice')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Admin Backoffice & Risk Engine
+                  </button>
+                  <button onClick={() => handleNav('/solutions/social-copy-trading')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Social & Copy Trading System
+                  </button>
+                  <button onClick={() => handleNav('/solutions/pamm-mam')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    PAMM / MAM Allocation Engine
+                  </button>
+                  <button onClick={() => handleNav('/solutions/prop-firm-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Prop Firm Challenge & CRM
+                  </button>
+                  <button onClick={() => handleNav('/solutions/mt5-server-apis')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    MT5 Server APIs & Plugins
+                  </button>
+                  <button onClick={() => handleNav('/solutions/websockets-streaming')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    WebSockets Streaming & Feed
+                  </button>
+                  <button onClick={() => handleNav('/solutions/crypto-gateway')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Crypto Payment Gateway
+                  </button>
+                  <button onClick={() => handleNav('/solutions/fix-api-liquidity')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    FIX API & Liquidity Engine
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* 4. Platforms Dropdown */}
+            <div
+              className="relative py-2"
+              onMouseEnter={() => handleMouseEnter('platforms')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMouseEnter('platforms');
+                }}
+                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                  activeDropdown === 'platforms'
+                    ? 'text-emerald-500 font-bold'
+                    : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
+                }`}
+              >
+                <span>Platforms</span>
+                <ChevronDown className="w-3 h-3 opacity-70" />
+              </button>
+              {activeDropdown === 'platforms' && (
+                <div
+                  onMouseEnter={() => handleMouseEnter('platforms')}
+                  onMouseLeave={handleMouseLeave}
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
+                    isDarkNavbar
+                      ? 'bg-[#121520] border-slate-800 text-white'
+                      : 'bg-white border-slate-200 text-slate-800'
+                  }`}
+                >
+                  <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
+
+                  <button onClick={() => handleNav('/platforms/web')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    WebTrader Terminal
+                  </button>
+                  <button onClick={() => handleNav('/platforms/mobile')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Mobile Trading Apps
+                  </button>
+                  <button onClick={() => handleNav('/platforms/desktop')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Desktop Workstation
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* 5. Pricing Dropdown */}
             <div
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter('pricing')}
@@ -141,210 +342,154 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="button"
                 onClick={(e) => {
                   e.preventDefault();
-                  // Non-clickable direct navigation as requested, or opens dropdown
                   handleMouseEnter('pricing');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap ${activeDropdown === 'pricing' ? 'text-emerald-600 font-bold' : 'hover:text-emerald-700'}`}
+                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                  activeDropdown === 'pricing'
+                    ? 'text-emerald-500 font-bold'
+                    : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
+                }`}
               >
-                Pricing
+                <span>Pricing</span>
+                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'pricing' && (
                 <div
                   onMouseEnter={() => handleMouseEnter('pricing')}
                   onMouseLeave={handleMouseLeave}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-56 bg-white rounded-none shadow-2xl border border-slate-200 border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50"
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
+                    isDarkNavbar
+                      ? 'bg-[#121520] border-slate-800 text-white'
+                      : 'bg-white border-slate-200 text-slate-800'
+                  }`}
                 >
-                  {/* Upward pointing pointer arrow in emerald green */}
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
-                  <button
-                    onClick={() => handleNav('/pricing/commissions')}
-                    className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer"
-                  >
-                    Commissions
+                  <button onClick={() => handleNav('/pricing')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Pricing Overview
                   </button>
-                  
-                  <button
-                    onClick={() => handleNav('/pricing/interest-rates')}
-                    className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer"
-                  >
-                    Interest Rates
+                  <button onClick={() => handleNav('/pricing/interest-rates')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Margin Interest Rates
                   </button>
-
-                  <button
-                    onClick={() => handleNav('/pricing/short-sale-cost')}
-                    className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer"
-                  >
-                    Short Sale Cost
+                  <button onClick={() => handleNav('/pricing/market-data')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Market Data Subscriptions
                   </button>
-
-                  <button
-                    onClick={() => handleNav('/pricing/market-data')}
-                    className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer"
-                  >
-                    Market Data Pricing
-                  </button>
-
-                  <button
-                    onClick={() => handleNav('/pricing/other-fees')}
-                    className="px-3 py-2 text-xs font-semibold text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer"
-                  >
-                    Other Fees
+                  <button onClick={() => handleNav('/pricing/other-fees')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Other Fees & Commissions
                   </button>
                 </div>
               )}
             </div>
 
-            {/* 3. Trading Dropdown (Modules 04, 05, 10, 11 + Markets) */}
+            {/* 6. Education Dropdown */}
             <div
               className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('trading')}
+              onMouseEnter={() => handleMouseEnter('education')}
               onMouseLeave={handleMouseLeave}
             >
               <button
-                onClick={() => handleNav('/markets')}
-                className={`transition-colors cursor-pointer whitespace-nowrap ${activeDropdown === 'trading' ? 'text-emerald-600 font-bold' : 'hover:text-emerald-700'}`}
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMouseEnter('education');
+                }}
+                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                  activeDropdown === 'education'
+                    ? 'text-emerald-500 font-bold'
+                    : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
+                }`}
               >
-                Trading
+                <span>Education</span>
+                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
-              {activeDropdown === 'trading' && (
+              {activeDropdown === 'education' && (
                 <div
-                  onMouseEnter={() => handleMouseEnter('trading')}
+                  onMouseEnter={() => handleMouseEnter('education')}
                   onMouseLeave={handleMouseLeave}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-60 bg-white rounded-none shadow-2xl border border-slate-200 border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50"
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
+                    isDarkNavbar
+                      ? 'bg-[#121520] border-slate-800 text-white'
+                      : 'bg-white border-slate-200 text-slate-800'
+                  }`}
                 >
-                  {/* Upward pointing pointer arrow */}
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
-                  <button onClick={() => handleNav('/trading/web-terminal')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Web Trading Terminal
+                  <button onClick={() => handleNav('/education/academy')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Trader Academy
                   </button>
-                  <button onClick={() => handleNav('/trading/mobile-apps')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Mobile Trading Apps
-                  </button>
-                  <button onClick={() => handleNav('/trading/robots')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Trading Robots
-                  </button>
-                  <button onClick={() => handleNav('/trading/indicators')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Technical Indicators
-                  </button>
-                  <button onClick={() => handleNav('/markets/stocks')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Stocks & ETFs
-                  </button>
-                  <button onClick={() => handleNav('/markets/options')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Options & Volatility
+                  <button onClick={() => handleNav('/education/learning-center')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Learning Center
                   </button>
                 </div>
               )}
             </div>
 
-            {/* 4. Services Dropdown (PDF Infrastructure Modules 01, 02, 03, 06, 07, 08, 09, 12, 13, 14) */}
-            <div
-              className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('services')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                onClick={() => handleNav('/solutions/broker-crm')}
-                className={`transition-colors cursor-pointer whitespace-nowrap ${activeDropdown === 'services' ? 'text-emerald-600 font-bold' : 'hover:text-emerald-700'}`}
-              >
-                Services
-              </button>
-              {activeDropdown === 'services' && (
-                <div
-                  onMouseEnter={() => handleMouseEnter('services')}
-                  onMouseLeave={handleMouseLeave}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 bg-white rounded-none shadow-2xl border border-slate-200 border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50"
-                >
-                  {/* Upward pointing pointer arrow */}
-                  <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
-
-                  <button onClick={() => handleNav('/solutions/broker-crm')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    White-Label Broker CRM
-                  </button>
-                  <button onClick={() => handleNav('/solutions/ib-partner')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    CRM with IB Module
-                  </button>
-                  <button onClick={() => handleNav('/solutions/admin-backoffice')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Admin Backoffice
-                  </button>
-                  <button onClick={() => handleNav('/solutions/social-copy-trading')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Social Copy Trading
-                  </button>
-                  <button onClick={() => handleNav('/solutions/pamm-mam')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    PAMM / MAM Asset Management
-                  </button>
-                  <button onClick={() => handleNav('/solutions/prop-firm-crm')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    PropFirm CRM Engine
-                  </button>
-
-                  <button onClick={() => handleNav('/solutions/mt5-server-apis')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    MT5 Server APIs
-                  </button>
-                  <button onClick={() => handleNav('/solutions/websockets-streaming')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    WebSockets Streaming
-                  </button>
-                  <button onClick={() => handleNav('/solutions/crypto-gateway')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    Crypto Gateway
-                  </button>
-                  <button onClick={() => handleNav('/solutions/fix-api-liquidity')} className="px-3 py-2 text-xs font-medium text-slate-800 hover:text-emerald-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
-                    FIX API Liquidity Bridge
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* 5. Education */}
-            <button
-              onClick={() => handleNav('/education')}
-              className="hover:text-emerald-700 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Education
-            </button>
           </nav>
 
-          {/* Search Icon & Action Buttons */}
-          <div className="flex items-center gap-3 border-l border-slate-200 pl-5">
-            {/* Search Icon */}
+          {/* Action Buttons */}
+          <div className="flex items-center gap-3">
             <button
               onClick={onOpenSearch}
-              className="text-slate-600 hover:text-emerald-600 transition-colors p-1 cursor-pointer"
-              aria-label="Search"
+              className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors cursor-pointer ${
+                isDarkNavbar
+                  ? 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:border-slate-700'
+                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
+              }`}
             >
-              <Search className="w-4 h-4" />
+              <Search className="w-3.5 h-3.5" />
+              <span>Search...</span>
             </button>
 
-            {/* Outlined Log In Button */}
+            {/* Universal Theme Toggle Button */}
             <button
-              onClick={() => handleNav('/login')}
-              className="px-4 py-1.5 text-xs font-semibold text-emerald-700 bg-white border border-emerald-600 hover:bg-emerald-50 rounded-none transition-colors cursor-pointer whitespace-nowrap"
+              onClick={toggleTheme}
+              aria-label="Toggle Light/Dark Theme"
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              className={`p-2 rounded-xl transition-all cursor-pointer flex items-center justify-center ${
+                isDarkNavbar
+                  ? 'text-amber-400 hover:bg-slate-800/70 hover:text-amber-300'
+                  : 'text-amber-500 hover:bg-slate-100 hover:text-amber-600'
+              }`}
             >
-              Log In
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5 text-amber-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-slate-700" />
+              )}
             </button>
 
-            {/* Solid Open Account Button */}
             <button
-              onClick={() => handleNav('/open-account')}
-              className="px-4 py-1.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-none transition-colors cursor-pointer whitespace-nowrap shadow-xs uppercase tracking-wider"
+              onClick={onLogin}
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg shadow-sm shadow-emerald-600/20 transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
-              Open Account
+              <span>Log In</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
 
-        {/* Mobile Hamburger toggle */}
-        <div className="flex items-center gap-3 lg:hidden">
+        {/* Mobile Menu & Theme Controls */}
+        <div className="lg:hidden flex items-center gap-2">
+          {/* Mobile Theme Switcher */}
           <button
-            onClick={onOpenSearch}
-            className="text-slate-600 p-1.5"
-            aria-label="Search"
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+            className={`p-2 rounded-xl cursor-pointer flex items-center justify-center transition-all ${
+              isDarkNavbar
+                ? 'text-amber-400 hover:bg-slate-800/70'
+                : 'text-slate-700 hover:bg-slate-100'
+            }`}
           >
-            <Search className="w-5 h-5" />
+            {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
           </button>
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 text-slate-700 rounded-md hover:bg-slate-100"
-            aria-label="Toggle Navigation"
+            className={`p-2 rounded-lg border cursor-pointer ${
+              isDarkNavbar
+                ? 'bg-slate-900 border-slate-800 text-white'
+                : 'bg-slate-50 border-slate-200 text-slate-700'
+            }`}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -353,80 +498,63 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-in fade-in duration-150 max-h-[85vh] overflow-y-auto">
-          <button
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenSearch();
-            }}
-            className="w-full flex items-center justify-between p-2.5 bg-slate-100 rounded-lg text-xs text-slate-600 font-medium cursor-pointer"
-          >
-            <div className="flex items-center gap-2">
-              <Search className="w-4 h-4 text-emerald-600" />
-              <span>Search symbol, market, or help...</span>
-            </div>
-          </button>
-
-          <div className="space-y-1 pt-2 border-t border-slate-100 text-slate-900 font-semibold text-xs">
+        <div className={`lg:hidden border-b p-4 space-y-4 animate-in slide-in-from-top duration-200 ${
+          isDarkNavbar ? 'bg-[#0a0a0a] border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'
+        }`}>
+          <div className="space-y-1">
+            <div className="text-[10px] font-mono font-bold text-emerald-500 uppercase px-2 py-1 tracking-wider">Products</div>
             <button
-              onClick={() => handleNav('/why-brokerbros')}
-              className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between font-bold"
+              onClick={() => handleNav('/products/back-office')}
+              className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs"
             >
-              <span>Why BrokerBros</span>
+              <span>Back Office</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
             </button>
-
-            {/* Markets Dropdown */}
-            <div className="space-y-1 p-2 bg-slate-50 rounded-xl border border-slate-100">
-              <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider px-2 py-1 font-bold">Products & Markets</div>
-              <div className="grid grid-cols-2 gap-1 text-[11px] font-medium text-slate-700">
-                <button onClick={() => handleNav('/markets/stocks')} className="text-left p-1.5 hover:text-emerald-700">Stocks & ETFs</button>
-                <button onClick={() => handleNav('/markets/options')} className="text-left p-1.5 hover:text-emerald-700">Options</button>
-                <button onClick={() => handleNav('/markets/futures')} className="text-left p-1.5 hover:text-emerald-700">Futures</button>
-                <button onClick={() => handleNav('/markets/forex')} className="text-left p-1.5 hover:text-emerald-700">Spot Forex</button>
-                <button onClick={() => handleNav('/markets/bonds')} className="text-left p-1.5 hover:text-emerald-700">Bonds</button>
-                <button onClick={() => handleNav('/markets/mutual-funds')} className="text-left p-1.5 hover:text-emerald-700">Mutual Funds</button>
-              </div>
-            </div>
-
-            {/* Platforms Dropdown */}
-            <div className="space-y-1 p-2 bg-slate-50 rounded-xl border border-slate-100">
-              <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider px-2 py-1 font-bold">Platforms</div>
-              <div className="grid grid-cols-2 gap-1 text-[11px] font-medium text-slate-700">
-                <button onClick={() => handleNav('/platforms/desktop')} className="text-left p-1.5 hover:text-emerald-700">Desktop Pro</button>
-                <button onClick={() => handleNav('/platforms/web')} className="text-left p-1.5 hover:text-emerald-700">WebTrader</button>
-                <button onClick={() => handleNav('/platforms/mobile')} className="text-left p-1.5 hover:text-emerald-700">Mobile App</button>
-                <button onClick={() => handleNav('/platforms/tools')} className="text-left p-1.5 hover:text-emerald-700">Trading Tools</button>
-                <button onClick={() => handleNav('/platforms/api')} className="text-left p-1.5 hover:text-emerald-700">Developer API</button>
-              </div>
-            </div>
-
             <button
-              onClick={() => handleNav('/pricing')}
-              className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between font-bold"
+              onClick={() => handleNav('/products/prop-trading-crm')}
+              className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs"
             >
-              <span>Pricing & Yield</span>
+              <span>Prop Trading CRM</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
             </button>
-
             <button
-              onClick={() => handleNav('/research')}
-              className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between font-bold"
+              onClick={() => handleNav('/products/client-area')}
+              className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs"
             >
-              <span>Research & News</span>
+              <span>Client Area</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
             </button>
-
             <button
-              onClick={() => handleNav('/help')}
-              className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between font-bold"
+              onClick={() => handleNav('/products/mobile-app')}
+              className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs"
             >
-              <span>Support & FAQs</span>
+              <span>Mobile App</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+            </button>
+            <button
+              onClick={() => handleNav('/products/partner-area')}
+              className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs"
+            >
+              <span>Partner Area</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+            </button>
+            <button
+              onClick={() => handleNav('/products/b2b-crm')}
+              className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs"
+            >
+              <span>B2B CRM</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+            </button>
+            <button
+              onClick={() => handleNav('/products/service-desk')}
+              className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs"
+            >
+              <span>Service Desk</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
             </button>
           </div>
 
-          <div className="pt-3 border-t border-slate-100 flex gap-2">
+          <div className="pt-3 border-t border-slate-800 flex gap-2">
             <button
               onClick={() => handleNav('/login')}
               className="w-full py-2.5 text-center font-extrabold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl text-xs cursor-pointer shadow-md"
@@ -439,4 +567,3 @@ export const Navbar: React.FC<NavbarProps> = ({
     </header>
   );
 };
-;

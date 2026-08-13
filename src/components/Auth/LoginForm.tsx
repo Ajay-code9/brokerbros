@@ -55,7 +55,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onOpenAccount, onSuccessLo
       
       {/* Card Header with Clean Logo */}
       <div className="space-y-2.5 text-center flex flex-col items-center">
-        <img src="/logo-white.webp" alt="BrokerBros" className="h-11 sm:h-14 w-auto object-contain mb-1" />
+        <img src="/logo-white.png" alt="BrokerBros" className="h-11 sm:h-14 w-auto object-contain mb-1" />
         <div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans">
             Client Portal Login

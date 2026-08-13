@@ -11,21 +11,21 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
   const selectedAccount = ACCOUNT_TYPES.find(a => a.id === selectedAccountId) || ACCOUNT_TYPES[0];
 
   return (
-    <section className="py-12 lg:py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+    <section className="py-12 lg:py-16 bg-[#F8FAFC] dark:bg-[#0E1420] border-b border-slate-200/80 dark:border-[#1E293B] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-[#1E293B] pb-5">
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200">
-              <User className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 text-xs font-mono font-bold border border-emerald-200 dark:border-emerald-500/30">
+              <User className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>MODULAR BROKERAGE INFRASTRUCTURE</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 font-sans">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white font-sans">
               Configured for Your Brokerage Business Model
             </h2>
           </div>
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-md font-sans">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed max-w-md font-sans">
             From White-Label Retail Brokers to Prop Firms and Multi-Tier IB Networks — select the infrastructure stack that matches your target market and go live in days.
           </p>
         </div>
@@ -40,14 +40,14 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
                 onClick={() => setSelectedAccountId(account.id)}
                 className={`p-6 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                   isSelected
-                    ? 'bg-slate-900 text-white border-emerald-500/80 shadow-xl shadow-slate-900/10 ring-1 ring-emerald-500/30'
-                    : 'bg-white text-slate-900 border-slate-200/80 hover:border-slate-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.03)]'
+                    ? 'bg-slate-900 dark:bg-[#141C2B] text-white border-emerald-500/80 shadow-xl shadow-slate-900/10 ring-1 ring-emerald-500/30'
+                    : 'bg-white dark:bg-[#141C2B] text-slate-900 dark:text-slate-100 border-slate-200/80 dark:border-[#1E293B] hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-[0_4px_20px_rgba(0,0,0,0.03)]'
                 }`}
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
-                      isSelected ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-100 text-slate-600'
+                      isSelected ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400'
                     }`}>
                       0{idx + 1}
                     </span>
@@ -55,7 +55,7 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
                       <span className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${
                         isSelected
                           ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-extrabold'
-                          : 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                          : 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30'
                       }`}>
                         {account.badge}
                       </span>
@@ -63,30 +63,30 @@ export const AccountSection: React.FC<AccountSectionProps> = ({ onOpenAccount })
                   </div>
 
                   <div>
-                    <h3 className={`text-base font-bold font-sans ${isSelected ? 'text-white' : 'text-slate-900'}`}>{account.title}</h3>
-                    <div className={`text-[11px] font-mono mt-0.5 ${isSelected ? 'text-emerald-400' : 'text-slate-500'}`}>{account.subtitle}</div>
+                    <h3 className={`text-base font-bold font-sans ${isSelected ? 'text-white' : 'text-slate-900 dark:text-white'}`}>{account.title}</h3>
+                    <div className={`text-[11px] font-mono mt-0.5 ${isSelected ? 'text-emerald-400' : 'text-slate-500 dark:text-slate-400'}`}>{account.subtitle}</div>
                   </div>
 
-                  <p className={`text-[11px] leading-relaxed font-sans ${isSelected ? 'text-slate-300' : 'text-slate-600'}`}>
+                  <p className={`text-[11px] leading-relaxed font-sans ${isSelected ? 'text-slate-300' : 'text-slate-600 dark:text-slate-300'}`}>
                     {account.description}
                   </p>
 
-                  <div className={`space-y-1.5 pt-2.5 border-t text-[11px] font-sans ${isSelected ? 'border-slate-800 text-slate-300' : 'border-slate-100 text-slate-700'}`}>
+                  <div className={`space-y-1.5 pt-2.5 border-t text-[11px] font-sans ${isSelected ? 'border-slate-800 text-slate-300' : 'border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-300'}`}>
                     {account.features.map((feat, fidx) => (
                       <div key={fidx} className="flex items-start gap-1.5">
-                        <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${isSelected ? 'text-emerald-400' : 'text-emerald-600'}`} />
+                        <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${isSelected ? 'text-emerald-400' : 'text-emerald-600 dark:text-emerald-400'}`} />
                         <span>{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className={`pt-3.5 mt-3.5 border-t flex items-center justify-between ${isSelected ? 'border-slate-800' : 'border-slate-100'}`}>
-                  <span className={`text-xs font-mono font-bold ${isSelected ? 'text-emerald-400' : 'text-slate-900'}`}>{account.minDeposit}</span>
+                <div className={`pt-3.5 mt-3.5 border-t flex items-center justify-between ${isSelected ? 'border-slate-800' : 'border-slate-100 dark:border-slate-800'}`}>
+                  <span className={`text-xs font-mono font-bold ${isSelected ? 'text-emerald-400' : 'text-slate-900 dark:text-white'}`}>{account.minDeposit}</span>
                   <button
                     onClick={onOpenAccount}
                     className={`text-xs font-bold flex items-center gap-1 cursor-pointer group ${
-                      isSelected ? 'text-white hover:text-emerald-400' : 'text-emerald-700 hover:text-emerald-800'
+                      isSelected ? 'text-white hover:text-emerald-400' : 'text-emerald-700 dark:text-emerald-400 hover:text-emerald-800'
                     }`}
                   >
                     <span>Configure</span>

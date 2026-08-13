@@ -80,16 +80,16 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     : comparisonData.filter(item => item.category === selectedCategory);
 
   return (
-    <section className="py-10 sm:py-14 bg-slate-50 border-b border-slate-200 font-sans">
+    <section className="py-10 sm:py-14 bg-slate-50/80 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B] font-sans transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
         {/* Section Header - B2B PDF Aligned */}
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 dark:text-white tracking-tight font-sans">
             Why Global Brokerages & Institutions Choose BrokerBros
           </h2>
 
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium font-sans">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium font-sans">
             Compare our turn-key White-Label Broker CRM, IB Rebate Engines, Prop Firm Modules, and FIX Liquidity Bridges against legacy software vendors.
           </p>
         </div>
@@ -101,7 +101,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
             className={`px-4 py-1.5 text-xs font-bold rounded-none transition-all cursor-pointer ${
               selectedCategory === 'all'
                 ? 'bg-emerald-600 text-white shadow-xs'
-                : 'bg-white text-slate-600 hover:text-slate-950 border border-slate-200'
+                : 'bg-white dark:bg-[#141C2B] text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white border border-slate-200 dark:border-[#1E293B]'
             }`}
           >
             All 14 Modular Solutions
@@ -111,7 +111,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
             className={`px-4 py-1.5 text-xs font-bold rounded-none transition-all cursor-pointer ${
               selectedCategory === 'crm'
                 ? 'bg-emerald-600 text-white shadow-xs'
-                : 'bg-white text-slate-600 hover:text-slate-950 border border-slate-200'
+                : 'bg-white dark:bg-[#141C2B] text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white border border-slate-200 dark:border-[#1E293B]'
             }`}
           >
             Broker CRM & Backoffice
@@ -121,7 +121,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
             className={`px-4 py-1.5 text-xs font-bold rounded-none transition-all cursor-pointer ${
               selectedCategory === 'copy'
                 ? 'bg-emerald-600 text-white shadow-xs'
-                : 'bg-white text-slate-600 hover:text-slate-950 border border-slate-200'
+                : 'bg-white dark:bg-[#141C2B] text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white border border-slate-200 dark:border-[#1E293B]'
             }`}
           >
             Copy Trading & PAMM
@@ -131,7 +131,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
             className={`px-4 py-1.5 text-xs font-bold rounded-none transition-all cursor-pointer ${
               selectedCategory === 'apis'
                 ? 'bg-emerald-600 text-white shadow-xs'
-                : 'bg-white text-slate-600 hover:text-slate-950 border border-slate-200'
+                : 'bg-white dark:bg-[#141C2B] text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white border border-slate-200 dark:border-[#1E293B]'
             }`}
           >
             FIX Liquidity & APIs
@@ -139,31 +139,31 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-none border border-slate-200 shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-[#141C2B] rounded-none border border-slate-200 dark:border-[#1E293B] shadow-sm overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse font-sans text-xs">
               <thead>
-                <tr className="bg-slate-100 border-b border-slate-200 text-slate-700 font-bold uppercase tracking-wider">
+                <tr className="bg-slate-100 dark:bg-[#090D14] border-b border-slate-200 dark:border-[#1E293B] text-slate-700 dark:text-slate-300 font-bold uppercase tracking-wider">
                   <th className="py-3.5 px-5 min-w-[240px]">Modular Infrastructure Feature</th>
-                  <th className="py-3.5 px-5 min-w-[200px] bg-emerald-50 text-emerald-900 border-x border-emerald-200 text-xs font-extrabold">
+                  <th className="py-3.5 px-5 min-w-[200px] bg-emerald-50 dark:bg-emerald-500/10 text-emerald-900 dark:text-emerald-400 border-x border-emerald-200 dark:border-emerald-500/30 text-xs font-extrabold">
                     BrokerBros Standard
                   </th>
-                  <th className="py-3.5 px-5 min-w-[170px] text-slate-600">Legacy Software Vendors</th>
-                  <th className="py-3.5 px-5 min-w-[170px] text-slate-600">Custom In-House Build</th>
+                  <th className="py-3.5 px-5 min-w-[170px] text-slate-600 dark:text-slate-400">Legacy Software Vendors</th>
+                  <th className="py-3.5 px-5 min-w-[170px] text-slate-600 dark:text-slate-400">Custom In-House Build</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
+              <tbody className="divide-y divide-slate-200 dark:divide-[#1E293B]">
                 {filteredData.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                    <td className="py-3.5 px-5 font-semibold text-slate-900">
+                  <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-[#1B2538] transition-colors">
+                    <td className="py-3.5 px-5 font-semibold text-slate-900 dark:text-white">
                       <div>{row.feature}</div>
-                      <div className="text-[11px] text-slate-500 font-normal mt-0.5">{row.note}</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 font-normal mt-0.5">{row.note}</div>
                     </td>
-                    <td className="py-3.5 px-5 bg-emerald-50/70 border-x border-emerald-200 font-extrabold text-emerald-800 text-xs">
+                    <td className="py-3.5 px-5 bg-emerald-50/70 dark:bg-emerald-500/10 border-x border-emerald-200 dark:border-emerald-500/30 font-extrabold text-emerald-800 dark:text-emerald-300 text-xs">
                       {row.brokerbros}
                     </td>
-                    <td className="py-3.5 px-5 text-slate-600 font-medium">{row.legacy}</td>
-                    <td className="py-3.5 px-5 text-slate-600 font-medium">{row.inhouse}</td>
+                    <td className="py-3.5 px-5 text-slate-600 dark:text-slate-300 font-medium">{row.legacy}</td>
+                    <td className="py-3.5 px-5 text-slate-600 dark:text-slate-300 font-medium">{row.inhouse}</td>
                   </tr>
                 ))}
               </tbody>
@@ -171,8 +171,8 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
           </div>
 
           {/* Table Footer Action */}
-          <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-slate-500 font-medium">
+          <div className="p-4 sm:p-5 bg-slate-50 dark:bg-[#0E1420] border-t border-slate-200 dark:border-[#1E293B] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">
               * All 14 modules available standalone or as a complete white-label brokerage suite.
             </div>
             <button

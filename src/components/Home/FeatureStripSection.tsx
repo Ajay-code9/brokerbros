@@ -26,7 +26,7 @@ export const FeatureStripSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white border-b border-slate-200 py-10 sm:py-12">
+    <section className="bg-white dark:bg-[#090D14] border-b border-slate-200 dark:border-[#1E293B] py-10 sm:py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {features.map((item, index) => (
@@ -35,13 +35,13 @@ export const FeatureStripSection: React.FC = () => {
                 <img
                   src={item.imageSrc}
                   alt={item.title}
-                  className="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="w-20 h-20 object-contain dark:invert dark:brightness-200 group-hover:scale-110 transition-all duration-300"
                 />
               </div>
-              <h3 className="text-base font-bold text-slate-900 tracking-tight font-sans">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight font-sans">
                 {item.title}
               </h3>
-              <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal font-sans max-w-xs">
+              <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-300 leading-relaxed font-normal font-sans max-w-xs">
                 {item.description}
               </p>
             </div>

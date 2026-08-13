@@ -78,7 +78,7 @@ export const IposPage: React.FC<PageProps> = ({ onOpenAccount }) => {
         </div>
       </section>
 
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
     </div>
   );
 };

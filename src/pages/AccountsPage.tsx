@@ -10,7 +10,7 @@ export const AccountsPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <div className="bg-white text-slate-900">
       <AccountSection onOpenAccount={onOpenAccount} />
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
     </div>
   );
 };

@@ -93,72 +93,72 @@ export const ShortSaleCostsSection: React.FC = () => {
   );
 
   return (
-    <section className="py-12 sm:py-16 bg-slate-50/80 border-b border-slate-200 font-sans">
+    <section className="py-12 sm:py-16 bg-slate-50/80 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B] font-sans transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-bold uppercase tracking-wider">
-            <ArrowDownRight className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
+            <ArrowDownRight className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>Short Sale Mechanics & Locate Rates</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight font-sans">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 dark:text-white tracking-tight font-sans">
             Short Sale Costs & Borrow Rates
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
             Direct access to global stock loan pools, transparent indicative borrow rates updated every 15 minutes, and automated locate requests.
           </p>
         </div>
 
         {/* 4 Feature Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center font-bold text-sm">
+          <div className="bg-white dark:bg-[#141C2B] p-5 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-2xs space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center font-bold text-sm">
               <RefreshCw className="w-4.5 h-4.5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Real-Time Indicative Rates</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Real-Time Indicative Rates</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Borrow rates are streamed live in trading tickets so you know exact costs upfront.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center font-bold text-sm">
+          <div className="bg-white dark:bg-[#141C2B] p-5 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-2xs space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center font-bold text-sm">
               <ShieldAlert className="w-4.5 h-4.5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Hard-to-Borrow (HTB) Desk</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Hard-to-Borrow (HTB) Desk</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Automated locate engine scans 20+ prime broker pools for hard-to-borrow stock allocations.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center font-bold text-sm">
+          <div className="bg-white dark:bg-[#141C2B] p-5 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-2xs space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center font-bold text-sm">
               <Percent className="w-4.5 h-4.5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Short Interest Credit</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Short Interest Credit</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Earn interest credit on short sale cash proceeds for balances over $100,000.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center font-bold text-sm">
+          <div className="bg-white dark:bg-[#141C2B] p-5 rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-2xs space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center font-bold text-sm">
               <DollarSign className="w-4.5 h-4.5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Daily Fee Formula</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Fee = <code className="bg-slate-100 px-1 py-0.5 rounded text-[11px] font-mono text-slate-800">(Shares × Price × Rate)/360</code>.
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Daily Fee Formula</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Fee = <code className="bg-slate-100 dark:bg-[#0E1420] px-1 py-0.5 rounded text-[11px] font-mono text-slate-800 dark:text-slate-200">(Shares × Price × Rate)/360</code>.
             </p>
           </div>
         </div>
 
         {/* Live Stock Borrow Rate Lookup Table Card */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-md p-6 sm:p-8 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+        <div className="bg-white dark:bg-[#141C2B] text-slate-900 dark:text-white rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-md p-6 sm:p-8 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-[#1E293B] pb-5">
             <div>
-              <span className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider">STOCK LOAN DESK PREVIEW</span>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-950 font-sans mt-0.5">Live Indicative Stock Borrow Rates</h3>
+              <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">STOCK LOAN DESK PREVIEW</span>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-950 dark:text-white font-sans mt-0.5">Live Indicative Stock Borrow Rates</h3>
             </div>
 
             {/* Search Box */}
@@ -169,7 +169,7 @@ export const ShortSaleCostsSection: React.FC = () => {
                 placeholder="Search company (e.g. Apple, Tesla)..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-[#0E1420] border border-slate-200 dark:border-[#1E293B] rounded-xl text-xs font-medium text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
           </div>
@@ -178,7 +178,7 @@ export const ShortSaleCostsSection: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs font-sans">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50 text-slate-600 font-mono uppercase text-[11px]">
+                <tr className="border-b border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0E1420] text-slate-600 dark:text-slate-400 font-mono uppercase text-[11px]">
                   <th className="py-3 px-4 font-bold">Company</th>
                   <th className="py-3 px-4 font-bold">Availability Status</th>
                   <th className="py-3 px-4 font-bold">Borrow Rate (APY)</th>
@@ -186,13 +186,13 @@ export const ShortSaleCostsSection: React.FC = () => {
                   <th className="py-3 px-4 font-bold text-right">Daily Cost / $10k Short</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-[#1E293B]">
                 {filteredStocks.map((s) => (
-                  <tr key={s.ticker} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-slate-900">
+                  <tr key={s.ticker} className="hover:bg-slate-50/80 dark:hover:bg-[#1B2538] transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-slate-900 dark:text-white">
                       <div className="flex items-center gap-3">
                         {/* Company Real Logo Container */}
-                        <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200 p-1.5 flex items-center justify-center shrink-0 shadow-2xs">
+                        <div className="w-9 h-9 rounded-xl bg-slate-50 dark:bg-[#0E1420] border border-slate-200 dark:border-[#1E293B] p-1.5 flex items-center justify-center shrink-0 shadow-2xs">
                           <img 
                             src={s.logo} 
                             alt={s.name} 
@@ -200,7 +200,7 @@ export const ShortSaleCostsSection: React.FC = () => {
                           />
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-slate-950 font-bold text-sm leading-tight">{s.name}</span>
+                          <span className="text-slate-950 dark:text-white font-bold text-sm leading-tight">{s.name}</span>
                           <span className="text-slate-400 font-mono text-[11px] font-medium">{s.ticker}</span>
                         </div>
                       </div>
@@ -208,24 +208,24 @@ export const ShortSaleCostsSection: React.FC = () => {
                     <td className="py-3.5 px-4">
                       <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold border ${
                         s.status === 'General Availability'
-                          ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                          ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30'
                           : s.status === 'Hard to Borrow'
-                          ? 'bg-amber-50 text-amber-800 border-amber-200'
-                          : 'bg-rose-50 text-rose-800 border-rose-200'
+                          ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-500/30'
+                          : 'bg-rose-50 dark:bg-rose-500/10 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-500/30'
                       }`}>
                         {s.status}
                       </span>
                     </td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-slate-900 text-sm">{s.borrowRate}</td>
-                    <td className="py-3.5 px-4 font-mono text-slate-600 font-medium">{s.availableShares}</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-700 text-right text-sm">{s.dailyCostPer10k}</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white text-sm">{s.borrowRate}</td>
+                    <td className="py-3.5 px-4 font-mono text-slate-600 dark:text-slate-300 font-medium">{s.availableShares}</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-700 dark:text-emerald-400 text-right text-sm">{s.dailyCostPer10k}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="pt-2 flex items-center justify-between text-xs text-slate-500 font-mono">
+          <div className="pt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-mono">
             <span>* Borrow fees are annualized and calculated daily based on market value. Rates fluctuate based on market demand.</span>
             <span className="hidden sm:inline">Updated every 15 mins</span>
           </div>

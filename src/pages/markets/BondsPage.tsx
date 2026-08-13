@@ -1484,7 +1484,7 @@ export const BondsPage: React.FC<BondsPageProps> = ({ onOpenAccount }) => {
       </section>
 
       {/* 13. FINAL CTA SECTION */}
-      <CTASection onOpenAccount={onOpenAccount} />
+      <CTASection variant="light" onOpenAccount={onOpenAccount} />
 
     </div>
   );
