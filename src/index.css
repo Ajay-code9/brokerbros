@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -21,11 +21,16 @@
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   }
 
-  /* Smooth, premium crossfade transition across all background, border, text, fill, stroke, and shadow color changes */
-  *, *::before, *::after {
-    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
-    transition-duration: 350ms;
+  /* Smooth theme transition engine targeted at layout containers and card backgrounds */
+  html, body, header, footer, main, section, nav, div, button, a, input, select, textarea, table, tr, td, th {
+    transition-property: background-color, border-color, fill, stroke, box-shadow;
+    transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Typography elements switch crisp & high-contrast without passing through dull grey mid-blend */
+  h1, h2, h3, h4, h5, h6, p, span, label, strong, b, code {
+    transition-property: background-color, border-color, box-shadow;
   }
 
   /* Exclude heavy image/video/canvas assets or spin animations from theme transition lag */
@@ -33,11 +38,17 @@
     transition-property: none !important;
   }
 
-  /* View Transitions API Native Silky Crossfade */
-  ::view-transition-old(root),
+  /* View Transitions API Zero-Grey Circular Wave Reveal Configuration */
+  ::view-transition-old(root) {
+    animation: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    z-index: 1;
+  }
   ::view-transition-new(root) {
-    animation-duration: 350ms;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation: none !important;
+    mix-blend-mode: normal !important;
+    z-index: 9999;
   }
 
   html {
@@ -46,6 +57,10 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
   }
 
   html.dark {
@@ -53,6 +68,42 @@
     --color-paragraph: #94a3b8;
     --color-muted: #64748b;
     color-scheme: dark;
+    scrollbar-color: #334155 transparent;
+  }
+
+  /* Ultra-Thin Modern Global Scrollbar (5px Width, No Arrows) */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb,
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb:hover,
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   body {
@@ -297,5 +348,16 @@
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #10b981 #06141D;
+}
+
+/* High-Performance Rendering Utilities */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
 }
 

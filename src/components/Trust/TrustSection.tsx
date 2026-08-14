@@ -427,17 +427,17 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
                 className="space-y-4"
               >
                 {/* Top Badge & Audit Strip */}
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200 shadow-2xs">
+                    <span className="text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800/80 shadow-2xs">
                       {currentContent.badge}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-500 flex items-center gap-1">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                    <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                      <CheckCircle2 className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
                       {currentContent.verifiedStatus}
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono font-semibold text-slate-400">
+                  <span className="text-[11px] font-mono font-semibold text-slate-400 dark:text-slate-500">
                     {currentContent.lastAudited}
                   </span>
                 </div>
@@ -446,17 +446,17 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
                   <div className="lg:col-span-7 space-y-2.5">
                     <div>
-                      <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-0.5">
+                      <div className="text-[10px] font-mono text-slate-400 dark:text-slate-400 uppercase tracking-wider mb-0.5">
                         Verified Trust Standard
                       </div>
-                      <div className="text-2xl sm:text-3xl font-black font-mono tracking-tight text-slate-900">
+                      <div className="text-2xl sm:text-3xl font-black font-mono tracking-tight text-slate-900 dark:text-emerald-400">
                         {currentContent.amount}
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold font-sans text-slate-900 leading-snug">
+                    <h3 className="text-lg sm:text-xl font-bold font-sans text-slate-900 dark:text-white leading-snug">
                       {currentContent.heading}
                     </h3>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans font-medium">
+                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-sans font-medium">
                       {currentContent.paragraph}
                     </p>
                   </div>
@@ -482,14 +482,14 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
                         }}
                         className="w-full h-auto max-h-[200px] object-contain select-none scale-105"
                       />
-                      <div className="placeholder-info hidden w-full aspect-[4/3] rounded-xl border-2 border-dashed border-slate-300 bg-slate-50/80 flex flex-col items-center justify-center p-4 text-center">
-                        <div className="p-2 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200/80 mb-1.5">
+                      <div className="placeholder-info hidden w-full aspect-[4/3] rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-900/80 flex flex-col items-center justify-center p-4 text-center">
+                        <div className="p-2 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200/80 dark:border-emerald-800/80 mb-1.5">
                           <PieChart className="w-5 h-5" />
                         </div>
-                        <span className="text-[11px] font-mono font-bold text-slate-800 uppercase tracking-wide">
+                        <span className="text-[11px] font-mono font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wide">
                           {currentContent.placeholderLabel}
                         </span>
-                        <span className="text-[10px] font-sans text-slate-500 mt-0.5">
+                        <span className="text-[10px] font-sans text-slate-500 dark:text-slate-400 mt-0.5">
                           Path: {currentContent.imagePath}
                         </span>
                       </div>
@@ -499,7 +499,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
 
                 {/* Staggered Metric Cards */}
                 <div className="pt-1">
-                  <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+                  <div className="text-[10px] font-mono font-bold text-slate-400 dark:text-slate-400 uppercase tracking-wider mb-1.5">
                     KEY PROTECTION & EXECUTION HIGHLIGHTS
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -511,20 +511,20 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
                           initial={{ opacity: 0, y: 10, scale: 0.97 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           transition={{ duration: 0.3, delay: idx * 0.06 }}
-                          className="px-2.5 py-2 rounded-lg border border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-emerald-300 hover:shadow-xs transition-all duration-200 space-y-0.5 group"
+                          className="px-2.5 py-2 rounded-lg border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/70 hover:bg-white dark:hover:bg-slate-800/80 hover:border-emerald-300 dark:hover:border-emerald-500/50 hover:shadow-xs transition-all duration-200 space-y-0.5 group"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-[10px] font-mono font-semibold text-slate-500 truncate max-w-[130px]">
+                            <span className="text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 truncate max-w-[130px]">
                               {metric.title}
                             </span>
                             <div className={`p-0.5 rounded border text-[9px] ${metric.highlight}`}>
                               <MetricIcon className="w-2.5 h-2.5" />
                             </div>
                           </div>
-                          <div className="text-sm font-black font-mono text-slate-900 tracking-tight group-hover:text-emerald-700 transition-colors">
+                          <div className="text-sm font-black font-mono text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                             {metric.value}
                           </div>
-                          <div className="text-[9.5px] font-sans text-slate-500 leading-tight truncate">
+                          <div className="text-[9.5px] font-sans text-slate-500 dark:text-slate-400 leading-tight truncate">
                             {metric.subtitle}
                           </div>
                         </motion.div>
@@ -536,22 +536,22 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
             </AnimatePresence>
 
             {/* Bottom Regulatory Footer Strip */}
-            <div className="pt-2.5 border-t border-slate-200 space-y-2.5">
+            <div className="pt-2.5 border-t border-slate-200 dark:border-slate-800 space-y-2.5">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-center">
-                <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
-                  <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" />
+                <div className="py-1 px-2 rounded-md bg-slate-50 dark:bg-slate-900/80 border border-slate-200/70 dark:border-slate-800 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800 dark:text-slate-200">
+                  <ShieldCheck className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>ISO 27001 Certified</span>
                 </div>
-                <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                <div className="py-1 px-2 rounded-md bg-slate-50 dark:bg-slate-900/80 border border-slate-200/70 dark:border-slate-800 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800 dark:text-slate-200">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>Segregated Wallets</span>
                 </div>
-                <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
-                  <BadgeCheck className="w-3 h-3 text-emerald-600 shrink-0" />
+                <div className="py-1 px-2 rounded-md bg-slate-50 dark:bg-slate-900/80 border border-slate-200/70 dark:border-slate-800 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800 dark:text-slate-200">
+                  <BadgeCheck className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>FCA / CySEC / ASIC Ready</span>
                 </div>
-                <div className="py-1 px-2 rounded-md bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800">
-                  <Lock className="w-3 h-3 text-emerald-600 shrink-0" />
+                <div className="py-1 px-2 rounded-md bg-slate-50 dark:bg-slate-900/80 border border-slate-200/70 dark:border-slate-800 flex items-center justify-center gap-1.5 text-[10px] font-mono font-bold text-slate-800 dark:text-slate-200">
+                  <Lock className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>Cryptographic Audit Logs</span>
                 </div>
               </div>
@@ -559,9 +559,9 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 pt-0.5">
                 <button
                   onClick={onOpenAccount}
-                  className="flex items-center gap-1.5 text-[10.5px] font-mono font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-3 py-2 rounded-lg border border-slate-300/80 transition-all justify-center cursor-pointer"
+                  className="flex items-center gap-1.5 text-[10.5px] font-mono font-bold text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 px-3 py-2 rounded-lg border border-slate-300/80 dark:border-slate-700 transition-all justify-center cursor-pointer"
                 >
-                  <Download className="w-3 h-3 text-emerald-600 shrink-0" />
+                  <Download className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>Download Infrastructure Security Brief →</span>
                 </button>
 

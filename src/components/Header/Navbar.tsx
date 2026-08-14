@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         setIsScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -86,8 +86,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isDarkNavbar
         ? isScrolled
-          ? 'bg-[#090D14]/95 backdrop-blur-md border-b border-[#1E293B] text-white shadow-xl'
-          : 'bg-[#090D14] border-b border-transparent text-white'
+          ? 'bg-[#0d121d]/95 backdrop-blur-md border-b border-slate-800/80 text-white shadow-xl'
+          : 'bg-[#0d121d] border-b border-transparent text-white'
         : isScrolled
           ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-900 shadow-md'
           : 'bg-white border-b border-transparent text-slate-900'
@@ -113,12 +113,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </button>
 
-        {/* Right Aligned Navigation & Actions */}
-        <div className="hidden lg:flex items-center gap-6">
-          {/* Navigation Links - Signature IBKR Sleek Layout with Full PDF Modules */}
-          <nav className={`flex items-center gap-4 xl:gap-6 text-xs xl:text-[13px] font-semibold ${
-            isDarkNavbar ? 'text-slate-200' : 'text-slate-700'
-          }`}>
+        {/* Centered Navigation Links */}
+        <nav className={`hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-4 xl:gap-6 text-[11.5px] xl:text-xs font-semibold ${
+          isDarkNavbar ? 'text-slate-200' : 'text-slate-700'
+        }`}>
             
             {/* 1. Why BrokerBros Dropdown */}
             <div
@@ -132,14 +130,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('why');
                 }}
-                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
                   activeDropdown === 'why'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
                 }`}
               >
                 <span>Why BrokerBros</span>
-                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'why' && (
                 <div
@@ -147,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onMouseLeave={handleMouseLeave}
                   className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
                     isDarkNavbar
-                      ? 'bg-[#121520] border-slate-800 text-white'
+                      ? 'bg-[#131926] border-slate-800 text-white'
                       : 'bg-white border-slate-200 text-slate-800'
                   }`}
                 >
@@ -179,14 +176,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('products');
                 }}
-                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
                   activeDropdown === 'products'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
                 }`}
               >
                 <span>Products</span>
-                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'products' && (
                 <div
@@ -194,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onMouseLeave={handleMouseLeave}
                   className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
                     isDarkNavbar
-                      ? 'bg-[#121520] border-slate-800 text-white'
+                      ? 'bg-[#131926] border-slate-800 text-white'
                       : 'bg-white border-slate-200 text-slate-800'
                   }`}
                 >
@@ -237,14 +233,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('services');
                 }}
-                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
                   activeDropdown === 'services' || (isSolutionsPage && isDarkNavbar)
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
                 }`}
               >
                 <span>Services</span>
-                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'services' && (
                 <div
@@ -252,7 +247,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onMouseLeave={handleMouseLeave}
                   className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-72 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
                     isDarkNavbar
-                      ? 'bg-[#121520] border-slate-800 text-white'
+                      ? 'bg-[#131926] border-slate-800 text-white'
                       : 'bg-white border-slate-200 text-slate-800'
                   }`}
                 >
@@ -305,14 +300,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('platforms');
                 }}
-                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
                   activeDropdown === 'platforms'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
                 }`}
               >
                 <span>Platforms</span>
-                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'platforms' && (
                 <div
@@ -320,7 +314,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onMouseLeave={handleMouseLeave}
                   className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
                     isDarkNavbar
-                      ? 'bg-[#121520] border-slate-800 text-white'
+                      ? 'bg-[#131926] border-slate-800 text-white'
                       : 'bg-white border-slate-200 text-slate-800'
                   }`}
                 >
@@ -351,14 +345,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('pricing');
                 }}
-                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
                   activeDropdown === 'pricing'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
                 }`}
               >
                 <span>Pricing</span>
-                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'pricing' && (
                 <div
@@ -366,7 +359,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onMouseLeave={handleMouseLeave}
                   className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
                     isDarkNavbar
-                      ? 'bg-[#121520] border-slate-800 text-white'
+                      ? 'bg-[#131926] border-slate-800 text-white'
                       : 'bg-white border-slate-200 text-slate-800'
                   }`}
                 >
@@ -400,14 +393,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('education');
                 }}
-                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
                   activeDropdown === 'education'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
                 }`}
               >
                 <span>Education</span>
-                <ChevronDown className="w-3 h-3 opacity-70" />
               </button>
               {activeDropdown === 'education' && (
                 <div
@@ -415,7 +407,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onMouseLeave={handleMouseLeave}
                   className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
                     isDarkNavbar
-                      ? 'bg-[#121520] border-slate-800 text-white'
+                      ? 'bg-[#131926] border-slate-800 text-white'
                       : 'bg-white border-slate-200 text-slate-800'
                   }`}
                 >
@@ -431,62 +423,61 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </div>
 
-          </nav>
+        </nav>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenSearch}
-              className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all duration-300 ease-in-out cursor-pointer ${
-                isDarkNavbar
-                  ? 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:border-slate-700'
-                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
-              }`}
-            >
-              <Search className="w-3.5 h-3.5" />
-              <span>Search...</span>
-            </button>
+        {/* Action Buttons on Right */}
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <button
+            onClick={onOpenSearch}
+            className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all duration-300 ease-in-out cursor-pointer ${
+              isDarkNavbar
+                ? 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:border-slate-700'
+                : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
+            }`}
+          >
+            <Search className="w-3.5 h-3.5" />
+            <span>Search...</span>
+          </button>
 
-            {/* Universal Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle Light/Dark Theme"
-              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              className="relative p-2 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-amber-400 shadow-xs hover:shadow-md overflow-hidden group"
-            >
-              <div className="relative w-5 h-5 flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
-                <Sun className={`w-5 h-5 text-amber-400 absolute transition-all duration-500 transform ${
-                  theme === 'dark' ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
-                }`} />
-                <Moon className={`w-5 h-5 text-slate-700 dark:text-slate-200 absolute transition-all duration-500 transform ${
-                  theme === 'light' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
-                }`} />
-              </div>
-            </button>
+          {/* Universal Theme Toggle Button */}
+          <button
+            onClick={(e) => toggleTheme(e)}
+            aria-label="Toggle Light/Dark Theme"
+            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            className="relative p-1.5 transition-all duration-300 hover:scale-110 active:scale-90 cursor-pointer flex items-center justify-center bg-transparent border-0 text-slate-600 dark:text-amber-400 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg overflow-hidden group"
+          >
+            <div className="relative w-4 h-4 flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
+              <Sun className={`w-4 h-4 text-amber-400 absolute transition-all duration-500 transform ${
+                theme === 'dark' ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
+              }`} />
+              <Moon className={`w-4 h-4 text-slate-600 dark:text-amber-400 absolute transition-all duration-500 transform ${
+                theme === 'light' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+              }`} />
+            </div>
+          </button>
 
-            <button
-              onClick={onLogin}
-              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg shadow-sm shadow-emerald-600/20 transition-all duration-300 ease-in-out flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
-            >
-              <span>Log In</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
+          <button
+            onClick={onLogin}
+            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg shadow-sm shadow-emerald-600/20 transition-all duration-300 ease-in-out flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+          >
+            <span>Log In</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
         </div>
 
         {/* Mobile Menu & Theme Controls */}
         <div className="lg:hidden flex items-center gap-2">
           {/* Mobile Theme Switcher */}
           <button
-            onClick={toggleTheme}
+            onClick={(e) => toggleTheme(e)}
             aria-label="Toggle Theme"
-            className="relative p-2 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-amber-400 shadow-xs overflow-hidden group"
+            className="relative p-1.5 transition-all duration-300 hover:scale-110 active:scale-90 cursor-pointer flex items-center justify-center bg-transparent border-0 text-slate-600 dark:text-amber-400 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg overflow-hidden group"
           >
-            <div className="relative w-5 h-5 flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
-              <Sun className={`w-5 h-5 text-amber-400 absolute transition-all duration-500 transform ${
+            <div className="relative w-4 h-4 flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
+              <Sun className={`w-4 h-4 text-amber-400 absolute transition-all duration-500 transform ${
                 theme === 'dark' ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
               }`} />
-              <Moon className={`w-5 h-5 text-slate-700 dark:text-slate-200 absolute transition-all duration-500 transform ${
+              <Moon className={`w-4 h-4 text-slate-600 dark:text-amber-400 absolute transition-all duration-500 transform ${
                 theme === 'light' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
               }`} />
             </div>
@@ -508,7 +499,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className={`lg:hidden border-b p-4 space-y-4 animate-in slide-in-from-top duration-200 ${
-          isDarkNavbar ? 'bg-[#0a0a0a] border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'
+          isDarkNavbar ? 'bg-[#0d121d] border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'
         }`}>
           <div className="space-y-1">
             <div className="text-[10px] font-mono font-bold text-emerald-500 uppercase px-2 py-1 tracking-wider">Products</div>

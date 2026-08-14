@@ -79,18 +79,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAccount, onExplo
 
   return (
     <section
-      className="relative bg-slate-100 dark:bg-[#090D14] text-slate-950 dark:text-white min-h-[460px] sm:min-h-[510px] flex items-center overflow-hidden border-b border-slate-200 dark:border-[#1E293B] font-sans select-none transition-colors duration-300"
+      className="relative bg-slate-900 text-white min-h-[460px] sm:min-h-[510px] flex items-center overflow-hidden border-b border-slate-800 font-sans select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Image Carousel with Direct Smooth Switch (Zero Black Flash) */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Original Still Background Image Carousel (Untouched by theme transitions) */}
+      <div className="absolute inset-0 w-full h-full no-theme-transition">
         {HERO_SLIDES.map((item, idx) => (
           <img
             key={item.id}
             src={item.bgImage}
             alt={`BrokerBros Hero Slide ${item.id}`}
-            className={`absolute inset-0 w-full h-full object-cover object-center pointer-events-none transition-opacity duration-500 ease-in-out ${
+            className={`absolute inset-0 w-full h-full object-cover object-center pointer-events-none transition-opacity duration-500 ease-in-out no-theme-transition ${
               currentSlide === idx ? 'opacity-100 z-0' : 'opacity-0 z-0'
             }`}
           />
