@@ -132,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('why');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
                   activeDropdown === 'why'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
@@ -179,7 +179,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('products');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
                   activeDropdown === 'products'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
@@ -237,7 +237,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('services');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
                   activeDropdown === 'services' || (isSolutionsPage && isDarkNavbar)
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
@@ -305,7 +305,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('platforms');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
                   activeDropdown === 'platforms'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
@@ -351,7 +351,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('pricing');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
                   activeDropdown === 'pricing'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
@@ -400,7 +400,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   e.preventDefault();
                   handleMouseEnter('education');
                 }}
-                className={`transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1 ${
+                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center gap-1 ${
                   activeDropdown === 'education'
                     ? 'text-emerald-500 font-bold'
                     : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
@@ -437,7 +437,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenSearch}
-              className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors cursor-pointer ${
+              className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all duration-300 ease-in-out cursor-pointer ${
                 isDarkNavbar
                   ? 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:border-slate-700'
                   : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
@@ -466,7 +466,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={onLogin}
-              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg shadow-sm shadow-emerald-600/20 transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg shadow-sm shadow-emerald-600/20 transition-all duration-300 ease-in-out flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
               <span>Log In</span>
               <ArrowRight className="w-3.5 h-3.5" />
