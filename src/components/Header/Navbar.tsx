@@ -97,13 +97,20 @@ export const Navbar: React.FC<NavbarProps> = ({
         isScrolled ? 'h-14 sm:h-16' : 'h-18 sm:h-20'
       }`}>
         <button onClick={() => handleNav('/')} className="flex items-center group shrink-0 text-left cursor-pointer py-1">
-          <img
-            src={isDarkNavbar ? '/logo-black.png' : '/logo-white.png'}
-            alt="BrokerBros"
-            className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.01] ${
-              isScrolled ? 'h-9 sm:h-10 lg:h-11' : 'h-11 sm:h-13 lg:h-14'
-            }`}
-          />
+          <div className={`relative flex items-center transition-all duration-300 ${
+            isScrolled ? 'h-8 sm:h-9 lg:h-10' : 'h-10 sm:h-11 lg:h-12'
+          }`}>
+            <img
+              src="/logo-black.png"
+              alt="BrokerBros"
+              className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out opacity-0 dark:opacity-100 group-hover:scale-[1.01]"
+            />
+            <img
+              src="/logo-white.png"
+              alt="BrokerBros"
+              className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out opacity-100 dark:opacity-0 absolute inset-0 group-hover:scale-[1.01]"
+            />
+          </div>
         </button>
 
         {/* Right Aligned Navigation & Actions */}

@@ -22,8 +22,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-8 border-b border-slate-200 dark:border-slate-800/70">
           <div className="space-y-1.5 max-w-lg">
             <div className="flex items-center gap-2">
-              <img src="/logo-white.png" alt="BrokerBros" className="h-10 sm:h-12 lg:h-14 w-auto object-contain dark:hidden" />
-              <img src="/logo-black.png" alt="BrokerBros" className="h-10 sm:h-12 lg:h-14 w-auto object-contain hidden dark:block" />
+              <div className="relative h-9 sm:h-11 lg:h-12 flex items-center shrink-0">
+                <img
+                  src="/logo-black.png"
+                  alt="BrokerBros"
+                  className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out opacity-0 dark:opacity-100"
+                />
+                <img
+                  src="/logo-white.png"
+                  alt="BrokerBros"
+                  className="h-full w-auto object-contain transition-opacity duration-300 ease-in-out opacity-100 dark:opacity-0 absolute inset-0"
+                />
+              </div>
               <span className="text-[10px] font-mono font-bold text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 px-2 py-0.5 rounded-full tracking-wider uppercase">
                 Enterprise SaaS
               </span>
