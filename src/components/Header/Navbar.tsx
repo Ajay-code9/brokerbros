@@ -445,17 +445,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={toggleTheme}
               aria-label="Toggle Light/Dark Theme"
               title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              className={`p-2 rounded-xl transition-all cursor-pointer flex items-center justify-center ${
-                isDarkNavbar
-                  ? 'text-amber-400 hover:bg-slate-800/70 hover:text-amber-300'
-                  : 'text-amber-500 hover:bg-slate-100 hover:text-amber-600'
-              }`}
+              className="relative p-2 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-amber-400 shadow-xs hover:shadow-md overflow-hidden group"
             >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-amber-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-slate-700" />
-              )}
+              <div className="relative w-5 h-5 flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
+                <Sun className={`w-5 h-5 text-amber-400 absolute transition-all duration-500 transform ${
+                  theme === 'dark' ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
+                }`} />
+                <Moon className={`w-5 h-5 text-slate-700 dark:text-slate-200 absolute transition-all duration-500 transform ${
+                  theme === 'light' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+                }`} />
+              </div>
             </button>
 
             <button
@@ -474,13 +473,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
-            className={`p-2 rounded-xl cursor-pointer flex items-center justify-center transition-all ${
-              isDarkNavbar
-                ? 'text-amber-400 hover:bg-slate-800/70'
-                : 'text-slate-700 hover:bg-slate-100'
-            }`}
+            className="relative p-2 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-amber-400 shadow-xs overflow-hidden group"
           >
-            {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
+            <div className="relative w-5 h-5 flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
+              <Sun className={`w-5 h-5 text-amber-400 absolute transition-all duration-500 transform ${
+                theme === 'dark' ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
+              }`} />
+              <Moon className={`w-5 h-5 text-slate-700 dark:text-slate-200 absolute transition-all duration-500 transform ${
+                theme === 'light' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+              }`} />
+            </div>
           </button>
 
           <button

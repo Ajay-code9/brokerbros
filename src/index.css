@@ -21,6 +21,25 @@
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   }
 
+  /* Smooth, premium crossfade transition across all background, border, text, fill, stroke, and shadow color changes */
+  *, *::before, *::after {
+    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+    transition-duration: 350ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Exclude heavy image/video/canvas assets or spin animations from theme transition lag */
+  img, video, canvas, svg.animate-spin, .no-theme-transition {
+    transition-property: none !important;
+  }
+
+  /* View Transitions API Native Silky Crossfade */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 350ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   html {
     color: var(--color-heading);
     -webkit-font-smoothing: antialiased;
@@ -43,7 +62,6 @@
     line-height: 1.7;
     color: #4B5563;
     background-color: #ffffff;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   html.dark body {
