@@ -1,648 +1,362 @@
 import React, { useState } from 'react';
 import {
+  Zap,
   ShieldCheck,
-  TrendingUp,
+  Building2,
+  Clock,
+  CheckCircle2,
   Award,
   Lock,
-  Building2,
-  CheckCircle,
-  AlertCircle,
-  FileText,
-  Globe,
+  Headphones,
+  Users,
+  Activity,
   ArrowRight,
-  Download,
+  Server,
+  FileCheck2,
   HelpCircle,
-  Layers,
   ChevronDown,
-  ChevronUp,
-  Zap,
-  BarChart3,
-  DollarSign,
-  PieChart,
-  Check,
-  X,
-  Clock,
-  Briefcase
+  Globe2,
+  Cpu
 } from 'lucide-react';
 import { CTASection } from '../components/CTA/CTASection';
-import { VideoHeroBackground } from '../components/Common/VideoHeroBackground';
-import { UniversalCard } from '../components/Common/UniversalCard';
 
-interface PageProps {
+interface WhyBrokerBrosPageProps {
   onOpenAccount: () => void;
 }
 
-export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
+export const WhyBrokerBrosPage: React.FC<WhyBrokerBrosPageProps> = ({ onOpenAccount }) => {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
-  const [selectedTimelineIndex, setSelectedTimelineIndex] = useState<number>(4);
-  const [activeBalanceTab, setActiveBalanceTab] = useState<'assets' | 'capital' | 'liquidity'>('capital');
-  const [downloadToast, setDownloadToast] = useState<boolean>(false);
+  const [selectedLatencyLoc, setSelectedLatencyLoc] = useState<'ny4' | 'ld4' | 'ty3'>('ny4');
 
-  const handleDownloadReport = () => {
-    setDownloadToast(true);
-    setTimeout(() => setDownloadToast(false), 4000);
+  const speedMetrics = [
+    { label: "Execution Latency", value: "< 8.4 ms", sub: "Equinix NY4 Direct Fiber", highlight: "Sub-10ms Standard" },
+    { label: "SLA Uptime", value: "99.999%", sub: "Multi-Region Redundant Node", highlight: "Zero Downtime" },
+    { label: "Human Support Response", value: "< 30 Sec", sub: "24/7 Direct Desk Access", highlight: "No Support Bots" },
+    { label: "Order Execution Rate", value: "12M+/Day", sub: "Zero-PFOF SmartRouting", highlight: "100% Transparent" },
+    { label: "Capital Equity Base", value: "$28.4 Billion", sub: "Tier-1 Capital Reserves", highlight: "S&P Rated" },
+    { label: "Segregated Accounts", value: "100% Isolated", sub: "Top-Tier Bank Accounts", highlight: "Audit-Ready" }
+  ];
+
+  const speedPillars = [
+    {
+      title: "Sub-10ms Direct Fiber Interconnects",
+      desc: "Co-located directly inside Equinix NY4, LD4, and TY3 financial datacenters. Our ultra-low latency fiber cross-connects route your orders to prime liquidity providers in single-digit milliseconds.",
+      icon: Zap,
+      metric: "8.4ms Avg Speed",
+      color: "emerald"
+    },
+    {
+      title: "Human-Centric 24/7 Trading Desk",
+      desc: "We believe institutional trading requires genuine human intellect. Speak directly to senior market specialists in under 30 seconds — no frustrating AI support bots or phone mazes.",
+      icon: Headphones,
+      metric: "24/7 Human Desk",
+      color: "blue"
+    },
+    {
+      title: "Uncompromising 99.999% SLA Uptime",
+      desc: "Built on redundant multi-datacenter failover nodes. Even during historic market volatility spikes, our infrastructure operates seamlessly without order queuing or gateway freeze.",
+      icon: Server,
+      metric: "99.999% SLA",
+      color: "purple"
+    },
+    {
+      title: "Zero PFOF & Pure SmartRouting",
+      desc: "We never sell your order flow to third-party internalizers or market makers. Every trade is routed directly to liquidity venues to secure the absolute best price execution for your firm.",
+      icon: Cpu,
+      metric: "Zero PFOF",
+      color: "amber"
+    },
+    {
+      title: "Transparent & Accountable Culture",
+      desc: "Zero hidden markups, zero overnight surprise fees, and full microsecond execution timestamp logs provided for every filled order. Complete clarity from onboarding to execution.",
+      icon: FileCheck2,
+      metric: "100% Transparent",
+      color: "teal"
+    },
+    {
+      title: "Institutional $28.4B Capital Base",
+      desc: "Your capital is safeguarded by a conservative $28.4B equity base, holding 28.5% CET1 ratio — nearly 3x the global regulatory requirement.",
+      icon: ShieldCheck,
+      metric: "$28.4B Capital",
+      color: "cyan"
+    }
+  ];
+
+  const latencyLocations = {
+    ny4: [
+      { venue: "NASDAQ / NYSE Direct", latency: "1.2 ms", route: "Direct Cross-Connect" },
+      { venue: "CME Group Chicago", latency: "7.8 ms", route: "Microwave Wireless" },
+      { venue: "London LSE / LME", latency: "34.2 ms", route: "Transatlantic Fiber" },
+      { venue: "Tokyo JPX / TSE", latency: "94.1 ms", route: "Transpacific Fiber" }
+    ],
+    ld4: [
+      { venue: "London LSE / LME", latency: "1.1 ms", route: "Direct Cross-Connect" },
+      { venue: "Eurex / Deutsche Börse", latency: "6.4 ms", route: "European Sub-Sea" },
+      { venue: "NASDAQ / NYSE Direct", latency: "34.1 ms", route: "Transatlantic Fiber" },
+      { venue: "Singapore SGX", latency: "88.4 ms", route: "Indo-Euro Cable" }
+    ],
+    ty3: [
+      { venue: "Tokyo JPX / TSE", latency: "1.4 ms", route: "Direct Cross-Connect" },
+      { venue: "Hong Kong HKEX", latency: "28.6 ms", route: "East Asia Sub-Sea" },
+      { venue: "Singapore SGX", latency: "32.1 ms", route: "South Asia Cable" },
+      { venue: "NASDAQ / NYSE Direct", latency: "94.5 ms", route: "Transpacific Fiber" }
+    ]
   };
 
-  const metrics = [
-    { label: "Consolidated Equity Capital", value: "$28.4 Billion", sub: "S&P Investment Grade Standard", highlight: "+14.2% YoY" },
-    { label: "Excess Regulatory Capital", value: "$14.2 Billion", sub: "28.5% CET1 Ratio vs 10.5% Req.", highlight: "2.7x Required" },
-    { label: "Daily Average Trading Vol.", value: "$480+ Billion", sub: "Over 12M Executed Trades Daily", highlight: "Global Liquidity" },
-    { label: "Active Client Accounts", value: "2.8 Million+", sub: "Institutions & Retail Investors", highlight: "35 Countries" },
-    { label: "Client Assets Under Custody", value: "$320+ Billion", sub: "Held in Tier-1 Bank Segregation", highlight: "100% Segregated" },
-    { label: "Excess SIPC Insurance", value: "$30 Million", sub: "Per Account via Lloyd's Syndicates", highlight: "Tier-1 Protection" }
-  ];
-
-  const pillars = [
-    {
-      title: "Uncompromising Client Confidence",
-      desc: "Investors require total assurance that their capital is shielded from systemic shocks. Our $28.4B capital base ensures peace of mind through any market cycle.",
-      icon: ShieldCheck,
-      metric: "S&P A- Rated"
-    },
-    {
-      title: "Market Downturn Protection",
-      desc: "During extreme volatility spikes or liquidity squeezes, BrokerBros maintains robust excess capital buffers to execute client orders uninterrupted.",
-      icon: TrendingUp,
-      metric: "28.5% CET1 Ratio"
-    },
-    {
-      title: "Immediate Capital Liquidity",
-      desc: "Client cash reserves are held in overnight Tier-1 bank deposits and short-dated US Treasuries, guaranteeing same-day withdrawal capabilities.",
-      icon: Zap,
-      metric: "Zero Illiquid Assets"
-    },
-    {
-      title: "Continuous Operational Resilience",
-      desc: "Redundant clearing pathways, multi-region datacenters, and zero PFOF routing protect execution speeds even during record volume days.",
-      icon: Building2,
-      metric: "99.999% Uptime"
-    },
-    {
-      title: "Generational Sustainability",
-      desc: "Operating conservatively with zero long-term debt leverage ensures long-term institutional longevity for wealth management & family offices.",
-      icon: Award,
-      metric: "Zero Debt Leverage"
-    }
-  ];
-
-  const ratingComparisons = [
-    { broker: "BrokerBros Securities", rating: "S&P: A- (Stable)", moodys: "Moody's: A3", cet1: "28.5%", pfof: "Zero PFOF", protection: "SIPC + $30M Excess" },
-    { broker: "Legacy Tier-1 Broker A", rating: "S&P: BBB+", moodys: "Moody's: Baa1", cet1: "14.2%", pfof: "Accepts PFOF", protection: "SIPC Only" },
-    { broker: "Fintech Retail App B", rating: "S&P: BBB- / Unrated", moodys: "Moody's: Baa3", cet1: "11.0%", pfof: "Heavy PFOF Dependent", protection: "SIPC Only" },
-    { broker: "Offshore CFD Broker C", rating: "Unrated (Non-US)", moodys: "Unrated", cet1: "Unknown", pfof: "B-Book Internalizer", protection: "No SIPC Protection" }
-  ];
-
-  const riskFramework = [
-    {
-      title: "Real-Time Automated Margin Risk Engine",
-      desc: "Scans client positions every 100 milliseconds using stress-testing algorithms to prevent negative equity balances before liquidations occur.",
-      tag: "Microsecond Risk Analytics"
-    },
-    {
-      title: "Daily Monte Carlo Stress Testing",
-      desc: "Simulates severe multi-asset market crash scenarios daily to verify that capital reserves exceed extreme 99.9th percentile loss expectations.",
-      tag: "99.9th Percentile VaR"
-    },
-    {
-      title: "Tier-1 Central Clearing Gateways",
-      desc: "Direct clearing membership with DTCC, OCC, CME Clearing, and Euroclear eliminates intermediary credit risks.",
-      tag: "Direct Exchange Member"
-    },
-    {
-      title: "SOC-2 Type II Cyber Resilience",
-      desc: "Multi-datacenter fault tolerance with hardware security modules (HSM) and encrypted multi-signature vault architecture.",
-      tag: "Hardware Level Encryption"
-    }
-  ];
-
-  const timelineEvents = [
-    { year: "2012", title: "Foundation & SEC/FINRA Registration", detail: "Established with $250M initial capital base focused on direct market access." },
-    { year: "2016", title: "S&P Investment Grade Credit Rating", detail: "Received inaugural S&P BBB+ rating following global clearing expansion." },
-    { year: "2020", title: "Capital Reaches $15.0 Billion", detail: "Expanded excess regulatory capital reserves to absorb unprecedented pandemic market volume." },
-    { year: "2024", title: "S&P Upgrade to A- (Stable)", detail: "Upgraded by S&P Global Ratings citing outstanding balance sheet strength & zero PFOF." },
-    { year: "2026", title: "$28.4B Consolidated Capital Today", detail: "Serving 2.8M accounts across 35 countries with $320B+ assets under custody." }
-  ];
-
-  const globalHubs = [
-    { city: "New York (Global HQ)", region: "Americas", status: "Active • 24/5 Desk", volume: "$210B Daily", address: "One World Trade Center, 74th Fl" },
-    { city: "London", region: "EMEA", status: "Active • 24/5 Desk", volume: "$130B Daily", address: "25 Bank Street, Canary Wharf" },
-    { city: "Singapore", region: "Asia-Pacific", status: "Active • 24/5 Desk", volume: "$95B Daily", address: "Marina Bay Financial Centre" },
-    { city: "Tokyo", region: "Asia-Pacific", status: "Active • 24/5 Desk", volume: "$45B Daily", address: "Roppongi Hills Mori Tower" }
+  const humanComparison = [
+    { feature: "Support Accessibility", brokerBros: "24/7 Live Human Desk (<30s)", retailApps: "Chatbot / Email Only (24-48h)" },
+    { feature: "Execution Speed", brokerBros: "Sub-10ms Direct Fiber", retailApps: "150ms - 500ms Delayed" },
+    { feature: "Order Routing Model", brokerBros: "Zero PFOF SmartRouting", retailApps: "PFOF Sold to Internalizers" },
+    { feature: "Infrastructure Uptime", brokerBros: "99.999% SLA Failover", retailApps: "Frequent Volatility Outages" },
+    { feature: "Fee Transparency", brokerBros: "Zero Hidden Markups", retailApps: "Hidden Spread Markups" },
+    { feature: "Client Capital Safety", brokerBros: "100% Segregated Top Tier", retailApps: "Co-mingled Operating Pool" }
   ];
 
   const faqs = [
     {
-      q: "What does the S&P A- Investment Grade rating mean for my account safety?",
-      a: "An S&P Global rating of A- indicates strong financial security and an exceptional capacity to meet financial commitments. Unlike unrated or lower-rated retail brokers, BrokerBros maintains conservative capital reserves that undergo rigorous independent credit evaluation annually."
+      q: "What makes BrokerBros execution faster than typical brokers?",
+      a: "BrokerBros servers are co-located directly inside major financial hubs (Equinix NY4 New Jersey, LD4 London, TY3 Tokyo). By utilizing optical fiber cross-connects and zero-PFOF SmartRouting, order latency stays consistently under 10 milliseconds."
     },
     {
-      q: "How are my cash and securities protected if BrokerBros experiences market distress?",
-      a: "Client assets are held in fully segregated accounts at Tier-1 banking institutions (e.g., JPMorgan Chase, Bank of America) completely separate from BrokerBros corporate funds. In addition, client securities are protected by SIPC up to $500,000 (including $250,000 for cash claims) and backed by additional Lloyd's of London excess insurance up to $30,000,000 per client account."
+      q: "How does 24/7 Human Desk support work?",
+      a: "Unlike retail fintech apps that force clients into unhelpful AI chatbot loops, BrokerBros provides direct phone and chat channels to experienced human trading specialists 24 hours a day, 7 days a week. Average answer time is under 30 seconds."
     },
     {
-      q: "Does BrokerBros lend out my fully paid stock for short selling without my permission?",
-      a: "No. Fully paid client securities are never lent out or re-hypothecated without your explicit written opt-in through our Fully Paid Stock Yield Enhancement Program, where you receive 50% of earned loan interest fees."
+      q: "What does 99.999% SLA Uptime mean for my firm?",
+      a: "Our infrastructure operates with less than 5.2 minutes of total downtime per year across our entire network. Dual active-active datacenter redundancy ensures your trading terminals, APIs, and client portals remain operational during record market volatility spikes."
     },
     {
-      q: "What is CET1 Capital Ratio and why is 28.5% significant?",
-      a: "Common Equity Tier 1 (CET1) measures an institution's core capital against its total risk-weighted assets. While international banking regulations require a minimum CET1 ratio of 10.5%, BrokerBros maintains a 28.5% CET1 ratio — almost 3x the regulatory threshold — ensuring unmatched balance sheet resilience."
-    },
-    {
-      q: "Can I review BrokerBros' official audited balance sheet and regulatory filings?",
-      a: "Yes. As a registered broker-dealer, BrokerBros files quarterly financial reports with the SEC and FINRA. You can download our latest audited financial disclosures directly from our Investor Relations hub or request a physical report copy."
+      q: "How is client capital segregated and protected?",
+      a: "All client funds are held in dedicated, segregated bank accounts at Tier-1 banking institutions (such as JPMorgan Chase, Barclays, and UBS), completely separate from BrokerBros corporate operating funds. Daily automated balance reconciliations guarantee instant withdrawal liquidity."
     }
   ];
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 transition-colors duration-300 selection:bg-emerald-500 selection:text-white font-sans antialiased">
-      {/* Toast Notification for Financial Report Download */}
-      {downloadToast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-slate-950 text-white px-5 py-4 rounded-xl border border-emerald-500/40 shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-200">
-          <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
-          <div>
-            <div className="text-xs font-bold text-white">2026 Financial Strength Report Downloaded</div>
-            <div className="text-[11px] text-slate-400">Audited SEC & FINRA financial disclosures sent to your browser.</div>
-          </div>
-        </div>
-      )}
+    <div className="min-h-screen bg-slate-50 dark:bg-[#090D14] text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
+      
+      {/* 1. HERO SECTION (WELL-PADDED & FULLY VISIBLE BELOW FIXED HEADER) */}
+      <section className="relative min-h-[calc(100vh-80px)] flex flex-col justify-center pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden border-b border-slate-200 dark:border-slate-800">
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* 1. HERO SECTION WITH NATURAL BACKGROUND IMAGE */}
-      <section 
-        className="relative text-slate-900 dark:text-white min-h-[calc(100vh-80px)] py-10 lg:py-14 border-b border-slate-200 dark:border-[#1E293B] overflow-hidden font-sans bg-cover bg-center bg-no-repeat flex flex-col justify-between"
-        style={{ backgroundImage: "url('/backgroundimage-one.webp')" }}
-      >
-        <div className="absolute inset-0 bg-white/40 dark:bg-[#090D14]/85 backdrop-blur-[2px] transition-colors duration-300" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-3xl space-y-5 text-left">
-            <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white font-mono text-xs font-bold border border-slate-200 dark:border-slate-800 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-emerald-700 dark:text-emerald-400">CAPITAL STRENGTH & SAFETY OF FUNDS</span>
-            </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-black tracking-tight text-slate-950 dark:text-white font-sans leading-[1.12]">
-              Unmatched Financial Strength & Institutional Capital Protection
-            </h1>
-            <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-medium max-w-2xl font-sans">
-              BrokerBros maintains $28.4 Billion in consolidated equity capital, a 28.5% CET1 ratio, and multi-tier regulatory oversight across premier global jurisdictions.
-            </p>
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <button
-                onClick={onOpenAccount}
-                className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center gap-2 cursor-pointer"
-              >
-                <span>Open Enterprise Account</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <button
-                onClick={handleDownloadReport}
-                className="px-5 py-3.5 bg-white dark:bg-[#141C2B] hover:bg-slate-50 dark:hover:bg-[#1B2538] text-slate-900 dark:text-white font-semibold rounded-xl border border-slate-300 dark:border-[#1E293B] shadow-sm transition-all flex items-center gap-2 cursor-pointer text-sm"
-              >
-                <Download className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                <span>Download 2026 Audit Report</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6 sm:space-y-8 my-auto">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+            Engineered for Millisecond Speed. <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-400">
+              Built on Unshakable Human Trust.
+            </span>
+          </h1>
 
-        {/* Key Quick Badges */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-8 pb-2">
-          <div className="pt-6 border-t border-slate-300/80 dark:border-[#1E293B] grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono max-w-3xl">
-            <div className="bg-white/90 dark:bg-[#141C2B]/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-[#1E293B] shadow-sm">
-              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">S&P Credit Rating</div>
-              <div className="text-emerald-700 dark:text-emerald-400 font-extrabold text-sm sm:text-base mt-0.5">A- (Stable Outlook)</div>
-            </div>
-            <div className="bg-white/90 dark:bg-[#141C2B]/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-[#1E293B] shadow-sm">
-              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">CET1 Capital Ratio</div>
-              <div className="text-slate-950 dark:text-white font-extrabold text-sm sm:text-base mt-0.5">28.5% (2.7x Req)</div>
-            </div>
-            <div className="bg-white/90 dark:bg-[#141C2B]/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 dark:border-[#1E293B] shadow-sm">
-              <div className="text-slate-500 dark:text-slate-400 text-xs font-sans">Client Protection</div>
-              <div className="text-emerald-700 dark:text-emerald-400 font-extrabold text-sm sm:text-base mt-0.5">$30M Excess Policy</div>
-            </div>
+          <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+            BrokerBros combines sub-10ms direct fiber execution, 99.999% SLA uptime, and a 24/7 dedicated human trading desk — giving institutional operators and proprietary firms the fastest, most reliable financial infrastructure on earth.
+          </p>
+
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <button
+              onClick={onOpenAccount}
+              className="w-full sm:w-auto px-8 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-600/25 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>Get Started with BrokerBros</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <a
+              href="#speed-benchmarks"
+              className="w-full sm:w-auto px-7 py-3.5 bg-slate-200 dark:bg-slate-800/80 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-sm rounded-xl border border-slate-300 dark:border-slate-700 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <Activity className="w-4 h-4 text-emerald-500" />
+              <span>Explore Execution Benchmarks</span>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* 2. WHY CAPITAL STRENGTH MATTERS */}
-      <section className="py-20 bg-slate-50/80 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B] relative overflow-hidden transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">
-              Why Capital Strength Matters When Selecting a Brokerage
-            </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed font-sans">
-              Financial markets experience extreme volatility, liquidity shocks, and credit tightening. A heavily capitalized broker acts as an indestructible fortress for your life's savings and institutional portfolios.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pillars.map((item, idx) => {
-              const IconComp = item.icon;
-              return (
-                <UniversalCard
-                  key={idx}
-                  icon={<IconComp className="w-6 h-6" />}
-                  title={item.title}
-                  description={item.desc}
-                  badge={item.metric}
-                  onClick={onOpenAccount}
-                  variant="light"
-                />
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. FINANCIAL STRENGTH HIGHLIGHTS */}
-      <section className="py-20 bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 border-b border-slate-200/80 dark:border-[#1E293B] transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 dark:border-[#1E293B] pb-8">
-            <div>
-              <div className="text-emerald-800 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider mb-2">FINANCIAL STANDING HIGHLIGHTS</div>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">Institutional Key Metrics</h2>
+      {/* 2. CORE SPEED & RELIABILITY PILLARS & METRICS */}
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        {/* Metric Badges Strip (Appears on Scroll) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          {speedMetrics.map((m, idx) => (
+            <div
+              key={idx}
+              className="p-3.5 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm text-center space-y-1"
+            >
+              <div className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">
+                {m.highlight}
+              </div>
+              <div className="text-xl sm:text-2xl font-black font-mono text-slate-900 dark:text-white">
+                {m.value}
+              </div>
+              <div className="text-[11px] font-semibold text-slate-700 dark:text-slate-300">
+                {m.label}
+              </div>
             </div>
-            <p className="text-slate-600 dark:text-slate-400 text-sm max-w-md font-sans">
-              Audited quarterly figures confirming BrokerBros position among the world's most capitalized independent brokerages.
-            </p>
-          </div>
+          ))}
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {metrics.map((m, idx) => (
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Why Financial Institutions Choose BrokerBros
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+            Every layer of our stack is optimized for maximum velocity, total transparency, and continuous human availability.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {speedPillars.map((p, idx) => {
+            const Icon = p.icon;
+            return (
               <div
                 key={idx}
-                className="bg-slate-50/70 dark:bg-[#141C2B] p-8 rounded-2xl border border-slate-200/80 dark:border-[#1E293B] space-y-3 relative overflow-hidden group hover:bg-white dark:hover:bg-[#1B2538] hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/15 hover:-translate-y-1 transition-all duration-300"
+                className="p-6 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-slate-800/80 shadow-md hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group space-y-4"
               >
-                <div className="flex justify-between items-center text-xs font-mono text-slate-500 dark:text-slate-400">
-                  <span className="font-semibold text-slate-700 dark:text-slate-300">{m.label}</span>
-                  <span className="text-emerald-800 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-200 dark:border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">{m.highlight}</span>
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight pt-1 font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-                  {m.value}
-                </div>
-                <div className="text-xs font-sans text-slate-600 dark:text-slate-400 pt-2 border-t border-slate-200/60 dark:border-slate-800">
-                  {m.sub}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. CREDIT RATING & STANDING */}
-      <section className="py-20 bg-slate-50/60 dark:bg-[#0E1420] border-b border-slate-200 dark:border-[#1E293B] transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 text-xs font-bold font-mono rounded-md border border-emerald-200 dark:border-emerald-500/30">
-              <Award className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
-              S&P GLOBAL CREDIT EVALUATION
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white font-sans">
-              S&P A- Credit Rating Comparison
-            </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
-              Standard & Poor's investment grade rating evaluates operational liquidity, equity reserves, risk management discipline, and counterparty reliability.
-            </p>
-          </div>
-
-          {/* Rating Comparison Table */}
-          <div className="overflow-hidden bg-white dark:bg-[#141C2B] rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-lg">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-100 dark:bg-[#090D14] text-slate-900 dark:text-white text-xs uppercase font-mono border-b border-slate-200 dark:border-[#1E293B]">
-                <tr>
-                  <th className="py-4 px-6 font-bold">Brokerage Firm</th>
-                  <th className="py-4 px-6 font-bold text-emerald-400">S&P Credit Rating</th>
-                  <th className="py-4 px-6 font-bold">Moody's Rating</th>
-                  <th className="py-4 px-6 font-bold">CET1 Ratio</th>
-                  <th className="py-4 px-6 font-bold">PFOF Model</th>
-                  <th className="py-4 px-6 font-bold">Client Protection</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 font-sans">
-                {ratingComparisons.map((row, idx) => {
-                  const isBrokerBros = idx === 0;
-                  return (
-                    <tr key={idx} className={isBrokerBros ? "bg-slate-900 dark:bg-slate-800/80 text-white font-bold" : "hover:bg-slate-50 dark:hover:bg-slate-800/40 text-slate-700 dark:text-slate-300 transition-colors"}>
-                      <td className="py-4.5 px-6 flex items-center gap-2">
-                        {isBrokerBros && <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 animate-pulse" />}
-                        <span className={isBrokerBros ? "text-white font-bold text-base" : "font-semibold"}>{row.broker}</span>
-                      </td>
-                      <td className="py-4.5 px-6 font-mono">
-                        <span className={isBrokerBros ? "bg-emerald-500 text-slate-950 font-black px-3 py-1 rounded text-xs shadow-md" : "text-slate-700 dark:text-slate-300 font-semibold"}>
-                          {row.rating}
-                        </span>
-                      </td>
-                      <td className="py-4.5 px-6 font-mono text-xs">{row.moodys}</td>
-                      <td className="py-4.5 px-6 font-mono text-xs font-bold text-emerald-400">{row.cet1}</td>
-                      <td className="py-4.5 px-6 text-xs font-semibold">{row.pfof}</td>
-                      <td className="py-4.5 px-6 text-xs font-semibold">{row.protection}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. BALANCE SHEET STRENGTH & CET1 GAUGE */}
-      <section className="py-20 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white font-sans">
-              Interactive Balance Sheet & Capital Fortress
-            </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base font-sans">
-              Detailed view of consolidated equity reserves, segregated client assets, and unencumbered US Treasury liquidity.
-            </p>
-
-            {/* Tabs */}
-            <div className="flex flex-wrap justify-center gap-2 pt-4">
-              <button
-                onClick={() => setActiveBalanceTab('capital')}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${activeBalanceTab === 'capital' ? 'bg-slate-950 dark:bg-emerald-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
-                  }`}
-              >
-                Capital Reserves ($28.4B)
-              </button>
-              <button
-                onClick={() => setActiveBalanceTab('assets')}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${activeBalanceTab === 'assets' ? 'bg-slate-950 dark:bg-emerald-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
-                  }`}
-              >
-                Client Custody Assets ($320B)
-              </button>
-              <button
-                onClick={() => setActiveBalanceTab('liquidity')}
-                className={`px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${activeBalanceTab === 'liquidity' ? 'bg-slate-950 dark:bg-emerald-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
-                  }`}
-              >
-                US Treasuries & Cash Reserves
-              </button>
-            </div>
-          </div>
-
-          {/* Dynamic Tab Content Box with Visual Capital Gauge */}
-          <div className="bg-slate-50 dark:bg-[#121520] p-8 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl max-w-4xl mx-auto space-y-8">
-            {activeBalanceTab === 'capital' && (
-              <div className="space-y-6 animate-in fade-in duration-300">
-                <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white font-sans">Consolidated Equity & Regulatory Reserve Buffer</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs font-mono">SEC & FINRA audited net capital compliance</p>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
+                      {p.metric}
+                    </span>
                   </div>
-                  <span className="text-emerald-700 dark:text-emerald-400 font-bold font-mono text-xl">$28,420,000,000</span>
-                </div>
-
-                {/* CET1 Fortress Capital Progress Gauge */}
-                <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200/90 dark:border-slate-800 shadow-sm space-y-3">
-                  <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="font-bold text-slate-900 dark:text-white">BrokerBros CET1 Ratio: 28.5%</span>
-                    <span className="text-emerald-700 dark:text-emerald-400 font-bold">2.7x Regulatory Minimum (10.5%)</span>
-                  </div>
-                  <div className="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden relative">
-                    <div className="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full transition-all duration-1000 shadow-inner" style={{ width: '82%' }}></div>
-                    <div className="absolute left-[30%] top-0 bottom-0 w-0.5 bg-slate-400 dark:bg-slate-600 z-10"></div>
-                  </div>
-                  <div className="flex justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 pt-1">
-                    <span>0%</span>
-                    <span>10.5% Regulatory Min</span>
-                    <span>28.5% Fortress Capital</span>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs font-mono">
-                  <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-2xs">
-                    <div className="text-slate-500 dark:text-slate-400">Tier-1 Common Equity Capital</div>
-                    <div className="text-slate-900 dark:text-white font-bold text-lg">$18,200,000,000</div>
-                    <div className="text-emerald-700 dark:text-emerald-400 text-[11px] font-bold">Unencumbered core equity</div>
-                  </div>
-                  <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-2xs">
-                    <div className="text-slate-500 dark:text-slate-400">Excess Regulatory Reserve</div>
-                    <div className="text-slate-900 dark:text-white font-bold text-lg">$10,220,000,000</div>
-                    <div className="text-emerald-700 dark:text-emerald-400 text-[11px] font-bold">2.7x mandatory threshold</div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeBalanceTab === 'assets' && (
-              <div className="space-y-6 animate-in fade-in duration-300">
-                <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white font-sans">Client Custody Asset Breakdown</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs font-mono">Held off-balance sheet in fully segregated Tier-1 accounts</p>
-                  </div>
-                  <span className="text-emerald-700 dark:text-emerald-400 font-bold font-mono text-xl">$320,000,000,000+</span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
-                  <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-2xs">
-                    <div className="text-slate-500 dark:text-slate-400">Equities & ETFs</div>
-                    <div className="text-slate-900 dark:text-white font-bold text-lg">$210.4B</div>
-                  </div>
-                  <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-2xs">
-                    <div className="text-slate-500 dark:text-slate-400">Fixed Income & Treasuries</div>
-                    <div className="text-slate-900 dark:text-white font-bold text-lg">$68.2B</div>
-                  </div>
-                  <div className="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 shadow-2xs">
-                    <div className="text-slate-500 dark:text-slate-400">Segregated Cash Deposits</div>
-                    <div className="text-slate-900 dark:text-white font-bold text-lg">$41.4B</div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeBalanceTab === 'liquidity' && (
-              <div className="space-y-6 animate-in fade-in duration-300">
-                <div className="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white font-sans">Instant Liquidity & Cash Reserves</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs font-mono">Zero exposure to illiquid commercial real estate or venture debt</p>
-                  </div>
-                  <span className="text-emerald-700 dark:text-emerald-400 font-bold font-mono text-xl">100% Liquid</span>
-                </div>
-
-                <div className="p-5 bg-emerald-50 dark:bg-emerald-500/10 rounded-xl border border-emerald-200 dark:border-emerald-500/30 text-xs text-emerald-950 dark:text-emerald-300 font-mono space-y-2">
-                  <div className="font-bold">Liquidity Composition:</div>
-                  <p>• 62% Short-dated US Treasury Bills (&lt;90 day maturity)</p>
-                  <p>• 38% Federal Reserve Bank & Tier-1 Demand Cash Deposits</p>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. RISK MANAGEMENT FRAMEWORK */}
-      <section className="py-20 bg-slate-50/80 dark:bg-[#0c0f17] text-slate-900 dark:text-slate-100 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="text-emerald-800 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">ENTERPRISE RISK GOVERNANCE</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">
-              Multi-Layered Risk Management Architecture
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-sm font-sans">
-              Our automated risk engines execute continuous real-time oversight to protect institutional capital integrity.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {riskFramework.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white dark:bg-[#121520] p-8 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3 shadow-xs hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/15 hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-3 py-1 rounded-md border border-emerald-200 dark:border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
-                    {item.tag}
-                  </span>
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white pt-2 font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">{item.title}</h3>
-                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-sans">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. CLIENT ASSET PROTECTION */}
-      <section className="py-20 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">
-              Multi-Tiered Client Asset Protection
-            </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base font-sans">
-              How BrokerBros protects retail investors, family offices, and institutional accounts.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-50 dark:bg-[#121520] p-8 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 hover:shadow-lg transition-shadow">
-              <div className="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-800 dark:text-emerald-400 font-bold">
-                <ShieldCheck className="w-6 h-6 text-emerald-700 dark:text-emerald-400" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white font-sans">SIPC Protection</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed font-sans">
-                Securities Investor Protection Corporation (SIPC) protects securities and cash up to $500,000 (including $250,000 for cash claims).
-              </p>
-            </div>
-
-            <div className="bg-slate-950 dark:bg-[#0c0f17] text-white p-8 rounded-2xl border border-slate-800 dark:border-emerald-500/40 space-y-4 shadow-2xl relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
-              <div className="w-11 h-11 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold border border-emerald-500/30">
-                <Lock className="w-6 h-6 text-emerald-400" />
-              </div>
-              <div className="text-xs font-mono text-emerald-400 font-bold uppercase">EXCLUSIVE INSTITUTIONAL POLICY</div>
-              <h3 className="text-xl font-bold text-white font-sans">$30 Million Excess Insurance</h3>
-              <p className="text-slate-300 text-xs leading-relaxed font-sans">
-                Underwritten by Lloyd's of London syndicates, providing up to $30,000,000 per client account with an aggregate firm limit of $150,000,000.
-              </p>
-            </div>
-
-            <div className="bg-slate-50 dark:bg-[#121520] p-8 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 hover:shadow-lg transition-shadow">
-              <div className="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-800 dark:text-emerald-400 font-bold">
-                <Building2 className="w-6 h-6 text-emerald-700 dark:text-emerald-400" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white font-sans">Bank Segregation</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed font-sans">
-                Client cash is deposited into special reserve accounts at Tier-1 banks (JPMorgan Chase, Bank of America) strictly in accordance with SEC Rule 15c3-3.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. GLOBAL FINANCIAL PRESENCE */}
-      <section className="py-20 bg-slate-50/80 dark:bg-[#0c0f17] text-slate-900 dark:text-slate-100 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="text-emerald-800 dark:text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">GLOBAL FINANCIAL HUBS</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">
-              Regulated Operating Desks Worldwide
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-sm font-sans">
-              Continuous 24-hour liquidity and trading support across major international financial centers.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {globalHubs.map((hub, idx) => (
-              <div
-                key={idx}
-                className="bg-white dark:bg-[#121520] p-6 rounded-2xl border border-slate-200/90 dark:border-slate-800 space-y-3 shadow-2xs hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="flex justify-between items-center text-xs font-mono">
-                  <span className="text-slate-500 dark:text-slate-400 font-bold">{hub.region}</span>
-                  <span className="inline-flex items-center gap-1.5 text-emerald-800 dark:text-emerald-400 font-bold text-[11px] bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-500/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span>{hub.status}</span>
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">{hub.city}</h3>
-                <div className="text-xs font-mono text-slate-500 dark:text-slate-400">{hub.address}</div>
-                <div className="text-xs font-mono text-emerald-800 dark:text-emerald-400 font-bold pt-2 border-t border-slate-100 dark:border-slate-800">
-                  Daily Clearing Volume: {hub.volume}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. HORIZONTAL TIMELINE */}
-      <section className="py-20 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">
-              Timeline of Financial Capital Growth
-            </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base font-sans">
-              Fourteen years of continuous organic capital accumulation and balance sheet strengthening.
-            </p>
-          </div>
-
-          {/* Interactive Connected Stepper */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 relative">
-            {timelineEvents.map((item, idx) => {
-              const isSelected = selectedTimelineIndex === idx;
-              return (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedTimelineIndex(idx)}
-                  className={`p-6 rounded-2xl border text-left transition-all duration-300 cursor-pointer ${isSelected
-                    ? 'bg-slate-950 dark:bg-emerald-600 text-white border-emerald-500 shadow-xl ring-2 ring-emerald-500/40 translate-y-[-2px]'
-                    : 'bg-slate-50 dark:bg-[#121520] text-slate-700 dark:text-slate-300 border-slate-200/90 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-[#161a28] hover:border-slate-300 dark:hover:border-slate-700'
-                    }`}
-                >
-                  <div className={`text-xs font-mono font-bold flex items-center justify-between ${isSelected ? 'text-emerald-400' : 'text-emerald-700 dark:text-emerald-400'}`}>
-                    <span>{item.year}</span>
-                    {isSelected && <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>}
-                  </div>
-                  <h3 className={`text-sm font-bold font-sans mt-2.5 ${isSelected ? 'text-white' : 'text-slate-900 dark:text-white'}`}>
-                    {item.title}
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+                    {p.title}
                   </h3>
-                  <p className={`text-xs mt-2 leading-relaxed font-sans ${isSelected ? 'text-slate-300' : 'text-slate-500 dark:text-slate-400'}`}>
-                    {item.detail}
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {p.desc}
                   </p>
-                </button>
-              );
-            })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 3. LATENCY BENCHMARK VISUALIZER */}
+      <section id="speed-benchmarks" className="py-16 sm:py-20 bg-slate-100 dark:bg-[#0d121d] border-y border-slate-200 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+            <div>
+              <div className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-1 flex items-center gap-1.5">
+                <Globe2 className="w-4 h-4" />
+                GLOBAL EQUINIX FIBER NETWORK
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                Real-Time Execution Latency Benchmarks
+              </h2>
+            </div>
+
+            {/* Datacenter Switcher */}
+            <div className="flex items-center p-1 bg-slate-200 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700">
+              <button
+                onClick={() => setSelectedLatencyLoc('ny4')}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  selectedLatencyLoc === 'ny4'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                Equinix NY4 (New Jersey)
+              </button>
+              <button
+                onClick={() => setSelectedLatencyLoc('ld4')}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  selectedLatencyLoc === 'ld4'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                Equinix LD4 (London)
+              </button>
+              <button
+                onClick={() => setSelectedLatencyLoc('ty3')}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  selectedLatencyLoc === 'ty3'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                Equinix TY3 (Tokyo)
+              </button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {latencyLocations[selectedLatencyLoc].map((loc, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-slate-800 shadow-sm space-y-3"
+              >
+                <div className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
+                  {loc.venue}
+                </div>
+                <div className="text-3xl font-black font-mono text-emerald-600 dark:text-emerald-400">
+                  {loc.latency}
+                </div>
+                <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                  <span>{loc.route}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 10. FAQs */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#0c0f17] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">
-              Frequently Asked Questions on Capital Safety
+      {/* 4. THE HUMAN DIFFERENCE (BROKERBROS VS RETAIL APPS) */}
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest flex items-center justify-center gap-1.5">
+            <Users className="w-4 h-4" />
+            HUMAN ACCESSIBILITY & AUDITABILITY
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            BrokerBros vs Standard Retail Apps
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+            See how our speed, reliability, and dedicated human desk support compare against legacy and retail brokers.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131926] shadow-xl">
+          <table className="w-full text-left text-xs sm:text-sm">
+            <thead className="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-mono uppercase text-[11px] border-b border-slate-200 dark:border-slate-800">
+              <tr>
+                <th className="py-4 px-6 font-bold">Feature Metric</th>
+                <th className="py-4 px-6 font-bold text-emerald-600 dark:text-emerald-400">BrokerBros Master Standard</th>
+                <th className="py-4 px-6 font-bold text-slate-500">Retail Fintech Brokers</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-800/80">
+              {humanComparison.map((row, idx) => (
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td className="py-4 px-6 font-bold text-slate-900 dark:text-white">
+                    {row.feature}
+                  </td>
+                  <td className="py-4 px-6 font-bold font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500" />
+                    <span>{row.brokerBros}</span>
+                  </td>
+                  <td className="py-4 px-6 text-slate-500 dark:text-slate-400 font-mono">
+                    {row.retailApps}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* 5. FAQ ACCORDION */}
+      <section className="py-16 sm:py-20 bg-slate-100 dark:bg-[#0d121d] border-t border-slate-200 dark:border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-center space-y-2">
+            <div className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest flex items-center justify-center gap-1.5">
+              <HelpCircle className="w-4 h-4" />
+              FREQUENTLY ASKED QUESTIONS
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Understanding Why BrokerBros Leads
             </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base font-sans">
-              Clear answers regarding regulatory oversight, account protection, and financial standing.
-            </p>
           </div>
 
           <div className="space-y-3">
@@ -651,18 +365,17 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
               return (
                 <div
                   key={idx}
-                  className={`bg-white dark:bg-[#121520] rounded-xl border transition-all duration-200 overflow-hidden ${isOpen ? 'border-emerald-500/80 shadow-md ring-1 ring-emerald-500/20' : 'border-slate-200/90 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-2xs'
-                    }`}
+                  className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131926] overflow-hidden transition-all"
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full p-5 text-left flex justify-between items-center gap-4 cursor-pointer"
+                    className="w-full p-4 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center justify-between gap-4 cursor-pointer hover:text-emerald-500 transition-colors"
                   >
-                    <span className="font-bold text-slate-900 dark:text-white text-base font-sans leading-snug">{faq.q}</span>
-                    {isOpen ? <ChevronUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />}
+                    <span>{faq.q}</span>
+                    <ChevronDown className={`w-4 h-4 shrink-0 text-emerald-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3.5 font-sans animate-in fade-in duration-200">
+                    <div className="px-4 pb-4 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 font-sans font-medium">
                       {faq.a}
                     </div>
                   )}
@@ -673,8 +386,11 @@ export const WhyBrokerBrosPage: React.FC<PageProps> = ({ onOpenAccount }) => {
         </div>
       </section>
 
-      {/* 11. FINAL CTA */}
-      <CTASection variant="light" onOpenAccount={onOpenAccount} />
+      {/* 6. CTA SECTION */}
+      <CTASection
+        title="Experience Sub-10ms Speed & 24/7 Human Trust Today"
+        onOpenAccount={onOpenAccount}
+      />
     </div>
   );
 };

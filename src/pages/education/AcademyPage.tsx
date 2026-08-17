@@ -36,61 +36,61 @@ export const AcademyPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   const courses: CourseCard[] = [
     {
       id: '1',
-      title: 'Stock Market Fundamentals',
-      level: 'Beginner',
-      lessons: '4 Lessons',
-      duration: '1.5 Hours',
-      description: 'Learn how stocks work, how to read price charts, place your first trade, and manage risk safely.',
+      title: 'Turnkey Brokerage Launch Masterclass',
+      level: 'Executive',
+      lessons: '5 Modules',
+      duration: '2.0 Hours',
+      description: 'Step-by-step guide on launching a white-label Forex broker, connecting CRM portals, and setting up MT5 bridges.',
       topics: [
-        'How Stock Exchanges & Quotes Work',
-        'Market Orders vs Limit Orders',
-        'Reading Candlestick Charts & Trends',
-        'Basic Risk & Capital Protection'
+        'Offshore Licensing & Banking Setup',
+        'White-Label Broker CRM & Portal Config',
+        'MetaTrader 5 & WebTrader Server Hooks',
+        'KYC Workflows & Payment Gateway Integration'
       ],
       badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200'
     },
     {
       id: '2',
-      title: 'Options Trading Made Simple',
-      level: 'Intermediate',
-      lessons: '6 Lessons',
+      title: 'Prop Firm Architecture & Evaluation Rules',
+      level: 'Advanced',
+      lessons: '6 Modules',
       duration: '2.5 Hours',
-      description: 'Understand Calls, Puts, option strike prices, expiration dates, and simple income strategies.',
+      description: 'Architecting funded trader evaluation challenges, automated breach engines, drawdown math, and profit payout rules.',
       topics: [
-        'Call & Put Options Explained Simply',
-        'Buying vs Selling Options Contracts',
-        'Covered Calls & Cash-Secured Puts',
-        'Managing Option Risk & Stop-Losses'
+        'Step 1 & Step 2 Challenge Parameter Design',
+        'Real-Time Daily Drawdown & Equity Breach Detection',
+        'Automated Risk Rules & Trailing Drawdowns',
+        'Profit Split Payout & Wallet Management'
       ],
       badgeColor: 'bg-blue-100 text-blue-800 border-blue-200'
     },
     {
       id: '3',
-      title: 'Futures & Commodities Guide',
-      level: 'Advanced',
-      lessons: '5 Lessons',
+      title: 'A-Book vs B-Book Dealing Desk Management',
+      level: 'Institutional',
+      lessons: '5 Modules',
       duration: '2.0 Hours',
-      description: 'Discover how index, gold, and oil futures work with leverage, margin, and daily settlement.',
+      description: 'Mastering brokerage dealing desk execution models, STP routing to LPs, internalization profit rules, and auto-hedging.',
       topics: [
-        'Index Futures (E-mini S&P 500 & Nasdaq)',
-        'Understanding Futures Margin & Leverage',
-        'Gold & Crude Oil Market Mechanics',
-        'Overnight Positions & Rollover Dates'
+        'A-Book STP Routing & Prime Broker Accounts',
+        'B-Book Internalization & Toxic Flow Detection',
+        'Hybrid C-Book Routing Triggers',
+        'Real-Time Net Exposure & Margin Call Limits'
       ],
       badgeColor: 'bg-purple-100 text-purple-800 border-purple-200'
     },
     {
       id: '4',
-      title: 'Automated & Algo Trading Basics',
-      level: 'Quantitative',
-      lessons: '6 Lessons',
-      duration: '3.0 Hours',
-      description: 'Learn how automated trading rules work, backtesting strategies, and using APIs.',
+      title: 'Multi-Tier IB & Affiliate Network Architecture',
+      level: 'Commercial',
+      lessons: '6 Modules',
+      duration: '2.0 Hours',
+      description: 'Structuring multi-level referral rebate trees, commission tier overrides, marketing portals, and automated payouts.',
       topics: [
-        'Introduction to Automated Trading',
-        'Backtesting Rules & Strategy Testing',
-        'Setting Up Trading Bots & WebSockets',
-        'API Keys & Execution Safety'
+        'Multi-Tier Rebate Hierarchy Calculation',
+        'Volume, Spread & Commission Override Rules',
+        'IB Portal Dashboard & Custom Affiliate Links',
+        'Automated Monthly & Instant Rebate Distribution'
       ],
       badgeColor: 'bg-amber-100 text-amber-800 border-amber-200'
     }

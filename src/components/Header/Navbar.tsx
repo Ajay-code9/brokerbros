@@ -21,7 +21,14 @@ import {
   Zap,
   Briefcase,
   Sun,
-  Moon
+  Moon,
+  Smartphone,
+  Users,
+  PieChart,
+  Activity,
+  Coins,
+  Network,
+  LayoutGrid
 } from 'lucide-react';
 import { useRouter } from '../../router';
 import { useTheme } from '../../context/ThemeContext';
@@ -51,6 +58,21 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const isSolutionsPage = Boolean(currentPath && currentPath.startsWith('/solutions/'));
   const isDarkNavbar = theme === 'dark';
+
+  const PRODUCTS_MENU = [
+    { title: "Web Trader", path: "/products/web-trader", desc: "Browser-based institutional terminal", icon: Globe },
+    { title: "Mobile Applications", path: "/products/mobile-app", desc: "Native iOS & Android trading apps", icon: Smartphone },
+    { title: "Forex CRM", path: "/products/forex-crm", desc: "Multi-tier broker CRM & client portal", icon: Briefcase },
+    { title: "Simplex", path: "/products/simplex", desc: "Lightweight turnkey trading engine", icon: Zap },
+    { title: "Social Trading", path: "/products/social-trading", desc: "Community copy trading & signals", icon: Users },
+    { title: "Financial Charts", path: "/products/financial-charts", desc: "Professional HTML5 charting suite", icon: BarChart3 },
+    { title: "PAMM/MAM System", path: "/products/pamm-mam", desc: "Multi-account manager allocation", icon: PieChart },
+    { title: "BrokerBros Quote Engine (BQE)", path: "/products/quote-engine", desc: "Sub-10ms price feed aggregator", icon: Activity },
+    { title: "Crypto ETFs", path: "/products/crypto-etfs", desc: "Digital asset index routing", icon: Coins },
+    { title: "IB Portal", path: "/products/ib-portal", desc: "Multi-tier affiliate & rebate engine", icon: Network },
+    { title: "Financial Widgets", path: "/products/financial-widgets", desc: "Embeddable web tickers & calendar", icon: LayoutGrid },
+    { title: "Plugins", path: "/products/plugins", desc: "MT5 server plugins & bridge add-ons", icon: Cpu }
+  ];
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -118,51 +140,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           isDarkNavbar ? 'text-slate-200' : 'text-slate-700'
         }`}>
             
-            {/* 1. Why BrokerBros Dropdown */}
-            <div
-              className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('why')}
-              onMouseLeave={handleMouseLeave}
+            {/* 1. Why BrokerBros Direct Link */}
+            <button
+              type="button"
+              onClick={() => handleNav('/why-brokerbros')}
+              className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
+                currentPath === '/why-brokerbros' || currentPath.startsWith('/why-brokerbros/')
+                  ? 'text-emerald-500 font-bold'
+                  : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
+              }`}
             >
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleMouseEnter('why');
-                }}
-                className={`transition-all duration-300 ease-in-out cursor-pointer whitespace-nowrap flex items-center ${
-                  activeDropdown === 'why'
-                    ? 'text-emerald-500 font-bold'
-                    : isDarkNavbar ? 'hover:text-emerald-400' : 'hover:text-emerald-700'
-                }`}
-              >
-                <span>Why BrokerBros</span>
-              </button>
-              {activeDropdown === 'why' && (
-                <div
-                  onMouseEnter={() => handleMouseEnter('why')}
-                  onMouseLeave={handleMouseLeave}
-                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
-                    isDarkNavbar
-                      ? 'bg-[#131926] border-slate-800 text-white'
-                      : 'bg-white border-slate-200 text-slate-800'
-                  }`}
-                >
-                  {/* Upward pointing pointer arrow */}
-                  <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
-
-                  <button onClick={() => handleNav('/why-brokerbros/capital-safety')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Capital Strength & Safety
-                  </button>
-                  <button onClick={() => handleNav('/why-brokerbros/best-execution')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Best Execution & Zero PFOF
-                  </button>
-                  <button onClick={() => handleNav('/why-brokerbros/global-market-access')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Global Market Access
-                  </button>
-                </div>
-              )}
-            </div>
+              <span>Why BrokerBros</span>
+            </button>
 
             {/* 2. Products Dropdown (NEW!) */}
             <div
@@ -188,35 +177,43 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <div
                   onMouseEnter={() => handleMouseEnter('products')}
                   onMouseLeave={handleMouseLeave}
-                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-64 rounded-none shadow-2xl border border-t-2 border-t-emerald-600 p-2 grid grid-cols-1 gap-1 animate-in fade-in duration-150 z-50 ${
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-[680px] rounded-2xl shadow-2xl border border-t-2 border-t-emerald-600 p-3.5 grid grid-cols-2 gap-2 animate-in fade-in duration-150 z-50 ${
                     isDarkNavbar
                       ? 'bg-[#131926] border-slate-800 text-white'
                       : 'bg-white border-slate-200 text-slate-800'
                   }`}
                 >
+                  {/* Upward pointing pointer arrow */}
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
-                  <button onClick={() => handleNav('/products/back-office')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Back Office
-                  </button>
-                  <button onClick={() => handleNav('/products/prop-trading-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Prop Trading CRM
-                  </button>
-                  <button onClick={() => handleNav('/products/client-area')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Client Area
-                  </button>
-                  <button onClick={() => handleNav('/products/mobile-app')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Mobile App
-                  </button>
-                  <button onClick={() => handleNav('/products/partner-area')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Partner Area
-                  </button>
-                  <button onClick={() => handleNav('/products/b2b-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    B2B CRM
-                  </button>
-                  <button onClick={() => handleNav('/products/service-desk')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Service Desk
-                  </button>
+                  {PRODUCTS_MENU.map((prod, pIdx) => {
+                    const IconComp = prod.icon;
+                    return (
+                      <button
+                        key={pIdx}
+                        onClick={() => handleNav(prod.path)}
+                        className={`p-2.5 rounded-xl transition-all text-left cursor-pointer flex items-start gap-3 group ${
+                          isDarkNavbar
+                            ? 'hover:bg-slate-800/80 hover:text-emerald-400'
+                            : 'hover:bg-emerald-50/60 hover:text-emerald-600'
+                        }`}
+                      >
+                        <div className={`p-2 rounded-lg shrink-0 transition-transform group-hover:scale-110 ${
+                          isDarkNavbar ? 'bg-slate-800 text-emerald-400' : 'bg-emerald-100/70 text-emerald-700'
+                        }`}>
+                          <IconComp className="w-4 h-4" />
+                        </div>
+                        <div className="space-y-0.5 min-w-0">
+                          <div className="text-xs font-bold font-sans tracking-tight leading-tight group-hover:text-emerald-500 transition-colors">
+                            {prod.title}
+                          </div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400 font-sans line-clamp-1">
+                            {prod.desc}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -253,33 +250,27 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
-                  <button onClick={() => handleNav('/solutions/broker-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer flex items-center justify-between ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    <span>White-Label Broker CRM</span>
-                    <span className="text-[9px] bg-emerald-500/20 text-emerald-400 font-mono px-1.5 py-0.5 rounded">Core</span>
+                  <button onClick={() => handleNav('/services/technical-support')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer flex items-center justify-between ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    <span>24/7 Technical Support</span>
+                    <span className="text-[9px] bg-emerald-500/20 text-emerald-400 font-mono px-1.5 py-0.5 rounded">SLA</span>
                   </button>
-                  <button onClick={() => handleNav('/solutions/ib-partner')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    CRM with IB Partner Module
+                  <button onClick={() => handleNav('/services/success-manager')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Dedicated Success Manager
                   </button>
-                  <button onClick={() => handleNav('/solutions/admin-backoffice')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Admin Backoffice & Risk Engine
+                  <button onClick={() => handleNav('/services/hosting-server-management')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Hosting & Server Management
                   </button>
-                  <button onClick={() => handleNav('/solutions/social-copy-trading')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Social & Copy Trading System
+                  <button onClick={() => handleNav('/services/cyber-security-ddos')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    DDoS Protection & Cyber Services
                   </button>
-                  <button onClick={() => handleNav('/solutions/pamm-mam')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    PAMM / MAM Allocation Engine
+                  <button onClick={() => handleNav('/services/website-ux-ui')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Website UX/UI Development
                   </button>
-                  <button onClick={() => handleNav('/solutions/prop-firm-crm')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Prop Firm Challenge & CRM
+                  <button onClick={() => handleNav('/services/user-training')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    User Training & Onboarding
                   </button>
-                  <button onClick={() => handleNav('/solutions/mt5-server-apis')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    MT5 Server APIs & Plugins
-                  </button>
-                  <button onClick={() => handleNav('/solutions/websockets-streaming')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    WebSockets Streaming & Feed
-                  </button>
-                  <button onClick={() => handleNav('/solutions/crypto-gateway')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Crypto Payment Gateway
+                  <button onClick={() => handleNav('/services/custom-system-development')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Custom System Development
                   </button>
                   <button onClick={() => handleNav('/solutions/fix-api-liquidity')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     FIX API & Liquidity Engine
@@ -320,14 +311,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
-                  <button onClick={() => handleNav('/platforms/web')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                  <button onClick={() => handleNav('/products/web-trader')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     WebTrader Terminal
                   </button>
-                  <button onClick={() => handleNav('/platforms/mobile')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                  <button onClick={() => handleNav('/products/mobile-app')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Mobile Trading Apps
                   </button>
                   <button onClick={() => handleNav('/platforms/desktop')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Desktop Workstation
+                  </button>
+                  <button onClick={() => handleNav('/products/plugins')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    MT5 & Server Plugins
                   </button>
                 </div>
               )}
@@ -366,16 +360,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
                   <button onClick={() => handleNav('/pricing')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Pricing Overview
+                    Turnkey SaaS Tiers
                   </button>
-                  <button onClick={() => handleNav('/pricing/interest-rates')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Margin Interest Rates
+                  <button onClick={() => handleNav('/pricing/commissions')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Volume & Execution Fees
                   </button>
                   <button onClick={() => handleNav('/pricing/market-data')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Market Data Subscriptions
                   </button>
                   <button onClick={() => handleNav('/pricing/other-fees')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Other Fees & Commissions
+                    Infrastructure & Hosting Fees
                   </button>
                 </div>
               )}
@@ -414,10 +408,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[7px] border-b-emerald-600" />
 
                   <button onClick={() => handleNav('/education/academy')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Trader Academy
+                    Brokerage Launch Academy
                   </button>
                   <button onClick={() => handleNav('/education/learning-center')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
-                    Learning Center
+                    API & Developer Docs
                   </button>
                 </div>
               )}
@@ -501,6 +495,13 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className={`lg:hidden border-b p-4 space-y-4 animate-in slide-in-from-top duration-200 ${
           isDarkNavbar ? 'bg-[#0d121d] border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'
         }`}>
+          <button
+            onClick={() => handleNav('/why-brokerbros')}
+            className="w-full text-left p-2 rounded-lg font-bold hover:text-emerald-500 flex items-center justify-between text-xs border-b border-slate-200 dark:border-slate-800"
+          >
+            <span className="text-emerald-500 font-extrabold">Why BrokerBros</span>
+            <ArrowRight className="w-3.5 h-3.5 text-emerald-500" />
+          </button>
           <div className="space-y-1">
             <div className="text-[10px] font-mono font-bold text-emerald-500 uppercase px-2 py-1 tracking-wider">Products</div>
             <button

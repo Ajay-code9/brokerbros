@@ -62,48 +62,48 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
 
         {/* Normal Spaced Sitemap Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-slate-200 dark:border-slate-800/70">
-          {/* Column 1: Products */}
+          {/* Column 1: SaaS Products */}
           <div className="space-y-3">
             <h4 className="font-bold text-slate-900 dark:text-slate-200 text-[10px] font-mono uppercase tracking-wider flex items-center gap-1.5">
               <span className="w-1 h-1 rounded-full bg-emerald-600 dark:bg-emerald-400" />
-              Products
+              SaaS Products
             </h4>
             <ul className="space-y-2.5 text-slate-600 dark:text-slate-400 text-[8.5px]">
-              <li><button onClick={() => navigate('/trading/web-terminal')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Web Trading Terminal</button></li>
-              <li><button onClick={() => navigate('/trading/mobile-apps')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Mobile Trading Apps</button></li>
-              <li><button onClick={() => navigate('/trading/robots')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Trading Robots & Algo</button></li>
-              <li><button onClick={() => navigate('/trading/indicators')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Technical Indicators</button></li>
-              <li><button onClick={() => navigate('/platforms/desktop')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Desktop Workstation</button></li>
+              <li><button onClick={() => navigate('/products/web-trader')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">WebTrader Terminal</button></li>
+              <li><button onClick={() => navigate('/products/mobile-app')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Mobile Trading Apps</button></li>
+              <li><button onClick={() => navigate('/products/forex-crm')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">White-Label Forex CRM</button></li>
+              <li><button onClick={() => navigate('/products/simplex')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Simplex Trading Engine</button></li>
+              <li><button onClick={() => navigate('/products/plugins')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">MT5 Server Plugins</button></li>
             </ul>
           </div>
 
-          {/* Column 2: Markets */}
+          {/* Column 2: Enterprise Solutions */}
           <div className="space-y-3">
             <h4 className="font-bold text-slate-900 dark:text-slate-200 text-[10px] font-mono uppercase tracking-wider flex items-center gap-1.5">
               <span className="w-1 h-1 rounded-full bg-emerald-600 dark:bg-emerald-400" />
-              Markets
+              Solutions
             </h4>
             <ul className="space-y-2.5 text-slate-600 dark:text-slate-400 text-[8.5px]">
-              <li><button onClick={() => navigate('/markets/stocks')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Stocks & ETFs</button></li>
-              <li><button onClick={() => navigate('/markets/options')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Options & Volatility</button></li>
-              <li><button onClick={() => navigate('/markets/forex')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Forex Currency Pairs</button></li>
-              <li><button onClick={() => navigate('/markets/commodities')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Commodities & Metals</button></li>
-              <li><button onClick={() => navigate('/markets/indices')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Global Stock Indices</button></li>
+              <li><button onClick={() => navigate('/products/pamm-mam')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">PAMM / MAM Manager</button></li>
+              <li><button onClick={() => navigate('/products/social-trading')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Social Copy Trading</button></li>
+              <li><button onClick={() => navigate('/products/ib-portal')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Multi-Tier IB Portal</button></li>
+              <li><button onClick={() => navigate('/solutions/fix-api-liquidity')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">FIX API Liquidity Bridge</button></li>
+              <li><button onClick={() => navigate('/products/quote-engine')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">BrokerBros Quote Engine</button></li>
             </ul>
           </div>
 
-          {/* Column 3: B2B Services */}
+          {/* Column 3: Managed Services */}
           <div className="space-y-3">
             <h4 className="font-bold text-slate-900 dark:text-slate-200 text-[10px] font-mono uppercase tracking-wider flex items-center gap-1.5">
               <span className="w-1 h-1 rounded-full bg-emerald-600 dark:bg-emerald-400" />
-              B2B Services
+              Managed Services
             </h4>
             <ul className="space-y-2.5 text-slate-600 dark:text-slate-400 text-[8.5px]">
-              <li><button onClick={() => navigate('/accounts')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">White-Label Broker CRM</button></li>
-              <li><button onClick={() => navigate('/institutional')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Liquidity & FIX Bridge</button></li>
-              <li><button onClick={() => navigate('/pricing')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Prop Firm Suite</button></li>
-              <li><button onClick={() => navigate('/funding')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Multi-Currency Wallet</button></li>
-              <li><button onClick={() => navigate('/partner')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">IB & Partner Program</button></li>
+              <li><button onClick={() => navigate('/services/technical-support')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">24/7 Tech Support SLA</button></li>
+              <li><button onClick={() => navigate('/services/success-manager')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Dedicated Success Manager</button></li>
+              <li><button onClick={() => navigate('/services/hosting-server-management')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Hosting & Server Infra</button></li>
+              <li><button onClick={() => navigate('/services/cyber-security-ddos')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">DDoS & Cyber Defense</button></li>
+              <li><button onClick={() => navigate('/services/custom-system-development')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Custom FinTech Dev</button></li>
             </ul>
           </div>
 
@@ -114,11 +114,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
               Resources
             </h4>
             <ul className="space-y-2.5 text-slate-600 dark:text-slate-400 text-[8.5px]">
-              <li><button onClick={() => navigate('/research/calendar')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Economic Calendar</button></li>
-              <li><button onClick={() => navigate('/education/academy')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Trading Academy</button></li>
-              <li><button onClick={() => navigate('/help')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Help & Support Center</button></li>
-              <li><button onClick={() => navigate('/api-integrations')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">API & Integration Docs</button></li>
-              <li><button onClick={() => navigate('/contact')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Contact Desk</button></li>
+              <li><button onClick={() => navigate('/education/academy')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Brokerage Launch Academy</button></li>
+              <li><button onClick={() => navigate('/education/learning-center')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">API & Developer Docs</button></li>
+              <li><button onClick={() => navigate('/pricing')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Turnkey SaaS Tiers</button></li>
+              <li><button onClick={() => navigate('/pricing/commissions')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Volume & Execution Tiers</button></li>
+              <li><button onClick={() => navigate('/help')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Help & Support Desk</button></li>
             </ul>
           </div>
 
@@ -129,24 +129,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
               Company
             </h4>
             <ul className="space-y-2.5 text-slate-600 dark:text-slate-400 text-[8.5px]">
-              <li><button onClick={() => navigate('/about')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">About Infrastructure</button></li>
-              <li><button onClick={() => navigate('/security/regulation')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Security & Regulation</button></li>
-              <li><button onClick={() => navigate('/legal')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Terms & Conditions</button></li>
+              <li><button onClick={() => navigate('/why-brokerbros')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Why BrokerBros</button></li>
+              <li><button onClick={() => navigate('/security/regulation')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Security & Compliance</button></li>
+              <li><button onClick={() => navigate('/legal')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Terms & SLA Agreement</button></li>
               <li><button onClick={() => navigate('/legal')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Privacy Policy</button></li>
-              <li><button onClick={() => navigate('/careers')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Careers & Roles</button></li>
+              <li><button onClick={() => navigate('/contact')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Contact Institutional Desk</button></li>
             </ul>
           </div>
         </div>
 
-        {/* Regulatory Risk Notice Box */}
+        {/* B2B Technology & Infrastructure Disclosure Box */}
         <div className="bg-white dark:bg-[#09131C] p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-800/90 space-y-1.5 shadow-xs">
           <div className="flex items-center gap-2 text-slate-800 dark:text-slate-300 font-semibold text-[10px] font-mono uppercase tracking-wider">
-            <AlertTriangle className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
-            <span>RISK WARNING & DISCLOSURE</span>
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <span>B2B TECHNOLOGY & INFRASTRUCTURE DISCLOSURE</span>
           </div>
           <p className="text-slate-600 dark:text-slate-400 text-[10px] leading-relaxed font-normal">
-            Trading CFDs, Forex, stocks, options, and financial derivatives involves substantial risk of loss and is not suitable for all investors.
-            Leverage can amplify both gains and losses. Please ensure you fully understand the risks involved and take independent advice if necessary.
+            BrokerBros is an enterprise B2B financial technology provider supplying white-label broker CRM platforms, multi-asset trading terminals, liquidity bridge plugins, and co-located server infrastructure. BrokerBros does not provide retail brokerage services, manage retail client funds, or act as a counterparty to retail trades.
           </p>
         </div>
 
@@ -154,7 +153,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
         <div className="pt-2 space-y-3 text-[10px] text-slate-500">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800/60 pb-3">
             <div className="flex flex-wrap items-center gap-2">
-              {['ISO 27001 Certified', '256-Bit SSL', 'FINRA / SIPC Compliant', 'SOC 2 Type II'].map((b) => (
+              {['ISO 27001 Certified', '256-Bit SSL', 'SOC 2 Type II Certified', 'Equinix LD4/NY4 Co-Located'].map((b) => (
                 <span key={b} className="px-2.5 py-0.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded font-mono text-[10px] text-slate-700 dark:text-slate-400 shadow-2xs">
                   {b}
                 </span>
@@ -162,13 +161,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
             </div>
 
             <div className="flex items-center gap-3.5 text-slate-600 dark:text-slate-400 font-mono text-[10px]">
-              <button onClick={() => navigate('/security/regulation')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">Regulation</button>
+              <button onClick={() => navigate('/security/regulation')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">Security</button>
               <span>·</span>
               <button onClick={() => navigate('/legal')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">Terms</button>
               <span>·</span>
               <button onClick={() => navigate('/legal')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">Privacy</button>
               <span>·</span>
-              <button onClick={() => navigate('/contact')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">Contact</button>
+              <button onClick={() => navigate('/contact')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">Contact Desk</button>
             </div>
           </div>
 

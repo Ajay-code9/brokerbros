@@ -65,21 +65,41 @@ import { LoginPage } from './pages/auth/LoginPage';
 import { OpenAccountPage } from './pages/auth/OpenAccountPage';
 import { AdminBackofficePage } from './pages/solutions/AdminBackofficePage';
 import { SocialCopyTradingPage } from './pages/solutions/SocialCopyTradingPage';
-import { PammMamPage } from './pages/solutions/PammMamPage';
+import { PammMamPage as PammMamSolutionPage } from './pages/solutions/PammMamPage';
 import { PropFirmCrmPage } from './pages/solutions/PropFirmCrmPage';
 import { Mt5ServerApiPage } from './pages/solutions/Mt5ServerApiPage';
 import { WebSocketsStreamingPage } from './pages/solutions/WebSocketsStreamingPage';
 import { CryptoGatewayPage } from './pages/solutions/CryptoGatewayPage';
 import { FixApiLiquidityPage } from './pages/solutions/FixApiLiquidityPage';
 
-// New Product Submenu Pages
+// 12 Dedicated Product Pages
+import { WebTraderPage } from './pages/products/WebTraderPage';
+import { MobileAppProductPage } from './pages/products/MobileAppProductPage';
+import { ForexCrmPage } from './pages/products/ForexCrmPage';
+import { SimplexPage } from './pages/products/SimplexPage';
+import { SocialTradingPage } from './pages/products/SocialTradingPage';
+import { FinancialChartsPage } from './pages/products/FinancialChartsPage';
+import { PammMamPage } from './pages/products/PammMamPage';
+import { QuoteEnginePage } from './pages/products/QuoteEnginePage';
+import { CryptoEtfsPage } from './pages/products/CryptoEtfsPage';
+import { IbPortalPage } from './pages/products/IbPortalPage';
+import { FinancialWidgetsPage } from './pages/products/FinancialWidgetsPage';
+import { PluginsPage } from './pages/products/PluginsPage';
 import { BackOfficePage } from './pages/products/BackOfficePage';
 import { PropTradingCrmPage } from './pages/products/PropTradingCrmPage';
 import { ClientAreaPage } from './pages/products/ClientAreaPage';
-import { MobileAppProductPage } from './pages/products/MobileAppProductPage';
 import { PartnerAreaPage } from './pages/products/PartnerAreaPage';
 import { B2bCrmPage } from './pages/products/B2bCrmPage';
 import { ServiceDeskPage } from './pages/products/ServiceDeskPage';
+
+// New Managed Service Submenu Pages
+import { TechnicalSupportPage } from './pages/services/TechnicalSupportPage';
+import { SuccessManagerPage } from './pages/services/SuccessManagerPage';
+import { HostingServerPage } from './pages/services/HostingServerPage';
+import { CyberSecurityPage } from './pages/services/CyberSecurityPage';
+import { WebsiteDevPage } from './pages/services/WebsiteDevPage';
+import { UserTrainingPage } from './pages/services/UserTrainingPage';
+import { CustomDevelopmentPage } from './pages/services/CustomDevelopmentPage';
 
 function AppContent() {
   const { currentPath, navigate } = useRouter();
@@ -112,13 +132,49 @@ function AppContent() {
       case '/why-brokerbros':
       case '/why-brokerbros/capital-safety':
       case '/capital-safety':
-        return <WhyBrokerBrosPage onOpenAccount={handleOpenAccount} />;
       case '/why-brokerbros/best-execution':
       case '/best-execution':
-        return <BestExecutionPage onOpenAccount={handleOpenAccount} />;
       case '/why-brokerbros/global-market-access':
       case '/global-market-access':
-        return <GlobalMarketAccessPage onOpenAccount={handleOpenAccount} />;
+        return <WhyBrokerBrosPage onOpenAccount={handleOpenAccount} />;
+      case '/services/technical-support':
+        return <TechnicalSupportPage onOpenAccount={handleOpenAccount} />;
+      case '/services/success-manager':
+        return <SuccessManagerPage onOpenAccount={handleOpenAccount} />;
+      case '/services/hosting-server-management':
+        return <HostingServerPage onOpenAccount={handleOpenAccount} />;
+      case '/services/cyber-security-ddos':
+        return <CyberSecurityPage onOpenAccount={handleOpenAccount} />;
+      case '/services/website-ux-ui':
+        return <WebsiteDevPage onOpenAccount={handleOpenAccount} />;
+      case '/services/user-training':
+        return <UserTrainingPage onOpenAccount={handleOpenAccount} />;
+      case '/services/custom-system-development':
+        return <CustomDevelopmentPage onOpenAccount={handleOpenAccount} />;
+      case '/products/web-trader':
+        return <WebTraderPage onOpenAccount={handleOpenAccount} />;
+      case '/products/mobile-app':
+        return <MobileAppProductPage onOpenAccount={handleOpenAccount} />;
+      case '/products/forex-crm':
+        return <ForexCrmPage onOpenAccount={handleOpenAccount} />;
+      case '/products/simplex':
+        return <SimplexPage onOpenAccount={handleOpenAccount} />;
+      case '/products/social-trading':
+        return <SocialTradingPage onOpenAccount={handleOpenAccount} />;
+      case '/products/financial-charts':
+        return <FinancialChartsPage onOpenAccount={handleOpenAccount} />;
+      case '/products/pamm-mam':
+        return <PammMamPage onOpenAccount={handleOpenAccount} />;
+      case '/products/quote-engine':
+        return <QuoteEnginePage onOpenAccount={handleOpenAccount} />;
+      case '/products/crypto-etfs':
+        return <CryptoEtfsPage onOpenAccount={handleOpenAccount} />;
+      case '/products/ib-portal':
+        return <IbPortalPage onOpenAccount={handleOpenAccount} />;
+      case '/products/financial-widgets':
+        return <FinancialWidgetsPage onOpenAccount={handleOpenAccount} />;
+      case '/products/plugins':
+        return <PluginsPage onOpenAccount={handleOpenAccount} />;
       case '/markets':
         return <MarketsOverviewPage onOpenAccount={handleOpenAccount} />;
       case '/markets/stocks':
@@ -203,7 +259,7 @@ function AppContent() {
       case '/solutions/social-copy-trading':
         return <SocialCopyTradingPage />;
       case '/solutions/pamm-mam':
-        return <PammMamPage />;
+        return <PammMamSolutionPage />;
       case '/solutions/prop-firm-crm':
         return <PropFirmCrmPage />;
       case '/solutions/mt5-server-apis':
@@ -217,21 +273,6 @@ function AppContent() {
       case '/solutions/ib-partner':
         return <IbPartnerModulePage />;
 
-      {/* Dedicated Products Submenu Pages */}
-      case '/products/back-office':
-        return <BackOfficePage onOpenAccount={handleOpenAccount} />;
-      case '/products/prop-trading-crm':
-        return <PropTradingCrmPage onOpenAccount={handleOpenAccount} />;
-      case '/products/client-area':
-        return <ClientAreaPage onOpenAccount={handleOpenAccount} />;
-      case '/products/mobile-app':
-        return <MobileAppProductPage onOpenAccount={handleOpenAccount} />;
-      case '/products/partner-area':
-        return <PartnerAreaPage onOpenAccount={handleOpenAccount} />;
-      case '/products/b2b-crm':
-        return <B2bCrmPage onOpenAccount={handleOpenAccount} />;
-      case '/products/service-desk':
-        return <ServiceDeskPage onOpenAccount={handleOpenAccount} />;
       case '/partner':
         return <PartnerProgramPage onOpenAccount={handleOpenAccount} />;
       case '/api-integrations':

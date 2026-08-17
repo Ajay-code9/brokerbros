@@ -11,7 +11,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
   const comparisonData = [
     {
       category: 'crm',
-      feature: '01. White-Label Broker CRM Deployment',
+      feature: 'White-Label Broker CRM Deployment',
       brokerbros: 'Turnkey Setup (1-3 Business Days)',
       legacy: '3-6 Months Complex Integration',
       inhouse: '12+ Months High R&D Risk',
@@ -19,7 +19,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     },
     {
       category: 'crm',
-      feature: '02. Multi-Level IB Rebate Tree Engine',
+      feature: 'Multi-Level IB Rebate Tree Engine',
       brokerbros: 'Unlimited Tiers & Instant Rebate Calculation',
       legacy: '2-Tier Limit & Manual Monthly Calculations',
       inhouse: 'High Database & Server Overhead',
@@ -27,7 +27,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     },
     {
       category: 'crm',
-      feature: '03. Admin Backoffice & Compliance Audit',
+      feature: 'Admin Backoffice & Compliance Audit',
       brokerbros: 'Role-Based Approvals & Granular Audit Logs',
       legacy: 'Single Admin User & Static Log Exports',
       inhouse: 'Manual Compliance Reporting',
@@ -35,7 +35,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     },
     {
       category: 'crm',
-      feature: '12. PropFirm CRM & Evaluation Engine',
+      feature: 'PropFirm CRM & Evaluation Engine',
       brokerbros: 'Real-Time Breach Engine & Profit Split Rules',
       legacy: 'Requires Third-Party Plug-in Subscriptions',
       inhouse: 'High Latency Breach Detection Risk',
@@ -43,7 +43,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     },
     {
       category: 'copy',
-      feature: '06. Social Copy Trading Execution Engine',
+      feature: 'Social Copy Trading Execution Engine',
       brokerbros: 'Sub-Millisecond Master-Follower Copier',
       legacy: '500ms+ High Slippage Copy Engine',
       inhouse: 'Unstable Socket Connections',
@@ -51,7 +51,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     },
     {
       category: 'copy',
-      feature: '07. PAMM / MAM Asset Management System',
+      feature: 'PAMM / MAM Asset Management System',
       brokerbros: 'Flexible Equity & Balance Allocation Modes',
       legacy: 'Basic Balance-Only Allocation',
       inhouse: 'Complex Manual End-of-Month Math',
@@ -59,7 +59,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     },
     {
       category: 'apis',
-      feature: '08 & 09. MT5 Server APIs & WebSocket Feeds',
+      feature: 'MT5 Server APIs & WebSocket Feeds',
       brokerbros: 'Real-Time Tick Streaming & Event Hooks',
       legacy: 'Restricted Polling-Only REST Endpoints',
       inhouse: 'Difficult MT5 C++ Plugin Maintenance',
@@ -67,7 +67,7 @@ export const IbkrComparisonTable: React.FC<IbkrComparisonTableProps> = ({ onOpen
     },
     {
       category: 'apis',
-      feature: '14. FIX 4.4 / 5.0 Liquidity Bridge',
+      feature: 'FIX 4.4 / 5.0 Liquidity Bridge',
       brokerbros: 'Direct Ultra-Low Latency LP Aggregation',
       legacy: 'Expensive Per-Million Volume Surcharges',
       inhouse: 'Fragile FIX Session Management',
