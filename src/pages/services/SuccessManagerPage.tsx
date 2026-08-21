@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, ShieldCheck, Award, Briefcase, CheckCircle2 } from 'lucide-react';
+import { Users, ShieldCheck, Award, Briefcase, CheckCircle2, UserPlus, Target, LineChart, Calendar } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -11,19 +11,19 @@ export const SuccessManagerPage: React.FC<PageProps> = ({ onOpenAccount }) => {
     <ServiceMasterPageTemplate
       serviceTitle="Dedicated Success Manager"
       heroBadge="1-ON-1 EXECUTIVE HANDHOLDING"
-      heroDescription="A named senior account executive assigned to your brokerage to guide technical integrations, license optimization, and revenue growth."
-      slaMetric={{ label: "Account Executive Availability", value: "Dedicated", sub: "Named Senior FinTech Advisor" }}
+      heroDescription="A dedicated senior account manager assigned to your broker to assist with platform setup, license optimization, and business growth."
+      slaMetric={{ label: "Account Executive Availability", value: "Dedicated 1-on-1", sub: "Named Senior FinTech Advisor" }}
       deliverables={[
-        { title: "Named Account Manager", desc: "Single point of contact for all strategic, operational, and commercial needs.", icon: Users, sla: "Dedicated" },
-        { title: "Weekly Growth Audits", desc: "Regular reviews of trading volume, conversion rates, and server performance.", icon: Briefcase, sla: "Weekly" },
-        { title: "Priority Feature Requests", desc: "Direct input into BrokerBros product roadmap & custom patch prioritization.", icon: Award, sla: "VIP Priority" },
-        { title: "Regulatory Assistance", desc: "Guidance on reporting metrics, audit logs, and compliance documentation.", icon: ShieldCheck, sla: "Continuous" }
+        { title: "Named Account Manager", desc: "Single direct contact person for all your operational, technical, and trading desk needs.", icon: Users, sla: "Dedicated 1-on-1" },
+        { title: "Weekly Performance Audits", desc: "Regular reviews of trading volume, conversion rates, and server execution speeds.", icon: Briefcase, sla: "Weekly Sync" },
+        { title: "Priority Feature Requests", desc: "Direct priority input into BrokerBros product roadmap and custom feature requests.", icon: Award, sla: "VIP Priority" },
+        { title: "Regulatory Assistance", desc: "Guidance on trade reporting logs, audit trails, and compliance documentation.", icon: ShieldCheck, sla: "Continuous SLA" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Executive Onboarding", desc: "Introduction call with your assigned Account Executive." },
-        { step: "02", title: "Business Alignment", desc: "Custom strategic roadmap built for your specific target market." },
-        { step: "03", title: "Proactive Optimization", desc: "Weekly check-ins, performance tuning, and fee audits." },
-        { step: "04", title: "Quarterly Strategy Review", desc: "Executive QBR analyzing growth metrics and infrastructure scaling." }
+        { step: "01", title: "Executive Intro", desc: "1-on-1 introduction call with your assigned Account Executive.", icon: UserPlus },
+        { step: "02", title: "Setup Roadmap", desc: "Build a custom setup and growth roadmap tailored to your broker goals.", icon: Target },
+        { step: "03", title: "Weekly Sync & Tuning", desc: "Weekly check-ins, performance tuning, and trading volume optimization.", icon: LineChart },
+        { step: "04", title: "Quarterly Growth Review", desc: "Quarterly review analyzing client volume growth and system scaling.", icon: Calendar }
       ]}
       scopeInclusions={[
         { feature: "Account Management", standard: "Pooled Desk", enterprise: "Dedicated Named Executive" },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart3, Activity, Zap, Layers, Globe, ShieldCheck } from 'lucide-react';
+import { BarChart3, Activity, Zap, Layers, Globe, ShieldCheck, Code, Sliders, Play, MousePointer } from 'lucide-react';
 import { ProductMasterPageTemplate } from '../../components/Products/ProductMasterPageTemplate';
 
 interface PageProps {
@@ -11,27 +11,33 @@ export const FinancialChartsPage: React.FC<PageProps> = ({ onOpenAccount }) => {
     <ProductMasterPageTemplate
       productTitle="BrokerBros Financial Charts"
       heroBadge="PROFESSIONAL HTML5 CHARTING SUITE"
-      heroDescription="Institutional-grade HTML5 charting package featuring 100+ technical indicators, drawing tools, multi-timeframe analysis, and real-time WebSocket feeds."
-      productMetric={{ label: "Chart Render Speed", value: "60 FPS", sub: "Canvas & WebGL High-Speed Rendering" }}
+      heroDescription="High-speed HTML5 charting software for web and mobile. Give your traders 100+ technical indicators, drawing tools, and 1-click chart trading."
+      productMetric={{ label: "Chart Render Speed", value: "60 FPS", sub: "Super-Smooth High Speed Charting" }}
+      workflowSteps={[
+        { num: '01', title: 'Embed Chart Widget', desc: 'Embed our lightweight HTML5 chart component into your website or web trading platform in minutes.', icon: Code },
+        { num: '02', title: 'Connect Live Price Feeds', desc: 'Stream sub-10ms real-time price quotes for Forex, Gold, Commodities, and Crypto onto trader charts.', icon: Activity },
+        { num: '03', title: 'Enable 100+ Indicators', desc: 'Provide your traders with technical indicators, drawing tools, multi-chart grids, and dark/light themes.', icon: Sliders },
+        { num: '04', title: '1-Click Chart Trading', desc: 'Allow traders to buy/sell directly from price chart lines with drag-and-drop stop-loss handles.', icon: MousePointer }
+      ]}
       visualizerTabs={[
-        { id: "indicators", label: "100+ Technical Indicators", previewText: "RSI, MACD, Bollinger Bands, Ichimoku Cloud, Volume Profile, Fibonacci, and custom Pine Script style indicators." },
-        { id: "layouts", label: "Multi-Timeframe Grids", previewText: "Sync up to 8 chart windows with linked crosshairs and time-synced playback." }
+        { id: "indicators", label: "100+ Technical Indicators", previewText: "RSI, MACD, Moving Averages, Bollinger Bands, Fibonacci, and Volume Profile." },
+        { id: "layouts", label: "Multi-Chart Grid Layouts", previewText: "View up to 8 active charts at the same time with synchronized crosshairs and time periods." }
       ]}
       modules={[
-        { title: "HTML5 Canvas & WebGL Engine", desc: "Hardware-accelerated charting engine supporting smooth 60 FPS scrolling and zooming.", icon: BarChart3, highlight: "60 FPS Canvas" },
-        { title: "100+ Technical Indicators", desc: "Pre-built library of trend, momentum, volatility, and volume-based indicators.", icon: Activity, highlight: "100+ Indicators" },
-        { title: "Multi-Timeframe Synchronization", desc: "Compare tick, 1-second, 1-minute, daily, and monthly bars side-by-side.", icon: Layers, highlight: "Multi-Timeframe" },
-        { title: "Custom Theme Styling", desc: "Full dark and light mode theme customization matching your brokerage brand.", icon: Globe, highlight: "Custom Themes" }
+        { title: "Fast 60 FPS Charting", desc: "Hardware-accelerated engine that scrolls and zooms smoothly without lag or freezing.", icon: BarChart3, highlight: "60 FPS Smooth" },
+        { title: "100+ Built-In Indicators", desc: "Full library of trend, momentum, volatility, and volume indicators ready for traders.", icon: Activity, highlight: "100+ Indicators" },
+        { title: "Multi-Timeframe Analysis", desc: "Compare 1-second, 1-minute, 1-hour, daily, and monthly candlestick bars easily.", icon: Layers, highlight: "All Timeframes" },
+        { title: "Brand Customization", desc: "Customize chart colors, background themes, and default watchlists to match your brand.", icon: Globe, highlight: "Custom Styling" }
       ]}
       techSpecs={[
-        { label: "Rendering Engine", value: "WebGL / Canvas" },
+        { label: "Chart Technology", value: "HTML5 / WebGL" },
         { label: "Frame Rate", value: "60 FPS" },
-        { label: "Indicators Included", value: "100+" },
-        { label: "Data Source", value: "WebSockets Feed" }
+        { label: "Indicators", value: "100+ Built-In" },
+        { label: "Data Streaming", value: "WebSockets" }
       ]}
       faqs={[
-        { q: "Can Financial Charts be embedded into our existing web or mobile app?", a: "Yes. Financial Charts is a lightweight JS/React component that embeds cleanly via npm package or iframe." },
-        { q: "Does the charting suite support custom user drawings and saved templates?", a: "Yes. Traders can save chart layouts, custom indicator parameters, and drawings directly to local storage or CRM profile." }
+        { q: "Can we embed Financial Charts into our existing website?", a: "Yes. Financial Charts embeds easily into any web app, CRM, or portal via a simple JavaScript widget." },
+        { q: "Can traders save their custom chart layouts?", a: "Yes. Traders can save custom indicator setups, drawings, and color themes automatically." }
       ]}
       onOpenAccount={onOpenAccount}
     />

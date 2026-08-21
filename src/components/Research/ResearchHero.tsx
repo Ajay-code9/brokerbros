@@ -30,7 +30,7 @@ export const ResearchHero: React.FC<ResearchHeroProps> = ({
           {/* Live Financial Data Ticker Status Bar (Wall Street Style) */}
           <div className="inline-flex flex-wrap items-center gap-3 px-3.5 py-1.5 bg-[#0D2231] text-white rounded-lg border border-slate-800 shadow-md font-mono text-[11px] mx-auto">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-emerald-400 font-bold tracking-wider">REFINITIV & BLOOMBERG FEED</span>
             </div>
             <span className="text-slate-700">|</span>

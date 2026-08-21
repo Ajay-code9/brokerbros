@@ -1,229 +1,195 @@
 import React, { useState } from 'react';
 import {
   GraduationCap,
-  BookOpen,
-  CheckCircle2,
-  ArrowRight,
-  PlayCircle,
   Clock,
   Award,
-  Users,
   Sparkles,
-  ChevronRight,
-  Check
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
+  Lock,
+  Mail,
+  Send,
+  BookOpen,
+  Zap,
+  Users,
+  Server,
+  Layers
 } from 'lucide-react';
-
+import { CTASection } from '../../components/CTA/CTASection';
 
 interface PageProps {
   onOpenAccount: () => void;
 }
 
-interface CourseCard {
-  id: string;
-  title: string;
-  level: string;
-  lessons: string;
-  duration: string;
-  description: string;
-  topics: string[];
-  badgeColor: string;
-}
-
 export const AcademyPage: React.FC<PageProps> = ({ onOpenAccount }) => {
-  const [activeTab, setActiveTab] = useState<string>('All');
-  const [selectedCourse, setSelectedCourse] = useState<CourseCard | null>(null);
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  const courses: CourseCard[] = [
+  const handleWaitlistSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubmitted(true);
+    }
+  };
+
+  const curriculumSneakPeek = [
     {
-      id: '1',
-      title: 'Turnkey Brokerage Launch Masterclass',
-      level: 'Executive',
-      lessons: '5 Modules',
-      duration: '2.0 Hours',
-      description: 'Step-by-step guide on launching a white-label Forex broker, connecting CRM portals, and setting up MT5 bridges.',
-      topics: [
-        'Offshore Licensing & Banking Setup',
-        'White-Label Broker CRM & Portal Config',
-        'MetaTrader 5 & WebTrader Server Hooks',
-        'KYC Workflows & Payment Gateway Integration'
-      ],
-      badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200'
+      module: 'Module 01',
+      title: 'Turnkey Brokerage Setup & CRM Configuration',
+      desc: 'Step-by-step masterclass on offshore company incorporation, corporate banking, CRM setup, and payment gateway integration.',
+      topics: ['Offshore Jurisdictions & Licensing', 'Client Portal & B2B CRM Setup', 'Payment Gateway Integration']
     },
     {
-      id: '2',
-      title: 'Prop Firm Architecture & Evaluation Rules',
-      level: 'Advanced',
-      lessons: '6 Modules',
-      duration: '2.5 Hours',
-      description: 'Architecting funded trader evaluation challenges, automated breach engines, drawdown math, and profit payout rules.',
-      topics: [
-        'Step 1 & Step 2 Challenge Parameter Design',
-        'Real-Time Daily Drawdown & Equity Breach Detection',
-        'Automated Risk Rules & Trailing Drawdowns',
-        'Profit Split Payout & Wallet Management'
-      ],
-      badgeColor: 'bg-blue-100 text-blue-800 border-blue-200'
+      module: 'Module 02',
+      title: 'Prop Firm Challenge Engine Architecture',
+      desc: 'Architecting funded trader evaluation rules, daily drawdown limits, trailing equity caps, and automated breach engines.',
+      topics: ['2-Step Evaluation Challenge Math', 'Automated Breach Detection', 'Funded Account Profit Payouts']
     },
     {
-      id: '3',
-      title: 'A-Book vs B-Book Dealing Desk Management',
-      level: 'Institutional',
-      lessons: '5 Modules',
-      duration: '2.0 Hours',
-      description: 'Mastering brokerage dealing desk execution models, STP routing to LPs, internalization profit rules, and auto-hedging.',
-      topics: [
-        'A-Book STP Routing & Prime Broker Accounts',
-        'B-Book Internalization & Toxic Flow Detection',
-        'Hybrid C-Book Routing Triggers',
-        'Real-Time Net Exposure & Margin Call Limits'
-      ],
-      badgeColor: 'bg-purple-100 text-purple-800 border-purple-200'
+      module: 'Module 03',
+      title: 'A-Book vs B-Book Risk & Dealing Desk',
+      desc: 'Mastering brokerage execution models, prime broker STP routing, toxic flow detection, and internalized B-Book risk.',
+      topics: ['STP vs B-Book Risk Strategies', 'Liquidity Provider Bridge Hooks', 'Real-Time Exposure & Margin Safeguards']
     },
     {
-      id: '4',
-      title: 'Multi-Tier IB & Affiliate Network Architecture',
-      level: 'Commercial',
-      lessons: '6 Modules',
-      duration: '2.0 Hours',
-      description: 'Structuring multi-level referral rebate trees, commission tier overrides, marketing portals, and automated payouts.',
-      topics: [
-        'Multi-Tier Rebate Hierarchy Calculation',
-        'Volume, Spread & Commission Override Rules',
-        'IB Portal Dashboard & Custom Affiliate Links',
-        'Automated Monthly & Instant Rebate Distribution'
-      ],
-      badgeColor: 'bg-amber-100 text-amber-800 border-amber-200'
+      module: 'Module 04',
+      title: 'Multi-Tier IB Hierarchy & Rebate Engine',
+      desc: 'Structuring multi-level referral rebate trees, commission tier overrides, white-label partner portals, and automated payouts.',
+      topics: ['Infinite-Tier Rebate Hierarchies', 'Automated Daily Payout Ledger', 'Affiliate Tracking & UTM Attribution']
     }
   ];
 
-  const filteredCourses = activeTab === 'All'
-    ? courses
-    : courses.filter(c => c.level === activeTab);
+  const roadmapSteps = [
+    {
+      step: '01',
+      title: 'Curriculum Finalization',
+      desc: 'Senior institutional architects curate 20+ video modules and brokerage operational blueprints.'
+    },
+    {
+      step: '02',
+      title: 'Early VIP Registration',
+      desc: 'Broker founders and prop firm creators reserve early-access spots with a 50% discount.'
+    },
+    {
+      step: '03',
+      title: 'Private Beta Access',
+      desc: 'Waitlist members receive early access to course materials and downloadable operational templates.'
+    },
+    {
+      step: '04',
+      title: 'Official Q4 Launch & Certification',
+      desc: 'Full platform launch with 1-on-1 strategy sessions and accredited Executive Brokerage Certificates.'
+    }
+  ];
 
   return (
-    <div className="bg-white dark:bg-[#0a0a0a] text-slate-900 dark:text-slate-300 min-h-screen font-sans transition-colors duration-300">
+    <div className="bg-slate-50 dark:bg-[#090D14] text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300 min-h-screen">
       
-      {/* 1. GROUNDED HERO SECTION */}
-      <section className="relative bg-white dark:bg-[#0a0a0a] py-16 sm:py-20 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
-        {/* Soft Background Grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none" />
+      {/* 1. HERO SECTION (100% ABOVE-THE-FOLD LANDING FIT & DUAL THEME COMPATIBLE) */}
+      <section className="relative min-h-[calc(100vh-90px)] flex flex-col justify-center py-6 sm:py-10 overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0E1420]">
+        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:28px_28px] opacity-60 pointer-events-none" />
+        <div className="absolute top-1/4 right-10 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 sm:space-y-5 my-auto w-full">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-400 text-xs font-semibold border border-emerald-200 dark:border-emerald-800/50">
-            <GraduationCap className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span>BROKERBROS TRADING ACADEMY</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-400 text-xs font-mono font-bold border border-emerald-200 dark:border-emerald-800/50">
+            <GraduationCap className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <span>BROKERAGE LAUNCH ACADEMY • COMING SOON (Q4 2026)</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight max-w-3xl mx-auto">
-            Learn Trading Step-by-Step with Clear & Easy Courses
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+            Brokerage Launch Academy <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-400">
+              Executive Masterclass & Certification Program
+            </span>
           </h1>
 
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Free, easy-to-understand video guides and lessons designed for beginners and growing traders. No complicated jargon.
+          <p className="max-w-3xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+            The definitive educational masterclass suite for brokerage founders, prop firm creators, and asset managers. Learn dealing desk risk management, licensing, and turnkey technology setup directly from industry architects.
           </p>
 
-          {/* Quick Info Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-slate-600 dark:text-slate-400">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span>100% Free Access</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span>Short Video Lessons</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span>Self-Paced Learning</span>
+          {/* Early Access Waitlist Form */}
+          <div className="pt-2 max-w-md mx-auto w-full">
+            {!submitted ? (
+              <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-2">
+                <div className="relative flex-1">
+                  <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="email"
+                    required
+                    placeholder="Enter business email for VIP access..."
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#141C2B] border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 font-medium shadow-xs"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl shadow-md shadow-emerald-600/25 transition-all flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+                >
+                  <span>Join Waitlist</span>
+                  <Send className="w-3.5 h-3.5" />
+                </button>
+              </form>
+            ) : (
+              <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold flex items-center justify-center gap-2">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>You're on the VIP list! We will notify you first upon launch.</span>
+              </div>
+            )}
+          </div>
+
+          {/* Integrated Metric Card */}
+          <div className="pt-3 max-w-xl mx-auto w-full">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#131926] border border-slate-200 dark:border-slate-800 shadow-xs flex items-center justify-between">
+              <div className="text-left space-y-0.5">
+                <div className="text-xs font-mono font-extrabold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                  <span>EARLY ACCESS BENEFIT</span>
+                </div>
+                <div className="text-xs font-medium text-slate-600 dark:text-slate-400">
+                  50% Discount + 1-on-1 Strategy Architecture Session
+                </div>
+              </div>
+              <div className="text-xl sm:text-2xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400 px-3.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                Q4 2026
+              </div>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* 2. SIMPLE COURSE CATALOG */}
-      <section className="py-16 bg-slate-50 dark:bg-[#121520] border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      {/* 2. CHRONOLOGICAL 4-STEP PRE-LAUNCH ROADMAP */}
+      <section className="py-14 sm:py-18 bg-white dark:bg-[#0E1420] border-b border-slate-200 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          {/* Section Header & Tab Filters */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                Explore Courses
-              </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">
-                Choose a course level that fits your trading goals.
-              </p>
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+              <Clock className="w-4 h-4" />
+              <span>ACADEMY LAUNCH ROADMAP</span>
             </div>
-
-            {/* Level Tabs */}
-            <div className="flex flex-wrap items-center gap-1 bg-white dark:bg-[#0a0a0a] p-1 rounded-lg border border-slate-200 dark:border-slate-800 shadow-xs">
-              {['All', 'Beginner', 'Intermediate', 'Advanced', 'Quantitative'].map((level) => (
-                <button
-                  key={level}
-                  onClick={() => setActiveTab(level)}
-                  className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all cursor-pointer ${
-                    activeTab === level
-                      ? 'bg-emerald-600 text-white shadow-xs'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
-                  }`}
-                >
-                  {level}
-                </button>
-              ))}
-            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Pre-Launch Timeline & Milestones
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
+              How early VIP waitlist members gain exclusive masterclass advantages.
+            </p>
           </div>
 
-          {/* Course Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {filteredCourses.map((course) => (
-              <div
-                key={course.id}
-                className="bg-white dark:bg-[#0a0a0a] p-6 sm:p-7 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs hover:shadow-md transition-all space-y-5 flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  {/* Top Badge & Duration */}
-                  <div className="flex items-center justify-between text-xs font-mono">
-                    <span className={`px-2.5 py-1 rounded-md font-bold border ${course.badgeColor} dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-200`}>
-                      {course.level}
-                    </span>
-                    <span className="text-slate-500 dark:text-slate-400 font-medium">
-                      {course.lessons} • {course.duration}
-                    </span>
-                  </div>
-
-                  {/* Title & Description */}
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                      {course.title}
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
-                      {course.description}
-                    </p>
-                  </div>
-
-                  {/* Topic List */}
-                  <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-                    <div className="text-xs font-bold text-slate-700 dark:text-slate-300">What you will learn:</div>
-                    {course.topics.map((topic, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                        <span>{topic}</span>
-                      </div>
-                    ))}
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {roadmapSteps.map((step, idx) => (
+              <div key={idx} className="p-6 rounded-2xl bg-slate-50 dark:bg-[#131926] border border-slate-200 dark:border-slate-800 space-y-3 relative">
+                <div className="w-9 h-9 rounded-xl font-mono font-bold flex items-center justify-center text-sm border bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20">
+                  {step.step}
                 </div>
-
-                {/* Card Action Button */}
-                <button
-                  onClick={() => setSelectedCourse(course)}
-                  className="w-full py-2.5 bg-slate-900 dark:bg-slate-800 hover:bg-emerald-600 dark:hover:bg-emerald-600 text-white font-bold text-xs rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-                >
-                  <PlayCircle className="w-4 h-4" />
-                  <span>Start Course Free</span>
-                </button>
-
+                <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  {step.title}
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -231,112 +197,59 @@ export const AcademyPage: React.FC<PageProps> = ({ onOpenAccount }) => {
         </div>
       </section>
 
-      {/* 3. THREE SIMPLE BENEFITS */}
-      <section className="py-16 bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-              Why Learn With BrokerBros?
+      {/* 3. CURRICULUM SNEAK PEEK GRID */}
+      <section className="py-16 sm:py-20 border-b border-slate-200 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Masterclass Curriculum Sneak Peek
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">
-              Everything you need to build confidence in financial markets.
+            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Curated by senior dealing desk managers and financial software engineers.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#121520] border border-slate-200 dark:border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-800/40">
-                <BookOpen className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Clear & Short Lessons</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Short 5-to-10 minute videos that explain complex market concepts in plain language.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {curriculumSneakPeek.map((course, idx) => (
+              <div 
+                key={idx} 
+                className="bg-white dark:bg-[#141C2B] p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-4 hover:border-emerald-500/50 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 px-2.5 py-1 rounded-md border border-emerald-200 dark:border-emerald-800">
+                      {course.module}
+                    </span>
+                    <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                      <Lock className="w-3.5 h-3.5 text-amber-500" />
+                      Unlocks Q4 2026
+                    </span>
+                  </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#121520] border border-slate-200 dark:border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-400 flex items-center justify-center border border-blue-200 dark:border-blue-800/40">
-                <Users className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Live Q&A Webinars</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Ask questions directly to market instructors during live weekly trading sessions.
-              </p>
-            </div>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">{course.title}</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                    {course.desc}
+                  </p>
+                </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#121520] border border-slate-200 dark:border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-400 flex items-center justify-center border border-purple-200 dark:border-purple-800/40">
-                <Award className="w-5 h-5" />
+                <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                  {course.topics.map((t, tIdx) => (
+                    <div key={tIdx} className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                      <span>{t}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Free Course Certificate</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Earn a certificate when you finish any learning track to showcase your knowledge.
-              </p>
-            </div>
+            ))}
           </div>
+
         </div>
       </section>
 
-      {/* 4. COURSE PREVIEW MODAL */}
-      {selectedCourse && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/80 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="relative w-full max-w-xl bg-white dark:bg-[#0a0a0a] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
-            
-            <div className="flex items-start justify-between">
-              <div>
-                <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${selectedCourse.badgeColor} dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-200`}>
-                  {selectedCourse.level}
-                </span>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-2">
-                  {selectedCourse.title}
-                </h3>
-              </div>
-              <button
-                onClick={() => setSelectedCourse(null)}
-                className="p-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer"
-              >
-                ✕
-              </button>
-            </div>
-
-            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
-              {selectedCourse.description}
-            </p>
-
-            <div className="space-y-2 p-4 bg-slate-50 dark:bg-[#121520] rounded-xl border border-slate-200 dark:border-slate-800">
-              <div className="text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">Course Syllabus ({selectedCourse.lessons}):</div>
-              {selectedCourse.topics.map((t, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
-                  <span className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-400 font-mono text-[10px] flex items-center justify-center font-bold">
-                    {i + 1}
-                  </span>
-                  <span>{t}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex items-center justify-end gap-3 pt-2">
-              <button
-                onClick={() => setSelectedCourse(null)}
-                className="px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer"
-              >
-                Close
-              </button>
-              <button
-                onClick={() => {
-                  setSelectedCourse(null);
-                  onOpenAccount();
-                }}
-                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-sm"
-              >
-                <span>Start Learning Now</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-
-          </div>
-        </div>
-      )}
+      {/* 4. CTA SECTION */}
+      <CTASection onOpenAccount={onOpenAccount} />
 
     </div>
   );

@@ -20,7 +20,7 @@ export const PlatformsHero: React.FC<HeroProps> = ({ onOpenAccount }) => {
           
           {/* Live Data Ticker Status Bar */}
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-50 text-slate-700 rounded-full border border-slate-200/80 text-xs font-mono font-medium mx-auto">
-            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-emerald-600" />
             <span className="text-slate-900 font-bold">SUB-MILLISECOND LATENCY</span>
             <span className="text-slate-300">•</span>
             <span className="text-emerald-700 font-bold">150+ VENUES CONNECTED</span>

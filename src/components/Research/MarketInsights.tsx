@@ -22,7 +22,7 @@ export const MarketInsights: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#0D2231] text-white font-mono text-[11px] border border-slate-800 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-emerald-400 font-bold tracking-wider">DTCC & OCC LIQUIDITY MATRIX</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white font-sans tracking-tight">

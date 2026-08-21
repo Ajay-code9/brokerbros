@@ -115,8 +115,7 @@ export const BackOfficePage: React.FC<BackOfficePageProps> = ({ onOpenAccount })
             
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Brokerage Engine Module</span>
+              <span>Live Operational Status</span>
             </div>
 
             {/* Title */}

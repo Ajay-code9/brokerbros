@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headphones, ShieldCheck, Clock, Server, Zap, CheckCircle2 } from 'lucide-react';
+import { Headphones, ShieldCheck, Clock, Server, Zap, CheckCircle2, PhoneCall, UserCheck, Wrench, FileText } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -9,21 +9,21 @@ interface PageProps {
 export const TechnicalSupportPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <ServiceMasterPageTemplate
-      serviceTitle="24/7 Technical Support Desk"
-      heroBadge="SUB-30 SECOND RESPONSE SLA"
-      heroDescription="Direct 24/7 access to senior market technicians, system engineers, and infrastructure specialists. Zero dead-end AI support chatbots."
-      slaMetric={{ label: "Average Response Time", value: "< 24 Seconds", sub: "24/7/365 Direct Human Answer SLA" }}
+      serviceTitle="24/7 Technical Support SLA Desk"
+      heroBadge="24/7 DIRECT HUMAN SUPPORT"
+      heroDescription="Direct 24/7 access to senior brokerage engineers and server specialists. Instant response with zero dead-end chatbot delays."
+      slaMetric={{ label: "Average Response Time", value: "< 24 Seconds", sub: "24/7 Direct Human Answer Guarantee" }}
       deliverables={[
-        { title: "24/7 Live Desk Access", desc: "Phone, Slack, and encrypted portal channels to tier-3 engineering technicians.", icon: Headphones, sla: "<30s Response" },
-        { title: "Emergency Incident Desk", desc: "Priority dispatch desk for urgent execution or connectivity anomalies.", icon: Zap, sla: "100% Priority" },
-        { title: "Server Log Diagnostics", desc: "Microsecond timestamp analysis for order execution and gateway logs.", icon: Server, sla: "Real-time" },
-        { title: "Multi-Language Desk", desc: "Support in English, Spanish, Mandarin, Arabic, and Cantonese.", icon: ShieldCheck, sla: "Global" }
+        { title: "24/7 Live Desk Access", desc: "Reach senior engineers via phone, VIP Slack channels, or urgent ticketing system.", icon: Headphones, sla: "<30s Answer" },
+        { title: "Emergency Priority Hotline", desc: "Instant priority dispatch desk for urgent server or trade connectivity issues.", icon: Zap, sla: "Immediate" },
+        { title: "Trading Log Diagnostics", desc: "Fast log analysis for order execution queries, price feed issues, and server status.", icon: Server, sla: "Real-Time" },
+        { title: "Multi-Language Team", desc: "Support available in English, Spanish, Arabic, Mandarin, and Cantonese.", icon: ShieldCheck, sla: "Global Team" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Direct Intake", desc: "Incident or query logged via phone or VIP Slack channel." },
-        { step: "02", title: "Senior Triage", desc: "Assigned immediately to a dedicated senior FinTech engineer." },
-        { step: "03", title: "Rapid Resolution", desc: "Diagnostic testing, log tracing, and gateway fix applied." },
-        { step: "04", title: "Post-Mortem SLA", desc: "Full root cause analysis (RCA) report provided within 4 hours." }
+        { step: "01", title: "Instant Call / Ticket", desc: "Contact our desk via phone, Slack, or portal ticket.", icon: PhoneCall },
+        { step: "02", title: "Assigned Senior Engineer", desc: "Your query goes straight to an experienced MT5 & FIX engineer.", icon: UserCheck },
+        { step: "03", title: "Fast System Fix", desc: "Diagnostics and fixes applied directly to resolve your issue.", icon: Wrench },
+        { step: "04", title: "Resolution Report", desc: "Complete incident report provided detailing root cause and fix.", icon: FileText }
       ]}
       scopeInclusions={[
         { feature: "Support Channels", standard: "Ticketing & Email", enterprise: "24/7 Direct Phone, VIP Slack & Portal" },

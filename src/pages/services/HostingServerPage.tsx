@@ -1,5 +1,5 @@
 import React from 'react';
-import { Server, Zap, ShieldCheck, Cpu, CheckCircle2 } from 'lucide-react';
+import { Server, Zap, ShieldCheck, Cpu, CheckCircle2, Search, Activity } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -10,20 +10,20 @@ export const HostingServerPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <ServiceMasterPageTemplate
       serviceTitle="Hosting & Server Management"
-      heroBadge="EQUINIX NY4 / LD4 CO-LOCATION"
-      heroDescription="Managed high-performance infrastructure inside prime financial datacenters with sub-10ms optical cross-connects and 99.999% SLA uptime."
-      slaMetric={{ label: "Datacenter Uptime SLA", value: "99.999%", sub: "Equinix NY4 / LD4 / TY3 Active-Active Co-location" }}
+      heroBadge="EQUINIX FINANCIAL DATACENTERS"
+      heroDescription="High-speed hosting inside Equinix LD4 (London) and NY4 (New York) financial datacenters with sub-10ms connections and 99.999% uptime."
+      slaMetric={{ label: "Server Uptime Guarantee", value: "99.999%", sub: "Equinix NY4 (New York) & LD4 (London) Co-Location" }}
       deliverables={[
-        { title: "Financial Co-location", desc: "Bare-metal dedicated servers inside Equinix NY4 (NJ), LD4 (London), and TY3 (Tokyo).", icon: Server, sla: "Tier-4 Facility" },
-        { title: "Direct Fiber Cross-Connects", desc: "Sub-10ms optical interconnects to liquidity providers, exchanges, and MT5 servers.", icon: Zap, sla: "<10ms Speed" },
-        { title: "Automated Backup & Failover", desc: "Real-time snapshot replication and automatic DNS failover between datacenters.", icon: Cpu, sla: "Active-Active" },
-        { title: "24/7 Server Hardware Monitoring", desc: "Continuous CPU, RAM, disk I/O, and network bandwidth diagnostics.", icon: ShieldCheck, sla: "100% Monitored" }
+        { title: "Financial Co-Location", desc: "Dedicated high-speed servers co-located directly inside Equinix NY4, LD4, and TY3 datacenters.", icon: Server, sla: "Equinix LD4/NY4" },
+        { title: "Direct Fiber Connections", desc: "Sub-10ms direct fiber connections to liquidity providers, banks, and trading servers.", icon: Zap, sla: "<10ms Speed" },
+        { title: "Automated Failover", desc: "Real-time data backups and automatic failover if any server hardware experiences an issue.", icon: Cpu, sla: "Auto Failover" },
+        { title: "24/7 Server Hardware Monitoring", desc: "Continuous monitoring of CPU load, RAM usage, storage space, and network bandwidth.", icon: ShieldCheck, sla: "24/7 Monitored" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Infrastructure Audit", desc: "Analysis of your current server load, latency, and geographic traffic." },
-        { step: "02", title: "Co-location Setup", desc: "Deployment of custom bare-metal servers inside Equinix datacenters." },
-        { step: "03", title: "Fiber Cross-Connection", desc: "Provisioning direct optical fiber cross-connects to liquidity venues." },
-        { step: "04", title: "Active SLA Monitoring", desc: "24/7 automated monitoring with automatic failover triggers." }
+        { step: "01", title: "Server Audit", desc: "We review your current server load, latency speeds, and traffic locations.", icon: Search },
+        { step: "02", title: "Equinix Deployment", desc: "Provision dedicated bare-metal servers inside Equinix LD4 or NY4 facilities.", icon: Server },
+        { step: "03", title: "Direct Cross-Connect", desc: "Plug in direct fiber cables to banks, liquidity providers, and MetaTrader 5.", icon: Zap },
+        { step: "04", title: "24/7 Monitoring", desc: "Enable 24/7 automatic monitoring with instant failover protection.", icon: Activity }
       ]}
       scopeInclusions={[
         { feature: "Datacenter Tier", standard: "Standard Cloud VPS", enterprise: "Equinix NY4/LD4 Dedicated Co-location" },

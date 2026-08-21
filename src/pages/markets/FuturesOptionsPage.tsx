@@ -300,7 +300,7 @@ export const FuturesOptionsPage: React.FC<FuturesOptionsPageProps> = ({ onOpenAc
       <div className="bg-slate-950 border-b border-slate-800 py-2.5 overflow-hidden font-mono text-xs text-slate-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4">
           <div className="flex items-center gap-1.5 text-emerald-400 font-bold shrink-0 z-10 bg-slate-950 pr-4">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
             GLOBAL FUTURES STREAM:
           </div>
           <div className="overflow-hidden flex-1 relative group no-scrollbar">
@@ -1076,7 +1076,7 @@ export const FuturesOptionsPage: React.FC<FuturesOptionsPageProps> = ({ onOpenAc
             </div>
 
             <div className="text-emerald-400 text-center hidden md:block">
-              <ArrowRight className="w-6 h-6 mx-auto animate-pulse" />
+              <ArrowRight className="w-6 h-6 mx-auto" />
             </div>
 
             <div className="bg-slate-900 p-5 rounded-xl border border-slate-800 text-center space-y-2">
@@ -1086,7 +1086,7 @@ export const FuturesOptionsPage: React.FC<FuturesOptionsPageProps> = ({ onOpenAc
             </div>
 
             <div className="text-emerald-400 text-center hidden md:block">
-              <ArrowRight className="w-6 h-6 mx-auto animate-pulse" />
+              <ArrowRight className="w-6 h-6 mx-auto" />
             </div>
 
             <div className="bg-slate-900 p-5 rounded-xl border border-slate-800 text-center space-y-2 border-emerald-500/50">

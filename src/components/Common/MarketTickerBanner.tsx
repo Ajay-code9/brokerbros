@@ -21,7 +21,7 @@ export const MarketTickerBanner: React.FC<MarketTickerBannerProps> = ({
     <div className="bg-slate-950 border-b border-slate-800 py-2.5 overflow-hidden font-mono text-xs text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-6">
         <div className="flex items-center gap-1.5 text-emerald-400 font-bold shrink-0 z-10 bg-slate-950 pr-4 border-r border-slate-800">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+          <span className="w-2 h-2 rounded-full bg-emerald-500" />
           <span>{label}</span>
         </div>
         <div className="flex items-center gap-8 animate-marquee whitespace-nowrap overflow-x-auto no-scrollbar">

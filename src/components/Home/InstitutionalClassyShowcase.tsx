@@ -1,11 +1,13 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Globe, Percent, Layers, BarChart2 } from 'lucide-react';
+import { useRouter } from '../../router';
 
 interface InstitutionalClassyShowcaseProps {
   onOpenAccount: () => void;
 }
 
 export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcaseProps> = ({ onOpenAccount }) => {
+  const { navigate } = useRouter();
   return (
     <section className="bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 py-16 sm:py-24 font-sans border-b border-slate-100 dark:border-[#1E293B] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
@@ -99,7 +101,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             
             {/* Card 1 */}
-            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group">
+            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group cursor-pointer" onClick={() => navigate('/products/forex-crm')}>
               <h3 className="text-base font-bold text-slate-950 dark:text-white font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 White-Label Broker CRM & Backoffice
               </h3>
@@ -107,7 +109,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
                 Complete client portal, automated KYC verification, and multi-tier IB rebate management.
               </p>
               <button
-                onClick={onOpenAccount}
+                onClick={(e) => { e.stopPropagation(); navigate('/products/forex-crm'); }}
                 className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold text-xs hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors cursor-pointer pt-1"
               >
                 <span>Explore CRM Suite</span>
@@ -116,7 +118,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
             </div>
 
             {/* Card 2 */}
-            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group">
+            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group cursor-pointer" onClick={() => navigate('/products/prop-trading-crm')}>
               <h3 className="text-base font-bold text-slate-950 dark:text-white font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 Prop Firm Evaluation Engine
               </h3>
@@ -124,7 +126,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
                 Automated daily drawdown tracking, profit target rules, breach alerts, and payout management.
               </p>
               <button
-                onClick={onOpenAccount}
+                onClick={(e) => { e.stopPropagation(); navigate('/products/prop-trading-crm'); }}
                 className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold text-xs hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors cursor-pointer pt-1"
               >
                 <span>Explore Prop Firm Engine</span>
@@ -133,7 +135,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
             </div>
 
             {/* Card 3 */}
-            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group">
+            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group cursor-pointer" onClick={() => navigate('/products/web-trader')}>
               <h3 className="text-base font-bold text-slate-950 dark:text-white font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 Web & Mobile Trading Apps
               </h3>
@@ -141,7 +143,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
                 Custom branded Webtrader, iOS, and Android applications with real-time charting and instant execution.
               </p>
               <button
-                onClick={onOpenAccount}
+                onClick={(e) => { e.stopPropagation(); navigate('/products/web-trader'); }}
                 className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold text-xs hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors cursor-pointer pt-1"
               >
                 <span>Explore Trading Apps</span>
@@ -150,7 +152,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
             </div>
 
             {/* Card 4 */}
-            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group">
+            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group cursor-pointer" onClick={() => navigate('/products/pamm-mam')}>
               <h3 className="text-base font-bold text-slate-950 dark:text-white font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 Copy Trading & PAMM / MAM
               </h3>
@@ -158,7 +160,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
                 Ultra-fast trade copying, flexible equity allocation, and automated performance fee splitting.
               </p>
               <button
-                onClick={onOpenAccount}
+                onClick={(e) => { e.stopPropagation(); navigate('/products/pamm-mam'); }}
                 className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold text-xs hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors cursor-pointer pt-1"
               >
                 <span>Explore Copy & PAMM</span>
@@ -167,7 +169,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
             </div>
 
             {/* Card 5 */}
-            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group">
+            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group cursor-pointer" onClick={() => navigate('/products/plugins')}>
               <h3 className="text-base font-bold text-slate-950 dark:text-white font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 MT5 Server APIs & WebSockets
               </h3>
@@ -175,7 +177,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
                 Server-side MetaTrader 5 API hooks, event triggers, and real-time WebSocket tick price streaming.
               </p>
               <button
-                onClick={onOpenAccount}
+                onClick={(e) => { e.stopPropagation(); navigate('/products/plugins'); }}
                 className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold text-xs hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors cursor-pointer pt-1"
               >
                 <span>Explore Server APIs</span>
@@ -184,7 +186,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
             </div>
 
             {/* Card 6 */}
-            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group">
+            <div className="space-y-2.5 p-6 bg-slate-50/70 dark:bg-[#141C2B] border border-slate-200/80 dark:border-[#1E293B] border-l-4 border-l-emerald-600 hover:bg-white dark:hover:bg-[#1B2538] hover:shadow-md transition-all group cursor-pointer" onClick={() => navigate('/api-integrations')}>
               <h3 className="text-base font-bold text-slate-950 dark:text-white font-sans group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 FIX Liquidity & Crypto Gateways
               </h3>
@@ -192,7 +194,7 @@ export const InstitutionalClassyShowcase: React.FC<InstitutionalClassyShowcasePr
                 Direct FIX 4.4/5.0 liquidity bridge to 150+ LPs and instant crypto deposit auto-crediting.
               </p>
               <button
-                onClick={onOpenAccount}
+                onClick={(e) => { e.stopPropagation(); navigate('/api-integrations'); }}
                 className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold text-xs hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors cursor-pointer pt-1"
               >
                 <span>Explore FIX & Gateways</span>

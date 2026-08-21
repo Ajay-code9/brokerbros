@@ -293,7 +293,6 @@ export const WhyBrokerBrosPage: React.FC<WhyBrokerBrosPageProps> = ({ onOpenAcco
                   {loc.latency}
                 </div>
                 <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                   <span>{loc.route}</span>
                 </div>
               </div>

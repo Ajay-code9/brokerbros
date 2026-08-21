@@ -78,7 +78,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onOpenAccount, onSuccessLo
             Encrypted session established. Launching BrokerBros Pro Trading Terminal...
           </p>
           <div className="pt-2 flex items-center justify-center gap-2 text-xs font-mono font-bold text-emerald-700">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
             <span>Redirecting to Dashboard...</span>
           </div>
         </div>

@@ -182,7 +182,6 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({ onOpenAccount })
                 </div>
                 <div className="text-2xl font-black font-mono text-slate-900 dark:text-white">$45,280.50</div>
                 <div className="text-[11px] text-slate-500 font-mono flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
                   <span>Instant Transfer Available</span>
                 </div>
               </div>

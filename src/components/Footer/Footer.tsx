@@ -115,7 +115,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAccount, onLogin }) => {
             </h4>
             <ul className="space-y-2.5 text-slate-600 dark:text-slate-400 text-[8.5px]">
               <li><button onClick={() => navigate('/education/academy')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Brokerage Launch Academy</button></li>
-              <li><button onClick={() => navigate('/education/learning-center')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">API & Developer Docs</button></li>
+              <li><button onClick={() => navigate('/api-integrations')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">API & Developer Docs</button></li>
               <li><button onClick={() => navigate('/pricing')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Turnkey SaaS Tiers</button></li>
               <li><button onClick={() => navigate('/pricing/commissions')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Volume & Execution Tiers</button></li>
               <li><button onClick={() => navigate('/help')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-left font-normal">Help & Support Desk</button></li>

@@ -257,9 +257,9 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
       id="trust"
       className="py-6 lg:py-10 bg-white dark:bg-[#090D14] text-slate-900 dark:text-slate-100 border-b border-slate-200/50 dark:border-[#1E293B] relative overflow-hidden font-sans transition-colors duration-300"
     >
-      {/* Subtle Animated Background Grid (Opacity < 5%) */}
+      {/* Subtle Static Background Grid (Opacity < 5%) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.035]">
-        <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:28px_28px] animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:28px_28px]"></div>
         <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-gradient-to-br from-emerald-500 via-teal-500 to-transparent rounded-full blur-3xl"></div>
       </div>
 
@@ -267,7 +267,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/70 dark:border-[#1E293B] pb-4">
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-slate-900 text-white font-mono text-[11px] border border-slate-800 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-emerald-400 font-bold tracking-wider">ISO 27001 CERTIFIED</span>
               <span className="text-slate-700">|</span>
               <span className="text-slate-300 font-bold">MULTI-JURISDICTION COMPLIANCE READY</span>
@@ -364,7 +364,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({ onOpenAccount }) => 
                             {isCompleted ? (
                               <Check className="w-3 h-3 text-emerald-400 stroke-[3]" />
                             ) : isSelected ? (
-                              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                              <div className="w-2 h-2 rounded-full bg-emerald-400" />
                             ) : (
                               <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
                             )}

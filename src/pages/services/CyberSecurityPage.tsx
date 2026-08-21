@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Lock, Zap, Server, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Lock, Zap, Server, CheckCircle2, ShieldAlert, Globe, Activity, FileCheck } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -10,20 +10,20 @@ export const CyberSecurityPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <ServiceMasterPageTemplate
       serviceTitle="DDoS Protection & Cyber Services"
-      heroBadge="TERABIT-SCALE MITIGATION"
-      heroDescription="Enterprise cybersecurity, DDoS mitigation, and intrusion prevention designed specifically to safeguard brokerage platforms during extreme market volatility."
-      slaMetric={{ label: "DDoS Mitigation Capacity", value: "3.2 Tbps+", sub: "Sub-Second Scrubbing & Zero Downtime" }}
+      heroBadge="TERABIT-SCALE CYBER DEFENSE"
+      heroDescription="Enterprise cyber defense and DDoS scrubbing network built to keep your trading platforms online during massive market volatility and cyber attacks."
+      slaMetric={{ label: "DDoS Mitigation Capacity", value: "3.2 Tbps+", sub: "Instant Sub-Second Scrubbing & Zero Downtime" }}
       deliverables={[
-        { title: "Terabit DDoS Mitigation", desc: "Always-on multi-layered scrubbing network filtering Layer 3, 4, and 7 attacks.", icon: Zap, sla: "<1s Scrubbing" },
-        { title: "Web Application Firewall (WAF)", desc: "Custom financial WAF rules blocking SQL injection, XSS, and bot scrapers.", icon: Lock, sla: "Always-On" },
-        { title: "Penetration Testing & Audits", desc: "Quarterly vulnerability scans and ethical hacking audits for regulatory compliance.", icon: ShieldCheck, sla: "Quarterly" },
-        { title: "24/7 Security Operations Center", desc: "Dedicated SOC team monitoring real-time threat intelligence and traffic anomalies.", icon: Server, sla: "24/7 SOC" }
+        { title: "3.2 Tbps DDoS Scrubbing", desc: "Always-on multi-layer scrubbing network that filters out Layer 3, 4, and 7 attacks instantly.", icon: Zap, sla: "<1s Scrubbing" },
+        { title: "Web Application Firewall (WAF)", desc: "Custom firewall rules blocking SQL injection, XSS, and unauthorized bot scrapers.", icon: Lock, sla: "Always-On" },
+        { title: "Penetration Testing & Audits", desc: "Quarterly vulnerability scans and security penetration tests for regulatory compliance.", icon: ShieldCheck, sla: "Quarterly Audit" },
+        { title: "24/7 Security Desk (SOC)", desc: "Security Operations Center monitoring network traffic anomalies 24/7/365.", icon: Server, sla: "24/7 SOC Desk" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Security Assessment", desc: "Comprehensive audit of your domain, API endpoints, and server infrastructure." },
-        { step: "02", title: "DNS & WAF Setup", desc: "Routing traffic through our high-speed DDoS scrubbing network." },
-        { step: "03", title: "Real-time Filtering", desc: "Continuous automated attack detection and instant packet scrubbing." },
-        { step: "04", title: "Threat Reporting", desc: "Detailed attack telemetry reports and compliance security certificates." }
+        { step: "01", title: "Security Assessment", desc: "Full audit of your domain, web apps, API endpoints, and server infrastructure.", icon: ShieldAlert },
+        { step: "02", title: "DNS & WAF Setup", desc: "Route your incoming traffic through our high-speed DDoS scrubbing network.", icon: Globe },
+        { step: "03", title: "Real-Time Packet Scrubbing", desc: "Automated threat detection filters out malicious traffic in sub-seconds.", icon: Activity },
+        { step: "04", title: "Compliance Reports", desc: "Receive detailed attack telemetry and security compliance certificates.", icon: FileCheck }
       ]}
       scopeInclusions={[
         { feature: "Mitigation Bandwidth", standard: "100 Gbps Basic", enterprise: "3.2 Tbps+ Unlimited Terabit Capacity" },

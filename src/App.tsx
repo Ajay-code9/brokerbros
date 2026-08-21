@@ -72,7 +72,8 @@ import { WebSocketsStreamingPage } from './pages/solutions/WebSocketsStreamingPa
 import { CryptoGatewayPage } from './pages/solutions/CryptoGatewayPage';
 import { FixApiLiquidityPage } from './pages/solutions/FixApiLiquidityPage';
 
-// 12 Dedicated Product Pages
+// 13 Dedicated Product Pages
+import { BrokerBrosTraderPage } from './pages/products/BrokerBrosTraderPage';
 import { WebTraderPage } from './pages/products/WebTraderPage';
 import { MobileAppProductPage } from './pages/products/MobileAppProductPage';
 import { ForexCrmPage } from './pages/products/ForexCrmPage';
@@ -151,6 +152,8 @@ function AppContent() {
         return <UserTrainingPage onOpenAccount={handleOpenAccount} />;
       case '/services/custom-system-development':
         return <CustomDevelopmentPage onOpenAccount={handleOpenAccount} />;
+      case '/products/brokerbros-trader':
+        return <BrokerBrosTraderPage onOpenAccount={handleOpenAccount} />;
       case '/products/web-trader':
         return <WebTraderPage onOpenAccount={handleOpenAccount} />;
       case '/products/mobile-app':
@@ -175,6 +178,16 @@ function AppContent() {
         return <FinancialWidgetsPage onOpenAccount={handleOpenAccount} />;
       case '/products/plugins':
         return <PluginsPage onOpenAccount={handleOpenAccount} />;
+      case '/products/back-office':
+        return <BackOfficePage onOpenAccount={handleOpenAccount} />;
+      case '/products/prop-trading-crm':
+        return <PropTradingCrmPage onOpenAccount={handleOpenAccount} />;
+      case '/products/client-area':
+        return <ClientAreaPage onOpenAccount={handleOpenAccount} />;
+      case '/products/partner-area':
+        return <PartnerAreaPage onOpenAccount={handleOpenAccount} />;
+      case '/products/b2b-crm':
+        return <B2bCrmPage onOpenAccount={handleOpenAccount} />;
       case '/markets':
         return <MarketsOverviewPage onOpenAccount={handleOpenAccount} />;
       case '/markets/stocks':

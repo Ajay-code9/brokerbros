@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Users, Video, BookOpen, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, Users, Video, BookOpen, CheckCircle2, FileSearch, Award } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -10,20 +10,20 @@ export const UserTrainingPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <ServiceMasterPageTemplate
       serviceTitle="User Training & Staff Onboarding"
-      heroBadge="COMPREHENSIVE TEAM CERTIFICATION"
-      heroDescription="Hands-on training programs, live workshops, and operational certification for your brokerage staff, risk managers, support teams, and sales representatives."
-      slaMetric={{ label: "Staff Certification Rate", value: "100%", sub: "Hands-on Back Office & Risk Management Training" }}
+      heroBadge="COMPLETE STAFF CERTIFICATION"
+      heroDescription="Hands-on training, live video workshops, and step-by-step guides for your back-office staff, risk managers, support teams, and sales agents."
+      slaMetric={{ label: "Staff Certification Rate", value: "100%", sub: "Live Hands-on Back Office & Risk Training" }}
       deliverables={[
-        { title: "Back Office Operations Training", desc: "In-depth instruction on client onboarding, KYC approvals, deposit approvals, and IB payouts.", icon: GraduationCap, sla: "Complete Staff" },
-        { title: "Risk Management Workshops", desc: "Training for risk officers on margin monitoring, A/B book routing, and PnL hedging.", icon: Users, sla: "Risk Certified" },
-        { title: "Sales & Support Staff Training", desc: "Equipping your account managers and support staff with CRM best practices.", icon: Video, sla: "Interactive" },
-        { title: "Custom Documentation & SOPs", desc: "Bespoke operating manuals and video tutorials tailored to your firm's workflows.", icon: BookOpen, sla: "Custom Manuals" }
+        { title: "Back Office Operations Training", desc: "Step-by-step training on client onboarding, KYC approvals, deposit processing, and IB payouts.", icon: GraduationCap, sla: "Complete Staff" },
+        { title: "Risk Management Workshops", desc: "Specialized training for risk officers on margin monitoring, A/B book routing, and PnL hedging.", icon: Users, sla: "Risk Certified" },
+        { title: "Sales & Support Staff Training", desc: "Equipping your sales agents and support staff with CRM best practices and client tools.", icon: Video, sla: "Interactive" },
+        { title: "Custom Documentation & Manuals", desc: "Branded operating guides and video tutorials customized to your brokerage workflows.", icon: BookOpen, sla: "Custom Manuals" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Needs Assessment", desc: "Evaluating your staff roles, experience levels, and software modules." },
-        { step: "02", title: "Curriculum Customization", desc: "Building a tailored training program for your specific operational procedures." },
-        { step: "03", title: "Live Workshop Sessions", desc: "Interactive training sessions led by senior BrokerBros technical directors." },
-        { step: "04", title: "Certification & Support", desc: "Final staff assessment, operational certification, and ongoing Q&A desk." }
+        { step: "01", title: "Team Role Review", desc: "We review your staff roles, experience levels, and software permissions.", icon: FileSearch },
+        { step: "02", title: "Custom Training Plan", desc: "Build a tailored training agenda for your sales, risk, and support teams.", icon: BookOpen },
+        { step: "03", title: "Live Video Workshops", desc: "Interactive live training sessions conducted by senior FinTech specialists.", icon: Video },
+        { step: "04", title: "Staff Certification", desc: "Final practical assessment, staff certification, and ongoing Q&A support desk.", icon: Award }
       ]}
       scopeInclusions={[
         { feature: "Training Format", standard: "Recorded Video Library", enterprise: "Live Interactive 1-on-1 Workshops" },

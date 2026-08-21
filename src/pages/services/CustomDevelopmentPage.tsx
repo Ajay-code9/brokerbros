@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Code2, Zap, FileCheck2, CheckCircle2 } from 'lucide-react';
+import { Cpu, Code2, Zap, FileCheck2, CheckCircle2, FileSearch, Layers, Code, Rocket } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -11,19 +11,19 @@ export const CustomDevelopmentPage: React.FC<PageProps> = ({ onOpenAccount }) =>
     <ServiceMasterPageTemplate
       serviceTitle="Custom System Development"
       heroBadge="BESPOKE FINTECH ENGINEERING"
-      heroDescription="Tailor-made software engineering, proprietary trading plugins, custom API bridges, and bespoke CRM integrations built to your exact institutional specifications."
-      slaMetric={{ label: "Engineering Quality SLA", value: "100%", sub: "Full Source Code Ownership & Microsecond Benchmarks" }}
+      heroDescription="Tailor-made software engineering, proprietary trading plugins, custom API bridges, and custom CRM modules built to your exact specifications."
+      slaMetric={{ label: "Source Code & Quality SLA", value: "100%", sub: "Full Source Code Ownership & High-Performance Benchmark" }}
       deliverables={[
-        { title: "Bespoke Trading Plugins", desc: "Custom C++ and MQL5 plugins for MetaTrader 5, cTrader, and proprietary platforms.", icon: Cpu, sla: "Custom C++" },
-        { title: "Proprietary API Connectors", desc: "Custom REST, WebSocket, and FIX API bridges connecting custom CRMs and liquidity pools.", icon: Code2, sla: "High-Speed" },
-        { title: "Custom CRM Module Engineering", desc: "Custom affiliate reward algorithms, payment gateway plugins, and reporting views.", icon: Zap, sla: "Tailored" },
-        { title: "Rigorous QA & Code Audit", desc: "Comprehensive unit testing, load stress testing, and security code reviews.", icon: FileCheck2, sla: "100% Tested" }
+        { title: "Custom Trading Plugins", desc: "Custom C++ and MQL5 plugins for MetaTrader 5, WebTrader, and proprietary platforms.", icon: Cpu, sla: "Custom C++" },
+        { title: "Proprietary API Bridges", desc: "High-speed REST, WebSocket, and FIX API connectors connecting custom CRMs and liquidity feeds.", icon: Code2, sla: "Sub-5ms Speed" },
+        { title: "Custom CRM Modules", desc: "Tailored IB commission calculators, payment gateway plugins, and custom admin reports.", icon: Zap, sla: "Tailored Code" },
+        { title: "Rigorous QA & Code Audits", desc: "Thorough stress load testing, security audits, and code reviews before live launch.", icon: FileCheck2, sla: "100% Tested" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Technical Scoping", desc: "Detailed engineering discovery to map out architecture and specifications." },
-        { step: "02", title: "Architecture Design", desc: "System diagramming, database schema design, and API contract definition." },
-        { step: "03", title: "Agile Development", desc: "Sprint-based software engineering with weekly demo builds and code reviews." },
-        { step: "04", title: "UAT & Deployment", desc: "User Acceptance Testing, load testing, and deployment to production servers." }
+        { step: "01", title: "Project Scoping", desc: "We map out your exact system requirements, logic, and feature list.", icon: FileSearch },
+        { step: "02", title: "Architecture Design", desc: "Create database schemas, API specs, and UI/UX wireframes.", icon: Layers },
+        { step: "03", title: "Agile Coding Sprints", desc: "Build system modules in fast 2-week sprints with weekly live demos.", icon: Code },
+        { step: "04", title: "UAT & Server Launch", desc: "Perform stress load tests, user acceptance testing, and launch to production.", icon: Rocket }
       ]}
       scopeInclusions={[
         { feature: "Code Ownership", standard: "Licensed Module", enterprise: "100% Source Code Ownership Option" },

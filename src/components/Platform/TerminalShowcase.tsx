@@ -25,7 +25,7 @@ export const TerminalShowcase: React.FC<TerminalShowcaseProps> = ({ onOpenAccoun
             {/* Header */}
             <div className="space-y-2.5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#0D2231] text-white font-mono text-[11px] border border-slate-800 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span className="text-emerald-400 font-bold tracking-wider">ENTERPRISE TRADING PLATFORM SUITE</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white font-sans leading-tight">

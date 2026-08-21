@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Zap, Cpu, Server, ShieldCheck, Layers } from 'lucide-react';
+import { Activity, Zap, Cpu, Server, ShieldCheck, Layers, Link, Sliders, ShieldAlert, Radio } from 'lucide-react';
 import { ProductMasterPageTemplate } from '../../components/Products/ProductMasterPageTemplate';
 
 interface PageProps {
@@ -10,28 +10,34 @@ export const QuoteEnginePage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <ProductMasterPageTemplate
       productTitle="BrokerBros Quote Engine (BQE)"
-      heroBadge="SUB-10MS PRICE FEED AGGREGATOR"
-      heroDescription="Ultra-low latency price feed aggregator aggregating raw quotes from 20+ Tier-1 banks and non-bank liquidity providers with customizable spread markups."
-      productMetric={{ label: "Feed Latency", value: "< 2.1 ms", sub: "Aggregated Raw Liquidity Feed from 20+ LPs" }}
+      heroBadge="FAST REAL-TIME PRICE FEED ENGINE"
+      heroDescription="Fast price feed aggregator that combines live quotes from 20+ top banks and liquidity providers into ultra-tight spreads with automated price spike protection."
+      productMetric={{ label: "Price Update Speed", value: "< 2.1 ms", sub: "Ultra-Fast Live Quotes from 20+ LPs" }}
+      workflowSteps={[
+        { num: '01', title: 'Connect Bank Feeds', desc: 'Connect live price feeds from 20+ Tier-1 banks, prime brokers, and ECN liquidity pools via FIX 4.4.', icon: Link },
+        { num: '02', title: 'Apply Spread Markups', desc: 'Set your desired pip or percentage spread markups per client group (e.g. VIP, Standard, Pro).', icon: Sliders },
+        { num: '03', title: 'Activate Spike Protection', desc: 'Enable microsecond filters that automatically reject bad price ticks and artificial market spikes.', icon: ShieldAlert },
+        { num: '04', title: 'Stream Quotes to Terminals', desc: 'Broadcast ultra-tight live price quotes to WebTrader, Mobile Apps, and MT5 servers in under 2ms.', icon: Radio }
+      ]}
       visualizerTabs={[
-        { id: "aggregator", label: "Liquidity Aggregator", previewText: "Combines quotes from LMAX, Finalto, Saxo, and CME into a single tight best bid/offer (BBO)." },
-        { id: "spikes", label: "Spike & Off-Quote Filter", previewText: "Automated algorithms detect and filter bad ticks, artificial spikes, and stale quotes." }
+        { id: "aggregator", label: "Live Price Aggregator", previewText: "Combines quotes from top liquidity providers into one super-tight bid/ask price for your traders." },
+        { id: "spikes", label: "Spike & Bad Price Filter", previewText: "Automated filters remove wrong prices or artificial spikes before they reach trader charts." }
       ]}
       modules={[
-        { title: "20+ LP Feed Aggregation", desc: "Aggregates bid/ask quotes in real-time to generate ultra-tight spreads.", icon: Activity, highlight: "20+ LPs Aggregated" },
-        { title: "Automated Spike & Bad-Tick Filter", desc: "Prevents artificial price spikes and non-market quotes from triggering client stop-losses.", icon: ShieldCheck, highlight: "Spike Filter" },
-        { title: "Custom Spread Markup Engine", desc: "Apply dynamic volume-based spread markups or commission schedules per group.", icon: Zap, highlight: "Dynamic Markups" },
-        { title: "Multi-Asset Feed Support", desc: "Delivers quotes for Forex, Indices, Commodities, Metals, Crypto, and US Stocks.", icon: Layers, highlight: "Multi-Asset" }
+        { title: "20+ Bank Feed Aggregation", desc: "Combines price quotes from 20+ major banks and liquidity pools for the tightest spreads.", icon: Activity, highlight: "20+ Banks" },
+        { title: "Price Spike Protection", desc: "Automatically blocks bad market ticks and wrong quotes from triggering trader stop-losses unfairly.", icon: ShieldCheck, highlight: "Spike Protection" },
+        { title: "Custom Spread Markups", desc: "Set your own spread markups per client group (e.g., VIP, Standard, Pro) with 1 click.", icon: Zap, highlight: "Custom Spreads" },
+        { title: "Multi-Asset Coverage", desc: "Delivers live prices for Forex pairs, Gold, Oil, Global Stock Indices, and Crypto assets.", icon: Layers, highlight: "All Markets" }
       ]}
       techSpecs={[
-        { label: "Feed Latency", value: "< 2.1 ms" },
-        { label: "LP Connections", value: "20+ Tier-1 LPs" },
-        { label: "Protocol", value: "FIX 4.4 / WS" },
-        { label: "Spike Filter", value: "Microsecond AI" }
+        { label: "Update Speed", value: "< 2.1 ms" },
+        { label: "Bank Connectors", value: "20+ LPs" },
+        { label: "Data Format", value: "FIX 4.4 / WebSockets" },
+        { label: "Spike Defense", value: "Automated" }
       ]}
       faqs={[
-        { q: "How does BQE handle market open price gaps and bad quotes?", a: "BQE uses statistical price deviation algorithms to identify anomalous quotes and discard bad ticks before broadcasting to trading terminals." },
-        { q: "Can we add our own custom liquidity provider feeds to BQE?", a: "Yes. BQE includes a universal FIX 4.4 adapter for connecting any FIX liquidity provider feed in minutes." }
+        { q: "What does BrokerBros Quote Engine (BQE) do?", a: "BQE collects prices from multiple top banks, cleans out bad price spikes, and sends super-fast quotes to your trading platforms." },
+        { q: "Can we add custom markup to spreads?", a: "Yes. You can add your desired markup per pip or percentage across different account types in seconds." }
       ]}
       onOpenAccount={onOpenAccount}
     />

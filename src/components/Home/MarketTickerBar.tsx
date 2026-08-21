@@ -49,7 +49,7 @@ export const MarketTickerBar: React.FC = () => {
       <div className="max-w-full mx-auto flex items-center gap-0">
         {/* Left label */}
         <div className="flex items-center gap-1.5 px-4 shrink-0 border-r border-slate-800 z-10 bg-slate-950 h-full pr-4">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
           <Activity className="w-3 h-3 text-emerald-400" />
           <span className="text-emerald-400 font-bold tracking-wider text-[10px] uppercase">Live Markets</span>
         </div>

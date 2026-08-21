@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, Server, Headphones } from 'lucide-react';
+import { 
+  Check, 
+  ArrowRight, 
+  Server, 
+  Headphones, 
+  Zap, 
+  ShieldCheck, 
+  Globe, 
+  Cpu, 
+  Layers, 
+  CheckCircle2, 
+  CreditCard,
+  Building2,
+  Users
+} from 'lucide-react';
 
 export const PricingTiersSection: React.FC<{ onOpenAccount: () => void }> = ({ onOpenAccount }) => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -10,78 +24,105 @@ export const PricingTiersSection: React.FC<{ onOpenAccount: () => void }> = ({ o
       badge: '14 White-Label Modules Included',
       priceMonthly: 1499,
       priceAnnual: 1199,
-      description: 'Complete turn-key white-label technology suite to launch your FX brokerage or trading business.',
+      description: 'Complete turnkey technology package to launch your forex brokerage or trading platform with zero hassle.',
       features: [
-        'Client CRM & Backoffice Admin Panel',
-        'Branded WebTrader & Mobile Apps (iOS/Android)',
-        'CRM with Multi-Level IB Tree & Rebate Engine',
-        '24/7 FIX 4.4 / FIX 5.0 Liquidity Bridge Access',
-        'Crypto & Fiat Integrated Payment Gateway',
-        'Tick-by-tick WebSocket Chart & Price Streaming',
-        'Standard Email & Ticket Support (24h SLA)'
+        'Branded WebTrader & Mobile Apps (iOS & Android)',
+        'Client Portal & Backoffice CRM Management',
+        'Multi-Tier IB Referral & Automated Pip Rebates',
+        'Sub-Millisecond FIX 4.4 Liquidity Bridge Gateway',
+        'Built-in Crypto & Bank Payment Gateways',
+        'Live Real-time WebSocket Price Charting Stream',
+        '24/7 Dedicated Customer & Tech Support'
       ],
       ctaText: 'Launch Starter Suite',
       popular: false
     },
     {
       name: 'Growth PropFirm & FX Suite',
-      badge: 'Full PropFirm CRM & PAMM Included',
+      badge: 'PropFirm CRM & PAMM Included',
       priceMonthly: 3499,
       priceAnnual: 2799,
-      description: 'Complete suite with automated PropFirm challenge engine, PAMM/MAM asset management, and social copier.',
+      description: 'Advanced suite with automated PropFirm challenge engine, PAMM asset manager, and social copy trading.',
       features: [
-        'Everything in Starter Broker Suite',
-        'PropFirm CRM (Challenge Builder, Rule & Breach Engine)',
-        'PAMM / MAM Asset Management Module',
-        'Social Trading Copier Engine (Master-follower allocation)',
-        'Trading Robots & EA Risk Safeguards',
-        '150+ Tier-1 LP Liquidity Bridge Connectivity',
-        'Dedicated Slack/Telegram Engineering Channel (< 15 min SLA)'
+        'Includes Everything in Starter Broker Suite',
+        'PropFirm Challenge Builder & Rule Engine',
+        'PAMM / MAM Multi-Account Fund Manager',
+        'Social Trading Copier Engine (Master-Follower)',
+        'Automated Risk Manager & EA Safeguards',
+        '150+ Institutional Liquidity Provider Access',
+        'Priority Technical Support (< 15 min SLA)'
       ],
       ctaText: 'Start Growth Suite',
       popular: true
     },
     {
       name: 'Institutional Master',
-      badge: 'Dedicated Equinix LD4 Infrastructure',
+      badge: 'Dedicated Equinix Infrastructure',
       priceMonthly: 'Custom',
       priceAnnual: 'Custom',
-      description: 'Dedicated Equinix LD4/NY4 cross-connects, custom FIX dictionary, MT5 Advanced Server APIs, and full LP aggregation.',
+      description: 'Dedicated Equinix LD4/NY4 cross-connects, custom FIX protocol dictionary, MT5 server plugins, and full LP aggregation.',
       features: [
-        'Dedicated Equinix LD4/NY4 server infrastructure',
-        'MT5 Advanced Server-Side APIs & Group Controls',
-        'Custom FIX 5.0 SP2 protocol dictionary & matching engine',
-        'Segregated LP wallet & custody integration',
-        'Unlimited messaging throughput (100k+ msg/sec)',
-        'Custom regulatory audit log reporting (FCA/CySEC/ASIC)',
-        'Dedicated 1-on-1 Senior Solutions Architect'
+        'Dedicated Equinix LD4 (London) & NY4 (New York) Servers',
+        'MetaTrader 5 Server Plugins & Bridge Add-ons',
+        'Custom FIX 5.0 Matching Engine Protocol',
+        'Segregated Custody & Multi-Bank Wallet Setup',
+        'High Throughput (100,000+ messages per second)',
+        'Custom Compliance & Regulatory Audit Logging',
+        'Dedicated Senior Solutions Architect'
       ],
       ctaText: 'Talk to Institutional Team',
       popular: false
     }
   ];
 
+  const saasSteps = [
+    {
+      step: '01',
+      title: 'Pick Your Plan',
+      desc: 'Select the turnkey SaaS tier that best fits your brokerage size and growth targets.',
+      icon: Layers
+    },
+    {
+      step: '02',
+      title: 'Upload Your Brand',
+      desc: 'Our team configures your logo, domain, custom brand colors, and payment gateways.',
+      icon: Building2
+    },
+    {
+      step: '03',
+      title: 'Connect Liquidity',
+      desc: 'Link your existing liquidity provider or tap into our pre-built sub-1ms FIX 4.4 feeds.',
+      icon: Zap
+    },
+    {
+      step: '04',
+      title: 'Go Live in 3 Days',
+      desc: 'Launch your branded WebTrader, Mobile Apps, and Client CRM to traders worldwide.',
+      icon: CheckCircle2
+    }
+  ];
+
   return (
-    <section className="bg-slate-50/70 dark:bg-[#0E1420] py-8 lg:py-12 border-b border-slate-200 dark:border-[#1E293B] relative overflow-hidden font-sans transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="bg-slate-50/70 dark:bg-[#0E1420] py-12 lg:py-16 border-b border-slate-200 dark:border-[#1E293B] relative overflow-hidden font-sans transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
-        {/* Header - Compact & Tight */}
-        <div className="text-center max-w-3xl mx-auto space-y-2 mb-6">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full bg-white dark:bg-[#141C2B] border border-slate-200 dark:border-[#1E293B] text-slate-700 dark:text-slate-300 text-[11px] font-mono font-semibold shadow-2xs">
-            <Server className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-            <span>FLAT MONTHLY SAAS PRICING</span>
+        {/* Header - Simple & Clean Language */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/50 text-emerald-800 dark:text-emerald-400 text-xs font-mono font-bold shadow-2xs">
+            <Server className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <span>SIMPLE FLAT MONTHLY SAAS PRICING</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white tracking-tight leading-tight">
-            Simple Flat Monthly SaaS Tiers. <span className="text-emerald-600 dark:text-emerald-400">Zero Commission Markup.</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+            Turnkey SaaS Tiers. <span className="text-emerald-600 dark:text-emerald-400">Zero Commission Markup.</span>
           </h2>
 
-          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
-            Keep 100% of your brokerage profits. Choose a plan tailored to your trading volume and scale seamlessly.
+          <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed max-w-xl mx-auto font-medium">
+            Keep 100% of your brokerage revenue. Flat monthly pricing with zero hidden fees, zero revenue share, and 24/7 expert support.
           </p>
 
           {/* Billing Switcher */}
-          <div className="flex items-center justify-center space-x-3 pt-2">
+          <div className="flex items-center justify-center space-x-3 pt-3">
             <span className={`text-xs font-semibold ${!isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
               Monthly Billing
             </span>
@@ -99,104 +140,113 @@ export const PricingTiersSection: React.FC<{ onOpenAccount: () => void }> = ({ o
               />
             </button>
 
-            <span className={`text-xs font-semibold flex items-center space-x-1 ${isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              <span>Annual Billing</span>
-              <span className="px-2 py-0.2 rounded-full bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold font-mono">
-                SAVE 20%
-              </span>
+            <span className={`text-xs font-semibold ${isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+              Annual Billing <span className="text-emerald-600 dark:text-emerald-400 font-bold">(Save 20%)</span>
             </span>
           </div>
         </div>
 
-        {/* Tiers Grid - Compact 3 Column */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        {/* 4-Step Setup Workflow */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 rounded-2xl bg-white dark:bg-[#131926] border border-slate-200 dark:border-slate-800 shadow-xs">
+          {saasSteps.map((step, idx) => (
+            <div key={idx} className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold flex items-center justify-center text-xs shrink-0 border border-emerald-500/20">
+                {step.step}
+              </div>
+              <div className="space-y-1">
+                <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                  <step.icon className="w-3.5 h-3.5 text-emerald-500" />
+                  <span>{step.title}</span>
+                </h4>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Tiers Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {tiers.map((tier, index) => {
             const isCustom = typeof tier.priceMonthly === 'string';
-            const price = isAnnual ? tier.priceAnnual : tier.priceMonthly;
+            const displayPrice = isCustom 
+              ? 'Custom' 
+              : isAnnual 
+                ? `$${tier.priceAnnual.toLocaleString()}` 
+                : `$${tier.priceMonthly.toLocaleString()}`;
 
             return (
               <div
                 key={index}
-                className={`rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 relative ${
+                className={`relative rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 ${
                   tier.popular
-                    ? 'bg-white dark:bg-[#141C2B] border-2 border-emerald-600 dark:border-emerald-500 shadow-lg shadow-emerald-600/10 z-20'
-                    : 'bg-white dark:bg-[#141C2B] border border-slate-200 dark:border-[#1E293B] shadow-2xs hover:border-slate-300 dark:hover:border-slate-700'
+                    ? 'bg-white dark:bg-[#141C2B] border-2 border-emerald-500 shadow-xl dark:shadow-emerald-950/40'
+                    : 'bg-white dark:bg-[#141C2B] border border-slate-200 dark:border-[#1E293B] shadow-md hover:border-slate-300 dark:hover:border-slate-700'
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-emerald-500 text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
-                    {tier.badge}
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[10px] font-mono font-extrabold uppercase px-3 py-1 rounded-full shadow-md tracking-wider">
+                    Most Popular Choice
                   </div>
                 )}
 
                 <div>
-                  <div className="mb-3">
-                    <h3 className="text-lg font-extrabold text-slate-900 dark:text-white font-sans">{tier.name}</h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">{tier.description}</p>
-                  </div>
-
-                  {/* Price */}
-                  <div className="mb-4 pb-4 border-b border-slate-100 dark:border-[#1E293B]">
-                    {isCustom ? (
-                      <div className="text-2xl font-extrabold text-slate-900 dark:text-white font-sans">Custom Tier</div>
-                    ) : (
-                      <div className="flex items-baseline space-x-1">
-                        <span className="text-3xl font-black text-slate-900 dark:text-white font-mono">${price}</span>
-                        <span className="text-slate-500 dark:text-slate-400 text-xs font-medium">/ month</span>
-                      </div>
-                    )}
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">
-                      {isAnnual ? 'Billed annually ($' + (typeof price === 'number' ? price * 12 : '') + '/yr)' : 'Billed monthly'}
+                  <div className="space-y-2 mb-6">
+                    <span className="inline-block text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1 rounded-md border border-emerald-200 dark:border-emerald-800/50">
+                      {tier.badge}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                      {tier.name}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                      {tier.description}
                     </p>
                   </div>
 
-                  {/* Feature list */}
-                  <div className="space-y-2 mb-5">
-                    <p className="text-[10px] font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">What's Included:</p>
-                    {tier.features.map((feat, i) => (
-                      <div key={i} className="flex items-start space-x-2 text-xs text-slate-700 dark:text-slate-300">
-                        <div className="w-4 h-4 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200/60 dark:border-emerald-500/30">
-                          <Check className="w-3 h-3" />
-                        </div>
-                        <span className="font-medium text-xs leading-tight">{feat}</span>
+                  <div className="mb-6 pb-6 border-b border-slate-100 dark:border-slate-800">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-4xl font-black font-mono text-slate-900 dark:text-white">
+                        {displayPrice}
+                      </span>
+                      {!isCustom && (
+                        <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                          / month
+                        </span>
+                      )}
+                    </div>
+                    {!isCustom && isAnnual && (
+                      <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
+                        Billed annually (Save ${( (tier.priceMonthly as number - tier.priceAnnual) * 12 ).toLocaleString()}/yr)
                       </div>
-                    ))}
+                    )}
                   </div>
+
+                  {/* Feature List with Vector Icons */}
+                  <ul className="space-y-3 mb-8">
+                    {tier.features.map((feat, fIdx) => (
+                      <li key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300 font-medium">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <button
                   onClick={onOpenAccount}
-                  className={`w-full py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
+                  className={`w-full py-3.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer ${
                     tier.popular
-                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-600/20'
-                      : 'bg-slate-900 dark:bg-[#1B2538] hover:bg-slate-800 dark:hover:bg-[#232F47] text-white border border-transparent dark:border-[#1E293B]'
+                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/25 font-extrabold'
+                      : 'bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white border border-slate-800 dark:border-slate-700'
                   }`}
                 >
                   <span>{tier.ctaText}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             );
           })}
-        </div>
-
-        {/* Compact Guarantee Banner */}
-        <div className="mt-6 p-4 rounded-xl bg-slate-950 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
-              <Headphones className="w-4 h-4 text-emerald-400" />
-            </div>
-            <div>
-              <h4 className="text-xs font-bold text-white">Need custom Equinix LD4 rack allocation or specific LP bridges?</h4>
-              <p className="text-[11px] text-slate-400">Our senior solutions engineers will set up your sandbox environment in under 2 hours.</p>
-            </div>
-          </div>
-          <button
-            onClick={onOpenAccount}
-            className="shrink-0 px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all cursor-pointer"
-          >
-            Talk to Solutions Architect
-          </button>
         </div>
 
       </div>

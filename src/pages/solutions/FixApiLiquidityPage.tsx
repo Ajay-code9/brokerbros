@@ -1,5 +1,5 @@
 import React from 'react';
-import { GitBranch, Zap, Route, Layers, Radio, ShieldCheck, Cpu, Server } from 'lucide-react';
+import { GitBranch, Zap, Route, Layers, Radio, ShieldCheck, Cpu, Server, Link, Sliders } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -10,20 +10,20 @@ export const FixApiLiquidityPage: React.FC<PageProps> = ({ onOpenAccount }) => {
   return (
     <ServiceMasterPageTemplate
       serviceTitle="FIX API & Liquidity Engine"
-      heroBadge="SUB-5MS EXECUTION & DIRECT CROSS-CONNECT"
-      heroDescription="Institutional FIX 4.4 protocol bridge connecting your brokerage servers directly to 20+ Tier-1 liquidity providers, ECNs, and prime brokers with microsecond smart order routing."
-      slaMetric={{ label: "Average FIX Latency", value: "< 4.8 ms", sub: "Equinix LD4/NY4/TY3 Cross-Connect SLA" }}
+      heroBadge="FAST FIX 4.4 LIQUIDITY BRIDGE"
+      heroDescription="Institutional FIX API engine connecting your brokerage directly to 20+ top banks and liquidity providers with sub-5ms trade execution."
+      slaMetric={{ label: "Trade Execution Latency", value: "< 4.8 ms", sub: "Equinix LD4 / NY4 Direct Fiber Cross-Connect" }}
       deliverables={[
-        { title: "FIX 4.4 Protocol Bridge", desc: "Full FIX 4.4 protocol implementation with session management, heartbeat monitoring, and instant failover.", icon: GitBranch, sla: "FIX 4.4 Native" },
-        { title: "Ultra-Low Latency Routing", desc: "Co-located direct fiber cross-connects at LD4 London and NY4 New York for sub-5ms fill rates.", icon: Zap, sla: "Sub-5ms Latency" },
-        { title: "Multi-LP Aggregation", desc: "Aggregate 20+ liquidity providers simultaneously with best-bid/best-ask order book compilation.", icon: Layers, sla: "20+ LPs Aggregated" },
-        { title: "A/B/C Book Routing Engine", desc: "Configurable dealing desk rules for A-Book (STP), B-Book (internalization), and C-Book hybrid execution.", icon: Route, sla: "Real-Time P&L" }
+        { title: "FIX 4.4 Protocol Bridge", desc: "Native FIX 4.4 engine with automated session health checks and instant failover protection.", icon: GitBranch, sla: "FIX 4.4 Protocol" },
+        { title: "Sub-5ms Execution Latency", desc: "Co-located direct fiber connections at Equinix LD4 (London) and NY4 (New York) for instant fills.", icon: Zap, sla: "<5ms Latency" },
+        { title: "20+ LP Bank Aggregation", desc: "Combines 20+ bank and liquidity feeds into one ultra-tight order book for your traders.", icon: Layers, sla: "20+ LPs Aggregated" },
+        { title: "Smart Order Routing Engine", desc: "Set automatic A-Book (STP to banks) or B-Book (internalization) routing rules per client group.", icon: Route, sla: "Smart Routing" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Cross-Connect Provisioning", desc: "Dedicated fiber cross-connect setup at Equinix LD4, NY4, or TY3 financial datacenters." },
-        { step: "02", title: "Session & LP Mapping", desc: "FIX 4.4 session handshake, sequence store configuration, and multi-LP credit line mapping." },
-        { step: "03", title: "Smart Routing & Risk Rules", desc: "Configure A/B/C book execution triggers, spread markup rules, and net position risk limits." },
-        { step: "04", title: "Live Execution & 24/7 Monitoring", desc: "Sub-5ms order routing goes live backed by 24/7 microsecond latency monitoring and auto-hedging." }
+        { step: "01", title: "Fiber Cross-Connect", desc: "Set up direct fiber cross-connect cables inside Equinix LD4 or NY4 datacenters.", icon: Link },
+        { step: "02", title: "FIX 4.4 Handshake", desc: "Configure FIX 4.4 sessions, order books, and bank credit lines.", icon: Sliders },
+        { step: "03", title: "Set Routing Rules", desc: "Configure A-Book and B-Book execution rules and spread markups.", icon: Route },
+        { step: "04", title: "Live Execution & 24/7 SLA", desc: "Start routing live trades with sub-5ms execution backed by 24/7 server monitoring.", icon: Radio }
       ]}
       scopeInclusions={[
         { feature: "FIX Protocol Version", standard: "FIX 4.2 / 4.4 Standard", enterprise: "FIX 4.4 High-Frequency Native" },

@@ -27,7 +27,7 @@ const MockDashboard = () => (
       </div>
       <div className="flex items-center gap-2">
         <div className="flex items-center gap-1 bg-green-600/20 border border-green-600/40 px-2 py-0.5 rounded">
-          <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
           <span className="text-green-400 font-mono text-[9px] font-bold">CONNECTED</span>
         </div>
       </div>
@@ -294,7 +294,7 @@ export const WebTradingTerminalPage: React.FC<PageProps> = ({ onOpenAccount }) =
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-5 w-full flex flex-col items-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-[10px] font-bold text-emerald-600 tracking-wider uppercase font-mono shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             <span>INSTITUTIONAL-GRADE BROWSER TERMINAL</span>
           </div>
 
@@ -429,7 +429,7 @@ export const WebTradingTerminalPage: React.FC<PageProps> = ({ onOpenAccount }) =
             {/* Left — copy */}
             <div className="space-y-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 <span>LIVE PLATFORM</span>
               </div>
 
@@ -611,7 +611,7 @@ export const WebTradingTerminalPage: React.FC<PageProps> = ({ onOpenAccount }) =
 
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               <span>SEAMLESS INTEGRATIONS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.1]">

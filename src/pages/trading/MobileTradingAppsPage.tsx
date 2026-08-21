@@ -26,7 +26,7 @@ const MockMobileScreen = () => (
         <span className="text-white font-bold text-xs">BrokerBros Mobile</span>
       </div>
       <div className="flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
         <span className="text-emerald-400 font-mono text-[9px] font-bold">LIVE</span>
       </div>
     </div>
@@ -132,7 +132,7 @@ export const MobileTradingAppsPage: React.FC<PageProps> = ({ onOpenAccount }) =>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-5 w-full flex flex-col items-center">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-[10px] font-bold text-emerald-600 tracking-wider uppercase font-mono shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             <span>NATIVE MOBILE TRADING APPS</span>
           </div>
 
@@ -212,7 +212,7 @@ export const MobileTradingAppsPage: React.FC<PageProps> = ({ onOpenAccount }) =>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 <span>MOBILE TRADING EXPERIENCE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.1]">

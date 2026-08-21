@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Palette, Zap, Globe, CheckCircle2 } from 'lucide-react';
+import { Layout, Palette, Zap, Globe, CheckCircle2, Figma, Code, Rocket } from 'lucide-react';
 import { ServiceMasterPageTemplate } from '../../components/Services/ServiceMasterPageTemplate';
 
 interface PageProps {
@@ -11,19 +11,19 @@ export const WebsiteDevPage: React.FC<PageProps> = ({ onOpenAccount }) => {
     <ServiceMasterPageTemplate
       serviceTitle="Website UX/UI Development"
       heroBadge="HIGH-CONVERTING BROKER WEBSITES"
-      heroDescription="Bespoke financial website design, landing pages, and interactive client portals built for maximum trader conversion, mobile responsiveness, and SEO dominance."
-      slaMetric={{ label: "Delivery Timeline", value: "14 Days", sub: "Fully Custom Branded Broker Website" }}
+      heroDescription="Bespoke financial website design, landing pages, and interactive client portals built for maximum trader conversion, mobile responsiveness, and fast loading speeds."
+      slaMetric={{ label: "Delivery Timeline Guarantee", value: "14 Days", sub: "Fully Custom Branded Broker Website Launch" }}
       deliverables={[
-        { title: "Custom Brand UI Design", desc: "Premium dark/light mode interface design tailored specifically to your brokerage identity.", icon: Palette, sla: "Custom UI" },
-        { title: "Mobile & Terminal Optimization", desc: "Ultra-fast, responsive web interfaces tested across all mobile devices and screen resolutions.", icon: Layout, sla: "100% Responsive" },
-        { title: "CRM & Widget Integration", desc: "Seamless integration with BrokerBros CRM, live ticker widgets, and registration forms.", icon: Zap, sla: "Pre-Integrated" },
-        { title: "Financial SEO & Speed Tuning", desc: "Optimized for Google Lighthouse 100/100 performance, fast page loads, and organic ranking.", icon: Globe, sla: "SEO Ready" }
+        { title: "Custom Brand UI Design", desc: "Premium interface design tailored specifically to your brokerage brand identity.", icon: Palette, sla: "Custom UI" },
+        { title: "Mobile & Terminal Optimization", desc: "Fast, responsive web design tested across all smartphones, tablets, and desktop displays.", icon: Layout, sla: "100% Responsive" },
+        { title: "CRM & Widget Integration", desc: "Seamless integration with BrokerBros CRM, live ticker widgets, and registration forms.", icon: Zap, sla: "CRM Ready" },
+        { title: "Financial SEO & Speed Tuning", desc: "Optimized for Google 95+ speed performance score, fast page loads, and search rankings.", icon: Globe, sla: "SEO Ready" }
       ]}
       workflowSteps={[
-        { step: "01", title: "Brand Strategy", desc: "Discovery call to analyze your target markets, branding, and color palette." },
-        { step: "02", title: "Figma UI/UX Mockup", desc: "Interactive Figma designs created and refined until 100% approved." },
-        { step: "03", title: "Frontend Engineering", desc: "Clean React/Vite code development with smooth micro-animations." },
-        { step: "04", title: "Launch & CRM Connect", desc: "Deployment to high-speed CDN and live CRM registration form integration." }
+        { step: "01", title: "Brand Strategy Call", desc: "Discovery call to analyze your target market, logo, and preferred color palette.", icon: Palette },
+        { step: "02", title: "Figma UI/UX Design", desc: "Custom Figma wireframes and visual designs created for your approval.", icon: Figma },
+        { step: "03", title: "Frontend Engineering", desc: "Clean React code development with smooth micro-animations and fast loading.", icon: Code },
+        { step: "04", title: "Launch & CRM Connect", desc: "Deployment to high-speed CDN and live CRM registration form integration.", icon: Rocket }
       ]}
       scopeInclusions={[
         { feature: "Design Customization", standard: "Pre-made Template", enterprise: "100% Bespoke Custom Figma Design" },

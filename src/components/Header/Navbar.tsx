@@ -28,7 +28,8 @@ import {
   Activity,
   Coins,
   Network,
-  LayoutGrid
+  LayoutGrid,
+  Monitor
 } from 'lucide-react';
 import { useRouter } from '../../router';
 import { useTheme } from '../../context/ThemeContext';
@@ -60,16 +61,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   const isDarkNavbar = theme === 'dark';
 
   const PRODUCTS_MENU = [
+    { title: "BrokerBros Trader", path: "/products/brokerbros-trader", desc: "Flagship multi-asset trading suite", icon: Monitor },
     { title: "Web Trader", path: "/products/web-trader", desc: "Browser-based institutional terminal", icon: Globe },
     { title: "Mobile Applications", path: "/products/mobile-app", desc: "Native iOS & Android trading apps", icon: Smartphone },
     { title: "Forex CRM", path: "/products/forex-crm", desc: "Multi-tier broker CRM & client portal", icon: Briefcase },
     { title: "Simplex", path: "/products/simplex", desc: "Lightweight turnkey trading engine", icon: Zap },
     { title: "Social Trading", path: "/products/social-trading", desc: "Community copy trading & signals", icon: Users },
     { title: "Financial Charts", path: "/products/financial-charts", desc: "Professional HTML5 charting suite", icon: BarChart3 },
-    { title: "PAMM/MAM System", path: "/products/pamm-mam", desc: "Multi-account manager allocation", icon: PieChart },
     { title: "BrokerBros Quote Engine (BQE)", path: "/products/quote-engine", desc: "Sub-10ms price feed aggregator", icon: Activity },
-    { title: "Crypto ETFs", path: "/products/crypto-etfs", desc: "Digital asset index routing", icon: Coins },
+    { title: "BrokerBros PAMM/MAM System", path: "/products/pamm-mam", desc: "Multi-account manager allocation", icon: PieChart },
     { title: "IB Portal", path: "/products/ib-portal", desc: "Multi-tier affiliate & rebate engine", icon: Network },
+    { title: "Crypto ETFs", path: "/products/crypto-etfs", desc: "Digital asset index routing", icon: Coins },
     { title: "Financial Widgets", path: "/products/financial-widgets", desc: "Embeddable web tickers & calendar", icon: LayoutGrid },
     { title: "Plugins", path: "/products/plugins", desc: "MT5 server plugins & bridge add-ons", icon: Cpu }
   ];
@@ -275,6 +277,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button onClick={() => handleNav('/solutions/fix-api-liquidity')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     FIX API & Liquidity Engine
                   </button>
+                  <button onClick={() => handleNav('/security/regulation')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer flex items-center justify-between ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    <span>Data Security & Compliance</span>
+                    <span className="text-[9px] bg-emerald-500/20 text-emerald-400 font-mono px-1.5 py-0.5 rounded">ISO 27001</span>
+                  </button>
                 </div>
               )}
             </div>
@@ -322,6 +328,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                   <button onClick={() => handleNav('/products/plugins')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     MT5 & Server Plugins
+                  </button>
+                  <button onClick={() => handleNav('/api-integrations')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    API Integrations & Docs
                   </button>
                 </div>
               )}
@@ -371,6 +380,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button onClick={() => handleNav('/pricing/other-fees')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Infrastructure & Hosting Fees
                   </button>
+                  <button onClick={() => handleNav('/partner')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    Partners & IB Rebate Program
+                  </button>
                 </div>
               )}
             </div>
@@ -410,8 +422,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button onClick={() => handleNav('/education/academy')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     Brokerage Launch Academy
                   </button>
-                  <button onClick={() => handleNav('/education/learning-center')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                  <button onClick={() => handleNav('/api-integrations')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
                     API & Developer Docs
+                  </button>
+                  <button onClick={() => handleNav('/research/news')} className={`px-3 py-2 text-xs font-semibold transition-colors text-left cursor-pointer ${isDarkNavbar ? 'text-slate-200 hover:text-emerald-400 hover:bg-slate-800/60' : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50'}`}>
+                    News & Market Insights
                   </button>
                 </div>
               )}
@@ -421,6 +436,17 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Action Buttons on Right */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <button
+            onClick={() => handleNav('/contact')}
+            className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
+              isDarkNavbar
+                ? 'text-slate-300 hover:text-white hover:bg-slate-800'
+                : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+            }`}
+          >
+            Contact Us
+          </button>
+
           <button
             onClick={onOpenSearch}
             className={`flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all duration-300 ease-in-out cursor-pointer ${
